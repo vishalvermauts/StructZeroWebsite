@@ -19,12 +19,26 @@ export function initAnimations() {
     return;
   }
 
-  // Hero headline: TextPlugin word-by-word reveal
+  // Hero headline: Staggered word blur & fade up reveal
   const heroLine = document.querySelector('[data-anim="hero-text"]');
   if (heroLine) {
-    const full = heroLine.textContent || '';
-    heroLine.textContent = '';
-    gsap.to(heroLine, { duration: 1.1, text: full, ease: 'none', delay: 0.15 });
+    const text = (heroLine.textContent || '').trim();
+    if (text) {
+      const words = text.split(/\s+/);
+      heroLine.innerHTML = '';
+      words.forEach((word) => {
+        const span = document.createElement('span');
+        span.textContent = word;
+        span.style.display = 'inline-block';
+        span.style.marginRight = '0.25em';
+        heroLine.appendChild(span);
+      });
+      
+      gsap.fromTo(heroLine.querySelectorAll('span'), 
+        { y: 15, opacity: 0, filter: 'blur(4px)' },
+        { y: 0, opacity: 1, filter: 'blur(0px)', duration: 0.8, stagger: 0.05, ease: 'power2.out', delay: 0.1 }
+      );
+    }
   }
 
   // Hero pipeline strip: sequential step highlight (Core only, no scroll dependency)
