@@ -1,0 +1,296 @@
+---
+import Base from '../layouts/Base.astro';
+import '../styles/global.css';
+---
+<Base
+  title="StructZero — Build software with an AI engineering team"
+  description="StructZero runs a real multi-model debate, certifies every file, and deploys real infrastructure — an AI engineering platform, not a chatbot."
+>
+  <nav class="sticky top-0 z-50 backdrop-blur bg-bg/85 border-b border-border">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center gap-7">
+      <a href="#top" class="flex items-center gap-2 font-bold text-sm">
+        <span class="w-2 h-2 rounded-sm bg-accent rotate-45"></span>StructZero
+      </a>
+      <div class="hidden md:flex gap-6 text-[13.5px] text-ink-muted flex-1">
+        <a href="#why" class="hover:text-ink">Why StructZero</a>
+        <a href="#workflow" class="hover:text-ink">How it works</a>
+        <a href="#certification" class="hover:text-ink">Certification</a>
+        <a href="#connect" class="hover:text-ink">Connect anything</a>
+        <a href="#deploy" class="hover:text-ink">Deploy</a>
+        <a href="#public" class="hover:text-ink">Built in public</a>
+      </div>
+      <a href="#get-started" class="ml-auto bg-accent text-[color:var(--accent-ink)] font-semibold text-[13.5px] px-4 py-2 rounded-md">Get started</a>
+    </div>
+  </nav>
+
+  <header id="top" class="relative pt-24 pb-16 text-center overflow-hidden">
+    <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full opacity-40" style="background: radial-gradient(ellipse at center, var(--accent-soft), transparent 65%);"></div>
+    <div class="max-w-3xl mx-auto px-6 relative">
+      <span class="inline-flex items-center gap-2 font-mono text-xs text-ink-muted bg-panel border border-border px-3.5 py-1.5 rounded-full mb-7">
+        <span class="w-1.5 h-1.5 rounded-full bg-ok"></span>Architecture-first AI Software Engineering
+      </span>
+      <h1 class="text-4xl md:text-6xl font-bold leading-[1.08] tracking-tight mb-5" data-anim="hero-text">
+        Build software with an AI engineering team — not a single AI model.
+      </h1>
+      <p class="text-lg text-ink-muted max-w-xl mx-auto mb-4">
+        Design. Debate. Build. Certify. Deploy. Repeat.
+      </p>
+      <p class="text-lg font-bold text-ink max-w-xl mx-auto mb-9">
+        Every project begins with an architecture debate before a single file is written.
+      </p>
+      <p class="text-lg text-ink-muted max-w-xl mx-auto mb-9">
+        StructZero runs a real architecture debate between multiple models before a single file is written — then certifies every file before it ships.
+      </p>
+      <div class="flex gap-3 justify-center flex-wrap mb-6">
+        <a href="#get-started" class="bg-accent text-[color:var(--accent-ink)] font-semibold text-[14.5px] px-6 py-3.5 rounded-lg">Try the demo</a>
+        <a href="#workflow" class="border border-border font-semibold text-[14.5px] px-6 py-3.5 rounded-lg hover:bg-panel">Watch the debate</a>
+      </div>
+      <div class="flex flex-wrap justify-center gap-1.5 font-mono text-[12.5px] mt-12">
+        {['Prompt','Debate','Architecture','Certification','Code','Deploy','Monitor'].map((step) => (
+          <span data-pipeline-step class="px-3.5 py-2 rounded-md bg-panel border border-border text-ink-faint">{step}</span>
+        ))}
+      </div>
+    </div>
+  </header>
+
+  <section id="why" class="py-24 border-t border-border">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="reveal opacity-0 translate-y-4 mb-12">
+        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Why another AI coding platform</span>
+        <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Cursor exists. Lovable exists. Bolt exists.<br />Here's the actual difference.</h2>
+        <p class="text-ink-muted">Most AI coding tools are one model, one pass, no review. You get code fast — and bugs faster. StructZero runs the process a real engineering team would, compressed into minutes.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 reveal opacity-0 translate-y-4">
+        <div class="border border-border rounded-2xl p-7 bg-panel opacity-70">
+          <div class="font-bold text-sm mb-4">Traditional AI IDE</div>
+          <div class="text-[14.5px] text-ink-muted py-2.5">Prompt</div>
+          <div class="text-[14.5px] text-ink-muted py-2.5 border-t border-border">Code</div>
+          <div class="text-[14.5px] text-ink-muted py-2.5 border-t border-border">Hope</div>
+          <div class="text-[14.5px] text-ink-muted py-2.5 border-t border-border">Debug</div>
+          <div class="text-[14.5px] text-ink-muted py-2.5 border-t border-border">Manual Deploy</div>
+        </div>
+        <div class="border border-accent rounded-2xl p-7" style="background: linear-gradient(180deg, var(--accent-soft), transparent 70%);">
+          <div class="font-bold text-sm mb-4">StructZero</div>
+          <div class="text-[14.5px] py-2.5">Prompt</div>
+          <div class="text-[14.5px] py-2.5 border-t border-border font-semibold text-accent">Architecture</div>
+          <div class="text-[14.5px] py-2.5 border-t border-border font-semibold text-accent">Debate</div>
+          <div class="text-[14.5px] py-2.5 border-t border-border font-semibold text-accent">Certification</div>
+          <div class="text-[14.5px] py-2.5 border-t border-border font-semibold text-accent">Deploy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 border-t border-border">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="reveal opacity-0 translate-y-4 mb-12">
+        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Don't hide the debate</span>
+        <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Watch the models actually disagree.</h2>
+        <p class="text-ink-muted mb-4">This is StructZero's real personality — a genuine review process, not a single model faking a conversation with itself.</p>
+        <p class="text-ink font-bold mb-8">Every opinion is independent. No model sees another model's critique before writing its own.</p>
+      </div>
+      <div data-debate-scene class="flex flex-col gap-3">
+        <div class="debate-bubble opacity-0 translate-y-2 flex gap-3 border border-border bg-panel rounded-xl px-5 py-4 max-w-[88%]">
+          <span class="font-mono text-[11px] font-bold text-accent uppercase w-20 shrink-0">Gemini</span>
+          <span class="text-[14.5px]">This API design is weak — the pagination contract doesn't handle empty result sets.</span>
+        </div>
+        <div class="debate-bubble opacity-0 translate-y-2 flex gap-3 border border-border bg-panel rounded-xl px-5 py-4 max-w-[88%]">
+          <span class="font-mono text-[11px] font-bold text-accent uppercase w-20 shrink-0">DeepSeek</span>
+          <span class="text-[14.5px]">Agreed, and the database schema has a redundant foreign key that will cause write conflicts under load.</span>
+        </div>
+        <div class="debate-bubble opacity-0 translate-y-2 flex gap-3 rounded-xl px-5 py-4 max-w-[88%] self-end" style="background: var(--accent-soft); border: 1px solid var(--accent);">
+          <span class="font-mono text-[11px] font-bold text-accent uppercase w-20 shrink-0">Judge</span>
+          <span class="text-[14.5px]">Both flags are valid. Revise the pagination contract and drop the redundant key before proceeding.</span>
+        </div>
+        <div class="debate-bubble opacity-0 translate-y-2 flex gap-3 rounded-xl px-5 py-4 max-w-[88%]" style="background: rgba(51,192,136,0.08); border: 1px solid var(--ok);">
+          <span class="font-mono text-[11px] font-bold uppercase w-20 shrink-0" style="color: var(--ok);">Verified</span>
+          <span class="text-[14.5px]">Architecture re-checked against the fixes. Consistent. Proceeding to certification.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="workflow" class="py-24 border-t border-border" data-pipeline-diagram>
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="reveal opacity-0 translate-y-4 mb-12">
+        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">How it works</span>
+        <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Every project follows the same real pipeline.</h2>
+        <p class="text-ink-muted">Not a metaphor — this is the literal sequence every generation runs through, in order.</p>
+      </div>
+      <div class="relative pl-8">
+        <svg class="absolute left-0 top-0 h-full w-4" viewBox="0 0 10 800" preserveAspectRatio="none" aria-hidden="true">
+          <path data-draw-path d="M5 0 L5 800" stroke="var(--accent)" stroke-width="2" fill="none" />
+        </svg>
+        {[
+          ['01','Idea','Describe what you want to build in plain English. StructZero classifies the request — a quick question, a focused change, or a full architecture debate.'],
+          ['02','Debate','Multiple models draft, critique, and revise the architecture — independently, not as a single model playing multiple roles.'],
+          ['03','Architecture','Every project produces a complete engineering blueprint before implementation.', ['Architecture Diagram', 'Database', 'APIs', 'Components', 'Dependencies', 'File Manifest']],
+          ['04','Certification','Every file is checked before it\'s considered done — nothing ships unverified.'],
+          ['05','Code','Real files, generated in dependency order, reconciled against each other so imports and interfaces actually line up.'],
+          ['06','Deploy','One click to real infrastructure — see it live before you decide to ship it further.'],
+          ['07','Monitor','Every model call, every decision, every step — logged, so you can see exactly what happened and why.'],
+          ['08','Improve','Refine the architecture, rebuild a single file, or start the next iteration — the same rigor, every time.'],
+        ].map(([n, title, desc, list]) => (
+          <div class="reveal opacity-0 translate-y-4 grid grid-cols-[48px_1fr] gap-5 py-7 border-t border-border first:border-t-0">
+            <div class="font-mono text-[13px] text-ink-faint pt-0.5">{n}</div>
+            <div>
+              <div class="text-lg font-bold mb-1.5">{title}</div>
+              <p class="text-[14.5px] text-ink-muted max-w-md">{desc}</p>
+              {list && (
+                <div class="flex flex-wrap gap-2 mt-4">
+                  {(list as string[]).map(item => (
+                    <span class="text-[11px] uppercase tracking-wider font-mono px-3 py-1.5 bg-panel border border-border rounded-md text-ink-muted">{item}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="certification" class="py-24 border-t border-border">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <div class="reveal opacity-0 translate-y-4">
+        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Certification</span>
+        <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Nothing ships until it's checked.</h2>
+        <p class="text-ink-muted mb-4">Every generated file passes automated checks before StructZero considers it done — the same discipline a careful engineer would apply by hand, run automatically, every time.</p>
+        <p class="text-ink font-bold">Code generation doesn't finish when the model stops typing. It finishes when certification passes.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-9 reveal opacity-0 translate-y-4">
+        {['Syntax','Imports','Module consistency','Framework fit','Dependencies'].map((c) => (
+          <div class="flex items-center gap-2 text-[14px] bg-panel border border-border rounded-lg px-3.5 py-3">
+            <span class="font-bold" style="color: var(--ok);">✓</span>{c}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="connect" class="py-24 border-t border-border">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="reveal opacity-0 translate-y-4 mb-10">
+        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Integration Marketplace</span>
+        <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Not a fixed list of integrations. A capability.</h2>
+        <p class="text-ink-muted">Install verified integrations or describe one in plain English and let StructZero build it.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5 reveal opacity-0 translate-y-4">
+        <div class="border border-border rounded-2xl p-7 bg-panel">
+          <h3 class="text-lg font-bold mb-2.5">Install</h3>
+          <p class="text-[14.5px] text-ink-muted mb-5">Connect Vercel or AWS in a couple of clicks and start deploying immediately.</p>
+          <div class="flex gap-2.5"><span class="text-xs font-semibold border border-border rounded-md px-3.5 py-2">Vercel</span><span class="text-xs font-semibold border border-border rounded-md px-3.5 py-2">AWS</span></div>
+        </div>
+        <div class="border border-border rounded-2xl p-7 bg-panel">
+          <h3 class="text-lg font-bold mb-2.5">Generate with AI</h3>
+          <p class="text-[14.5px] text-ink-muted mb-5">Need something else? Describe it in plain English — StructZero designs, generates, and certifies a real, working plugin.</p>
+          <span class="text-xs font-semibold border border-accent text-accent rounded-md px-3.5 py-2">Try it →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="deploy" class="py-24 border-t border-border" data-deploy-diagram>
+    <div class="max-w-2xl mx-auto px-6 text-center">
+      <div class="reveal opacity-0 translate-y-4">
+        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Deployment is a workflow</span>
+        <h2 class="text-3xl md:text-4xl tracking-tight">Not a button. A process.</h2>
+      </div>
+      <div class="relative mt-10">
+        <svg class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-2 hidden md:block" viewBox="0 0 500 4" preserveAspectRatio="none" aria-hidden="true">
+          <path data-draw-path-deploy d="M0 2 L500 2" stroke="var(--accent)" stroke-width="2" fill="none" />
+        </svg>
+        <div class="flex flex-wrap gap-4 justify-center relative reveal opacity-0 translate-y-4">
+          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-border whitespace-nowrap">Build</span>
+          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-border whitespace-nowrap">Preview</span>
+          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-border whitespace-nowrap">Approve</span>
+          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-border whitespace-nowrap">Deploy</span>
+          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-dashed border-border text-ink-faint whitespace-nowrap">Rollback</span>
+          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-border whitespace-nowrap">Redeploy</span>
+        </div>
+      </div>
+      <div class="flex gap-3 justify-center flex-wrap mt-7 reveal opacity-0 translate-y-4">
+        <span class="text-[13.5px] font-semibold px-5 py-2.5 rounded-full bg-panel border border-border">Vercel</span>
+        <span class="text-[13.5px] font-semibold px-5 py-2.5 rounded-full bg-panel border border-border">AWS</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 border-t border-border">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="reveal opacity-0 translate-y-4 mb-10">
+        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Engineering Guarantees</span>
+        <h2 class="text-3xl md:text-4xl tracking-tight">Most AI platforms hide this. We don't.</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 gap-5 reveal opacity-0 translate-y-4">
+        <div class="border border-border rounded-xl p-6"><span class="font-mono text-sm uppercase tracking-wide text-accent block mb-3">✓ Multi-model review</span><p class="text-base text-ink-muted">You choose — Gemini, Claude, DeepSeek, or your own local Ollama endpoint.</p></div>
+        <div class="border border-border rounded-xl p-6"><span class="font-mono text-sm uppercase tracking-wide text-accent block mb-3">✓ Sandboxed execution</span><p class="text-base text-ink-muted">Builds run in isolated, sandboxed containers — never against shared infrastructure.</p></div>
+        <div class="border border-border rounded-xl p-6"><span class="font-mono text-sm uppercase tracking-wide text-accent block mb-3">✓ Audit trail</span><p class="text-base text-ink-muted">Your projects, conversations, and architecture decisions are all logged transparently.</p></div>
+        <div class="border border-border rounded-xl p-6"><span class="font-mono text-sm uppercase tracking-wide text-accent block mb-3">✓ Certified output</span><p class="text-base text-ink-muted">Every file is checked before it ships. See exactly what's verified above.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="public" class="py-16 border-t border-border text-center">
+    <div class="max-w-2xl mx-auto px-6">
+      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Built in public</span>
+      <h2 class="text-2xl md:text-3xl tracking-tight mb-2">See where we are — and where we're going.</h2>
+      <p class="text-ink-muted">Real roadmap. Real known limitations. No hiding what isn't finished yet.</p>
+      <!-- Real bug found live: these were href="#" no-op links to pages that
+           don't exist yet -- clicking did nothing, which reads as broken.
+           Marked as non-interactive "coming soon" until the real subpages
+           ship, per this session's own no-dead-links principle. -->
+      <div class="flex gap-2.5 justify-center flex-wrap mt-8">
+        {['Roadmap','Engineering events','Release notes','Known limitations'].map((label) => (
+          <span class="text-[13.5px] font-semibold px-5 py-2.5 rounded-lg border border-dashed border-border text-ink-faint cursor-not-allowed" title="Coming at launch">{label} <span class="font-mono text-[10px] align-super">at launch</span></span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 border-t border-border">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="reveal opacity-0 translate-y-4 mb-12">
+        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">StructZero Builds StructZero</span>
+        <h2 class="text-3xl md:text-4xl tracking-tight mb-4">StructZero is its own first customer.</h2>
+        <p class="text-ink-muted max-w-2xl mx-auto mb-4">Every major feature starts as a StructZero debate.</p>
+        <p class="text-ink-muted max-w-2xl mx-auto">StructZero plans its own architecture, critiques its own designs, certifies its own code, and continuously improves itself before a human reviews every change.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 reveal opacity-0 translate-y-4 text-left">
+        {[
+          ['Plugin System', 'Designed by StructZero', 'Released'],
+          ['Knowledge Graph', 'Designed by StructZero', 'Released'],
+          ['Certification Engine', 'Designed by StructZero', 'Released'],
+          ['Deployment Pipeline', 'Designed by StructZero', 'Released'],
+        ].map(([title, subtitle, status]) => (
+          <div class="border border-border rounded-xl p-5 bg-panel">
+            <h3 class="font-bold text-sm mb-1">{title}</h3>
+            <div class="text-[12px] text-ink-muted mb-4">{subtitle}</div>
+            <div class="text-[11px] font-mono text-ok uppercase tracking-wider">{status}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <footer id="get-started" class="py-24 text-center">
+    <div class="max-w-2xl mx-auto px-6">
+      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Get started</span>
+      <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Start with an idea.</h2>
+      <p class="text-ink-muted mb-7">StructZero will debate it, design it, certify it, and help turn it into production software.</p>
+      <a href="#workflow" class="inline-block bg-accent text-[color:var(--accent-ink)] font-semibold text-[14.5px] px-6 py-3.5 rounded-lg">Try StructZero</a>
+      <div class="flex gap-5 justify-center flex-wrap mt-14 text-[13px] text-ink-faint">
+        <a href="#why" class="hover:text-ink">Why StructZero</a>
+        <a href="#workflow" class="hover:text-ink">How it works</a>
+        <a href="#public" class="hover:text-ink">Built in public</a>
+        <span class="cursor-not-allowed" title="Coming at launch">Docs <span class="font-mono text-[10px] align-super">at launch</span></span>
+      </div>
+      <div class="mt-6 text-[12px] text-ink-faint">© StructZero</div>
+    </div>
+  </footer>
+
+  <script>
+    import { initAnimations } from '../scripts/animations.js';
+    initAnimations();
+  </script>
+</Base>

@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens -- high-contrast dark palette, one accent, per the real
+   architecture debate: "inspired by Linear, Raycast, and Vercel, deliberately
+   rejecting every currently-saturated SaaS template convention." Avoids the
+   generic AI-landing-page defaults: no cream+terracotta, no purple-to-blue
+   gradient hero, no Inter-as-default, no centered-everything. */
+:root {
+  --bg: #0a0a0c;
+  --bg-alt: #111114;
+  --panel: #16161a;
+  --border: #232328;
+  --text: #f3f2ef;
+  --text-muted: #9d9aa4;
+  --text-faint: #63616b;
+  --accent: #4f6df5;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(79, 109, 245, 0.14);
+  --ok: #33c088;
+  --font-mono: 'Berkeley Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  --font-sans: 'Neue Haas', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+:root[data-theme='light'] {
+  --bg: #faf9f7;
+  --bg-alt: #f2f0ec;
+  --panel: #ffffff;
+  --border: #e4e1da;
+  --text: #16151a;
+  --text-muted: #565361;
+  --text-faint: #8c8994;
+  --accent: #3151e0;
+  --accent-ink: #ffffff;
+  --accent-soft: rgba(49, 81, 224, 0.08);
+  --ok: #1f9e6c;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --bg: #faf9f7;
+    --bg-alt: #f2f0ec;
+    --panel: #ffffff;
+    --border: #e4e1da;
+    --text: #16151a;
+    --text-muted: #565361;
+    --text-faint: #8c8994;
+    --accent: #3151e0;
+    --accent-ink: #ffffff;
+    --accent-soft: rgba(49, 81, 224, 0.08);
+    --ok: #1f9e6c;
+  }
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+}
+::selection { background: var(--accent-soft); }
+
+.reveal { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1 !important; transform: none !important; }
+  html { scroll-behavior: auto; }
+}
