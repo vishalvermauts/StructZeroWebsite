@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.structzero.app/sitemap-index.xml
+Sitemap: https://structzero.app/sitemap-index.xml

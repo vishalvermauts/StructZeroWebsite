@@ -12,5 +12,5 @@ export default defineConfig({
   output: 'static',
   adapter: vercel(),
   integrations: [tailwind({ applyBaseStyles: false }), sitemap()],
-  site: 'https://www.structzero.app',
+  site: 'https://structzero.app',
 });
