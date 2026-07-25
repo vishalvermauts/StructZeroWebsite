@@ -23,32 +23,59 @@ import '../styles/global.css';
     </div>
   </nav>
 
-  <header id="top" class="relative pt-24 pb-16 text-center overflow-hidden">
+  <header id="top" class="relative pt-10 pb-16 text-center overflow-hidden">
     <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full opacity-40" style="background: radial-gradient(ellipse at center, var(--accent-soft), transparent 65%);"></div>
-    <div class="max-w-3xl mx-auto px-6 relative">
-      <span class="inline-flex items-center gap-2 font-mono text-xs text-ink-muted bg-panel border border-border px-3.5 py-1.5 rounded-full mb-7">
-        <span class="w-1.5 h-1.5 rounded-full bg-ok"></span>Architecture-first AI Software Engineering
-      </span>
-      <h1 class="text-4xl md:text-6xl font-bold leading-[1.08] tracking-tight mb-5" data-anim="hero-text">
+    <div class="max-w-4xl mx-auto px-6 relative">
+      <h1 class="text-4xl md:text-6xl font-bold leading-[1.08] tracking-tight mb-6" data-anim="hero-text">
         Build software with an AI engineering team — not a single AI model.
       </h1>
-      <p class="text-lg text-ink-muted max-w-xl mx-auto mb-4">
-        Design. Debate. Build. Certify. Deploy. Repeat.
-      </p>
-      <p class="text-lg font-bold text-ink max-w-xl mx-auto mb-9">
-        Every project begins with an architecture debate before a single file is written.
-      </p>
-      <p class="text-lg text-ink-muted max-w-xl mx-auto mb-9">
-        StructZero runs a real architecture debate between multiple models before a single file is written — then certifies every file before it ships.
-      </p>
-      <div class="flex gap-3 justify-center flex-wrap mb-6">
-        <a href="#get-started" class="bg-accent text-[color:var(--accent-ink)] font-semibold text-[14.5px] px-6 py-3.5 rounded-lg">Try the demo</a>
-        <a href="#workflow" class="border border-border font-semibold text-[14.5px] px-6 py-3.5 rounded-lg hover:bg-panel">Watch the debate</a>
-      </div>
-      <div class="flex flex-wrap justify-center gap-1.5 font-mono text-[12.5px] mt-12">
+
+      <div class="flex flex-wrap justify-center gap-1.5 font-mono text-[12.5px] mb-8">
         {['Prompt','Debate','Architecture','Certification','Code','Deploy','Monitor'].map((step) => (
           <span data-pipeline-step class="px-3.5 py-2 rounded-md bg-panel border border-border text-ink-faint">{step}</span>
         ))}
+      </div>
+
+      <p class="text-lg font-bold text-ink max-w-xl mx-auto mb-3">
+        Every project begins with an architecture debate before a single file is written.
+      </p>
+      <p class="text-lg text-ink-muted max-w-xl mx-auto mb-10">
+        StructZero runs a real architecture debate between multiple models before a single file is written — then certifies every file before it ships.
+      </p>
+
+      <!-- Video Showcase with Modern IDE/Browser UI Frame -->
+      <div class="reveal opacity-0 translate-y-4 mb-4 rounded-2xl border border-border bg-panel/80 overflow-hidden shadow-2xl backdrop-blur text-left">
+        <!-- Mock Browser / Terminal Top Bar -->
+        <div class="flex items-center justify-between px-4 py-3 border-b border-border bg-bg/90">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+          </div>
+          <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-panel border border-border font-mono text-[11px] text-ink-muted">
+            <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Structzero - AI software engineering platform.mp4</span>
+          </div>
+          <div class="font-mono text-[11px] text-accent font-semibold px-2 py-0.5 rounded bg-accent-soft border border-accent/30">
+            EXPLAINER VIDEO
+          </div>
+        </div>
+
+        <!-- Video Player Wrapper -->
+        <div class="relative aspect-video bg-black/40 flex items-center justify-center group">
+          <video 
+            class="w-full h-full object-cover" 
+            controls 
+            playsinline 
+            preload="metadata"
+          >
+            <source src="/Structzero_AI_software_engineering_platform.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
       </div>
     </div>
   </header>
@@ -117,6 +144,7 @@ import '../styles/global.css';
         <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Every project follows the same real pipeline.</h2>
         <p class="text-ink-muted">Not a metaphor — this is the literal sequence every generation runs through, in order.</p>
       </div>
+
       <div class="relative pl-8">
         <svg class="absolute left-0 top-0 h-full w-4" viewBox="0 0 10 800" preserveAspectRatio="none" aria-hidden="true">
           <path data-draw-path d="M5 0 L5 800" stroke="var(--accent)" stroke-width="2" fill="none" />

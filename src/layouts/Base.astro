@@ -22,12 +22,30 @@ const { title, description } = Astro.props;
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="StructZero" />
+    <meta property="og:video" content="https://structzero.app/Structzero_AI_software_engineering_platform.mp4" />
+    <meta property="og:video:type" content="video/mp4" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={Astro.url} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+
+    <!-- VideoObject Schema.org Structured Data for Google Video SERP Indexing -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": "StructZero — AI Software Engineering Platform Explainer",
+        "description": "Learn how StructZero runs a real multi-model architecture debate, certifies every file, and deploys real infrastructure.",
+        "thumbnailUrl": [
+          "https://structzero.app/sitemap-index.xml"
+        ],
+        "uploadDate": "2026-07-25T00:00:00+00:00",
+        "contentUrl": "https://structzero.app/Structzero_AI_software_engineering_platform.mp4",
+        "embedUrl": "https://structzero.app/#top"
+      }
+    </script>
 
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><rect width=%2216%22 height=%2216%22 rx=%223%22 fill=%22%234f6df5%22/></svg>" />
     <link rel="sitemap" href="/sitemap-index.xml" />

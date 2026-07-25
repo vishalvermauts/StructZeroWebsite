@@ -64,3 +64,13 @@ body {
   .reveal { opacity: 1 !important; transform: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* Subtitle / WebVTT Cue Styling -- transparent background, clean shadow */
+video::cue {
+  background: transparent;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.95), 0px 0px 8px rgba(0, 0, 0, 0.9);
+}
