@@ -39,9 +39,10 @@ export function generateSitemap(outDir) {
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <video:video>
-      <video:content_loc>https://structzero.app/Structzero_AI_software_engineering_platform.mp4</video:content_loc>
+      <video:thumbnail_loc>https://structzero.app/favicon.svg</video:thumbnail_loc>
       <video:title>StructZero — AI Software Engineering Platform Explainer</video:title>
       <video:description>Learn how StructZero runs a real multi-model architecture debate, certifies every file, and deploys real infrastructure.</video:description>
+      <video:content_loc>https://structzero.app/Structzero_AI_software_engineering_platform.mp4</video:content_loc>
       <video:publication_date>2026-07-25T00:00:00+00:00</video:publication_date>
     </video:video>
   </url>`;
