@@ -6,6 +6,7 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
   output: 'static',
   adapter: vercel(),
+  trailingSlash: 'always',
   integrations: [
     tailwind({ applyBaseStyles: false }),
     mdx()
