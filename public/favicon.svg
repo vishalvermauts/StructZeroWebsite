@@ -1,6 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="#16161a" stroke="#232328" stroke-width="2"/>
-  <path d="M16 6L25 11.5V20.5L16 26L7 20.5V11.5L16 6Z" stroke="#4f6df5" stroke-width="2" stroke-linejoin="round" fill="none"/>
-  <circle cx="16" cy="16" r="4" fill="#4f6df5"/>
-  <path d="M16 6V12M25 11.5L20 14M25 20.5L20 18M16 26V20M7 20.5L12 18M7 11.5L12 14" stroke="#4f6df5" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <rect width="512" height="512" rx="110" fill="#090d16"/>
+  <!-- Stadium Rounded Number 0 Outer Ring (Cyan) -->
+  <rect x="106" y="66" width="300" height="380" rx="150" fill="none" stroke="#00d8ff" stroke-width="48"/>
+  <!-- Inner Letter S (White) -->
+  <path d="M 295 180 C 295 155, 275 142, 256 142 C 230 142, 212 158, 212 180 C 212 205, 230 218, 260 228 L 270 231 C 302 242, 320 262, 320 295 C 320 335, 290 358, 256 358 C 216 358, 190 330, 190 295" fill="none" stroke="#ffffff" stroke-width="44" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
