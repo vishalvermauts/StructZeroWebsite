@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Contact Us — StructZero Platform" description="Get in touch with the StructZero engineering and enterprise team.">
+  <section class="py-20 max-w-4xl mx-auto px-6 text-center">
+    <span class="font-mono text-xs uppercase text-accent font-semibold block mb-3">Get In Touch</span>
+    <h1 class="text-4xl font-bold mb-4">Contact StructZero</h1>
+    <p class="text-ink-muted max-w-xl mx-auto mb-10">
+      Interested in enterprise deployment, custom MCP servers, or technical partnerships? Reach out to our engineering leadership.
+    </p>
+
+    <div class="max-w-md mx-auto p-8 border border-border rounded-2xl bg-panel text-left">
+      <div class="mb-4">
+        <label class="block text-xs font-mono uppercase text-ink-muted mb-2">Work Email</label>
+        <input type="email" placeholder="name@company.com" class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 text-sm text-ink focus:border-accent outline-none" />
+      </div>
+      <div class="mb-6">
+        <label class="block text-xs font-mono uppercase text-ink-muted mb-2">Message / Use Case</label>
+        <textarea rows="4" placeholder="Describe your enterprise requirements..." class="w-full bg-bg border border-border rounded-lg px-4 py-2.5 text-sm text-ink focus:border-accent outline-none"></textarea>
+      </div>
+      <button class="w-full bg-accent text-white font-semibold text-sm py-3 rounded-lg hover:opacity-90 transition-opacity">Submit Request</button>
+    </div>
+  </section>
+</Base>
