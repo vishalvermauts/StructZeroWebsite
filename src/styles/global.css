@@ -22,34 +22,6 @@
   --font-mono: 'Berkeley Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
   --font-sans: 'Neue Haas', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
 }
-:root[data-theme='light'] {
-  --bg: #faf9f7;
-  --bg-alt: #f2f0ec;
-  --panel: #ffffff;
-  --border: #e4e1da;
-  --text: #16151a;
-  --text-muted: #565361;
-  --text-faint: #8c8994;
-  --accent: #3151e0;
-  --accent-ink: #ffffff;
-  --accent-soft: rgba(49, 81, 224, 0.08);
-  --ok: #1f9e6c;
-}
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme='dark']) {
-    --bg: #faf9f7;
-    --bg-alt: #f2f0ec;
-    --panel: #ffffff;
-    --border: #e4e1da;
-    --text: #16151a;
-    --text-muted: #565361;
-    --text-faint: #8c8994;
-    --accent: #3151e0;
-    --accent-ink: #ffffff;
-    --accent-soft: rgba(49, 81, 224, 0.08);
-    --ok: #1f9e6c;
-  }
-}
 
 html { scroll-behavior: smooth; }
 body {
