@@ -1,0 +1,23 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+---
+
+<SubpageLayout
+  title="Security Policy & Guardrails"
+  description="Security architecture, credential handling, and authorization controls."
+  status="Official Spec"
+  summary="StructZero enforces strict human authorization intercepts, credential masking, and container sandboxing to secure enterprise deployments."
+  related={[
+    { label: 'Security Overview', href: '/security' },
+    { label: 'Privacy Policy', href: '/legal/privacy' },
+  ]}
+>
+  ## Vulnerability Management
+  Every generated file is audited for security injection risks, hardcoded secrets, and module mismatches prior to repository commit.
+
+  ## Credential Protection
+  API keys and tokens are masked before entering LLM model context windows.
+
+  ## Sandboxed Execution
+  Build and test checks take place in non-root container sandboxes.
+</SubpageLayout>

@@ -1,0 +1,33 @@
+---
+title: "AWS Agent Toolkit Plugin"
+description: "Conversational AWS account operations, infrastructure provisioning, and service management."
+status: "Production"
+category: "Cloud Connectors"
+summary: "The AWS Agent Toolkit plugin enables StructZero to converse with AWS services — provisioning EC2, Lambda, SQS, DynamoDB, and S3 resources with human-in-the-loop authorization."
+useCases:
+  - "Provisioning serverless API backends via AWS Blocks"
+  - "Managing SQS message queues and event triggers"
+  - "Monitoring CloudWatch logs and metric alarms"
+benefits:
+  - "Enforces explicit user authorization before running billable commands"
+  - "Eliminates manual AWS Console navigation"
+  - "Integrates directly into StructZero architecture blueprints"
+related:
+  - { label: "Cloud Integrations", href: "/cloud-integrations" }
+  - { label: "Bedrock Plugin", href: "/plugins/bedrock" }
+faqs:
+  - q: "Does the AWS plugin run billable operations automatically?"
+    a: "No. Any command that incurs cloud charges pauses for explicit user approval."
+---
+
+## Technical Overview
+
+```mermaid
+sequenceDiagram
+    autonumber
+    StructZero->>AWS Plugin: Formulate Infrastructure Blueprint
+    AWS Plugin->>User: Request Authorization (PAUSED)
+    User->>AWS Plugin: Approve Execution
+    AWS Plugin->>AWS API: Provision AWS Blocks / CloudFormation
+    AWS API->>StructZero: Return Resource Endpoint
+```

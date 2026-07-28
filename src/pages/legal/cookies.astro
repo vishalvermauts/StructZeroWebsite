@@ -1,0 +1,16 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+---
+
+<SubpageLayout
+  title="Cookie & Local Storage Policy"
+  description="How StructZero uses browser storage and local tokens."
+  status="Official Spec"
+  summary="StructZero uses local browser storage exclusively for user interface preferences (such as dark theme preference) and local session state. No third-party tracking cookies are used."
+  related={[
+    { label: 'Privacy Policy', href: '/legal/privacy' },
+  ]}
+>
+  ## Use of Local Storage
+  StructZero stores `theme` state in browser `localStorage` to preserve visual preferences. No tracking or cross-site advertising cookies are set.
+</SubpageLayout>

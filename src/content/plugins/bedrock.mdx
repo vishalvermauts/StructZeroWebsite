@@ -1,0 +1,28 @@
+---
+title: "Amazon Bedrock Plugin"
+description: "AWS AI model platform integration for Claude and Titan models."
+status: "Production"
+category: "AI Model Connectors"
+summary: "Connect Amazon Bedrock endpoints to route Anthropic Claude, Meta Llama, and Titan models into StructZero debate roles."
+useCases:
+  - "Assigning Claude 3.5 Sonnet to Architect and Reviewer roles"
+  - "Utilizing Bedrock Guardrails for safety enforcement"
+benefits:
+  - "Converse API support with prompt caching"
+  - "Enterprise IAM authorization"
+related:
+  - { label: "AWS Agent Toolkit Plugin", href: "/plugins/aws-agent-toolkit" }
+  - { label: "Debate Engine", href: "/debate-engine" }
+faqs:
+  - q: "Does Bedrock support prompt caching in StructZero?"
+    a: "Yes. StructZero utilizes Bedrock Converse API prompt caching."
+---
+
+## Bedrock Architecture
+
+```mermaid
+graph LR
+    Orchestrator[StructZero Council] --> Bedrock[Amazon Bedrock API]
+    Bedrock --> Claude[Claude 3.5 Sonnet]
+    Bedrock --> Guardrails[Bedrock Guardrails]
+```

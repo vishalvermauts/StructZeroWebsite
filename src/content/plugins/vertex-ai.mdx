@@ -1,0 +1,28 @@
+---
+title: "Vertex AI Plugin"
+description: "Google's AI model platform integration for Gemini models."
+status: "Production"
+category: "AI Model Connectors"
+summary: "Connect Google Cloud Vertex AI to assign Gemini 3.6 Flash, Pro, and custom endpoints to StructZero AI team roles."
+useCases:
+  - "Assigning Gemini Pro to Architect and Strategist roles"
+  - "Utilizing Gemini Flash for rapid QA verification checks"
+benefits:
+  - "Enterprise SLA and data privacy controls"
+  - "Direct GCP billing integration"
+related:
+  - { label: "Google Cloud Plugin", href: "/plugins/google-cloud" }
+  - { label: "Debate Engine", href: "/debate-engine" }
+faqs:
+  - q: "Can we use Gemini 3.6 Pro via Vertex AI?"
+    a: "Yes. StructZero integrates natively with Vertex AI Gemini endpoints."
+---
+
+## Vertex AI Flow
+
+```mermaid
+graph LR
+    Orchestrator[StructZero Orchestrator] --> Vertex[Vertex AI API]
+    Vertex --> GeminiPro[Gemini 3.6 Pro]
+    Vertex --> GeminiFlash[Gemini 3.6 Flash]
+```

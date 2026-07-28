@@ -1,0 +1,38 @@
+---
+title: "Why StructZero"
+description: "The structural problem with single-model AI coding tools and how StructZero solves it."
+status: "Production"
+summary: "Most AI tools try to write all files in a single pass without review, causing hallucinated imports, broken routes, and security flaws. StructZero introduces structural organization, peer review, and topological dependency generation."
+related:
+  - { label: "Multi-Model Debate", href: "/debate-engine" }
+  - { label: "Project DNA Engine", href: "/project-dna" }
+  - { label: "Certification Gates", href: "/certification" }
+features:
+  - title: "Eliminating Confirmation Bias"
+    desc: "Single LLMs agree with their own prior mistakes. StructZero uses independent models to review work."
+  - title: "Topological Dependency Sorting"
+    desc: "Files are generated in strict dependency order — underlying interfaces finish before dependent modules start."
+  - title: "Zero Hallucinated Imports"
+    desc: "AST contracts are validated against disk before code generation finishes."
+faqs:
+  - q: "Why isn't a smarter single model enough?"
+    a: "Larger context windows do not solve structural organization flaws. Software engineering requires peer review, dependency ordering, and syntax compilation gates."
+---
+
+## The Structural Flaw in Current AI Coding Tools
+
+When a single LLM attempts to generate complex multi-file applications simultaneously:
+- It guesses what dependent files will export before they exist.
+- It mixes CommonJS and ESM module syntax.
+- Hardcoded secrets and command injection flaws go unnoticed.
+
+```mermaid
+graph LR
+    Sub1[Single LLM Model] --> Flaw1[Hallucinated Imports]
+    Sub1 --> Flaw2[Route 404s]
+    Sub1 --> Flaw3[Unchecked Bugs]
+    
+    SZ[StructZero Multi-Agent] --> Sol1[Topological Sorting]
+    SZ --> Sol2[Adversarial Review]
+    SZ --> Sol3[Certification Gate]
+```

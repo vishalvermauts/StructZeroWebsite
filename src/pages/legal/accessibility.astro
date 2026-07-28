@@ -1,0 +1,20 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+---
+
+<SubpageLayout
+  title="Accessibility Statement"
+  description="Our commitment to WCAG 2.1 AA accessibility standards."
+  status="Official Spec"
+  summary="StructZero is designed to meet WCAG 2.1 AA accessibility guidelines, offering high-contrast typography, screen-reader navigation, and full keyboard support."
+  related={[
+    { label: 'Company Overview', href: '/company' },
+    { label: 'Terms of Service', href: '/legal/terms' },
+  ]}
+>
+  ## Accessibility Features
+  - High-contrast dark palette with verified color contrast ratios.
+  - Full keyboard navigation across all interactive elements and dialogs.
+  - Semantic HTML5 landmark tags and ARIA labels.
+  - Native `prefers-reduced-motion` CSS rules to respect motion sensitivities.
+</SubpageLayout>

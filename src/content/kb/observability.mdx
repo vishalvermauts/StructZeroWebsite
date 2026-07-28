@@ -1,0 +1,37 @@
+---
+title: "Platform Observability & Cost Tracking"
+description: "Usage, latency, and token cost visibility across all AI models."
+status: "In Development"
+summary: "StructZero provides real-time visibility into AI token consumption, model API latencies, and cloud infrastructure spend."
+related:
+  - { label: "Engineering Events", href: "/engineering-events" }
+  - { label: "Billing Plugin", href: "/plugins/billing" }
+features:
+  - title: "Token Cost Attribution"
+    desc: "Track model expenditure per role, project, or feature build."
+  - title: "Model Latency Metrics"
+    desc: "Identify bottlenecks across Gemini, Claude, and DeepSeek responses."
+  - title: "Budget Guardrails"
+    desc: "Establish spending thresholds to prevent runaway API billing."
+faqs:
+  - q: "Can we track costs per team member?"
+    a: "Yes. Token usage and spending metrics can be attributed to specific projects and developer sessions."
+---
+
+## Observability Dashboard Metrics
+
+```mermaid
+mindmap
+  root((Observability))
+    Token Spending
+      Cost Per Role
+      Cost Per Project
+      Budget Alerts
+    Model Performance
+      Latency Metrics
+      Time-to-First-Token
+      Success Rate
+    Container Telemetry
+      CPU / Memory
+      Build Duration
+```

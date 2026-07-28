@@ -1,0 +1,31 @@
+---
+title: "Architecture Overview"
+description: "Public high-level system architecture and data isolation boundaries."
+status: "Production"
+summary: "StructZero's platform consists of an Orchestrator Core, a Context Graph Layer, an Agent Council, and a Certification Engine. Data remains isolated in secure sandbox environments."
+related:
+  - { label: "Platform Overview", href: "/platform-overview" }
+  - { label: "Security & Guardrails", href: "/security" }
+  - { label: "Engineering Event Recorder", href: "/engineering-events" }
+features:
+  - title: "Isolated Container Runtimes"
+    desc: "Build verification and test executions take place in sandboxed containers."
+  - title: "Zero Shared Memory"
+    desc: "Customer projects, codebases, and credentials are strictly isolated."
+  - title: "Audit Trail"
+    desc: "Every model call, argument, and decision is logged in structured JSONL transcripts."
+faqs:
+  - q: "Are customer codebases used to train public models?"
+    a: "No. StructZero never uses customer code or project data for model training."
+---
+
+## System Boundaries
+
+```mermaid
+graph TD
+    Client[IDE / MCP Client] <--> API[StructZero MCP Gate]
+    API <--> Orch[Orchestrator Core]
+    Orch <--> DNA[AST Context Graph]
+    Orch <--> Council[Multi-Model Agent Council]
+    Council <--> Gate[Certification Sandbox Engine]
+```

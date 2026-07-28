@@ -1,0 +1,27 @@
+---
+title: "Frequently Asked Questions (FAQ)"
+description: "Common questions about StructZero platform, architecture, security, and pricing."
+status: "Production"
+summary: "Answers to common questions regarding StructZero's multi-agent model, security guardrails, IDE interoperability, and dogfooding."
+related:
+  - { label: "Why StructZero", href: "/why-structzero" }
+  - { label: "Platform Overview", href: "/platform-overview" }
+  - { label: "Security & Guardrails", href: "/security" }
+faqs:
+  - q: "What is StructZero?"
+    a: "StructZero is an AI Software Engineering Platform — not a chatbot or simple code completion assistant. It coordinates a team of specialized AI roles to design, debate, verify, and deploy production software."
+  - q: "How much of StructZero was built using StructZero?"
+    a: "Approximately 70–80% of StructZero's production platform architecture and codebase was engineered using StructZero itself."
+  - q: "Can StructZero work with Cursor or VS Code?"
+    a: "Yes. StructZero provides a standard Model Context Protocol (MCP) server that connects into any MCP-compatible editor."
+  - q: "Is customer data used for model training?"
+    a: "No. Customer codebases, project DNA, and conversation transcripts are strictly isolated and never used for public model training."
+---
+
+## Technical & Architecture Questions
+
+### How does the Multi-Model Debate Engine work?
+Before generating code, StructZero assigns independent models (Gemini, Claude, DeepSeek) to opposing roles (Architect, Reviewer, Judge) to critique designs, uncover flaws, and issue an approved patch.
+
+### What is the Certification Gate?
+The Certification Gate runs automated AST syntax parsing, import resolution checks, and pre-flight tests. If code fails, an auto-repair loop fixes the issue or restores a clean backup before commit.

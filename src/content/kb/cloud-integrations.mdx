@@ -1,0 +1,30 @@
+---
+title: "Cloud Infrastructure Integrations"
+description: "Real deployment pipelines and cloud operations connectors."
+status: "Production"
+summary: "StructZero connects directly to AWS (Agent Toolkit / Blocks), Vercel, Google Cloud Platform, and Microsoft Azure to deploy certified applications."
+related:
+  - { label: "AWS Agent Toolkit", href: "/plugins/aws-agent-toolkit" }
+  - { label: "Vercel Plugin", href: "/plugins/vercel" }
+  - { label: "Google Cloud Plugin", href: "/plugins/google-cloud" }
+features:
+  - title: "One-Click Deployments"
+    desc: "Deploy certified static bundles or containerized microservices to Vercel or AWS in seconds."
+  - title: "Infrastructure-from-Code"
+    desc: "Utilize AWS Blocks or GCP Cloud Run specs to manage infrastructure declaratively."
+  - title: "Rollback Protection"
+    desc: "Automated rollback handling if deployment checks emit failure signals."
+faqs:
+  - q: "Do deployment commands run automatically?"
+    a: "No. Deployments require explicit user authorization unless configured otherwise in non-interactive CI/CD mode."
+---
+
+## Supported Cloud Targets
+
+```mermaid
+graph TD
+    SZ[StructZero Certification Gate] --> Vercel[Vercel Edge CDN]
+    SZ --> AWS[AWS Agent Toolkit / ECS / Lambda]
+    SZ --> GCP[Google Cloud / Cloud Run]
+    SZ --> Azure[Microsoft Azure AKS]
+```

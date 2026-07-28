@@ -1,0 +1,29 @@
+---
+title: "Engineering Event Recorder"
+description: "The structured immutable audit log of platform activity."
+status: "Production"
+summary: "Every model call, architecture decision, debate argument, and certification check is recorded in an immutable JSONL audit log."
+related:
+  - { label: "Observability", href: "/observability" }
+  - { label: "Security", href: "/security" }
+features:
+  - title: "100% Traceability"
+    desc: "Inspect the exact reasoning chain behind any generated file or architecture decision."
+  - title: "Structured JSONL Stream"
+    desc: "Log events are structured for easy SIEM and audit system integration."
+  - title: "Debugging Reproducibility"
+    desc: "Replay past debate trajectories to diagnose unexpected edge cases."
+faqs:
+  - q: "Where are engineering logs stored?"
+    a: "Logs are stored locally in your project workspace directory (`.system_generated/logs`)."
+---
+
+## Event Logging Model
+
+```mermaid
+graph LR
+    ModelCall[LLM Model Call] --> LogStream[Engineering Event Recorder]
+    DebateStep[Debate Decision] --> LogStream
+    GateCheck[Certification Gate Result] --> LogStream
+    LogStream --> JSONL[JSONL Audit File]
+```

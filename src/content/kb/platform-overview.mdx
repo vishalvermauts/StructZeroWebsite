@@ -1,0 +1,33 @@
+---
+title: "Platform Overview"
+description: "How the core platform engines fit together into an enterprise system."
+status: "Production"
+summary: "StructZero connects Project DNA parsing, Multi-Model Debate, AI Team task allocation, Certification Gates, and Cloud Connectors into a unified platform."
+related:
+  - { label: "Architecture Overview", href: "/architecture-overview" }
+  - { label: "AI Team Orchestration", href: "/ai-team" }
+  - { label: "Plugin System", href: "/plugin-system" }
+features:
+  - title: "Unified Knowledge Bus"
+    desc: "All agents communicate through an immutable event bus (Engineering Event Recorder)."
+  - title: "Model Agnostic"
+    desc: "Assign Gemini 3.6, Claude, DeepSeek, or local Ollama endpoints to specific roles."
+  - title: "Container Sandboxing"
+    desc: "Builds and checks run in isolated, secure execution environments."
+faqs:
+  - q: "Can we use our own local LLM models with StructZero?"
+    a: "Yes. StructZero supports local Ollama endpoints alongside cloud model providers."
+---
+
+## Platform Workflow
+
+```mermaid
+sequenceDiagram
+    autonumber
+    User->>StructZero: Submit Prompt / Spec
+    StructZero->>ProjectDNA: Parse AST & Directory Contracts
+    ProjectDNA->>DebateEngine: Provide Codebase Graph
+    DebateEngine->>AITeam: Generate Approved Patch & Manifest
+    AITeam->>Certification: Topologically Write & Compile Files
+    Certification->>Deploy: Ship to Vercel / AWS / GCP
+```

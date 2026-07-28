@@ -1,12 +1,35 @@
 ---
-title: "Google Cloud Platform Infrastructure Plugin"
-description: "Direct deployment integrations for GCP Dataproc Serverless, BigQuery, and Cloud Run."
-category: "cloud"
-status: "LIVE"
-icon: "google-cloud"
-roadmap: "V9.1 GCP Integration"
+title: "Google Cloud Platform Plugin"
+description: "GCP Dataproc Serverless, BigQuery, and Cloud Run integrations."
+status: "Production"
+category: "Cloud Connectors"
+summary: "Manage GCP infrastructure — running Dataproc Serverless Spark jobs, querying BigQuery datasets, and deploying Cloud Run containers."
+useCases:
+  - "Data ETL pipelines with Dataproc Serverless"
+  - "BigQuery analytics applications"
+  - "Container deployments to Cloud Run"
+benefits:
+  - "Automated IAM role mapping"
+  - "Resource attribution for gcloud and bq CLI commands"
+related:
+  - { label: "Vertex AI Plugin", href: "/plugins/vertex-ai" }
+  - { label: "Cloud Integrations", href: "/cloud-integrations" }
+faqs:
+  - q: "Does this plugin support Dataproc Serverless?"
+    a: "Yes. StructZero can execute Dataproc Serverless Spark batches."
 ---
 
-# Google Cloud Platform Integration
+## GCP Capabilities Graph
 
-StructZero automates GCP infrastructure provisioning — managing Dataproc Serverless Spark batches, BigQuery datasets, and Cloud Run containers from certified architecture specifications.
+```mermaid
+mindmap
+  root((GCP Plugin))
+    Dataproc Serverless
+      Spark Batches
+      PySpark Workflows
+    BigQuery
+      SQL Queries
+      Data Transfer Service
+    Cloud Run
+      Container Services
+```

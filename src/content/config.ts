@@ -1,5 +1,33 @@
 import { defineCollection, z } from 'astro:content';
 
+const kbCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    status: z.enum(['Production', 'In Development', 'Planned', 'Official Spec', 'Operational']),
+    summary: z.string().optional(),
+    related: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+    features: z.array(z.object({ title: z.string(), desc: z.string() })).default([]),
+  }),
+});
+
+const pluginKbCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    status: z.enum(['Production', 'In Development', 'Planned']),
+    category: z.string(),
+    summary: z.string().optional(),
+    useCases: z.array(z.string()).default([]),
+    benefits: z.array(z.string()).default([]),
+    related: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
+    faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
+  }),
+});
+
 const pagesCollection = defineCollection({
   type: 'content',
   schema: z.object({
@@ -16,8 +44,8 @@ const pluginsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    category: z.enum(['security', 'cloud', 'business', 'marketing', 'observability', 'billing', 'mcp', 'enterprise', 'search', 'social', 'analytics', 'crm']),
-    status: z.enum(['LIVE', 'IN DEVELOPMENT', 'PLANNED']),
+    category: z.string(),
+    status: z.enum(['LIVE', 'IN DEVELOPMENT', 'PLANNED', 'Production', 'In Development', 'Planned']),
     icon: z.string().optional(),
     roadmap: z.string().optional(),
   }),
@@ -57,6 +85,8 @@ const compareCollection = defineCollection({
 });
 
 export const collections = {
+  kb: kbCollection,
+  pluginKb: pluginKbCollection,
   pages: pagesCollection,
   plugins: pluginsCollection,
   docs: docsCollection,

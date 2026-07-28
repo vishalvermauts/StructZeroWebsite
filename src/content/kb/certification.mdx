@@ -1,0 +1,35 @@
+---
+title: "Certification & Release Gates"
+description: "The automated pre-flight quality and verification system."
+status: "Production"
+summary: "StructZero's Certification Gate compiles code, checks AST syntax, resolves import paths, and runs auto-repair loops before any code is committed."
+related:
+  - { label: "Debate Engine", href: "/debate-engine" }
+  - { label: "Project DNA", href: "/project-dna" }
+  - { label: "Security & Guardrails", href: "/security" }
+features:
+  - title: "Pre-Flight Syntax Compilation"
+    desc: "100% AST compilation check guarantees zero syntax errors before disk write."
+  - title: "Auto-Repair Loop"
+    desc: "Isolated repair routine rewrites failing imports or restores verified backups if checks fail."
+  - title: "Import Path Verification"
+    desc: "Verifies every imported module file exists on disk."
+faqs:
+  - q: "What happens if a file fails certification?"
+    a: "The auto-repair engine makes a localized fix attempt. If it fails twice, it restores the clean backup file."
+---
+
+## Certification Pipeline
+
+```mermaid
+flowchart TD
+    FileGenerated[Generated File Draft] --> SyntaxCheck{AST Syntax Check}
+    SyntaxCheck -- Pass --> ImportCheck{Import Resolution}
+    SyntaxCheck -- Fail --> Repair[Auto-Repair Loop]
+    ImportCheck -- Pass --> SecurityCheck{Security Audit}
+    ImportCheck -- Fail --> Repair
+    Repair --> RetryCheck{Retry < 2?}
+    RetryCheck -- Yes --> SyntaxCheck
+    RetryCheck -- No --> Restore[Restore Clean Backup]
+    SecurityCheck -- Pass --> Certified[Certified & Released]
+```

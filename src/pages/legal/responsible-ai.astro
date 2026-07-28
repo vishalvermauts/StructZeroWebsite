@@ -1,0 +1,23 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+---
+
+<SubpageLayout
+  title="Responsible AI & Governance Statement"
+  description="Our commitments to transparent, ethical, and verifiable AI engineering."
+  status="Official Spec"
+  summary="StructZero adheres to verifiable, evidence-based AI engineering — utilizing adversarial review and automated compilation checks to eliminate hallucinations."
+  related={[
+    { label: 'Debate Engine', href: '/debate-engine' },
+    { label: 'Certification', href: '/certification' },
+  ]}
+>
+  ## Verifiable Generation
+  StructZero never accepts unverified AI model output. Code must pass automated certification gates before release.
+
+  ## Multi-Model Neutrality
+  StructZero maintains model neutrality, allowing customers to assign model providers based on performance and privacy needs.
+
+  ## Human in the Loop
+  The platform keeps developers in command, using human-in-the-loop authorization for critical decisions.
+</SubpageLayout>

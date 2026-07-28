@@ -1,0 +1,31 @@
+---
+title: "Enterprise Security & Guardrails"
+description: "Approval boundaries, credential safety, and cloud deployment guardrails."
+status: "Production"
+summary: "StructZero enforces strict human authorization guardrails for irreversible actions, billable cloud provisioning, and credential handling."
+related:
+  - { label: "Certification Gates", href: "/certification" }
+  - { label: "Architecture Overview", href: "/architecture-overview" }
+features:
+  - title: "Human Authorization Intercept"
+    desc: "Autonomous execution pauses for explicit user approval before running billable or destructive operations."
+  - title: "Secret Masking"
+    desc: "API keys and sensitive tokens are automatically masked before passing into model context."
+  - title: "Isolated Sandboxes"
+    desc: "Code execution takes place in isolated containers with restricted filesystem permissions."
+faqs:
+  - q: "Will StructZero delete database tables without permission?"
+    a: "No. Destructive commands (DROP, DELETE, cloud resource destruction) trigger a hard approval pause."
+---
+
+## Approval Guardrail Workflow
+
+```mermaid
+flowchart TD
+    Task[Agent Task Execution] --> Check{Billable or Destructive?}
+    Check -- Yes --> Pause[PAUSED: Awaiting User Approval]
+    Pause --> UserChoice{User Approves?}
+    UserChoice -- Yes --> Execute[Execute Command]
+    UserChoice -- No --> Abort[Cancel Task Operation]
+    Check -- No --> Execute
+```

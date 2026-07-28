@@ -1,0 +1,42 @@
+---
+title: "Product Overview"
+description: "StructZero at a glance — an AI Software Engineering Platform."
+status: "Production"
+summary: "StructZero is an autonomous multi-agent engineering platform that designs architecture blueprints, executes adversarial model debate, certifies every file, and deploys real infrastructure."
+related:
+  - { label: "Platform Overview", href: "/platform-overview" }
+  - { label: "Debate Engine", href: "/debate-engine" }
+  - { label: "Certification Gates", href: "/certification" }
+  - { label: "MCP Server Setup", href: "/mcp-server" }
+features:
+  - title: "Multi-Agent Debate Engine"
+    desc: "Adversarial review where Gemini, Claude, and DeepSeek critique designs before implementation."
+  - title: "AST Project DNA"
+    desc: "Ingests actual codebase syntax trees to prevent hallucinated paths and broken interfaces."
+  - title: "Automated Certification"
+    desc: "Pre-flight verification loop checking syntax, type compatibility, and imports before commit."
+faqs:
+  - q: "What makes StructZero different from Cursor or Copilot?"
+    a: "Cursor and Copilot are single-model inline autocompletion extensions. StructZero is an autonomous multi-agent platform that designs architecture, debates design flaws, certifies code, and manages deployments."
+---
+
+## Product Pillars
+
+StructZero unifies five core engines into one seamless platform:
+
+```mermaid
+flowchart LR
+    DNA[Project DNA] --> Debate[Debate Engine]
+    Debate --> Team[AI Team Orchestrator]
+    Team --> Gate[Certification Gate]
+    Gate --> Deploy[Deploy Connectors]
+```
+
+### 1. Project DNA Context Engine
+Extracts AST syntax trees, route topologies, and exported symbols to ground generation in reality.
+
+### 2. Multi-Model Debate Engine
+Models independently critique architecture proposals to uncover scale bottlenecks and security flaws.
+
+### 3. Certification & Quality Gates
+Runs syntax compilation, import resolution, and security checks before code reaches your repository.

@@ -1,0 +1,33 @@
+---
+title: "Multi-Model Debate Engine"
+description: "The adversarial multi-model architecture debate process."
+status: "Production"
+summary: "StructZero assigns distinct LLM models (Gemini, Claude, DeepSeek) to opposing roles (Architect, Reviewer, Judge) to critique designs and eliminate hallucinations before writing code."
+related:
+  - { label: "Why StructZero", href: "/why-structzero" }
+  - { label: "AI Team Orchestration", href: "/ai-team" }
+  - { label: "Certification Gates", href: "/certification" }
+features:
+  - title: "Independent Critique"
+    desc: "Reviewer models evaluate drafts without seeing prior model bias."
+  - title: "Binding Judge Resolution"
+    desc: "A reasoning-tier model evaluates arguments and approves a definitive architectural patch."
+  - title: "Multi-Provider Resilience"
+    desc: "Prevents vendor lock-in by utilizing Anthropic, Google, DeepSeek, and local endpoints."
+faqs:
+  - q: "How many models participate in a debate?"
+    a: "Standard debates engage 3 to 5 independent model instances depending on project complexity."
+---
+
+## The 7-Step Debate Sequence
+
+```mermaid
+stateDiagram-v2
+    [*] --> SpecReceived
+    SpecReceived --> DraftProposal: Architect Role
+    DraftProposal --> AdversarialReview: Reviewer Role
+    AdversarialReview --> FlagDefects: Detect Conflicts
+    FlagDefects --> JudgeEvaluation: Judge Role
+    JudgeEvaluation --> ApprovedPatch: Issue Consensus
+    ApprovedPatch --> [*]: Hand off to Certification
+```

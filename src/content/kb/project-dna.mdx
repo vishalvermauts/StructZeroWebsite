@@ -1,0 +1,37 @@
+---
+title: "Project DNA Context Engine"
+description: "Grounding AI generation in actual codebase syntax trees and module graphs."
+status: "Production"
+summary: "Project DNA parses local codebases into Abstract Syntax Trees (AST), route maps, and symbol tables — eliminating non-existent import paths and broken API contracts."
+related:
+  - { label: "Architecture Overview", href: "/architecture-overview" }
+  - { label: "Certification Gates", href: "/certification" }
+features:
+  - title: "AST Parsing"
+    desc: "Extracts exact function signatures, class interfaces, and exported module names."
+  - title: "Route Topology Mapping"
+    desc: "Tracks application routes and endpoint contracts across backend and frontend code."
+  - title: "Incremental Indexing"
+    desc: "Updates AST indices in real time as files change during generation."
+faqs:
+  - q: "Does Project DNA support TypeScript and Python?"
+    a: "Yes. Project DNA supports TypeScript, JavaScript, Python, Go, Rust, Java, and HTML/CSS."
+---
+
+## What Project DNA Extracts
+
+```mermaid
+mindmap
+  root((Project DNA))
+    AST Graphs
+      Exported Symbols
+      Interface Contracts
+      Import Dependencies
+    Route Topologies
+      API Endpoints
+      Page Slugs
+      Middleware Handlers
+    Config Contracts
+      Environment Vars
+      Database Schemas
+```

@@ -1,0 +1,138 @@
+---
+import Base from './Base.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  status?: string;
+  summary?: string;
+  category?: string;
+  features?: Array<{ title: string; desc: string }>;
+  faqs?: Array<{ q: string; a: string }>;
+  related?: Array<{ label: string; href: string }>;
+}
+
+const {
+  title,
+  description,
+  status = 'Production',
+  summary,
+  category,
+  features = [],
+  faqs = [],
+  related = [],
+} = Astro.props;
+---
+
+<Base title={`${title} — StructZero Knowledge Base`} description={description}>
+  <!-- Subpage Hero Header -->
+  <section class="relative pt-16 pb-14 border-b border-border bg-panel/30 overflow-hidden">
+    <div class="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[350px] rounded-full opacity-30" style="background: radial-gradient(ellipse at center, var(--accent-soft), transparent 70%);"></div>
+    <div class="max-w-5xl mx-auto px-6 relative">
+      <div class="flex items-center gap-3 text-xs font-mono text-ink-muted mb-4">
+        <a href="/" class="hover:text-accent transition-colors">Home</a>
+        <span>/</span>
+        {category && (
+          <>
+            <a href="/plugins-hub" class="hover:text-accent transition-colors">{category}</a>
+            <span>/</span>
+          </>
+        )}
+        <span class="text-accent font-semibold">{title}</span>
+      </div>
+
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
+        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-ink">{title}</h1>
+        <StatusBadge status={status} size="md" />
+      </div>
+
+      <p class="text-lg text-ink-muted max-w-3xl leading-relaxed mb-6">
+        {description}
+      </p>
+
+      {summary && (
+        <div class="p-4 rounded-xl border border-accent/30 bg-accent-soft/20 text-sm text-ink font-medium max-w-3xl">
+          <span class="font-mono text-xs uppercase text-accent font-bold block mb-1">Executive Summary</span>
+          {summary}
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-6 space-y-16">
+      
+      <!-- Content Body Slot -->
+      <div class="prose prose-invert max-w-none text-ink-muted leading-relaxed">
+        <slot />
+      </div>
+
+      <!-- Feature Grid Card Component -->
+      {features.length > 0 && (
+        <div class="border-t border-border pt-12">
+          <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Capabilities</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-ink mb-8">Key Features & Technical Pillars</h2>
+          <div class="grid sm:grid-cols-2 gap-6">
+            {features.map(f => (
+              <div class="p-6 border border-border rounded-2xl bg-panel">
+                <h3 class="text-lg font-bold text-ink mb-2">{f.title}</h3>
+                <p class="text-sm text-ink-muted leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- FAQ Section Accordion -->
+      {faqs.length > 0 && (
+        <div class="border-t border-border pt-12">
+          <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Got Questions?</span>
+          <h2 class="text-2xl md:text-3xl font-bold text-ink mb-8">Frequently Asked Questions</h2>
+          <div class="space-y-4 max-w-3xl">
+            {faqs.map(faq => (
+              <div class="border border-border rounded-xl p-5 bg-panel">
+                <h4 class="text-base font-bold text-ink mb-2">{faq.q}</h4>
+                <p class="text-sm text-ink-muted leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Internal Link Graph / Related Pages -->
+      {related.length > 0 && (
+        <div class="border-t border-border pt-12">
+          <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Knowledge Graph</span>
+          <h2 class="text-xl font-bold text-ink mb-6">Related Knowledge Base Pages</h2>
+          <div class="flex flex-wrap gap-3">
+            {related.map(r => (
+              <a href={r.href} class="inline-flex items-center gap-2 text-xs font-mono px-4 py-2.5 rounded-lg border border-border bg-panel text-ink hover:border-accent hover:text-accent transition-all">
+                <span>{r.label}</span>
+                <span>→</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <!-- Call to Action Card -->
+      <div class="p-8 rounded-2xl border border-accent bg-gradient-to-b from-accent-soft/30 to-panel text-center">
+        <h3 class="text-2xl font-bold text-ink mb-3">Ready to deploy with StructZero?</h3>
+        <p class="text-sm text-ink-muted max-w-xl mx-auto mb-6">
+          Connect StructZero's multi-agent debate engine directly into your existing editor using Model Context Protocol (MCP).
+        </p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="/docs/mcp-setup" class="bg-accent text-white font-semibold text-sm px-6 py-3 rounded-lg hover:opacity-90 transition-opacity">
+            Connect via MCP
+          </a>
+          <a href="/roadmap" class="border border-border font-semibold text-sm px-6 py-3 rounded-lg hover:bg-panel text-ink transition-colors">
+            View Live Roadmap
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Base>

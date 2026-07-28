@@ -1,0 +1,30 @@
+---
+title: "GitHub Connector Plugin"
+description: "Repository import, version control sync, and automated pull-request creation."
+status: "Production"
+category: "Developer Tools"
+summary: "The GitHub plugin connects StructZero directly to your version control repositories — importing codebase syntax trees for Project DNA indexing and submitting certified PRs."
+useCases:
+  - "Importing existing repositories into Project DNA"
+  - "Submitting certified pull requests with full audit logs"
+  - "Syncing commit hooks with automated certification gates"
+benefits:
+  - "Keeps git branch history clean with topological commits"
+  - "Enforces pre-commit AST verification"
+related:
+  - { label: "Project DNA Engine", href: "/project-dna" }
+  - { label: "Certification Gates", href: "/certification" }
+faqs:
+  - q: "Can StructZero create GitHub Pull Requests?"
+    a: "Yes. Once certification passes, StructZero can push branches and open PRs."
+---
+
+## Workflow Integration
+
+```mermaid
+graph LR
+    Import[GitHub Repo Import] --> DNA[Project DNA Parser]
+    DNA --> Build[StructZero Multi-Agent Build]
+    Build --> Gate[Certification Gate]
+    Gate --> PR[Automated Pull Request]
+```

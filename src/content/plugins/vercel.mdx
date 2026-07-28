@@ -1,0 +1,29 @@
+---
+title: "Vercel Deployment Plugin"
+description: "Instant web application deployment to Vercel Edge CDN."
+status: "Production"
+category: "Deployment"
+summary: "Deploys static builds and serverless web apps directly to Vercel's global edge network with sub-100ms FCP performance."
+useCases:
+  - "Deploying Astro, Next.js, or Vite marketing sites and web apps"
+  - "Configuring static edge CDN caching"
+  - "Managing preview deployments and custom domains"
+benefits:
+  - "Sub-100ms FCP delivery target"
+  - "Zero server runtime overhead"
+related:
+  - { label: "Cloud Integrations", href: "/cloud-integrations" }
+  - { label: "Certification Gates", href: "/certification" }
+faqs:
+  - q: "Is static deployment supported?"
+    a: "Yes. StructZero uses @astrojs/vercel/static for pure static edge builds."
+---
+
+## Deployment Architecture
+
+```mermaid
+graph TD
+    Build[StructZero Static Build] --> Gate[Certification Gate]
+    Gate --> Output[Vercel Output API v3]
+    Output --> Edge[Vercel Global Edge CDN]
+```

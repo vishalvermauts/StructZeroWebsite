@@ -1,0 +1,19 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+---
+
+<SubpageLayout
+  title="Acceptable Use Policy"
+  description="Guidelines for acceptable platform usage and guardrails."
+  status="Official Spec"
+  summary="StructZero must not be utilized for malicious software generation, security exploit generation, or unauthorized infrastructure disruption."
+  related={[
+    { label: 'Security Policy', href: '/legal/security-policy' },
+    { label: 'Terms of Service', href: '/legal/terms' },
+  ]}
+>
+  ## Prohibited Activities
+  - Generating malware, ransomware, or zero-day exploit payloads.
+  - Attempting unauthorized access to third-party cloud infrastructure.
+  - Bypassing human authorization intercepts for billable commands.
+</SubpageLayout>

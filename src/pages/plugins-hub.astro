@@ -1,0 +1,30 @@
+---
+import SubpageLayout from '../layouts/SubpageLayout.astro';
+import PluginCard from '../components/PluginCard.astro';
+---
+
+<SubpageLayout
+  title="Plugin Marketplace Hub"
+  description="Explore built-in connectors for AWS, Vercel, GCP, Azure, GitHub, and Security — or describe a custom integration for StructZero to build automatically."
+  status="Production"
+  summary="StructZero plugins extend platform capabilities across cloud connectors, AI model endpoints, security posture, observability, and billing."
+  related={[
+    { label: 'Platform Overview', href: '/platform-overview' },
+    { label: 'AWS Agent Toolkit', href: '/plugins/aws-agent-toolkit' },
+    { label: 'GitHub Connector', href: '/plugins/github' },
+    { label: 'Vercel Connector', href: '/plugins/vercel' },
+  ]}
+>
+  <div class="my-8">
+    <h2 class="text-2xl font-bold text-ink mb-6">Available Ecosystem Plugins</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <PluginCard title="AWS Agent Toolkit" description="Conversational AWS account operations" category="Cloud" status="LIVE" slug="aws-agent-toolkit" />
+      <PluginCard title="GitHub Connector" description="Repository import and version control" category="Developer Tools" status="LIVE" slug="github" />
+      <PluginCard title="Vercel Connector" description="Web application deployment to edge" category="Deployment" status="LIVE" slug="vercel" />
+      <PluginCard title="Google Cloud Platform" description="GCP Dataproc, BigQuery, Cloud Run" category="Cloud" status="LIVE" slug="google-cloud" />
+      <PluginCard title="Vertex AI Connector" description="Google Gemini 3.6 Pro & Flash models" category="AI Models" status="LIVE" slug="vertex-ai" />
+      <PluginCard title="Amazon Bedrock" description="Anthropic Claude 3.5 & Titan models" category="AI Models" status="LIVE" slug="bedrock" />
+      <PluginCard title="Azure AI Foundry" description="Azure OpenAI enterprise models" category="AI Models" status="IN DEVELOPMENT" slug="azure-foundry" />
+    </div>
+  </div>
+</SubpageLayout>

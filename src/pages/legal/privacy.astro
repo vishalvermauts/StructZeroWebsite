@@ -1,0 +1,24 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+---
+
+<SubpageLayout
+  title="Privacy Policy"
+  description="StructZero enterprise privacy policy, data isolation, and governance practices."
+  status="Official Spec"
+  summary="StructZero operates in isolated container sandboxes. Your code, AST project DNA, and conversation transcripts are never used for public model training."
+  related={[
+    { label: 'Security & Guardrails', href: '/security' },
+    { label: 'Terms of Service', href: '/legal/terms' },
+    { label: 'Security Policy', href: '/legal/security-policy' },
+  ]}
+>
+  ## Data Isolation & Confidentiality
+  All code generation and verification workflows run in sandboxed container instances. Your source code and AST indices are isolated per project workspace.
+
+  ## Zero Model Training
+  StructZero never uses customer code, project DNA graphs, or execution transcripts to train public AI models.
+
+  ## Data Retention
+  Workspace audit transcripts are retained locally within your project environment (`.system_generated/logs`) under customer control.
+</SubpageLayout>

@@ -1,0 +1,45 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pluginKbEntries = await getCollection('pluginKb');
+  return pluginKbEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<SubpageLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  status={entry.data.status}
+  category={entry.data.category}
+  summary={entry.data.summary}
+  faqs={entry.data.faqs}
+  related={entry.data.related}
+>
+  <div class="mb-8">
+    <a href="/plugins-hub" class="text-xs font-mono text-accent hover:underline">← Back to Plugin Hub</a>
+  </div>
+
+  {entry.data.useCases && entry.data.useCases.length > 0 && (
+    <div class="mb-8 p-6 rounded-2xl border border-border bg-panel">
+      <h3 class="font-mono text-xs uppercase text-accent font-bold mb-3">Primary Use Cases</h3>
+      <ul class="space-y-2 text-sm text-ink-muted">
+        {entry.data.useCases.map(uc => (
+          <li class="flex items-center gap-2">
+            <span class="text-emerald-400 font-bold">✓</span>
+            <span>{uc}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
+
+  <Content />
+</SubpageLayout>

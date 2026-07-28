@@ -1,0 +1,28 @@
+---
+title: "Model Context Protocol (MCP) Server"
+description: "Exposing StructZero's debate engine and AST parser to any editor."
+status: "Production"
+summary: "StructZero operates as a standardized Model Context Protocol (MCP) server, allowing Cursor, VS Code, Zed, Claude Code, and JetBrains IDEs to utilize StructZero's intelligence engine."
+related:
+  - { label: "IDE Integration Guide", href: "/ide-integration" }
+  - { label: "Project DNA Context", href: "/project-dna" }
+features:
+  - title: "Universal Protocol Standard"
+    desc: "Connect once via MCP and bring StructZero multi-agent capabilities to any editor."
+  - title: "Exposed Tools & Resources"
+    desc: "Exposes Project DNA AST queries, multi-model debate triggers, and certification checks."
+  - title: "Zero Lock-In"
+    desc: "Use StructZero with your existing editor workflows without changing IDEs."
+faqs:
+  - q: "How do I add StructZero as an MCP server?"
+    a: "Add 'npx @structzero/mcp-server' to your editor's MCP server configuration JSON."
+---
+
+## MCP Architecture
+
+```mermaid
+graph LR
+    Editor[Cursor / VS Code / Zed / Claude Code] <-->|JSON-RPC via MCP| MCPServer[StructZero MCP Server]
+    MCPServer <--> DebateEngine[Multi-Model Debate Engine]
+    MCPServer <--> ASTGraph[AST Project DNA]
+```

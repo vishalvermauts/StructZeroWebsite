@@ -1,0 +1,17 @@
+---
+import SubpageLayout from '../../layouts/SubpageLayout.astro';
+---
+
+<SubpageLayout
+  title="Data Processing Addendum (DPA)"
+  description="Enterprise data processing terms and compliance standards."
+  status="Official Spec"
+  summary="The StructZero Data Processing Addendum governs customer data processing, sub-processor disclosures, and compliance with global privacy regulations."
+  related={[
+    { label: 'Privacy Policy', href: '/legal/privacy' },
+    { label: 'Security Policy', href: '/legal/security-policy' },
+  ]}
+>
+  ## Sub-Processors & Data Transfers
+  StructZero routes model queries to authorized provider endpoints (Anthropic, Google Cloud, AWS) under strict zero-retention enterprise agreements.
+</SubpageLayout>

@@ -1,0 +1,44 @@
+---
+title: "Company & Operating Philosophy"
+description: "Who StructZero is, our core principles, and our engineering-first philosophy."
+status: "Production"
+summary: "StructZero is an AI Software Engineering Platform built by developers for high-stakes software teams. We reject simple chatbot wrappers in favor of architecture debate, certification gates, and verified execution."
+related:
+  - { label: "Product Overview", href: "/product" }
+  - { label: "Why StructZero", href: "/why-structzero" }
+  - { label: "Platform Architecture", href: "/architecture-overview" }
+  - { label: "Platform Roadmap", href: "/roadmap" }
+features:
+  - title: "Honest Engineering"
+    desc: "Every claim on StructZero is verifiable. Features are explicitly labeled as Production, In Development, or Planned."
+  - title: "Recursive Dogfooding"
+    desc: "70–80% of StructZero's platform architecture was designed, tested, and built using StructZero itself."
+  - title: "Performance & Control"
+    desc: "Built static-first with zero unnecessary runtime JavaScript, isolated container execution, and user authorization control."
+faqs:
+  - q: "Is StructZero a commercial product or open source?"
+    a: "StructZero is an enterprise software engineering platform offering both hosted Cloud deployments and local/self-hosted MCP servers."
+  - q: "Where does code execution take place?"
+    a: "Builds and checks run in isolated, sandboxed containers — never on shared main loops or unmonitored infrastructure."
+---
+
+## Our Mission
+
+Modern software development requires rigorous architecture design, multi-model review, and verification. Most AI tools attempt to replace developers with single-prompt chatbot scripts.
+
+**StructZero takes the opposite approach**: we build an **AI Software Engineering Platform** that operates like a top-tier engineering department — coordinating architects, reviewers, security specialists, and QA roles into a unified council.
+
+```mermaid
+graph TD
+    A[Human Lead / Spec] --> B[StructZero Orchestrator]
+    B --> C[Multi-Model Architecture Debate]
+    C --> D[AST Project DNA Verification]
+    D --> E[Certification Release Gate]
+    E --> F[Container Sandbox & Deploy]
+```
+
+## Core Operating Principles
+
+1. **Architecture Before Code**: No code is generated until multi-model consensus is reached on data models and interfaces.
+2. **Every File Certified**: Before any file reaches disk, AST syntax parsers and import paths are tested.
+3. **IDE Agnostic**: Operates via standard Model Context Protocol (MCP) so you can keep using Cursor, VS Code, Zed, or Claude Code.
