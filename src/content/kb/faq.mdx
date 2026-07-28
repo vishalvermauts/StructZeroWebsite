@@ -1,27 +1,36 @@
 ---
 title: "Frequently Asked Questions (FAQ)"
-description: "Common questions about StructZero platform, architecture, security, and pricing."
+description: "Comprehensive answers to common questions about StructZero platform architecture, multi-agent debate, security, and pricing."
 status: "Production"
-summary: "Answers to common questions regarding StructZero's multi-agent model, security guardrails, IDE interoperability, and dogfooding."
+summary: "Detailed answers covering platform architecture, dogfooding, model privacy, IDE integrations, and certification gates."
 related:
   - { label: "Why StructZero", href: "/why-structzero" }
   - { label: "Platform Overview", href: "/platform-overview" }
   - { label: "Security & Guardrails", href: "/security" }
 faqs:
   - q: "What is StructZero?"
-    a: "StructZero is an AI Software Engineering Platform — not a chatbot or simple code completion assistant. It coordinates a team of specialized AI roles to design, debate, verify, and deploy production software."
+    a: "StructZero is an AI Software Engineering Platform — not a chatbot or simple code completion assistant. It coordinates a council of specialized AI roles to design, debate, verify, and deploy production software."
   - q: "How much of StructZero was built using StructZero?"
-    a: "Approximately 70–80% of StructZero's production platform architecture and codebase was engineered using StructZero itself."
-  - q: "Can StructZero work with Cursor or VS Code?"
-    a: "Yes. StructZero provides a standard Model Context Protocol (MCP) server that connects into any MCP-compatible editor."
+    a: "Approximately 70–80% of StructZero's production platform architecture and codebase was engineered using StructZero itself through recursive dogfooding."
+  - q: "Can StructZero work with Cursor, VS Code, or Zed?"
+    a: "Yes. StructZero operates as a standardized Model Context Protocol (MCP) server that connects into Cursor, VS Code, Windsurf, Claude Code, Zed, and JetBrains IDEs."
   - q: "Is customer data used for model training?"
     a: "No. Customer codebases, project DNA, and conversation transcripts are strictly isolated and never used for public model training."
+  - q: "How does the Multi-Model Debate Engine eliminate hallucinations?"
+    a: "Before writing code, independent models (Gemini 3.6, Claude 3.5, DeepSeek) take on opposing roles (Architect, Reviewer, Judge) to critique designs, uncover bottlenecks, and issue an approved patch."
+  - q: "What happens if a file fails the Certification Gate?"
+    a: "The Certification Gate runs AST syntax parsing, import resolution checks, and pre-flight tests. If code fails, an auto-repair loop fixes the issue or restores a clean backup before commit."
+  - q: "What cloud targets are supported for deployment?"
+    a: "StructZero supports static and edge deployments to Vercel Edge CDN, as well as containerized and serverless workloads on AWS, Google Cloud Platform, and Microsoft Azure."
+  - q: "How does StructZero prevent accidental cloud charges?"
+    a: "Any command that incurs cloud billing or performs destructive actions (DROP TABLE, delete resources) triggers a hard human-in-the-loop authorization pause."
+  - q: "Can we run local LLM models with StructZero?"
+    a: "Yes. StructZero supports local Ollama model endpoints alongside cloud providers."
+  - q: "What is Project DNA?"
+    a: "Project DNA is StructZero's context graph that parses your codebase's Abstract Syntax Tree (AST), exported symbols, and route topologies to ground AI generation in reality."
 ---
 
-## Technical & Architecture Questions
+## Platform & Technical Architecture
 
-### How does the Multi-Model Debate Engine work?
-Before generating code, StructZero assigns independent models (Gemini, Claude, DeepSeek) to opposing roles (Architect, Reviewer, Judge) to critique designs, uncover flaws, and issue an approved patch.
-
-### What is the Certification Gate?
-The Certification Gate runs automated AST syntax parsing, import resolution checks, and pre-flight tests. If code fails, an auto-repair loop fixes the issue or restores a clean backup before commit.
+### Platform Fundamentals & Operating Principles
+Explore how StructZero fundamentally differs from single-model autocompletion extensions by managing the full software engineering lifecycle from specification to certified cloud deployment.

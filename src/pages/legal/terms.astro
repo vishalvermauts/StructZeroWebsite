@@ -4,20 +4,30 @@ import SubpageLayout from '../../layouts/SubpageLayout.astro';
 
 <SubpageLayout
   title="Terms of Service"
-  description="Terms and conditions governing the use of StructZero platform and MCP servers."
+  description="Terms and conditions governing the use of StructZero platform, web interface, and MCP server integrations."
   status="Official Spec"
-  summary="StructZero provides multi-agent software engineering orchestration, model context protocol servers, and deployment connectors."
+  summary="StructZero provides multi-agent software engineering orchestration, model context protocol servers, and deployment connectors under these binding terms."
   related={[
     { label: 'Privacy Policy', href: '/legal/privacy' },
     { label: 'Acceptable Use Policy', href: '/legal/acceptable-use' },
+    { label: 'Security Policy', href: '/legal/security-policy' },
   ]}
 >
-  ## Platform Agreement
-  By accessing or connecting StructZero via MCP, you agree to these Terms of Service.
+  ## 1. Acceptance of Terms
+  By accessing the StructZero platform, connecting via Model Context Protocol (MCP), or utilizing our web interfaces, you ("Customer" or "User") agree to be bound by these Terms of Service. If you are entering into these terms on behalf of a company or organization, you represent that you have authority to bind that entity.
 
-  ## Authorization & Safety
-  StructZero includes human authorization guardrails for billable cloud operations and destructive execution. Users remain responsible for approving operations.
+  ## 2. Description of Platform & Services
+  StructZero is an AI Software Engineering Platform that coordinates autonomous multi-agent councils, Project DNA codebase indexing, multi-model debate, automated certification release gates, and cloud deployment connectors (AWS, Vercel, GCP, Azure).
 
-  ## Enterprise SLA
-  Production deployments inherit hosting provider SLAs (Vercel, AWS, GCP).
+  ## 3. Human Authorization Guardrails & User Responsibility
+  StructZero incorporates explicit human authorization intercepts for billable cloud infrastructure provisioning and destructive execution commands. **The Customer retains ultimate responsibility for reviewing and approving operations.** StructZero is not liable for cloud charges incurred from user-approved executions.
+
+  ## 4. Proprietary Rights & Customer Code Ownership
+  Customer retains all right, title, and interest in and to all source code, software architecture designs, data models, and artifacts generated or modified by StructZero during your utilization of the platform.
+
+  ## 5. Service Level Agreement (SLA) & Availability
+  StructZero provides platform availability targets of 99.9% uptime for cloud control plane APIs. Hosting deployments deployed by StructZero inherit the underlying SLAs of the targeted cloud provider (Vercel, AWS, GCP, Azure).
+
+  ## 6. Limitation of Liability & Warranties
+  Platform services are provided "as is" without warranty of any kind. StructZero's maximum aggregate liability shall not exceed the total fees paid by Customer to StructZero in the twelve (12) months preceding the claim.
 </SubpageLayout>

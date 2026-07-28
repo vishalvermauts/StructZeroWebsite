@@ -4,21 +4,39 @@ import SubpageLayout from '../../layouts/SubpageLayout.astro';
 
 <SubpageLayout
   title="Privacy Policy"
-  description="StructZero enterprise privacy policy, data isolation, and governance practices."
+  description="StructZero enterprise privacy policy, data isolation, GDPR/CCPA compliance, and governance practices."
   status="Official Spec"
-  summary="StructZero operates in isolated container sandboxes. Your code, AST project DNA, and conversation transcripts are never used for public model training."
+  summary="StructZero operates in isolated container sandboxes. Your source code, AST project DNA, and conversation transcripts are never used for public model training."
   related={[
     { label: 'Security & Guardrails', href: '/security' },
     { label: 'Terms of Service', href: '/legal/terms' },
     { label: 'Security Policy', href: '/legal/security-policy' },
+    { label: 'Data Processing (DPA)', href: '/legal/data-processing' },
   ]}
 >
-  ## Data Isolation & Confidentiality
-  All code generation and verification workflows run in sandboxed container instances. Your source code and AST indices are isolated per project workspace.
+  ## 1. Executive Summary & Data Governance
+  This Privacy Policy describes how StructZero Platform ("StructZero", "we", "us", or "our") collects, uses, stores, and protects personal data and proprietary source code when you access our platform, website, or Model Context Protocol (MCP) server integration. We operate under a strict enterprise privacy standard: **Your source code, Abstract Syntax Tree (AST) project graphs, and AI debate transcripts belong exclusively to you and are never used to train public AI models.**
 
-  ## Zero Model Training
-  StructZero never uses customer code, project DNA graphs, or execution transcripts to train public AI models.
+  ## 2. Information We Collect
+  - **Account & Identity Information**: When you register for an enterprise account, we collect your name, business email address, organization name, and authentication credentials.
+  - **Workspace & Codebase Metadata**: To perform Project DNA indexing, StructZero parses file paths, exported symbol names, route topologies, and AST structures locally or within isolated execution containers.
+  - **Model Context & Conversation Logs**: Structured transcripts of multi-model debates and agent tool invocations are logged to your local project directory (`.system_generated/logs`) for auditability.
+  - **Telemetry & Technical Usage**: We collect anonymized operational metrics including API request latencies, error codes, and token consumption counters for platform health monitoring.
 
-  ## Data Retention
-  Workspace audit transcripts are retained locally within your project environment (`.system_generated/logs`) under customer control.
+  ## 3. How We Use Information
+  - To execute requested architecture debates, code generation, and certification checks.
+  - To maintain isolated Model Context Protocol (MCP) server sessions across your preferred IDEs (Cursor, VS Code, Zed, Claude Code).
+  - To enforce human-in-the-loop authorization guardrails for billable cloud operations and destructive execution commands.
+  - To comply with legal obligations, enterprise security audits, and SOC2/SAIF compliance frameworks.
+
+  ## 4. Zero Model Training Guarantee
+  StructZero maintains strict zero-retention and zero-training agreements with enterprise AI provider partners (Anthropic, Google Cloud Vertex AI, AWS Bedrock). **No source code, file contents, prompts, or AST metadata submitted to StructZero is ever used to train, retrain, or improve foundational AI models.**
+
+  ## 5. Data Isolation & Security Safeguards
+  - **Isolated Container Sandboxes**: Code compilation and certification checks run in ephemeral, isolated container runtimes with restricted network and filesystem permissions.
+  - **Encryption Standards**: Data in transit is encrypted using TLS 1.3, and data at rest is encrypted using AES-256.
+  - **Credential Masking**: API keys, tokens, and secrets are automatically masked before passing into model context windows.
+
+  ## 6. Data Rights & International Compliance
+  Under GDPR, CCPA, and global privacy frameworks, users have the right to request access to, deletion of, or export of their account data. Requests may be submitted directly to `privacy@structzero.app`.
 </SubpageLayout>

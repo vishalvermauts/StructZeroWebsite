@@ -8,7 +8,7 @@ const footerSections = [
       { label: 'Architecture Overview', href: '/architecture-overview' },
       { label: 'Multi-Model Debate Engine', href: '/debate-engine' },
       { label: 'Project DNA Context', href: '/project-dna' },
-      { label: 'Certification & Quality Gates', href: '/certification' },
+      { label: 'Certification Gates', href: '/certification' },
       { label: 'Plugin Architecture', href: '/plugin-system' },
       { label: 'AI Team Orchestration', href: '/ai-team' },
       { label: 'Engineering Events', href: '/engineering-events' },
@@ -49,7 +49,7 @@ const footerSections = [
     ],
   },
   {
-    title: 'Company & Legal',
+    title: 'Company & Resources',
     links: [
       { label: 'About Company', href: '/company' },
       { label: 'Product Overview', href: '/product' },
@@ -60,6 +60,11 @@ const footerSections = [
       { label: 'Changelog', href: '/changelog' },
       { label: 'Careers', href: '/careers' },
       { label: 'Contact Us', href: '/contact' },
+    ],
+  },
+  {
+    title: 'Legal & Governance',
+    links: [
       { label: 'Privacy Policy', href: '/legal/privacy' },
       { label: 'Terms of Service', href: '/legal/terms' },
       { label: 'Security Policy', href: '/legal/security-policy' },
@@ -76,7 +81,7 @@ const footerSections = [
 
 <footer class="border-t border-border bg-bg-alt py-16">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 mb-16">
       {footerSections.map(section => (
         <div>
           <h4 class="font-mono text-xs uppercase tracking-wider text-accent font-semibold mb-4">{section.title}</h4>

@@ -4,7 +4,9 @@ import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
   const pluginKbEntries = await getCollection('pluginKb');
-  return pluginKbEntries.map(entry => ({
+  const pluginsEntries = await getCollection('plugins');
+  const allEntries = [...pluginKbEntries, ...pluginsEntries];
+  return allEntries.map(entry => ({
     params: { slug: entry.slug },
     props: { entry },
   }));

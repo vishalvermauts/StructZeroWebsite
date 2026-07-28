@@ -12,7 +12,7 @@ export interface Props {
 const { title, description, category, status, slug } = Astro.props;
 ---
 
-<a href={`/plugins/${category}/${slug}`} class="group border border-border rounded-2xl p-6 bg-panel hover:border-accent/50 transition-all duration-200 flex flex-col justify-between">
+<a href={`/plugins/${slug}`} class="group border border-border rounded-2xl p-6 bg-panel hover:border-accent/50 transition-all duration-200 flex flex-col justify-between">
   <div>
     <div class="flex items-center justify-between mb-4">
       <span class="font-mono text-xs uppercase tracking-wider text-accent">{category}</span>

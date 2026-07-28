@@ -55,6 +55,34 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://structze
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title="StructZero Blog RSS Feed" href="/rss.xml" />
+    <script type="module">
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: 'dark',
+        themeVariables: {
+          darkMode: true,
+          background: '#090d16',
+          primaryColor: '#1e293b',
+          primaryTextColor: '#f8fafc',
+          primaryBorderColor: '#3b82f6',
+          lineColor: '#60a5fa',
+          secondaryColor: '#0f172a',
+          tertiaryColor: '#1e293b'
+        }
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('pre code.language-mermaid, pre.mermaid').forEach((block) => {
+          const pre = block.tagName === 'PRE' ? block : block.parentElement;
+          const code = block.textContent;
+          const div = document.createElement('div');
+          div.className = 'mermaid my-6 p-4 rounded-xl border border-border bg-panel text-center overflow-x-auto';
+          div.textContent = code;
+          pre.replaceWith(div);
+        });
+        mermaid.contentLoaded();
+      });
+    </script>
   </head>
   <body class="antialiased min-h-screen flex flex-col bg-bg text-text">
     <Nav />

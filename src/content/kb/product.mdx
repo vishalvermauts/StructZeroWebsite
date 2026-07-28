@@ -1,5 +1,5 @@
 ---
-title: "Product Overview"
+title: "Product Overview & Enterprise Capabilities"
 description: "StructZero at a glance — an AI Software Engineering Platform."
 status: "Production"
 summary: "StructZero is an autonomous multi-agent engineering platform that designs architecture blueprints, executes adversarial model debate, certifies every file, and deploys real infrastructure."
@@ -15,28 +15,45 @@ features:
     desc: "Ingests actual codebase syntax trees to prevent hallucinated paths and broken interfaces."
   - title: "Automated Certification"
     desc: "Pre-flight verification loop checking syntax, type compatibility, and imports before commit."
+  - title: "10-Role AI Team"
+    desc: "Distributed cognitive load across Architect, Coder, QA, Security, Ops, and Researcher roles."
+  - title: "IDE-Agnostic MCP Server"
+    desc: "Connects into Cursor, VS Code, Windsurf, Claude Code, Zed, and JetBrains editors."
+  - title: "Multi-Cloud Connectors"
+    desc: "Native cloud connectors for AWS, Vercel, Google Cloud Platform, and Microsoft Azure."
 faqs:
   - q: "What makes StructZero different from Cursor or Copilot?"
     a: "Cursor and Copilot are single-model inline autocompletion extensions. StructZero is an autonomous multi-agent platform that designs architecture, debates design flaws, certifies code, and manages deployments."
+  - q: "Can StructZero deploy to real cloud infrastructure?"
+    a: "Yes. StructZero deploys web applications to Vercel Edge CDN and provisions AWS, GCP, or Azure infrastructure with human authorization."
+  - q: "Does StructZero support existing enterprise repositories?"
+    a: "Yes. StructZero's Project DNA engine ingests existing AST syntax trees and route maps to generate changes aligned with your codebase."
 ---
 
-## Product Pillars
+## Product Architecture & Lifecycle
 
-StructZero unifies five core engines into one seamless platform:
+StructZero unifies five core engines into one seamless engineering platform:
 
 ```mermaid
 flowchart LR
-    DNA[Project DNA] --> Debate[Debate Engine]
-    Debate --> Team[AI Team Orchestrator]
-    Team --> Gate[Certification Gate]
-    Gate --> Deploy[Deploy Connectors]
+    Spec[1. Prompt / Spec] --> DNA[2. Project DNA Context]
+    DNA --> Debate[3. Multi-Model Debate]
+    Debate --> Team[4. AI Team Execution]
+    Team --> Gate[5. Certification Gate]
+    Gate --> Deploy[6. Cloud Deploy]
 ```
 
 ### 1. Project DNA Context Engine
-Extracts AST syntax trees, route topologies, and exported symbols to ground generation in reality.
+Extracts Abstract Syntax Trees (AST), route topologies, and exported module symbols to ground code generation in reality, preventing broken imports.
 
 ### 2. Multi-Model Debate Engine
-Models independently critique architecture proposals to uncover scale bottlenecks and security flaws.
+Assigns independent LLM models (Gemini, Claude, DeepSeek) to opposing roles (Architect, Reviewer, Judge) to critique designs and resolve bottlenecks before writing code.
 
-### 3. Certification & Quality Gates
-Runs syntax compilation, import resolution, and security checks before code reaches your repository.
+### 3. Named-Role AI Team Orchestration
+Divides cognitive workload across 10 specialized roles including Strategist, Architect, Coder, QA, Security Auditor, Data Engineer, Ops, Designer, Researcher, and Compliance.
+
+### 4. Automated Certification Release Gate
+Executes pre-flight AST compilation checks, import resolution, and automated repair loops before any file is committed to your repository.
+
+### 5. IDE-Agnostic MCP Server & Cloud Connectors
+Exposes StructZero's engineering council to any editor via Model Context Protocol (MCP) and ships code via Vercel, AWS, GCP, and Azure connectors.

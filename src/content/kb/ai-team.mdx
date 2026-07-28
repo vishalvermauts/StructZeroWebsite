@@ -18,15 +18,80 @@ faqs:
     a: "Yes. You can assign Claude for Architecture, DeepSeek for Code, and Gemini for Security."
 ---
 
-## The 10 AI Team Roles
+## The 10 Specialized AI Roles
 
-1. **Strategist**: Classifies requests and defines boundaries.
-2. **Architect**: Designs data schemas and system blueprints.
-3. **Coder**: Generates code in topological dependency order.
-4. **QA & Verifier**: Executes syntax parsing and import checks.
-5. **Security**: Audits injection risks and credential leaks.
-6. **Data Engineer**: Manages database queries and migrations.
-7. **Ops / DevOps**: Manages container and cloud infrastructure.
-8. **Designer**: Enforces UI design tokens and layout rules.
-9. **Researcher**: Fetches documentation and API references.
-10. **Ethicist & Compliance**: Validates data privacy and licensing rules.
+```mermaid
+graph TD
+    UserPrompt[User Goal / Spec] --> Strategist[1. Strategist Role]
+    Strategist --> Architect[2. Architect Role]
+    Architect --> Designer[8. Designer Role]
+    Architect --> Coder[3. Coder Role]
+    Coder --> QA[4. QA & Verifier]
+    Coder --> DataEng[6. Data Engineer]
+    QA --> Security[5. Security Auditor]
+    Security --> Ops[7. Ops / DevOps]
+    Ops --> Researcher[9. Researcher Role]
+    Ops --> Ethicist[10. Ethicist & Compliance]
+```
+
+<div class="grid md:grid-cols-2 gap-4 my-8 not-prose">
+  <div class="p-5 rounded-xl border border-border bg-panel">
+    <span class="font-mono text-xs text-accent font-bold">ROLE 01</span>
+    <h3 class="text-lg font-bold text-ink mt-1">Strategist</h3>
+    <p class="text-xs text-ink-muted mt-2">Classifies incoming requests, sets operational boundaries, and determines execution path complexity.</p>
+  </div>
+
+  <div class="p-5 rounded-xl border border-border bg-panel">
+    <span class="font-mono text-xs text-accent font-bold">ROLE 02</span>
+    <h3 class="text-lg font-bold text-ink mt-1">Architect</h3>
+    <p class="text-xs text-ink-muted mt-2">Designs data schemas, module boundaries, system blueprints, and topological dependency order.</p>
+  </div>
+
+  <div class="p-5 rounded-xl border border-border bg-panel">
+    <span class="font-mono text-xs text-accent font-bold">ROLE 03</span>
+    <h3 class="text-lg font-bold text-ink mt-1">Coder</h3>
+    <p class="text-xs text-ink-muted mt-2">Generates production source code strictly abiding by AST Project DNA interfaces.</p>
+  </div>
+
+  <div class="p-5 rounded-xl border border-border bg-panel">
+    <span class="font-mono text-xs text-accent font-bold">ROLE 04</span>
+    <h3 class="text-lg font-bold text-ink mt-1">QA & Verifier</h3>
+    <p class="text-xs text-ink-muted mt-2">Executes syntax compilation, import resolution checks, and test runner routines.</p>
+  </div>
+
+  <div class="p-5 rounded-xl border border-border bg-panel">
+    <span class="font-mono text-xs text-accent font-bold">ROLE 05</span>
+    <h3 class="text-lg font-bold text-ink mt-1">Security Auditor</h3>
+    <p class="text-xs text-ink-muted mt-2">Audits code for injection risks, credential leaks, and permission boundary violations.</p>
+  </div>
+
+  <div class="p-5 rounded-xl border border-border bg-panel">
+    <span class="font-mono text-xs text-accent font-bold">ROLE 06</span>
+    <h3 class="text-lg font-bold text-ink mt-1">Data Engineer</h3>
+    <p class="text-xs text-ink-muted mt-2">Manages database queries, migrations, ORM models, and data transfer pipelines.</p>
+  </div>
+
+  <div class="p-5 rounded-xl border border-border bg-panel">
+    <span class="font-mono text-xs text-accent font-bold">ROLE 07</span>
+    <h3 class="text-lg font-bold text-ink mt-1">Ops / DevOps</h3>
+    <p class="text-xs text-ink-muted mt-2">Manages container sandboxing, cloud deployment pipelines, and environment variables.</p>
+  </div>
+
+  <div class="p-5 rounded-xl border border-border bg-panel">
+    <span class="font-mono text-xs text-accent font-bold">ROLE 08</span>
+    <h3 class="text-lg font-bold text-ink mt-1">Designer</h3>
+    <p class="text-xs text-ink-muted mt-2">Enforces UI design tokens, layout consistency, responsive breakpoints, and glassmorphism styling.</p>
+  </div>
+
+  <div class="p-5 rounded-xl border border-border bg-panel">
+    <span class="font-mono text-xs text-accent font-bold">ROLE 09</span>
+    <h3 class="text-lg font-bold text-ink mt-1">Researcher</h3>
+    <p class="text-xs text-ink-muted mt-2">Fetches third-party API documentation, library references, and dependency version specs.</p>
+  </div>
+
+  <div class="p-5 rounded-xl border border-border bg-panel">
+    <span class="font-mono text-xs text-accent font-bold">ROLE 10</span>
+    <h3 class="text-lg font-bold text-ink mt-1">Ethicist & Compliance</h3>
+    <p class="text-xs text-ink-muted mt-2">Validates data privacy rules, SAIF compliance, open-source licensing, and audit logging.</p>
+  </div>
+</div>
