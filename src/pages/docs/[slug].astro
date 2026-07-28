@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  return docs.map(doc => ({
+    params: { slug: doc.slug },
+    props: { doc },
+  }));
+}
+
+const { doc } = Astro.props;
+const { Content } = await doc.render();
+---
+
+<Base title={`${doc.data.title} — StructZero Docs`} description={doc.data.description}>
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="mb-8 border-b border-border pb-6">
+        <span class="font-mono text-xs uppercase text-accent font-semibold block mb-2">{doc.data.section}</span>
+        <h1 class="text-3xl md:text-4xl font-bold text-ink mb-3">{doc.data.title}</h1>
+        <p class="text-ink-muted leading-relaxed">{doc.data.description}</p>
+      </div>
+      <div class="prose prose-invert max-w-none">
+        <Content />
+      </div>
+    </div>
+  </section>
+</Base>

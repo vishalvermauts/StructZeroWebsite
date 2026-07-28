@@ -1,0 +1,14 @@
+---
+title: "Certification & Release Gates — StructZero"
+description: "Nothing ships until automated AST checks, syntax verification, and module integrity pass."
+---
+
+# Automated Certification Gates
+
+Code generation in StructZero does not finish when an LLM stops streaming text. It finishes when **Certification Passes**.
+
+## Verified Checks
+- **Syntax Check**: AST parsing confirms 100% valid syntax.
+- **Import Resolution**: Every imported path and named export is verified against disk.
+- **Type Compatibility**: Interfaces align across module boundaries.
+- **Auto-Repair Loop**: If a check fails, an isolated auto-repair routine fixes the file locally or restores a clean backup.

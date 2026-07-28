@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map(page => ({
+    params: { slug: page.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await page.render();
+---
+
+<Base title={page.data.title} description={page.data.description}>
+  <section class="py-20 border-b border-border bg-panel/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">StructZero Platform</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">{page.data.title}</h1>
+      <p class="text-lg text-ink-muted max-w-2xl mx-auto">{page.data.description}</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6 prose prose-invert max-w-none">
+      <Content />
+    </div>
+  </section>
+</Base>

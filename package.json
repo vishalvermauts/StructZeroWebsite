@@ -8,6 +8,9 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@astrojs/mdx": "^3.1.9",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.3",
     "astro": "^4.16.0",
     "gsap": "^3.12.5"
   },

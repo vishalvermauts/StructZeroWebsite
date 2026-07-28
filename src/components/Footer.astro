@@ -1,0 +1,80 @@
+---
+const footerSections = [
+  {
+    title: 'Platform',
+    links: [
+      { label: 'Why StructZero', href: '/platform' },
+      { label: 'Multi-Model Debate Engine', href: '/debate-engine' },
+      { label: 'Certification & Release Gates', href: '/certification' },
+      { label: 'Project DNA', href: '/project-dna' },
+      { label: 'AI Team Orchestration', href: '/ai-team' },
+      { label: 'IDE-Agnostic MCP Server', href: '/mcp' },
+      { label: 'Self Evolution Engine', href: '/evolution-engine' },
+    ],
+  },
+  {
+    title: 'Integrations & Ecosystem',
+    links: [
+      { label: 'Plugin Marketplace', href: '/plugins' },
+      { label: 'Cloud Infrastructure', href: '/cloud' },
+      { label: 'AWS Agent Toolkit', href: '/cloud/aws' },
+      { label: 'Google Cloud Platform', href: '/cloud/google-cloud' },
+      { label: 'Microsoft Azure', href: '/cloud/azure' },
+      { label: 'Business Growth Engine', href: '/business' },
+    ],
+  },
+  {
+    title: 'Comparisons',
+    links: [
+      { label: 'vs Cursor', href: '/compare/cursor' },
+      { label: 'vs Claude Code', href: '/compare/claude-code' },
+      { label: 'vs GitHub Copilot', href: '/compare/github-copilot' },
+      { label: 'vs Lovable', href: '/compare/lovable' },
+      { label: 'vs Bolt', href: '/compare/bolt' },
+      { label: 'vs Replit', href: '/compare/replit' },
+    ],
+  },
+  {
+    title: 'Resources & Company',
+    links: [
+      { label: 'Documentation', href: '/docs' },
+      { label: 'Interactive Roadmap', href: '/roadmap' },
+      { label: 'Engineering Blog', href: '/blog' },
+      { label: 'Releases & Changelog', href: '/releases' },
+      { label: 'Careers', href: '/careers' },
+      { label: 'Contact Us', href: '/contact' },
+      { label: 'Privacy Policy', href: '/privacy' },
+      { label: 'Terms of Service', href: '/terms' },
+    ],
+  },
+];
+---
+
+<footer class="border-t border-border bg-bg-alt py-16">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
+      {footerSections.map(section => (
+        <div>
+          <h4 class="font-mono text-xs uppercase tracking-wider text-accent font-semibold mb-4">{section.title}</h4>
+          <ul class="space-y-2.5 text-sm text-ink-muted">
+            {section.links.map(link => (
+              <li>
+                <a href={link.href} class="hover:text-ink transition-colors">{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="border-t border-border/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink-faint">
+      <div class="flex items-center gap-2">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>70–80% of StructZero was designed and built using StructZero itself.</span>
+      </div>
+      <div>
+        © {new Date().getFullYear()} StructZero Platform. All rights reserved.
+      </div>
+    </div>
+  </div>
+</footer>

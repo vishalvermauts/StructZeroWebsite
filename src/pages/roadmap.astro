@@ -1,0 +1,86 @@
+---
+import Base from '../layouts/Base.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+
+const milestones = [
+  {
+    version: 'Version 8',
+    date: 'Q1 2026',
+    status: 'LIVE',
+    description: 'Foundation of Multi-Agent Debate Engine, AST Parser, and basic Vercel deployment adapter.',
+    features: [
+      { name: 'Multi-Model Debate (Gemini + Claude)', status: 'LIVE' },
+      { name: 'AST Project DNA Ingestion', status: 'LIVE' },
+      { name: 'Static Deployment Pipeline', status: 'LIVE' },
+    ],
+  },
+  {
+    version: 'Version 9 (Current)',
+    date: 'Q3 2026',
+    status: 'LIVE',
+    description: 'Full IDE-Agnostic MCP Server, 10-Role AI Team Orchestration, AWS Agent Toolkit, and Certification Release Gates.',
+    features: [
+      { name: 'IDE-Agnostic MCP Server (Cursor, VS Code, Windsurf)', status: 'LIVE' },
+      { name: '10-Role AI Engineering Team', status: 'LIVE' },
+      { name: 'Automated Certification Gate', status: 'LIVE' },
+      { name: 'AWS Agent Toolkit Integration', status: 'LIVE' },
+      { name: '70–80% Recursive Self-Development Dogfooding', status: 'LIVE' },
+      { name: 'Plugin Marketplace Framework', status: 'IN DEVELOPMENT' },
+    ],
+  },
+  {
+    version: 'Version 10',
+    date: 'Q4 2026 / 2027',
+    status: 'PLANNED',
+    description: 'Self Evolution Engine, Business Growth Engine, and Autonomous Infrastructure Orchestration.',
+    features: [
+      { name: 'Self Evolution Engine (Autonomous Self-Patching)', status: 'PLANNED' },
+      { name: 'Business Growth Engine & ROI Analyzer', status: 'PLANNED' },
+      { name: 'Multi-Cloud Native Synthesis (AWS, GCP, Azure)', status: 'PLANNED' },
+    ],
+  },
+];
+---
+
+<Base
+  title="StructZero Roadmap — Version 8 to Version 10"
+  description="Exhaustive timeline of StructZero platform milestones, marked by Live, In Development, and Planned statuses."
+>
+  <section class="py-20 border-b border-border bg-panel/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Transparent Engineering</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Platform Roadmap & Release Timeline</h1>
+      <p class="text-lg text-ink-muted max-w-2xl mx-auto">
+        Every feature clearly marked as Live, In Development, or Planned. No unverified claims.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6 space-y-12">
+      {milestones.map(m => (
+        <div class="border border-border rounded-2xl p-8 bg-panel relative overflow-hidden">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-b border-border/80 pb-4">
+            <div>
+              <span class="font-mono text-xs text-ink-faint block">{m.date}</span>
+              <h2 class="text-2xl font-bold text-ink">{m.version}</h2>
+            </div>
+            <StatusBadge status={m.status} />
+          </div>
+          <p class="text-ink-muted mb-6">{m.description}</p>
+          <div class="space-y-3">
+            <h3 class="font-mono text-xs uppercase text-accent font-semibold">Key Capabilities</h3>
+            <div class="grid sm:grid-cols-2 gap-3">
+              {m.features.map(f => (
+                <div class="flex items-center justify-between p-3 rounded-lg bg-bg/60 border border-border/60 text-sm">
+                  <span class="text-ink font-medium">{f.name}</span>
+                  <StatusBadge status={f.status} size="sm" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

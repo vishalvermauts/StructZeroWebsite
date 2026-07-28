@@ -1,0 +1,40 @@
+---
+const navLinks = [
+  { href: '/platform', label: 'Platform' },
+  { href: '/debate-engine', label: 'Debate Engine' },
+  { href: '/certification', label: 'Certification' },
+  { href: '/project-dna', label: 'Project DNA' },
+  { href: '/plugins', label: 'Plugins' },
+  { href: '/ai-team', label: 'AI Team' },
+  { href: '/mcp', label: 'MCP Server' },
+  { href: '/cloud', label: 'Cloud' },
+  { href: '/roadmap', label: 'Roadmap' },
+  { href: '/docs', label: 'Docs' },
+];
+---
+
+<nav class="sticky top-0 z-50 backdrop-blur bg-bg/85 border-b border-border">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between gap-6">
+    <a href="/" class="flex items-center gap-2.5 font-bold text-sm hover:opacity-90 transition-opacity shrink-0">
+      <svg class="w-6 h-6 text-accent shrink-0" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="var(--panel)" stroke="var(--border)"/>
+        <path d="M16 6L25 11.5V20.5L16 26L7 20.5V11.5L16 6Z" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="16" cy="16" r="4" fill="var(--accent)"/>
+      </svg>
+      <span>StructZero</span>
+    </a>
+
+    <div class="hidden lg:flex items-center gap-5 text-[13.5px] text-ink-muted flex-1 justify-center">
+      {navLinks.map(link => (
+        <a href={link.href} class="hover:text-ink transition-colors whitespace-nowrap">{link.label}</a>
+      ))}
+    </div>
+
+    <div class="flex items-center gap-3 shrink-0">
+      <a href="/docs" class="hidden sm:inline-block text-[13.5px] text-ink-muted hover:text-ink px-3 py-1.5">Docs</a>
+      <a href="https://github.com/vishalvermauts/StructZeroWebsite" target="_blank" rel="noopener noreferrer" class="bg-accent text-[color:var(--accent-ink)] font-semibold text-[13.5px] px-4 py-2 rounded-md hover:opacity-90 transition-opacity">
+        GitHub
+      </a>
+    </div>
+  </div>
+</nav>

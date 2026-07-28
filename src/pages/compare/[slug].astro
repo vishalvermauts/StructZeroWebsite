@@ -1,0 +1,53 @@
+---
+import Base from '../../layouts/Base.astro';
+import ComparisonTable from '../../components/ComparisonTable.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const compareEntries = await getCollection('compare');
+  return compareEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+const comparisonRows = [
+  { feature: 'Architecture-First Pipeline', structZero: true, competitor: false },
+  { feature: 'Multi-Agent Debate Engine', structZero: true, competitor: false },
+  { feature: 'Automated Certification Gate', structZero: true, competitor: false },
+  { feature: 'AST Project DNA Parser', structZero: true, competitor: false },
+  { feature: '70–80% Recursive Self-Development', structZero: true, competitor: false },
+  { feature: 'IDE-Agnostic MCP Server', structZero: true, competitor: 'Varies' },
+];
+---
+
+<Base
+  title={`${entry.data.title} — StructZero Architectural Comparison`}
+  description={entry.data.description}
+>
+  <section class="py-20 border-b border-border bg-panel/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Architectural Comparison</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">{entry.data.title}</h1>
+      <p class="text-lg text-ink-muted max-w-2xl mx-auto">{entry.data.description}</p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6 space-y-12">
+      <div class="p-6 rounded-2xl border border-accent/40 bg-accent-soft/30">
+        <h2 class="font-mono text-xs uppercase text-accent font-bold mb-2">Verdict</h2>
+        <p class="text-lg font-semibold text-ink">{entry.data.verdict}</p>
+      </div>
+
+      <ComparisonTable competitorName={entry.data.targetTool} rows={comparisonRows} />
+
+      <div class="prose prose-invert max-w-none">
+        <Content />
+      </div>
+    </div>
+  </section>
+</Base>

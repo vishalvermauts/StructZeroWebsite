@@ -1,0 +1,16 @@
+---
+title: "Multi-Agent Debate Engine — StructZero"
+description: "Watch independent AI models debate and refine architecture before code generation."
+---
+
+# The Multi-Model Debate Engine
+
+When a single LLM attempts to generate complex multi-file software, it suffers from self-confirmation bias. 
+
+StructZero's **Debate Engine** assigns distinct specialized roles across multiple model providers:
+
+- **Architect (Claude / Gemini)**: Drafts component hierarchies and database schemas.
+- **Reviewer (DeepSeek / Llama)**: Attacks the architecture looking for scale bottlenecks, write conflicts, and security gaps.
+- **Judge (Reasoning Tier)**: Evaluates competing arguments and issues a binding architectural patch.
+
+Every opinion is generated independently without seeing peer output prior to submission, guaranteeing adversarial rigor.

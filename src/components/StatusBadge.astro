@@ -1,0 +1,23 @@
+---
+export interface Props {
+  status: 'LIVE' | 'IN DEVELOPMENT' | 'PLANNED' | string;
+  size?: 'sm' | 'md';
+}
+
+const { status, size = 'md' } = Astro.props;
+
+const styles: Record<string, string> = {
+  'LIVE': 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
+  'IN DEVELOPMENT': 'bg-amber-500/10 text-amber-400 border-amber-500/30',
+  'PLANNED': 'bg-blue-500/10 text-blue-400 border-blue-500/30',
+};
+
+const defaultStyle = 'bg-panel text-ink-muted border-border';
+const activeStyle = styles[status] || defaultStyle;
+const sizeStyle = size === 'sm' ? 'px-2 py-0.5 text-[10px]' : 'px-2.5 py-1 text-xs';
+---
+
+<span class={`inline-flex items-center font-mono font-semibold uppercase tracking-wider rounded-md border ${activeStyle} ${sizeStyle}`}>
+  <span class="w-1.5 h-1.5 rounded-full mr-1.5 fill-current bg-current"></span>
+  {status}
+</span>

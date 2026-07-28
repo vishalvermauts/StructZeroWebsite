@@ -1,0 +1,27 @@
+---
+import StatusBadge from './StatusBadge.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  category: string;
+  status: string;
+  slug: string;
+}
+
+const { title, description, category, status, slug } = Astro.props;
+---
+
+<a href={`/plugins/${category}/${slug}`} class="group border border-border rounded-2xl p-6 bg-panel hover:border-accent/50 transition-all duration-200 flex flex-col justify-between">
+  <div>
+    <div class="flex items-center justify-between mb-4">
+      <span class="font-mono text-xs uppercase tracking-wider text-accent">{category}</span>
+      <StatusBadge status={status} size="sm" />
+    </div>
+    <h3 class="text-xl font-bold text-ink mb-2 group-hover:text-accent transition-colors">{title}</h3>
+    <p class="text-sm text-ink-muted leading-relaxed mb-6">{description}</p>
+  </div>
+  <div class="flex items-center text-xs font-semibold text-accent group-hover:translate-x-1 transition-transform">
+    Explore Specification →
+  </div>
+</a>

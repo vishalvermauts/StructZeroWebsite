@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const docs = await getCollection('docs');
+const sections = Array.from(new Set(docs.map(d => d.data.section)));
+---
+
+<Base
+  title="StructZero Documentation Portal"
+  description="Technical documentation, MCP server setup, and architecture specs for StructZero."
+>
+  <section class="py-20 border-b border-border bg-panel/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Documentation</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">StructZero Technical Portal</h1>
+      <p class="text-lg text-ink-muted max-w-2xl mx-auto">
+        Complete operational guides, MCP server reference, and engineering specs.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-8">
+      {sections.map(section => (
+        <div class="border border-border rounded-2xl p-6 bg-panel">
+          <h2 class="font-mono text-sm uppercase text-accent font-bold mb-4">{section}</h2>
+          <ul class="space-y-3">
+            {docs.filter(d => d.data.section === section).map(doc => (
+              <li>
+                <a href={`/docs/${doc.slug}`} class="text-ink hover:text-accent font-medium transition-colors block">
+                  {doc.data.title} →
+                </a>
+                <p class="text-xs text-ink-muted mt-1">{doc.data.description}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

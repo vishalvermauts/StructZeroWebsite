@@ -1,9 +1,16 @@
 ---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
 export interface Props {
   title: string;
   description: string;
+  schemaType?: string;
 }
-const { title, description } = Astro.props;
+const { title, description, schemaType = 'SoftwareApplication' } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://structzero.app');
 ---
 <!doctype html>
 <html lang="en">
@@ -14,48 +21,46 @@ const { title, description } = Astro.props;
     <meta name="description" content={description} />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site || Astro.url)} />
+    <link rel="canonical" href={canonicalURL} />
 
     <!-- OpenGraph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:site_name" content="StructZero" />
+    <meta property="og:site_name" content="StructZero Platform" />
     <meta property="og:video" content="https://structzero.app/Structzero_AI_software_engineering_platform.mp4" />
     <meta property="og:video:type" content="video/mp4" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content={Astro.url} />
+    <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    <!-- VideoObject Schema.org Structured Data for Google Video SERP Indexing -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "VideoObject",
-        "name": "StructZero — AI Software Engineering Platform Explainer",
-        "description": "Learn how StructZero runs a real multi-model architecture debate, certifies every file, and deploys real infrastructure.",
-        "thumbnailUrl": [
-          "https://structzero.app/sitemap-index.xml"
-        ],
-        "uploadDate": "2026-07-25T00:00:00+00:00",
-        "contentUrl": "https://structzero.app/Structzero_AI_software_engineering_platform.mp4",
-        "embedUrl": "https://structzero.app/#top"
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": schemaType,
+      "name": title,
+      "description": description,
+      "url": canonicalURL.toString(),
+      "publisher": {
+        "@type": "Organization",
+        "name": "StructZero",
+        "url": "https://structzero.app"
       }
-    </script>
+    })} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <script>
-      // Respect a previously stamped theme, else follow system preference (CSS handles default)
-      const stored = localStorage.getItem('theme');
-      if (stored) document.documentElement.setAttribute('data-theme', stored);
-    </script>
+    <link rel="alternate" type="application/rss+xml" title="StructZero Blog RSS Feed" href="/rss.xml" />
   </head>
-  <body class="antialiased">
-    <slot />
+  <body class="antialiased min-h-screen flex flex-col bg-bg text-text">
+    <Nav />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

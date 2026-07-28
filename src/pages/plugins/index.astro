@@ -1,0 +1,39 @@
+---
+import Base from '../../layouts/Base.astro';
+import PluginCard from '../../components/PluginCard.astro';
+import { getCollection } from 'astro:content';
+
+const plugins = await getCollection('plugins');
+const categories = ['all', 'security', 'cloud', 'business', 'marketing', 'observability', 'billing', 'mcp'];
+---
+
+<Base
+  title="StructZero Plugin Marketplace — Ecosystem Extensions"
+  description="Explore official StructZero plugins for Security, Cloud, Observability, Billing, Business, and MCP integration."
+>
+  <section class="py-20 border-b border-border bg-panel/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Extensible Architecture</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Plugin Marketplace</h1>
+      <p class="text-lg text-ink-muted max-w-2xl mx-auto">
+        Not a fixed list of integrations. Describe an integration you need, and StructZero designs, builds, and certifies a real plugin.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {plugins.map(plugin => (
+          <PluginCard
+            title={plugin.data.title}
+            description={plugin.data.description}
+            category={plugin.data.category}
+            status={plugin.data.status}
+            slug={plugin.slug}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

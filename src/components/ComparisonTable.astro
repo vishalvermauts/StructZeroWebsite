@@ -1,0 +1,37 @@
+---
+export interface Props {
+  competitorName: string;
+  rows: Array<{
+    feature: string;
+    structZero: boolean | string;
+    competitor: boolean | string;
+  }>;
+}
+
+const { competitorName, rows } = Astro.props;
+---
+
+<div class="overflow-x-auto rounded-2xl border border-border bg-panel">
+  <table class="w-full text-left text-sm border-collapse">
+    <thead>
+      <tr class="border-b border-border bg-bg/60">
+        <th class="py-4 px-6 font-mono text-xs uppercase text-ink-muted">Architecture Feature / Capability</th>
+        <th class="py-4 px-6 font-mono text-xs uppercase text-accent font-bold">StructZero</th>
+        <th class="py-4 px-6 font-mono text-xs uppercase text-ink-muted">{competitorName}</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-border/60">
+      {rows.map(row => (
+        <tr class="hover:bg-bg/40 transition-colors">
+          <td class="py-4 px-6 font-medium text-ink">{row.feature}</td>
+          <td class="py-4 px-6 text-emerald-400 font-semibold">
+            {typeof row.structZero === 'boolean' ? (row.structZero ? '✓ Supported' : '—') : row.structZero}
+          </td>
+          <td class="py-4 px-6 text-ink-faint">
+            {typeof row.competitor === 'boolean' ? (row.competitor ? '✓ Supported' : '✗ Unsupported') : row.competitor}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
