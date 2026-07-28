@@ -1,0 +1,36 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const compareEntries = await getCollection('compare');
+---
+
+<Base
+  title="StructZero Tool Comparisons — Architectural Matrices"
+  description="Exhaustive comparison matrices comparing StructZero against Cursor, Claude Code, Copilot, Lovable, Bolt, Replit, Windsurf, Continue, and Cline."
+>
+  <section class="py-20 border-b border-border bg-panel/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Architectural Honesty</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Tool Comparisons</h1>
+      <p class="text-lg text-ink-muted max-w-2xl mx-auto">
+        Detailed breakdowns of why StructZero is an AI Software Engineering Platform — not simply another coding assistant.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {compareEntries.map(item => (
+        <a href={`/compare/${item.slug}`} class="p-6 border border-border rounded-2xl bg-panel hover:border-accent/50 transition-all flex flex-col justify-between group">
+          <div>
+            <span class="font-mono text-xs text-accent uppercase tracking-wider block mb-2">{item.data.category}</span>
+            <h2 class="text-xl font-bold text-ink mb-3 group-hover:text-accent transition-colors">{item.data.title}</h2>
+            <p class="text-xs text-ink-muted leading-relaxed mb-6">{item.data.description}</p>
+          </div>
+          <span class="text-xs font-semibold text-accent group-hover:translate-x-1 transition-transform">Read Architectural Breakdown →</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</Base>

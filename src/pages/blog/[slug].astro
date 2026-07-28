@@ -1,0 +1,32 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Base title={`${post.data.title} — StructZero Blog`} description={post.data.description} schemaType="Article">
+  <article class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="mb-10 border-b border-border pb-8 text-center">
+        <div class="font-mono text-xs text-accent uppercase tracking-wider mb-3">
+          {post.data.pubDate.toISOString().split('T')[0]} · By {post.data.author}
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold text-ink mb-4">{post.data.title}</h1>
+        <p class="text-lg text-ink-muted leading-relaxed max-w-2xl mx-auto">{post.data.description}</p>
+      </div>
+      <div class="prose prose-invert max-w-none">
+        <Content />
+      </div>
+    </div>
+  </article>
+</Base>

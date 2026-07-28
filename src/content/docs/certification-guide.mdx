@@ -1,0 +1,16 @@
+---
+title: "Certification Release Gate Operational Guide"
+description: "How automated AST syntax checks, import resolution, and backup repair loops protect your code."
+section: "Platform Architecture"
+order: 3
+lastUpdated: "2026-07-28"
+---
+
+# Certification Release Gate
+
+StructZero's **Certification Gate** runs pre-flight verification after code generation completes.
+
+## How Auto-Repair Works
+1. If a syntax or import path check fails, the system backs up the draft file.
+2. An isolated repair routine rewrites the failing import or missing symbol.
+3. If repair fails twice, the system restores the clean backup and notifies the user.

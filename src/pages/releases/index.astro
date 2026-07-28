@@ -1,0 +1,69 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+
+const releases = [
+  {
+    version: 'V9.2.0',
+    date: '2026-07-28',
+    type: 'Feature Release',
+    highlights: [
+      'Added dynamic MDX content system & 23-page multi-url sitemap generator.',
+      'Configured automated pre-release Certification Gate script.',
+      'Expanded comparison engine against Cursor, Claude Code, Copilot, Lovable, and Bolt.',
+    ],
+  },
+  {
+    version: 'V9.1.0',
+    date: '2026-07-20',
+    type: 'Infrastructure Update',
+    highlights: [
+      'Integrated AWS Agent Toolkit & AWS Blocks builder.',
+      'Added GCP Dataproc Serverless batch execution hooks.',
+    ],
+  },
+  {
+    version: 'V9.0.0',
+    date: '2026-07-10',
+    type: 'Major Release',
+    highlights: [
+      'Launched 10-Role AI Engineering Team Orchestrator.',
+      'Exposed IDE-Agnostic Model Context Protocol (MCP) Server.',
+    ],
+  },
+];
+---
+
+<Base title="Releases & Changelog — StructZero Platform" description="Official release notes and changelog for StructZero platform updates.">
+  <section class="py-20 border-b border-border bg-panel/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Changelog</span>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Releases & Updates</h1>
+      <p class="text-lg text-ink-muted max-w-2xl mx-auto">
+        Complete history of StructZero platform releases and architectural improvements.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-4xl mx-auto px-6 space-y-10">
+    {releases.map(rel => (
+      <div class="p-8 border border-border rounded-2xl bg-panel">
+        <div class="flex items-center justify-between border-b border-border pb-4 mb-6">
+          <div>
+            <span class="font-mono text-xs text-ink-faint block">{rel.date}</span>
+            <h2 class="text-2xl font-bold text-ink">{rel.version}</h2>
+          </div>
+          <StatusBadge status={rel.type} />
+        </div>
+        <ul class="space-y-3 text-sm text-ink-muted">
+          {rel.highlights.map(item => (
+            <li class="flex items-start gap-2">
+              <span class="text-accent font-bold">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+</Base>

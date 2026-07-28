@@ -8,6 +8,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://structzero.app/blog/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://structzero.app/blog/multi-model-debate/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://structzero.app/business/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -26,6 +38,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://structzero.app/compare/antigravity/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://structzero.app/compare/bolt/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,7 +56,25 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://structzero.app/compare/cline/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://structzero.app/compare/continue/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://structzero.app/compare/cursor/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://structzero.app/compare/firebase-studio/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -50,7 +86,25 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://structzero.app/compare/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://structzero.app/compare/lovable/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://structzero.app/compare/replit/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://structzero.app/compare/windsurf/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -68,6 +122,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://structzero.app/docs/certification-guide/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://structzero.app/docs/getting-started/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -75,6 +135,12 @@
   </url>
   <url>
     <loc>https://structzero.app/docs/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://structzero.app/docs/mcp-setup/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -129,6 +195,12 @@
   </url>
   <url>
     <loc>https://structzero.app/project-dna/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://structzero.app/releases/</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

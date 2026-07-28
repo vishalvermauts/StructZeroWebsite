@@ -1,0 +1,25 @@
+---
+title: "Connecting StructZero via MCP Server Protocol"
+description: "Step-by-step instructions to configure StructZero MCP server in Cursor, VS Code, Windsurf, and Claude Code."
+section: "MCP Integration"
+order: 2
+lastUpdated: "2026-07-28"
+---
+
+# Connecting StructZero via MCP
+
+StructZero operates as a standard Model Context Protocol (MCP) server, bringing multi-model debate into your local IDE.
+
+## Configuration for Cursor / VS Code
+Add the following snippet to your `mcpServers` settings JSON:
+
+```json
+{
+  "mcpServers": {
+    "structzero": {
+      "command": "npx",
+      "args": ["-y", "@structzero/mcp-server"]
+    }
+  }
+}
+```
