@@ -1,6 +1,7 @@
 import { execSync } from 'child_process';
 import fs from 'fs';
 import path from 'path';
+import { generateSitemap } from './generate-sitemap.js';
 
 console.log('🔒 Executing StructZero Automated Pre-Release Certification Gate...');
 
@@ -20,9 +21,13 @@ check('Astro Component & Type Check', () => {
   execSync('npx astro check', { stdio: 'pipe' });
 });
 
-// 2. Production Static Build
-check('Production Build Compilation', () => {
+// 2. Production Static Build & Dynamic Multi-Page Sitemap Generation
+check('Production Build & Dynamic Multi-Page Sitemap Generation', () => {
   execSync('npx astro build', { stdio: 'pipe' });
+  const outDir = fs.existsSync('./.vercel/output/static')
+    ? path.resolve('./.vercel/output/static')
+    : path.resolve('./dist');
+  generateSitemap(outDir);
 });
 
 // 3. Sitemap & Robots verification
