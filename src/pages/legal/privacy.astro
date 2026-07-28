@@ -14,29 +14,82 @@ import SubpageLayout from '../../layouts/SubpageLayout.astro';
     { label: 'Data Processing (DPA)', href: '/legal/data-processing' },
   ]}
 >
-  ## 1. Executive Summary & Data Governance
-  This Privacy Policy describes how StructZero Platform ("StructZero", "we", "us", or "our") collects, uses, stores, and protects personal data and proprietary source code when you access our platform, website, or Model Context Protocol (MCP) server integration. We operate under a strict enterprise privacy standard: **Your source code, Abstract Syntax Tree (AST) project graphs, and AI debate transcripts belong exclusively to you and are never used to train public AI models.**
+  <div class="space-y-10 text-ink-muted leading-relaxed">
+    <section class="border-b border-border/50 pb-8">
+      <h2 class="text-xl md:text-2xl font-bold text-ink mb-4">1. Executive Summary & Data Governance</h2>
+      <p class="mb-4">
+        This Privacy Policy describes how StructZero Platform ("StructZero", "we", "us", or "our") collects, uses, stores, and protects personal data and proprietary source code when you access our platform, website, or Model Context Protocol (MCP) server integration.
+      </p>
+      <div class="p-4 rounded-xl border border-emerald-500/30 bg-emerald-500/10 text-sm text-emerald-300 font-medium">
+        <strong>Enterprise Standard:</strong> Your source code, Abstract Syntax Tree (AST) project graphs, and AI debate transcripts belong exclusively to you and are <strong>never used to train public AI models</strong>.
+      </div>
+    </section>
 
-  ## 2. Information We Collect
-  - **Account & Identity Information**: When you register for an enterprise account, we collect your name, business email address, organization name, and authentication credentials.
-  - **Workspace & Codebase Metadata**: To perform Project DNA indexing, StructZero parses file paths, exported symbol names, route topologies, and AST structures locally or within isolated execution containers.
-  - **Model Context & Conversation Logs**: Structured transcripts of multi-model debates and agent tool invocations are logged to your local project directory (`.system_generated/logs`) for auditability.
-  - **Telemetry & Technical Usage**: We collect anonymized operational metrics including API request latencies, error codes, and token consumption counters for platform health monitoring.
+    <section class="border-b border-border/50 pb-8">
+      <h2 class="text-xl md:text-2xl font-bold text-ink mb-4">2. Information We Collect</h2>
+      <div class="grid sm:grid-cols-2 gap-4 my-4">
+        <div class="p-5 rounded-xl border border-border bg-panel">
+          <h3 class="font-bold text-ink mb-1">Account & Identity Information</h3>
+          <p class="text-xs text-ink-muted">When registering for an enterprise account, we collect your name, business email address, organization name, and authentication credentials.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-border bg-panel">
+          <h3 class="font-bold text-ink mb-1">Workspace & Codebase Metadata</h3>
+          <p class="text-xs text-ink-muted">To perform Project DNA indexing, StructZero parses file paths, exported symbol names, route topologies, and AST structures locally or within isolated execution containers.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-border bg-panel">
+          <h3 class="font-bold text-ink mb-1">Model Context & Conversation Logs</h3>
+          <p class="text-xs text-ink-muted">Structured transcripts of multi-model debates and agent tool invocations are logged to your local project directory (<code class="text-accent">.system_generated/logs</code>) for auditability.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-border bg-panel">
+          <h3 class="font-bold text-ink mb-1">Telemetry & Technical Usage</h3>
+          <p class="text-xs text-ink-muted">We collect anonymized operational metrics including API request latencies, error codes, and token consumption counters for platform health monitoring.</p>
+        </div>
+      </div>
+    </section>
 
-  ## 3. How We Use Information
-  - To execute requested architecture debates, code generation, and certification checks.
-  - To maintain isolated Model Context Protocol (MCP) server sessions across your preferred IDEs (Cursor, VS Code, Zed, Claude Code).
-  - To enforce human-in-the-loop authorization guardrails for billable cloud operations and destructive execution commands.
-  - To comply with legal obligations, enterprise security audits, and SOC2/SAIF compliance frameworks.
+    <section class="border-b border-border/50 pb-8">
+      <h2 class="text-xl md:text-2xl font-bold text-ink mb-4">3. How We Use Information</h2>
+      <ul class="space-y-3 text-sm list-disc list-inside">
+        <li>To execute requested architecture debates, code generation, and certification checks.</li>
+        <li>To maintain isolated Model Context Protocol (MCP) server sessions across your preferred IDEs (Cursor, VS Code, Zed, Claude Code).</li>
+        <li>To enforce human-in-the-loop authorization guardrails for billable cloud operations and destructive execution commands.</li>
+        <li>To comply with legal obligations, enterprise security audits, and SOC2/SAIF compliance frameworks.</li>
+      </ul>
+    </section>
 
-  ## 4. Zero Model Training Guarantee
-  StructZero maintains strict zero-retention and zero-training agreements with enterprise AI provider partners (Anthropic, Google Cloud Vertex AI, AWS Bedrock). **No source code, file contents, prompts, or AST metadata submitted to StructZero is ever used to train, retrain, or improve foundational AI models.**
+    <section class="border-b border-border/50 pb-8">
+      <h2 class="text-xl md:text-2xl font-bold text-ink mb-4">4. Zero Model Training Guarantee</h2>
+      <p class="mb-4">
+        StructZero maintains strict zero-retention and zero-training agreements with enterprise AI provider partners (Anthropic, Google Cloud Vertex AI, AWS Bedrock).
+      </p>
+      <p class="text-sm font-semibold text-ink">
+        No source code, file contents, prompts, or AST metadata submitted to StructZero is ever used to train, retrain, or improve foundational AI models.
+      </p>
+    </section>
 
-  ## 5. Data Isolation & Security Safeguards
-  - **Isolated Container Sandboxes**: Code compilation and certification checks run in ephemeral, isolated container runtimes with restricted network and filesystem permissions.
-  - **Encryption Standards**: Data in transit is encrypted using TLS 1.3, and data at rest is encrypted using AES-256.
-  - **Credential Masking**: API keys, tokens, and secrets are automatically masked before passing into model context windows.
+    <section class="border-b border-border/50 pb-8">
+      <h2 class="text-xl md:text-2xl font-bold text-ink mb-4">5. Data Isolation & Security Safeguards</h2>
+      <div class="space-y-4 text-sm">
+        <div class="p-4 rounded-xl border border-border bg-panel">
+          <strong class="text-ink block mb-1">Isolated Container Sandboxes</strong>
+          <span>Code compilation and certification checks run in ephemeral, isolated container runtimes with restricted network and filesystem permissions.</span>
+        </div>
+        <div class="p-4 rounded-xl border border-border bg-panel">
+          <strong class="text-ink block mb-1">Encryption Standards</strong>
+          <span>Data in transit is encrypted using TLS 1.3, and data at rest is encrypted using AES-256.</span>
+        </div>
+        <div class="p-4 rounded-xl border border-border bg-panel">
+          <strong class="text-ink block mb-1">Credential Masking</strong>
+          <span>API keys, tokens, and secrets are automatically masked before passing into model context windows.</span>
+        </div>
+      </div>
+    </section>
 
-  ## 6. Data Rights & International Compliance
-  Under GDPR, CCPA, and global privacy frameworks, users have the right to request access to, deletion of, or export of their account data. Requests may be submitted directly to `privacy@structzero.app`.
+    <section>
+      <h2 class="text-xl md:text-2xl font-bold text-ink mb-4">6. Data Rights & International Compliance</h2>
+      <p>
+        Under GDPR, CCPA, and global privacy frameworks, users have the right to request access to, deletion of, or export of their account data. Requests may be submitted directly to <a href="mailto:privacy@structzero.app" class="text-accent underline">privacy@structzero.app</a>.
+      </p>
+    </section>
+  </div>
 </SubpageLayout>
