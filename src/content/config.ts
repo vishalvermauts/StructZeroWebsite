@@ -10,6 +10,11 @@ const kbCollection = defineCollection({
     related: z.array(z.object({ label: z.string(), href: z.string() })).default([]),
     faqs: z.array(z.object({ q: z.string(), a: z.string() })).default([]),
     features: z.array(z.object({ title: z.string(), desc: z.string() })).default([]),
+    video: z.object({
+      src: z.string(),
+      title: z.string(),
+      label: z.string().optional(),
+    }).optional(),
   }),
 });
 

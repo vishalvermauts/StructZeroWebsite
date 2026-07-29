@@ -34,13 +34,20 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://structze
     <meta property="og:video:type" content="video/mp4" />
     <meta property="og:video:width" content="1280" />
     <meta property="og:video:height" content="720" />
-    <meta property="og:image" content="https://structzero.app/favicon.svg" />
+    <meta property="og:image" content="https://structzero.app/Multi-Agent_Engineering_Pipeline.png" />
+    <meta property="og:image:secure_url" content="https://structzero.app/Multi-Agent_Engineering_Pipeline.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:alt" content="StructZero Multi-Agent Engineering Pipeline Diagram" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://structzero.app/Multi-Agent_Engineering_Pipeline.png" />
+    <meta name="twitter:image:alt" content="StructZero Multi-Agent Engineering Pipeline Diagram" />
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
