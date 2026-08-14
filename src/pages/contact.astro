@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY;
 ---
 
 <Base title="Contact Us — StructZero Platform" description="Get in touch with the StructZero engineering and enterprise team.">
@@ -12,7 +13,7 @@ import Base from '../layouts/Base.astro';
 
     <form id="contact-form" class="max-w-md mx-auto p-8 border border-border rounded-2xl bg-panel text-left relative overflow-hidden">
       <!-- Web3Forms Access Key -->
-      <input type="hidden" name="access_key" value="db8a8aea-6170-4cc6-b4f0-80b8ca3f4752" />
+      <input type="hidden" name="access_key" value={web3FormsKey} />
       <input type="hidden" name="subject" value="New Contact Form Submission - StructZero" />
       <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
