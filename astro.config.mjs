@@ -11,5 +11,5 @@ export default defineConfig({
     tailwind({ applyBaseStyles: false }),
     mdx()
   ],
-  site: 'https://structzero.app',
+  site: 'https://www.structzero.app',
 });
