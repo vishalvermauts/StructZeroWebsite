@@ -3,7 +3,7 @@ import rss from '@astrojs/rss';
 export async function GET(context: any) {
   const updates = [
     {
-      title: 'V11.4 Technical Preview — Command Center Architecture',
+      title: 'V11.4 Technical Preview — AI Platform Architecture',
       pubDate: new Date('2026-10-01T00:00:00Z'),
       description: 'Consolidated engineering pipeline across research, debate, and verification. Dual-control remote specifications.',
       link: '/updates/',
@@ -17,7 +17,7 @@ export async function GET(context: any) {
     {
       title: 'Website Refresh & 25-Route Information Architecture',
       pubDate: new Date('2026-09-28T00:00:00Z'),
-      description: 'Refreshed public documentation and architecture specs reflecting the AI Software Command Center positioning.',
+      description: 'Refreshed public documentation and architecture specs reflecting the AI Software Engineering Platform positioning.',
       link: '/updates/',
     },
   ];

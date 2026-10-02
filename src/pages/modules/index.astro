@@ -2,160 +2,395 @@
 import Base from '../../layouts/Base.astro';
 import StatusBadge from '../../components/StatusBadge.astro';
 
-const moduleList = [
+interface LiveModule {
+  id: string;
+  moduleNumber: string;
+  title: string;
+  status: 'Live';
+  summary: string;
+  availableNow: string[];
+  next?: string[];
+}
+
+interface PlannedModule {
+  id: string;
+  moduleNumber: string;
+  title: string;
+  status: 'Planned';
+  summary: string;
+  planningScope: string[];
+}
+
+type ModuleItem = LiveModule | PlannedModule;
+
+const modules: ModuleItem[] = [
   {
-    id: 'build',
-    title: 'Build Module & Specialized Roles',
-    status: 'Available',
-    summary: 'Dividing engineering cognitive load across specialized roles (Architect, Coder, Verifier, Data Engineer) to generate dependency-ordered source code.',
-    details: [
-      'Architect role drafts system blueprints and interface contracts.',
-      'Coder role generates production files respecting AST boundaries.',
-      'Data Engineer manages migrations, schema shifts, and ORM contracts.',
-      'Topological dependency ordering prevents broken inter-module imports.',
+    id: 'engineering',
+    moduleNumber: '01',
+    title: 'Engineering Module',
+    status: 'Live',
+    summary: 'The base software engineering module. Takes an objective through planning, multi-model architecture debate and critique, implementation, verification, repair, artifacts, contextual preview, and supported approval/deployment steps. Coordinates specialist AI roles.',
+    availableNow: [
+      'Multi-model architecture debate & critique (Claude, Gemini, DeepSeek, Nova) with persisted turns and cost tracking.',
+      'Specialist AI roles (Architect, Coder, Verifier, Data Engineer) operating under constrained responsibilities.',
+      'Contract-enforced HTML/component synthesis with cryptographic SHA-256 digest validation.',
+      'Candidate-bound exact version approval requiring cryptographic human sign-off before modification or deploy.',
+    ],
+    next: [
+      'Autonomous AST-driven repair loops across arbitrary full-stack repositories.',
+      'General external web research and crawling (current research fixture is test-scoped).',
     ],
   },
   {
-    id: 'research',
-    title: 'Research & Context Indexer',
-    status: 'Available',
-    summary: 'Extracting codebase AST, route maps, exported symbols, and fetching authoritative third-party API documentation.',
-    details: [
-      'Full AST extraction for TypeScript, JavaScript, Python, and Go.',
-      'Live symbol table mapping exported functions and class contracts.',
-      'Route topology inspection aligning frontend paths with backend handlers.',
-      'Incremental cache updates as files are modified during generation runs.',
+    id: 'android-pipeline',
+    moduleNumber: '02',
+    title: 'Android Pipeline Module',
+    status: 'Live',
+    summary: 'Builds Android apps, coordinates source generation and backend integration, runs the supported build/test/repair workflow, and returns the artifacts that the current implementation actually produces. This is separate from the StructZero Remote control app.',
+    availableNow: [
+      'Expo / React Native TypeScript project scaffolding with screens, navigation, and backend integration.',
+      'GitHub Actions CI/CD remote build dispatch with libsodium sealed-box secret encryption.',
+      'Two-step operator approval gate (propose & apply) preventing unapproved commits to main.',
+      'Build status polling and historical artifact viewer producing tested debug APK outputs.',
+    ],
+    next: [
+      'Local Gradle container sandboxing inside Docker (current builds run in remote cloud runners).',
+      'Native Kotlin / Jetpack Compose code generation and Google Play Store signing/release pipelines.',
+    ],
+  },
+  {
+    id: 'autonomous-build',
+    moduleNumber: '03',
+    title: 'Autonomous Software Build Module',
+    status: 'Live',
+    summary: 'Coordinates longer software-building objectives using the worker and isolated-execution capabilities currently implemented. Shows progress, blockers, artifacts, and approval points in the central project.',
+    availableNow: [
+      'Isolated per-build Docker worker mounted read-only with ephemeral tmpfs (64MB limit, 1 CPU, 1GB RAM, non-root UID 1000, 0 capabilities, no docker socket access).',
+      'Durable lifecycle management with execution outbox, stage checkpoints, and pause/resume/cancel controls.',
+      'Progress tracking and blocker detection emitted directly to engineering events and audit streams.',
+      'Idempotent replay and stale-state detection preventing duplicate executions and race conditions.',
+    ],
+    next: [
+      'Unattended 24×7 background scheduling and continuous cron triggers (currently run via direct operator sessions).',
+      'Zero-touch autonomous production self-healing without manual operator confirmation.',
     ],
   },
   {
     id: 'security',
-    title: 'Security Auditor & Guardrails',
-    status: 'Available',
-    summary: 'Auditing code for injection risks, secret leakage, and enforcing human authorization on destructive or billable commands.',
-    details: [
-      'Automatic secret masking before strings reach model context.',
-      'Hard execution intercepts on DROP TABLE, resource deletion, and cloud billing.',
-      'Static analysis scans checking for OWASP Top 10 vulnerabilities.',
-      'Strict container filesystem sandboxing during test executions.',
+    moduleNumber: '04',
+    title: 'Dedicated Security Module',
+    status: 'Live',
+    summary: 'Runs the currently implemented standalone security workflow, produces findings and evidence, and routes proposed fixes through verification. Distinct from the security checks embedded in the Engineering module.',
+    availableNow: [
+      'Standalone security analysis panel evaluating SAST vulnerabilities, severity badges, and remediation diffs.',
+      'Static architecture security auditor scanning blueprints for missing rate limiting, CORS, and security headers.',
+      'Payload secret-leak detection and automatic sanitization before model dispatch.',
+      'Cryptographic artifact integrity checks, strict directory traversal defenses, and CSP sandbox confinement.',
+    ],
+    next: [
+      'Dedicated Kali-based security virtual machine and external DAST scanning environment.',
+      'Automated fix-routing into pull request branches with continuous regression verification.',
     ],
   },
   {
-    id: 'operations',
-    title: 'Operations & Observability Telemetry',
-    status: 'Available',
-    summary: 'Tracking token expenditure, API latency, container resource utilization, and budget ceilings per project.',
-    details: [
-      'Real-time token cost attribution per role, model, and project.',
-      'Model latency and time-to-first-token telemetry.',
-      'Budget alerts and hard execution stops when ceilings are hit.',
-      'Container CPU, memory, and build duration metrics.',
+    id: 'operations-reliability',
+    moduleNumber: '05',
+    title: 'Operations & Reliability Module',
+    status: 'Live',
+    summary: 'Provides the monitoring, telemetry, alerting, investigation, and reliability functions that currently work. Accurately distinguishes monitoring StructZero runs from monitoring deployed customer applications.',
+    availableNow: [
+      'Run-level observability tracking execution duration, model latencies, token consumption, and call counts.',
+      'Provider and cost provenance tracking: honest "unavailable" states instead of fabricated billing numbers.',
+      'Persistent engineering event ledger recording errors, stalls, build logs, and approvals.',
+      'Candidate deployment ledger maintaining immutable records of deployment targets, status history, and replay proofs.',
+    ],
+    next: [
+      'Customer deployed application APM, synthetic health monitoring, and external runtime log aggregation.',
+      'Automated PagerDuty, webhook alerting, and error budget policy management.',
     ],
   },
   {
-    id: 'android-delivery',
-    title: 'Android Delivery Pipeline',
-    status: 'In Development',
-    summary: 'Compiling generated mobile code into native Android APK/AAB packages using isolated containerized Gradle sandboxes.',
-    details: [
-      'Native Kotlin / Jetpack Compose scaffolding and build generation.',
-      'Sandboxed Gradle builds running without host filesystem access.',
-      'Signed APK artifacts generation with verified SHA-256 fingerprints.',
-      'Distinct from the StructZero Remote control client.',
-    ],
-  },
-  {
-    id: 'knowledge',
-    title: 'Engineering Event Recorder',
-    status: 'Available',
-    summary: 'Tamper-evident, structured JSONL audit stream recording every prompt, debate decision, AST check, and user approval.',
-    details: [
-      '100% decision traceability for compliance and post-mortems.',
-      'Structured JSONL logs easily ingested by enterprise SIEM systems.',
-      'Trajectory replay allowing developers to reproduce and debug past debates.',
-      'Local workspace storage under .system_generated/logs directory.',
-    ],
-  },
-  {
-    id: 'automation',
-    title: 'Automated Repair & Patch Synthesis',
-    status: 'Available',
-    summary: 'Pre-flight compilation gate that identifies AST syntax breaks or import errors and runs localized repair loops before writing to disk.',
-    details: [
-      '100% AST compilation check guarantees zero syntax errors before disk write.',
-      'Localized repair routines attempt automated patch fixes (max 2 retries).',
-      'Clean backup restoration ensures workspace is never left in a broken state.',
-      'Module resolution verification confirming all imported files exist on disk.',
-    ],
-  },
-  {
-    id: 'future',
-    title: 'Business & Autonomous ROI Analyzer',
+    id: 'research',
+    moduleNumber: '06',
+    title: 'Research Module',
     status: 'Planned',
-    summary: 'Exploratory economic and business analytics module evaluating feature ROI, technical debt reduction, and autonomous patch planning.',
-    details: [
-      'Autonomous feature impact analysis against product telemetry.',
-      'Refactoring opportunity detection based on historical bug density.',
-      'Cross-cloud cost optimization suggestions.',
-      'Exploratory future capability — not available in current release.',
+    summary: 'A customer-selectable, standalone workflow for market, competitor, technical, API, or other research with sourced reports. Future continuous research may run in an isolated worker and provide updates. Existing codebase/API context gathering is a shared platform capability; it does not make this broader module Live.',
+    planningScope: [
+      'Customer-selectable standalone workflow generating structured, sourced technical and market reports.',
+      'Deep competitive intelligence and third-party API capability analysis.',
+      'Future continuous background research worker providing automated domain updates.',
+      'Evidence-linked reference citations with persistent research artifact storage.',
     ],
+  },
+  {
+    id: 'project-management',
+    moduleNumber: '07',
+    title: 'Project Management Module',
+    status: 'Planned',
+    summary: 'Coordinates objectives, milestones, dependencies between modules, workers, budgets, approvals, blockers, and deliverables across a project.',
+    planningScope: [
+      'Cross-module milestone tracking and dependency graph formulation.',
+      'Worker allocation, run sequencing, and multi-run delivery coordination.',
+      'Budget allocation per milestone with automated pause thresholds.',
+      'Blocker identification and critical-path deliverable tracking across team roles.',
+    ],
+  },
+  {
+    id: 'advertising-marketing',
+    moduleNumber: '08',
+    title: 'Advertising & Social Media Marketing Module',
+    status: 'Planned',
+    summary: 'One combined module. With customer authorization, connects ad and social platforms, researches audiences, prepares campaigns and content, coordinates approved publishing, monitors spend and performance, and promotes products built through other modules.',
+    planningScope: [
+      'Authorized integration with ad and social platform APIs (Meta, Google Ads, LinkedIn, X).',
+      'Audience research, positioning synthesis, and campaign messaging preparation.',
+      'Strict human authorization gates before any campaign publishing or financial spend.',
+      'Live ad spend tracking, conversion telemetry, and promotional alignment with built software releases.',
+    ],
+  },
+  {
+    id: 'medical-analysis',
+    moduleNumber: '09',
+    title: 'Medical Analysis Module',
+    status: 'Planned',
+    summary: 'Lets users upload relevant case details and supported medical material such as scans, X-rays, MRI/CT studies, pathology material, reports, images, or audio. Routes inputs to suitable specialist medical models, optionally uses paid medical models and frontier models, compares findings, and produces an evidence-linked draft assessment for qualified clinical review. The model layer is provider-neutral (e.g. MedGemma, MedSigLIP, MedASR, Path Foundation, HeAR, TxGemma are non-exclusive examples). Output is not a confirmed diagnosis and does not imply clinical approval.',
+    planningScope: [
+      'Multimodal ingestion for medical scans, X-rays, MRI/CT studies, pathology slides, and clinical notes.',
+      'Provider-neutral routing to specialist medical models and frontier LLMs with multi-model comparison.',
+      'Evidence-linked draft assessments structured exclusively for qualified clinical review.',
+      'Strict HIPAA compliance boundaries and explicit disclaimer: unvalidated draft assessments are not confirmed diagnoses.',
+    ],
+  },
+  {
+    id: 'business-roi',
+    moduleNumber: '10',
+    title: 'Business & ROI Analysis Module',
+    status: 'Planned',
+    summary: 'Analyses engineering history and product telemetry to identify cost, technical debt, defects, and potential feature value; proposes improvements for human review.',
+    planningScope: [
+      'Engineering history analysis evaluating model token expenditure vs business feature value.',
+      'Technical debt identification based on historical defect density and churn.',
+      'Infrastructure total cost of ownership (TCO) forecasting across cloud targets.',
+      'Improvement and refactoring recommendations proposed with evidence for human review.',
+    ],
+  },
+];
+
+const platformCapabilities = [
+  {
+    title: 'Multi-model debate, critique, and role-to-model assignment',
+    description: 'Assigns independent models to specific roles, running adversarial peer critique cycles before code synthesis.',
+  },
+  {
+    title: 'Named specialist AI roles',
+    description: 'Specialist roles (Architect, Coder, Verifier, Security, Data Engineer) operate under constrained responsibilities.',
+  },
+  {
+    title: 'Project DNA, AST/symbol awareness, and project constraints',
+    description: 'Extracts compiler Abstract Syntax Trees, symbol tables, route topologies, and enforced codebase constraints.',
+  },
+  {
+    title: 'Verification gates, automated repair, and retesting',
+    description: 'Pre-flight compilation gate with automated localized repair loops and clean backup restoration.',
+  },
+  {
+    title: 'Engineering event stream, artifacts, and decision history',
+    description: 'Tamper-evident, structured JSONL audit stream tracking every prompt, debate decision, and human approval.',
+  },
+  {
+    title: 'Model gateway, usage and budget controls',
+    description: 'Provider-neutral model routing with enforced per-run budget ceilings and honest cost provenance.',
+  },
+  {
+    title: 'Isolation, deployment adapters, and human approval gates',
+    description: 'Container sandboxes with tmpfs isolation and mandatory human authorization intercepts for billable or destructive actions.',
   },
 ];
 ---
 
 <Base
   title="Modules & Availability Directory — StructZero"
-  description="Explore StructZero platform modules: Build, Research, Security, Operations, Knowledge, and Automation with verified release availability."
+  description="Explore StructZero platform modules: Engineering, Android pipeline, autonomous build, security, operations, and planned domain modules."
 >
   <!-- Hero Section -->
-  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+  <section class="py-16 sm:py-20 border-b border-[#1e1e1e] bg-[#0a0a0a]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4">
-        <a href="/" class="hover:text-[#4d8fe0]">Home</a>
+        <a href="/" class="hover:text-[#4d8fe0] transition-colors">Home</a>
         <span>/</span>
         <span class="text-[#e9e9ea]">Modules</span>
       </div>
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea]">Modules Directory</h1>
-        <StatusBadge status="Available" size="md" />
+
+      <div class="space-y-4 max-w-4xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#1e3450] bg-[#101c2c] text-[#7cadec] font-mono text-xs">
+          <span>Modular Architecture</span>
+          <span class="text-[#4d8fe0]">•</span>
+          <span>Plug-and-Play Workflows</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea]">
+          Modules Directory
+        </h1>
+
+        <p class="text-base sm:text-lg text-[#96979a] leading-relaxed">
+          StructZero coordinates plug-and-play workflows under one unified project. A user might ask it to build a web app, create an Android companion, assess security, and monitor the result; StructZero coordinates the selected modules, artifacts, and approvals from end to end.
+        </p>
+
+        <div class="pt-2 flex flex-wrap items-center gap-4 text-xs font-mono text-[#7c7d80]">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#4f9e6e]"></span>
+            <span class="text-[#e9e9ea]">5 Live Modules</span>
+          </div>
+          <span class="text-[#2c2c2c]">|</span>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#4d8fe0]"></span>
+            <span class="text-[#e9e9ea]">5 Planned Modules</span>
+          </div>
+          <span class="text-[#2c2c2c]">|</span>
+          <span>Unified Project Coordination</span>
+        </div>
       </div>
-      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed">
-        StructZero breaks down software engineering into modular capabilities. Review each module's technical scope, operational boundaries, and current release availability.
-      </p>
     </div>
   </section>
 
-  <!-- Module Cards with Required Anchors -->
-  <section class="py-16 bg-[#000000]">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-12">
-      {moduleList.map((m) => (
-        <div id={m.id} class="p-6 sm:p-8 rounded-2xl border border-[#1e1e1e] bg-[#111111] scroll-mt-24 space-y-5">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#1e1e1e] pb-4">
-            <div>
-              <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] block mb-1">
-                MODULE #{m.id.toUpperCase()}
-              </span>
-              <h2 class="text-2xl font-bold text-[#e9e9ea]">{m.title}</h2>
+  <!-- Module Cards Directory -->
+  <section class="py-16 sm:py-20 bg-[#000000]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-10">
+      {modules.map((m) => {
+        const isLive = m.status === 'Live';
+        return (
+          <article
+            id={m.id}
+            class={`p-6 sm:p-8 rounded-2xl border transition-colors scroll-mt-24 ${
+              isLive
+                ? 'bg-[#111111] border-[#1e1e1e] hover:border-[#2c2c2c]'
+                : 'bg-[#0a0a0a] border-[#1e1e1e] border-dashed hover:border-[#262626]'
+            }`}
+          >
+            <!-- Card Header -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#1e1e1e] pb-4 mb-5">
+              <div>
+                <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] block mb-1">
+                  MODULE #{m.moduleNumber}
+                </span>
+                <h2 class="text-2xl font-bold text-[#e9e9ea]">{m.title}</h2>
+              </div>
+              <div class="self-start sm:self-center">
+                <StatusBadge status={m.status} size="md" />
+              </div>
             </div>
-            <StatusBadge status={m.status} size="md" />
-          </div>
 
-          <p class="text-sm sm:text-base text-[#96979a] leading-relaxed">
-            {m.summary}
-          </p>
+            <!-- Summary -->
+            <p class="text-sm sm:text-base text-[#96979a] leading-relaxed mb-6">
+              {m.summary}
+            </p>
 
-          <div class="p-4 rounded-xl bg-[#000000] border border-[#1e1e1e]">
-            <h3 class="text-xs font-mono uppercase tracking-wider text-[#7c7d80] mb-3">Technical Specifications</h3>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#96979a]">
-              {m.details.map((d) => (
-                <li class="flex items-start gap-2">
-                  <span class="text-[#4d8fe0] font-bold">✓</span>
-                  <span>{d}</span>
-                </li>
-              ))}
-            </ul>
+            <!-- Technical Scope Sections -->
+            {isLive ? (
+              <div class="space-y-4">
+                <!-- Available now -->
+                <div class="p-4 sm:p-5 rounded-xl bg-[#000000] border border-[#1e1e1e]">
+                  <div class="flex items-center gap-2 mb-3">
+                    <span class="inline-block w-2 h-2 rounded-full bg-[#4f9e6e]"></span>
+                    <h3 class="text-xs font-mono uppercase tracking-wider text-[#4f9e6e] font-semibold">
+                      Available now
+                    </h3>
+                  </div>
+                  <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-[#96979a]">
+                    {'availableNow' in m && m.availableNow.map((item) => (
+                      <li class="flex items-start gap-2.5">
+                        <span class="text-[#4f9e6e] font-bold shrink-0 mt-0.5">✓</span>
+                        <span class="leading-relaxed">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <!-- Next capabilities -->
+                {'next' in m && m.next && m.next.length > 0 && (
+                  <div class="p-4 sm:p-5 rounded-xl bg-[#0a0a0a] border border-[#1e1e1e]">
+                    <div class="flex items-center gap-2 mb-3">
+                      <span class="inline-block w-2 h-2 rounded-full bg-[#7cadec]"></span>
+                      <h3 class="text-xs font-mono uppercase tracking-wider text-[#7cadec] font-semibold">
+                        Next in pipeline
+                      </h3>
+                    </div>
+                    <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-[#7c7d80]">
+                      {m.next.map((item) => (
+                        <li class="flex items-start gap-2.5">
+                          <span class="text-[#4d8fe0] font-mono shrink-0 mt-0.5">→</span>
+                          <span class="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <!-- Planned Module Scope -->
+              <div class="p-4 sm:p-5 rounded-xl bg-[#000000] border border-[#1e1e1e] border-dashed">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="inline-block w-2 h-2 rounded-full bg-[#4d8fe0]"></span>
+                    <h3 class="text-xs font-mono uppercase tracking-wider text-[#7cadec] font-semibold">
+                      Planned capabilities
+                    </h3>
+                  </div>
+                  <span class="text-[11px] font-mono text-[#7c7d80] uppercase tracking-wider">
+                    Roadmap
+                  </span>
+                </div>
+                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-[#96979a]">
+                  {'planningScope' in m && m.planningScope.map((item) => (
+                    <li class="flex items-start gap-2.5">
+                      <span class="text-[#4d8fe0] font-mono shrink-0 mt-0.5">--</span>
+                      <span class="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Shared Platform Capabilities Section -->
+  <section class="py-16 sm:py-20 border-t border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="mb-10">
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] block mb-2">
+          Shared Infrastructure
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-[#e9e9ea] mb-3">
+          Platform capabilities powering the modules
+        </h2>
+        <p class="text-sm sm:text-base text-[#96979a] max-w-3xl leading-relaxed">
+          Every specialized module operates on top of StructZero's shared engineering primitives, ensuring consistent AST hygiene, model oversight, auditability, and safety boundaries across all workflows.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {platformCapabilities.map((cap, idx) => (
+          <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111] hover:border-[#2c2c2c] transition-colors flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2.5 mb-2.5">
+                <span class="font-mono text-xs text-[#4d8fe0] font-semibold">
+                  0{idx + 1}
+                </span>
+                <span class="text-[#2c2c2c]">•</span>
+                <h3 class="text-sm font-semibold text-[#e9e9ea] leading-snug">
+                  {cap.title}
+                </h3>
+              </div>
+              <p class="text-xs text-[#96979a] leading-relaxed">
+                {cap.description}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   </section>
 </Base>
