@@ -59,43 +59,43 @@ const milestones = [
   title="Product Roadmap & Availability — StructZero"
   description="Transparent development timeline for StructZero platform capabilities, release statuses, and milestones."
 >
-  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
       <div class="inline-flex items-center gap-2 mb-3">
         <StatusBadge status="Available" size="sm" />
-        <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold">
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold">
           Transparent Milestones
         </span>
       </div>
-      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB] mb-4">
+      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea] mb-4">
         Platform Roadmap & Availability
       </h1>
-      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-2xl mx-auto">
+      <p class="text-base sm:text-lg text-[#96979a] max-w-2xl mx-auto">
         Every capability clearly tagged with its true development and release state. No unverified claims.
       </p>
     </div>
   </section>
 
-  <section class="py-16">
+  <section class="py-16 bg-[#000000]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
       {milestones.map(m => (
-        <div class="border border-[#23314D] rounded-2xl p-6 sm:p-8 bg-[#141D30] space-y-6">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#23314D] pb-4">
+        <div class="border border-[#1e1e1e] rounded-2xl p-6 sm:p-8 bg-[#111111] space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#1e1e1e] pb-4">
             <div>
-              <span class="font-mono text-xs text-[#8A98B0] block mb-1">{m.date}</span>
-              <h2 class="text-2xl font-bold text-[#F5F7FB]">{m.version}</h2>
+              <span class="font-mono text-xs text-[#7c7d80] block mb-1">{m.date}</span>
+              <h2 class="text-2xl font-bold text-[#e9e9ea]">{m.version}</h2>
             </div>
             <StatusBadge status={m.status} size="md" />
           </div>
 
-          <p class="text-sm text-[#B7C2D6] leading-relaxed">{m.description}</p>
+          <p class="text-sm text-[#96979a] leading-relaxed">{m.description}</p>
 
           <div class="space-y-3">
-            <h3 class="font-mono text-xs uppercase text-[#4F8BFF] font-semibold">Milestone Deliverables</h3>
+            <h3 class="font-mono text-xs uppercase text-[#7cadec] font-semibold">Milestone Deliverables</h3>
             <div class="grid sm:grid-cols-2 gap-3">
               {m.features.map(f => (
-                <div class="flex items-center justify-between p-3 rounded-xl bg-[#0B1020] border border-[#23314D] text-xs">
-                  <span class="text-[#F5F7FB] font-medium">{f.name}</span>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-[#000000] border border-[#1e1e1e] text-xs">
+                  <span class="text-[#e9e9ea] font-medium">{f.name}</span>
                   <StatusBadge status={f.status} size="sm" />
                 </div>
               ))}

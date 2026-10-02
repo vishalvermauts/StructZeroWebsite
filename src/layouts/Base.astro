@@ -108,24 +108,24 @@ const canonicalURL = new URL(pathWithSlash, 'https://www.structzero.app');
         theme: 'base',
         themeVariables: {
           darkMode: true,
-          background: '#0B1020',
-          primaryColor: '#141D30',
-          primaryTextColor: '#F5F7FB',
-          primaryBorderColor: '#4F8BFF',
-          lineColor: '#4F8BFF',
-          secondaryColor: '#1D2940',
-          secondaryTextColor: '#F5F7FB',
-          secondaryBorderColor: '#3A4C70',
-          tertiaryColor: '#10172A',
-          tertiaryTextColor: '#F5F7FB',
-          tertiaryBorderColor: '#23314D',
-          nodeBkg: '#141D30',
-          nodeTextColor: '#F5F7FB',
-          nodeBorder: '#4F8BFF',
-          clusterBkg: '#10172A',
-          clusterBorder: '#23314D',
-          titleColor: '#F5F7FB',
-          edgeLabelBackground: '#10172A'
+          background: '#000000',
+          primaryColor: '#111111',
+          primaryTextColor: '#e9e9ea',
+          primaryBorderColor: '#4d8fe0',
+          lineColor: '#4d8fe0',
+          secondaryColor: '#1a1a1a',
+          secondaryTextColor: '#e9e9ea',
+          secondaryBorderColor: '#2c2c2c',
+          tertiaryColor: '#0a0a0a',
+          tertiaryTextColor: '#e9e9ea',
+          tertiaryBorderColor: '#1e1e1e',
+          nodeBkg: '#111111',
+          nodeTextColor: '#e9e9ea',
+          nodeBorder: '#4d8fe0',
+          clusterBkg: '#0a0a0a',
+          clusterBorder: '#1e1e1e',
+          titleColor: '#e9e9ea',
+          edgeLabelBackground: '#0a0a0a'
         }
       });
       const renderMermaid = async () => {
@@ -134,7 +134,7 @@ const canonicalURL = new URL(pathWithSlash, 'https://www.structzero.app');
           const block = blocks[i];
           const code = block.textContent.trim();
           const container = document.createElement('div');
-          container.className = 'mermaid my-6 p-4 rounded-xl border border-[#23314D] bg-[#141D30] text-center overflow-x-auto min-h-[100px] flex items-center justify-center';
+          container.className = 'mermaid my-6 p-4 rounded-xl border border-[#1e1e1e] bg-[#111111] text-center overflow-x-auto min-h-[100px] flex items-center justify-center';
           block.replaceWith(container);
           try {
             const { svg } = await mermaid.render(`mermaid-diagram-${i}`, code);
@@ -142,7 +142,7 @@ const canonicalURL = new URL(pathWithSlash, 'https://www.structzero.app');
           } catch (e) {
             console.error('Mermaid rendering notice:', e);
             const pre = document.createElement('pre');
-            pre.className = 'text-xs text-left font-mono text-[#B7C2D6] overflow-x-auto p-3';
+            pre.className = 'text-xs text-left font-mono text-[#96979a] overflow-x-auto p-3';
             pre.textContent = code;
             container.innerHTML = '';
             container.appendChild(pre);
@@ -156,7 +156,7 @@ const canonicalURL = new URL(pathWithSlash, 'https://www.structzero.app');
       }
     </script>
   </head>
-  <body class="bg-[#0B1020] text-[#F5F7FB] antialiased">
+  <body class="bg-[#000000] text-[#e9e9ea] antialiased">
     <Nav />
     <main>
       <slot />

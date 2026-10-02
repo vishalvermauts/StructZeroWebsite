@@ -7,38 +7,38 @@ import StatusBadge from '../../components/StatusBadge.astro';
   title="Getting Started — StructZero Docs"
   description="Step-by-step setup guide for running StructZero locally, configuring model endpoints, and running your first governed engineering project."
 >
-  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="flex items-center gap-2 text-xs font-mono text-[#8A98B0] mb-4">
-        <a href="/" class="hover:text-[#4F8BFF]">Home</a>
+      <div class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4">
+        <a href="/" class="hover:text-[#4d8fe0]">Home</a>
         <span>/</span>
-        <a href="/docs/" class="hover:text-[#4F8BFF]">Docs</a>
+        <a href="/docs/" class="hover:text-[#4d8fe0]">Docs</a>
         <span>/</span>
-        <span class="text-[#F5F7FB]">Getting Started</span>
+        <span class="text-[#e9e9ea]">Getting Started</span>
       </div>
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB]">Getting Started</h1>
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea]">Getting Started</h1>
         <StatusBadge status="Available" size="md" />
       </div>
-      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-3xl leading-relaxed">
+      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed">
         Configure your local workstation environment, start Docker sandboxes, and initialize your codebase with Project DNA.
       </p>
     </div>
   </section>
 
-  <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
+  <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 space-y-12 bg-[#000000]">
     <!-- Step 1 -->
-    <div class="p-6 sm:p-8 rounded-2xl border border-[#23314D] bg-[#141D30] space-y-4">
+    <div class="p-6 sm:p-8 rounded-2xl border border-[#1e1e1e] bg-[#111111] space-y-4">
       <div class="flex items-center justify-between">
-        <span class="font-mono text-xs uppercase text-[#4F8BFF] font-semibold">Step 01</span>
-        <span class="text-xs font-mono text-[#8A98B0]">PREREQUISITES</span>
+        <span class="font-mono text-xs uppercase text-[#7cadec] font-semibold">Step 01</span>
+        <span class="text-xs font-mono text-[#7c7d80]">PREREQUISITES</span>
       </div>
-      <h2 class="text-xl font-bold text-[#F5F7FB]">Environment & Sandbox Verification</h2>
-      <p class="text-sm text-[#B7C2D6] leading-relaxed">
+      <h2 class="text-xl font-bold text-[#e9e9ea]">Environment & Sandbox Verification</h2>
+      <p class="text-sm text-[#96979a] leading-relaxed">
         StructZero requires Node.js 20+ and Docker to run isolated build and compilation sandboxes.
       </p>
-      <div class="p-4 rounded-xl bg-[#0B1020] border border-[#23314D] font-mono text-xs text-[#F5F7FB]">
-        <div class="text-[#8A98B0]"># Verify local runtime versions</div>
+      <div class="p-4 rounded-xl bg-[#000000] border border-[#1e1e1e] font-mono text-xs text-[#e9e9ea]">
+        <div class="text-[#7c7d80]"># Verify local runtime versions</div>
         <div>node --version # >= v20.x</div>
         <div>docker --version # Docker Engine 24+</div>
         <div>docker compose version # Compose v2.20+</div>
@@ -46,17 +46,17 @@ import StatusBadge from '../../components/StatusBadge.astro';
     </div>
 
     <!-- Step 2 -->
-    <div class="p-6 sm:p-8 rounded-2xl border border-[#23314D] bg-[#141D30] space-y-4">
+    <div class="p-6 sm:p-8 rounded-2xl border border-[#1e1e1e] bg-[#111111] space-y-4">
       <div class="flex items-center justify-between">
-        <span class="font-mono text-xs uppercase text-[#4F8BFF] font-semibold">Step 02</span>
-        <span class="text-xs font-mono text-[#8A98B0]">CREDENTIAL CONFIGURATION</span>
+        <span class="font-mono text-xs uppercase text-[#7cadec] font-semibold">Step 02</span>
+        <span class="text-xs font-mono text-[#7c7d80]">CREDENTIAL CONFIGURATION</span>
       </div>
-      <h2 class="text-xl font-bold text-[#F5F7FB]">Configure Model Endpoints</h2>
-      <p class="text-sm text-[#B7C2D6] leading-relaxed">
+      <h2 class="text-xl font-bold text-[#e9e9ea]">Configure Model Endpoints</h2>
+      <p class="text-sm text-[#96979a] leading-relaxed">
         Set your API keys for Anthropic, Google Vertex, or DeepSeek in your project environment. StructZero supports local Ollama endpoints for offline execution.
       </p>
-      <div class="p-4 rounded-xl bg-[#0B1020] border border-[#23314D] font-mono text-xs text-[#F5F7FB] space-y-1">
-        <div class="text-[#8A98B0]"># .env configuration</div>
+      <div class="p-4 rounded-xl bg-[#000000] border border-[#1e1e1e] font-mono text-xs text-[#e9e9ea] space-y-1">
+        <div class="text-[#7c7d80]"># .env configuration</div>
         <div>ANTHROPIC_API_KEY="sk-ant-..."</div>
         <div>GEMINI_API_KEY="AIzaSy..."</div>
         <div>DEEPSEEK_API_KEY="sk-..."</div>
@@ -65,20 +65,20 @@ import StatusBadge from '../../components/StatusBadge.astro';
     </div>
 
     <!-- Step 3 -->
-    <div class="p-6 sm:p-8 rounded-2xl border border-[#23314D] bg-[#141D30] space-y-4">
+    <div class="p-6 sm:p-8 rounded-2xl border border-[#1e1e1e] bg-[#111111] space-y-4">
       <div class="flex items-center justify-between">
-        <span class="font-mono text-xs uppercase text-[#4F8BFF] font-semibold">Step 03</span>
-        <span class="text-xs font-mono text-[#8A98B0]">INITIALIZATION</span>
+        <span class="font-mono text-xs uppercase text-[#7cadec] font-semibold">Step 03</span>
+        <span class="text-xs font-mono text-[#7c7d80]">INITIALIZATION</span>
       </div>
-      <h2 class="text-xl font-bold text-[#F5F7FB]">Initialize Codebase with Project DNA</h2>
-      <p class="text-sm text-[#B7C2D6] leading-relaxed">
+      <h2 class="text-xl font-bold text-[#e9e9ea]">Initialize Codebase with Project DNA</h2>
+      <p class="text-sm text-[#96979a] leading-relaxed">
         Run the Project DNA indexer to extract Abstract Syntax Trees, exported symbols, and route topology maps for your existing workspace.
       </p>
-      <div class="p-4 rounded-xl bg-[#0B1020] border border-[#23314D] font-mono text-xs text-[#F5F7FB]">
+      <div class="p-4 rounded-xl bg-[#000000] border border-[#1e1e1e] font-mono text-xs text-[#e9e9ea]">
         <div>npx structzero init</div>
-        <div class="text-[#34D399] mt-2">✓ Project DNA: 142 AST module contracts indexed</div>
-        <div class="text-[#34D399]">✓ Sandbox verified: Docker socket proxy clean</div>
-        <div class="text-[#4F8BFF]">✓ Command center ready at http://localhost:8080</div>
+        <div class="text-[#4f9e6e] mt-2">✓ Project DNA: 142 AST module contracts indexed</div>
+        <div class="text-[#4f9e6e]">✓ Sandbox verified: Docker socket proxy clean</div>
+        <div class="text-[#4d8fe0]">✓ Command center ready at http://localhost:8080</div>
       </div>
     </div>
   </section>

@@ -8,21 +8,21 @@ const { status, size = 'md' } = Astro.props;
 
 const normalized = status.toUpperCase();
 
-let colorClasses = 'bg-[#141D30] text-[#B7C2D6] border-[#23314D]';
-let dotClass = 'bg-[#8A98B0]';
+let colorClasses = 'bg-[#111111] text-[#96979a] border-[#1e1e1e]';
+let dotClass = 'bg-[#7c7d80]';
 
 if (normalized.includes('AVAILABLE') || normalized.includes('LIVE') || normalized.includes('PRODUCTION')) {
-  colorClasses = 'bg-[#064E3B]/40 text-[#34D399] border-[#065F46]';
-  dotClass = 'bg-[#34D399]';
+  colorClasses = 'bg-[#0f2417] text-[#4f9e6e] border-[#1e3a29]';
+  dotClass = 'bg-[#4f9e6e]';
 } else if (normalized.includes('PREVIEW') || normalized.includes('DEVELOPMENT')) {
-  colorClasses = 'bg-[#78350F]/40 text-[#FBBF24] border-[#92400E]';
-  dotClass = 'bg-[#FBBF24]';
+  colorClasses = 'bg-[#2b2210] text-[#c19a4a] border-[#423318]';
+  dotClass = 'bg-[#c19a4a]';
 } else if (normalized.includes('PLANNED')) {
-  colorClasses = 'bg-[#1E3A8A]/40 text-[#60A5FA] border-[#1D4ED8]';
-  dotClass = 'bg-[#60A5FA]';
+  colorClasses = 'bg-[#101c2c] text-[#7cadec] border-[#1e3450]';
+  dotClass = 'bg-[#4d8fe0]';
 } else if (normalized.includes('EXPLORING')) {
-  colorClasses = 'bg-[#4C1D95]/40 text-[#C084FC] border-[#581C87]';
-  dotClass = 'bg-[#C084FC]';
+  colorClasses = 'bg-[#22172e] text-[#b388eb] border-[#38264e]';
+  dotClass = 'bg-[#b388eb]';
 }
 
 const sizeClasses = {

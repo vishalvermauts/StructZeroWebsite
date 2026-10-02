@@ -34,45 +34,45 @@ const docSections = [
   title="Documentation Hub — StructZero"
   description="Comprehensive operational guides, MCP configuration reference, and architecture specifications for the StructZero platform."
 >
-  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="flex items-center gap-2 text-xs font-mono text-[#8A98B0] mb-4">
-        <a href="/" class="hover:text-[#4F8BFF]">Home</a>
+      <div class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4">
+        <a href="/" class="hover:text-[#4d8fe0]">Home</a>
         <span>/</span>
-        <span class="text-[#F5F7FB]">Docs</span>
+        <span class="text-[#e9e9ea]">Docs</span>
       </div>
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB]">Technical Documentation</h1>
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea]">Technical Documentation</h1>
         <StatusBadge status="Available" size="md" />
       </div>
-      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-3xl leading-relaxed">
+      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed">
         Everything you need to configure StructZero, connect your IDE via Model Context Protocol, and run governed AI software development.
       </p>
     </div>
   </section>
 
-  <section class="py-16">
+  <section class="py-16 bg-[#000000]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {docSections.map((s) => (
-          <div class="p-6 sm:p-8 rounded-2xl border border-[#23314D] bg-[#141D30] flex flex-col justify-between hover:border-[#4F8BFF]/40 transition-colors">
+          <div class="p-6 sm:p-8 rounded-2xl border border-[#1e1e1e] bg-[#111111] flex flex-col justify-between hover:border-[#2c2c2c] transition-colors">
             <div>
-              <h2 class="text-xl font-bold text-[#F5F7FB] mb-2.5">
-                <a href={s.href} class="hover:text-[#4F8BFF] transition-colors flex items-center justify-between">
+              <h2 class="text-xl font-bold text-[#e9e9ea] mb-2.5">
+                <a href={s.href} class="hover:text-[#7cadec] transition-colors flex items-center justify-between">
                   <span>{s.title}</span>
-                  <span class="text-[#4F8BFF] text-base">→</span>
+                  <span class="text-[#4d8fe0] text-base">→</span>
                 </a>
               </h2>
-              <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed mb-6">
+              <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed mb-6">
                 {s.description}
               </p>
             </div>
-            <div class="pt-4 border-t border-[#23314D]">
-              <h3 class="text-xs font-mono uppercase tracking-wider text-[#8A98B0] mb-3">Key Topics</h3>
-              <ul class="space-y-1.5 text-xs text-[#B7C2D6]">
+            <div class="pt-4 border-t border-[#1e1e1e]">
+              <h3 class="text-xs font-mono uppercase tracking-wider text-[#7c7d80] mb-3">Key Topics</h3>
+              <ul class="space-y-1.5 text-xs text-[#96979a]">
                 {s.topics.map((t) => (
                   <li class="flex items-center gap-2">
-                    <span class="w-1 h-1 rounded-full bg-[#4F8BFF]"></span>
+                    <span class="w-1 h-1 rounded-full bg-[#4d8fe0]"></span>
                     <span>{t}</span>
                   </li>
                 ))}

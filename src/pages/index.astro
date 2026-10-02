@@ -36,22 +36,22 @@ const faqs = [
   description="Coordinate research, development, verification, and operations across your projects — with budgets, approvals, and an immutable record of every change."
 >
   <!-- Section 1: Hero -->
-  <section class="relative pt-16 pb-20 overflow-hidden border-b border-[#23314D]/80">
-    <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full opacity-25" style="background: radial-gradient(ellipse at center, #4F8BFF, transparent 70%);"></div>
+  <section class="relative pt-16 pb-20 overflow-hidden border-b border-[#1e1e1e] bg-[#000000]">
+    <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full opacity-20" style="background: radial-gradient(ellipse at center, #4d8fe0, transparent 70%);"></div>
     <div class="max-w-5xl mx-auto px-4 sm:px-6 relative text-center">
 
       <!-- Availability Chip -->
       <div class="inline-flex items-center gap-2 mb-6">
         <StatusBadge status="Available" size="md" />
-        <span class="text-xs font-mono text-[#8A98B0]">Version 11 Technical Preview</span>
+        <span class="text-xs font-mono text-[#7c7d80]">Version 11 Technical Preview</span>
       </div>
 
-      <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#F5F7FB] leading-[1.08] mb-6">
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#e9e9ea] leading-[1.08] mb-6">
         Your command center for <br class="hidden sm:inline" />
-        <span class="text-[#4F8BFF]">AI-built software</span>.
+        <span class="text-[#4d8fe0]">AI-built software</span>.
       </h1>
 
-      <p class="text-lg sm:text-xl text-[#B7C2D6] max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+      <p class="text-lg sm:text-xl text-[#96979a] max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
         Coordinate research, development, verification, and operations across your projects — with budgets, approvals, and an immutable record of every change.
       </p>
 
@@ -59,131 +59,142 @@ const faqs = [
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
         <a
           href="/demo/"
-          class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#4F8BFF] text-[#0B1020] font-semibold text-sm hover:bg-[#689DFF] transition-all shadow-lg shadow-[#4F8BFF]/10 flex items-center justify-center gap-2"
+          class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#4d8fe0] text-[#000000] font-semibold text-sm hover:bg-[#7cadec] transition-all shadow-lg shadow-[#4d8fe0]/10 flex items-center justify-center gap-2"
         >
           <span>Explore Interactive Demo</span>
           <span>→</span>
         </a>
         <a
           href="/contact/"
-          class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#141D30] border border-[#23314D] text-[#F5F7FB] font-medium text-sm hover:bg-[#1D2940] transition-colors flex items-center justify-center gap-2"
+          class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#111111] border border-[#2c2c2c] text-[#e9e9ea] font-medium text-sm hover:bg-[#1a1a1a] transition-colors flex items-center justify-center gap-2"
         >
           <span>Request Access & Walkthrough</span>
         </a>
       </div>
 
-      <!-- Section 2: Product Proof (Command Center Canvas) -->
-      <div class="rounded-2xl border border-[#23314D] bg-[#141D30] overflow-hidden shadow-2xl text-left">
+      <!-- Section 2: Product Proof (Command Center Canvas Matching App UI) -->
+      <div class="rounded-2xl border border-[#1e1e1e] bg-[#0a0a0a] overflow-hidden shadow-2xl text-left">
         <!-- Canvas Top Bar -->
-        <div class="flex items-center justify-between px-4 py-3 border-b border-[#23314D] bg-[#0B1020]/90">
-          <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
-            <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
-            <span class="ml-2 font-mono text-xs text-[#8A98B0]">StructZero Command Center — v11.4</span>
-          </div>
+        <div class="flex items-center justify-between px-4 py-3 border-b border-[#1e1e1e] bg-[#000000]">
           <div class="flex items-center gap-3">
-            <span class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-mono bg-[#0B1020] text-[#34D399] border border-[#23314D]">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#34D399]"></span>
-              Docker Sandboxes Ready
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-mono text-[#96979a] pl-2 border-l border-[#1e1e1e]">
+              <span class="text-[#e9e9ea] font-semibold flex items-center gap-1.5">
+                <span class="text-[#4d8fe0]">▲</span> StructZero
+              </span>
+              <span class="text-[#7c7d80]">/</span>
+              <span>Workspace: aurora-studio</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <span class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-mono bg-[#101c2c] text-[#7cadec] border border-[#2c2c2c]">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#4f9e6e]"></span>
+              aurora-studio · BUILD
             </span>
-            <span class="text-[11px] font-mono text-[#4F8BFF] px-2 py-0.5 bg-[#4F8BFF]/10 rounded border border-[#4F8BFF]/30">
-              Interactive Canvas
+            <span class="text-[11px] font-mono text-[#96979a] px-2 py-0.5 bg-[#111111] rounded border border-[#1e1e1e]">
+              Open Full IDE
             </span>
           </div>
         </div>
 
-        <!-- Canvas Body (Authentic Product Layout) -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[#23314D] bg-[#0B1020]/60">
-          <!-- Left Column: Active Projects -->
-          <div class="lg:col-span-4 p-5 space-y-4">
-            <div class="flex items-center justify-between text-xs font-mono text-[#8A98B0]">
-              <span class="uppercase tracking-wider">Active Projects</span>
-              <span>3 Online</span>
-            </div>
+        <!-- Canvas Body: Authentic 3-Pane Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[#1e1e1e] bg-[#000000]">
+          <!-- Left Column: Session Drawer & Active Sessions -->
+          <div class="lg:col-span-3 p-4 space-y-4 bg-[#0a0a0a]">
+            <!-- Action Button -->
+            <button type="button" class="w-full py-2 px-3 rounded-lg bg-[#101c2c] border border-[#2c2c2c] text-[#7cadec] font-medium text-xs flex items-center justify-center gap-1.5 hover:bg-[#1a2c42] transition-colors">
+              <span>+ New Engineering Session</span>
+            </button>
 
-            <div class="space-y-2.5">
-              <div class="p-3.5 rounded-xl border border-[#4F8BFF]/40 bg-[#141D30] shadow-sm">
-                <div class="flex items-center justify-between mb-1.5">
-                  <span class="font-semibold text-sm text-[#F5F7FB]">StructZero Core V11</span>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#34D399]/10 text-[#34D399] border border-[#34D399]/30">RUNNING</span>
+            <div class="space-y-2">
+              <div class="text-[11px] font-mono uppercase tracking-wider text-[#7c7d80]">Recent Sessions</div>
+              <div class="space-y-1 text-xs">
+                <div class="p-2 rounded-md bg-[#111111] border border-[#2c2c2c] flex items-center justify-between text-[#e9e9ea]">
+                  <span class="font-medium text-[#7cadec]">aurora-studio</span>
+                  <span class="text-[10px] font-mono text-[#4f9e6e]">ACTIVE</span>
                 </div>
-                <div class="text-xs text-[#8A98B0]">Branch: plan/v11-release-integration</div>
-                <div class="mt-2.5 flex items-center justify-between text-[11px] text-[#B7C2D6]">
-                  <span>AST Graph: 142 Modules</span>
-                  <span class="text-[#4F8BFF]">Run #104 →</span>
+                <div class="p-2 rounded-md hover:bg-[#111111] flex items-center justify-between text-[#96979a] transition-colors">
+                  <span>dummy-preview-p...</span>
+                  <span class="text-[10px] font-mono text-[#7c7d80]">IDLE</span>
                 </div>
-              </div>
-
-              <div class="p-3.5 rounded-xl border border-[#23314D] bg-[#141D30]/60 hover:bg-[#141D30] transition-colors">
-                <div class="flex items-center justify-between mb-1.5">
-                  <span class="font-semibold text-sm text-[#F5F7FB]">FarmWatch Ag-Core</span>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#60A5FA]/10 text-[#60A5FA] border border-[#60A5FA]/30">VERIFIED</span>
+                <div class="p-2 rounded-md hover:bg-[#111111] flex items-center justify-between text-[#96979a] transition-colors">
+                  <span>neonfalcon</span>
+                  <span class="text-[10px] font-mono text-[#7c7d80]">IDLE</span>
                 </div>
-                <div class="text-xs text-[#8A98B0]">Branch: main · Fastify + Vite</div>
-                <div class="mt-2.5 flex items-center justify-between text-[11px] text-[#8A98B0]">
-                  <span>Last deploy: 42m ago</span>
-                  <span>AWS ECS</span>
+                <div class="p-2 rounded-md hover:bg-[#111111] flex items-center justify-between text-[#96979a] transition-colors">
+                  <span>project-lunarecho</span>
+                  <span class="text-[10px] font-mono text-[#7c7d80]">IDLE</span>
                 </div>
-              </div>
-
-              <div class="p-3.5 rounded-xl border border-[#23314D] bg-[#141D30]/60 hover:bg-[#141D30] transition-colors">
-                <div class="flex items-center justify-between mb-1.5">
-                  <span class="font-semibold text-sm text-[#F5F7FB]">BuildPilot Telemetry</span>
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-[#8A98B0]/10 text-[#8A98B0] border border-[#23314D]">IDLE</span>
-                </div>
-                <div class="text-xs text-[#8A98B0]">Event Bus: 12.8k recorded</div>
               </div>
             </div>
           </div>
 
-          <!-- Right Column: Active Run & Verification Inspector -->
-          <div class="lg:col-span-8 p-5 space-y-5">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-[#23314D] pb-3">
-              <div>
-                <span class="text-xs font-mono text-[#4F8BFF] block">RUN #104 — TOPOLOGICAL BUILD & PRE-FLIGHT VERIFY</span>
-                <span class="text-sm font-semibold text-[#F5F7FB]">Target: Multi-Model Debate & AST Module Confinement</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-xs font-mono px-2.5 py-1 rounded bg-[#FBBF24]/10 text-[#FBBF24] border border-[#FBBF24]/30 flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#FBBF24] animate-pulse"></span>
-                  Awaiting Operator Approval
-                </span>
-              </div>
+          <!-- Center Column: Workflow Steps & Metric Widgets -->
+          <div class="lg:col-span-4 p-4 space-y-4 bg-[#000000]">
+            <!-- Lifecycle Breadcrumb Strip -->
+            <div class="flex items-center gap-1 text-[11px] font-mono text-[#7c7d80] overflow-x-auto pb-1 border-b border-[#1e1e1e]">
+              <span class="text-[#4f9e6e]">● Define</span>
+              <span>→</span>
+              <span class="text-[#4f9e6e]">● Research</span>
+              <span>→</span>
+              <span class="text-[#4f9e6e]">● Debate</span>
+              <span>→</span>
+              <span class="text-[#7cadec] font-bold">● Build</span>
             </div>
 
-            <!-- Terminal / Event Stream Window -->
-            <div class="p-4 rounded-xl bg-[#0B1020] border border-[#23314D] font-mono text-xs space-y-1.5 text-left">
-              <div class="text-[#8A98B0]">[14:32:01] <span class="text-[#34D399]">ProjectDNA:</span> Abstract Syntax Tree parsed: 142 exports, 0 dangling imports.</div>
-              <div class="text-[#8A98B0]">[14:32:04] <span class="text-[#60A5FA]">DebateEngine:</span> Architect (Claude 3.5) drafted patch manifest; Reviewer (Gemini 3.6) flagged pagination defect.</div>
-              <div class="text-[#8A98B0]">[14:32:08] <span class="text-[#C084FC]">DebateEngine:</span> Judge (DeepSeek R1) issued binding consensus; patch approved.</div>
-              <div class="text-[#8A98B0]">[14:32:12] <span class="text-[#34D399]">CertificationGate:</span> AST syntax: PASS | Module resolution: PASS | Sandbox build: PASS</div>
-              <div class="text-[#FBBF24]">[14:32:15] SecurityGate: PAUSED: Cloud deployment to Vercel/AWS requires operator confirmation.</div>
-            </div>
+            <!-- Widgets Grid -->
+            <div class="space-y-3">
+              <div class="p-3 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+                <div class="text-[10px] font-mono text-[#7c7d80] uppercase">API Usage</div>
+                <div class="text-sm font-semibold text-[#e9e9ea] mt-0.5">Sandboxed Container</div>
+                <div class="text-[11px] text-[#96979a]">Claude 3.5 Sonnet + Gemini Flash</div>
+              </div>
 
-            <!-- Budget & Telemetry Bar -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-              <div class="p-3 rounded-lg bg-[#141D30] border border-[#23314D]">
-                <div class="text-[11px] font-mono text-[#8A98B0]">BUDGET CEILING</div>
-                <div class="text-sm font-bold text-[#F5F7FB] mt-0.5">$14.20 / $50.00</div>
-                <div class="w-full bg-[#0B1020] h-1.5 rounded-full mt-2 overflow-hidden">
-                  <div class="bg-[#34D399] h-full" style="width: 28%"></div>
+              <div class="p-3 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+                <div class="text-[10px] font-mono text-[#7c7d80] uppercase">Billing & Guardrails</div>
+                <div class="text-sm font-semibold text-[#e9e9ea] mt-0.5">$14.20 / $50.00 Limit</div>
+                <div class="w-full bg-[#000000] h-1.5 rounded-full mt-2 overflow-hidden border border-[#1e1e1e]">
+                  <div class="bg-[#4f9e6e] h-full" style="width: 28%"></div>
                 </div>
               </div>
-              <div class="p-3 rounded-lg bg-[#141D30] border border-[#23314D]">
-                <div class="text-[11px] font-mono text-[#8A98B0]">MODELS ACTIVE</div>
-                <div class="text-sm font-bold text-[#F5F7FB] mt-0.5">3 Models</div>
-                <div class="text-[10px] text-[#8A98B0] mt-1.5">Anthropic · Google · DeepSeek</div>
+
+              <div class="p-3 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+                <div class="flex items-center justify-between">
+                  <div class="text-[10px] font-mono text-[#7c7d80] uppercase">Preview Target</div>
+                  <span class="text-[10px] font-mono text-[#4f9e6e] flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#4f9e6e] animate-pulse"></span> Live
+                  </span>
+                </div>
+                <div class="text-xs text-[#96979a] mt-1">Generated: 18 files · 0 syntax defects</div>
               </div>
-              <div class="p-3 rounded-lg bg-[#141D30] border border-[#23314D]">
-                <div class="text-[11px] font-mono text-[#8A98B0]">SANDBOX STATUS</div>
-                <div class="text-sm font-bold text-[#34D399] mt-0.5">Isolated</div>
-                <div class="text-[10px] text-[#8A98B0] mt-1.5">Docker socket proxy clean</div>
-              </div>
-              <div class="p-3 rounded-lg bg-[#141D30] border border-[#23314D]">
-                <div class="text-[11px] font-mono text-[#8A98B0]">REMOTE CLIENT</div>
-                <div class="text-sm font-bold text-[#4F8BFF] mt-0.5">Connected</div>
-                <div class="text-[10px] text-[#8A98B0] mt-1.5">Android app listening</div>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Artifact Canvas / Workspace Preview -->
+          <div class="lg:col-span-5 p-4 space-y-3 bg-[#0a0a0a]">
+            <div class="flex items-center justify-between text-xs border-b border-[#1e1e1e] pb-2">
+              <span class="font-mono text-[#7cadec] font-semibold">PREVIEW: aurora / 01</span>
+              <span class="text-[11px] font-mono text-[#7c7d80]">index.html</span>
+            </div>
+
+            <!-- Terminal / Event Stream Output -->
+            <div class="p-3 rounded-xl bg-[#000000] border border-[#1e1e1e] font-mono text-xs space-y-1.5">
+              <div class="text-[#7c7d80]">[14:32:01] <span class="text-[#4f9e6e]">ProjectDNA:</span> Abstract Syntax Tree parsed: 142 exports.</div>
+              <div class="text-[#7c7d80]">[14:32:04] <span class="text-[#7cadec]">Debate:</span> Architect (Claude) proposal critiqued by Reviewer (Gemini).</div>
+              <div class="text-[#7c7d80]">[14:32:08] <span class="text-[#b388eb]">Judge:</span> DeepSeek R1 approved final layout patch.</div>
+              <div class="text-[#7c7d80]">[14:32:12] <span class="text-[#4f9e6e]">Certify:</span> Syntax: PASS | Imports: PASS | Build: PASS</div>
+              <div class="text-[#c19a4a]">[14:32:15] Intercept: PAUSED awaiting operator deploy approval.</div>
+            </div>
+
+            <div class="p-3 rounded-lg bg-[#111111] border border-[#2c2c2c] flex items-center justify-between text-xs">
+              <span class="text-[#e9e9ea]">Operator Confirmation:</span>
+              <div class="flex gap-2">
+                <span class="px-2.5 py-1 rounded text-[11px] font-semibold bg-[#4f9e6e] text-[#000000]">Approve</span>
+                <span class="px-2.5 py-1 rounded text-[11px] font-semibold bg-[#1a1a1a] text-[#e9e9ea] border border-[#2c2c2c]">Deny</span>
               </div>
             </div>
           </div>
@@ -193,29 +204,29 @@ const faqs = [
   </section>
 
   <!-- Section 3: 8-Stage Lifecycle -->
-  <section class="py-20 border-b border-[#23314D]/80 bg-[#10172A]/40">
+  <section class="py-20 border-b border-[#1e1e1e] bg-[#0a0a0a]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-3xl mx-auto mb-14">
-        <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold block mb-2">
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
           Governed Execution Pipeline
         </span>
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#F5F7FB] mb-4">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea] mb-4">
           The 8-Stage Engineering Lifecycle
         </h2>
-        <p class="text-base text-[#B7C2D6]">
+        <p class="text-base text-[#96979a]">
           Every generation follows the exact sequence an enterprise engineering department would execute.
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {lifecycleSteps.map((item) => (
-          <div class="p-5 rounded-xl border border-[#23314D] bg-[#141D30] hover:border-[#4F8BFF]/40 transition-colors">
+          <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111] hover:border-[#2c2c2c] transition-colors">
             <div class="flex items-center justify-between mb-3">
-              <span class="font-mono text-xs font-bold text-[#4F8BFF]">{item.step}</span>
-              <span class="w-2 h-2 rounded-full bg-[#4F8BFF]/30"></span>
+              <span class="font-mono text-xs font-bold text-[#7cadec]">{item.step}</span>
+              <span class="w-2 h-2 rounded-full bg-[#4d8fe0]/30"></span>
             </div>
-            <h3 class="text-base font-bold text-[#F5F7FB] mb-1.5">{item.name}</h3>
-            <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed">{item.desc}</p>
+            <h3 class="text-base font-bold text-[#e9e9ea] mb-1.5">{item.name}</h3>
+            <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
@@ -223,71 +234,71 @@ const faqs = [
   </section>
 
   <!-- Section 4: Three Core Outcome Groups -->
-  <section class="py-20 border-b border-[#23314D]/80">
+  <section class="py-20 border-b border-[#1e1e1e] bg-[#000000]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-3xl mx-auto mb-14">
-        <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold block mb-2">
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
           Purpose-Built Architecture
         </span>
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#F5F7FB] mb-4">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea] mb-4">
           Engineered for Real Software Production
         </h2>
-        <p class="text-base text-[#B7C2D6]">
+        <p class="text-base text-[#96979a]">
           Three distinct operational workflows configured for developers, teams, and autonomous pipelines.
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Outcome 1 -->
-        <div class="p-6 rounded-2xl border border-[#23314D] bg-[#141D30] flex flex-col justify-between">
+        <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#4F8BFF]/10 border border-[#4F8BFF]/30 flex items-center justify-center text-[#4F8BFF] mb-5">
+            <div class="w-10 h-10 rounded-xl bg-[#101c2c] border border-[#2c2c2c] flex items-center justify-center text-[#7cadec] mb-5">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
               </svg>
             </div>
-            <h3 class="text-lg font-bold text-[#F5F7FB] mb-2.5">Build a Product</h3>
-            <p class="text-sm text-[#B7C2D6] leading-relaxed mb-4">
+            <h3 class="text-lg font-bold text-[#e9e9ea] mb-2.5">Build a Product</h3>
+            <p class="text-sm text-[#96979a] leading-relaxed mb-4">
               Turn specifications into multi-file production applications. Files are written in strict topological dependency order with validated interfaces and zero dangling imports.
             </p>
           </div>
-          <div class="pt-4 border-t border-[#23314D] text-xs font-mono text-[#8A98B0]">
+          <div class="pt-4 border-t border-[#1e1e1e] text-xs font-mono text-[#7c7d80]">
             AST Project DNA · Pre-flight compilation
           </div>
         </div>
 
         <!-- Outcome 2 -->
-        <div class="p-6 rounded-2xl border border-[#23314D] bg-[#141D30] flex flex-col justify-between">
+        <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#34D399]/10 border border-[#34D399]/30 flex items-center justify-center text-[#34D399] mb-5">
+            <div class="w-10 h-10 rounded-xl bg-[#0f2417] border border-[#1e3a29] flex items-center justify-center text-[#4f9e6e] mb-5">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
             </div>
-            <h3 class="text-lg font-bold text-[#F5F7FB] mb-2.5">Operate a Portfolio</h3>
-            <p class="text-sm text-[#B7C2D6] leading-relaxed mb-4">
+            <h3 class="text-lg font-bold text-[#e9e9ea] mb-2.5">Operate a Portfolio</h3>
+            <p class="text-sm text-[#96979a] leading-relaxed mb-4">
               Manage dozens of concurrent projects from a centralized dashboard. Inspect historical runs, model token spend, latency metrics, and container sandboxes in real time.
             </p>
           </div>
-          <div class="pt-4 border-t border-[#23314D] text-xs font-mono text-[#8A98B0]">
+          <div class="pt-4 border-t border-[#1e1e1e] text-xs font-mono text-[#7c7d80]">
             Multi-project telemetry · Cost attribution
           </div>
         </div>
 
         <!-- Outcome 3 -->
-        <div class="p-6 rounded-2xl border border-[#23314D] bg-[#141D30] flex flex-col justify-between">
+        <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] flex flex-col justify-between">
           <div>
-            <div class="w-10 h-10 rounded-xl bg-[#FBBF24]/10 border border-[#FBBF24]/30 flex items-center justify-center text-[#FBBF24] mb-5">
+            <div class="w-10 h-10 rounded-xl bg-[#2b2210] border border-[#423318] flex items-center justify-center text-[#c19a4a] mb-5">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <h3 class="text-lg font-bold text-[#F5F7FB] mb-2.5">Improve Safely</h3>
-            <p class="text-sm text-[#B7C2D6] leading-relaxed mb-4">
+            <h3 class="text-lg font-bold text-[#e9e9ea] mb-2.5">Improve Safely</h3>
+            <p class="text-sm text-[#96979a] leading-relaxed mb-4">
               Enforce strict human authorization boundaries for cloud deployments, migrations, and destructive operations. Autonomous runs stop and wait for explicit sign-off.
             </p>
           </div>
-          <div class="pt-4 border-t border-[#23314D] text-xs font-mono text-[#8A98B0]">
+          <div class="pt-4 border-t border-[#1e1e1e] text-xs font-mono text-[#7c7d80]">
             Budget ceilings · Isolated preview environments
           </div>
         </div>
@@ -296,61 +307,61 @@ const faqs = [
   </section>
 
   <!-- Section 5: Web + Native Android Control -->
-  <section class="py-20 border-b border-[#23314D]/80 bg-[#10172A]/30">
+  <section class="py-20 border-b border-[#1e1e1e] bg-[#0a0a0a]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         <div class="lg:col-span-6 space-y-6">
-          <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold block">
+          <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block">
             Dual Control Surfaces
           </span>
-          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#F5F7FB] leading-tight">
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea] leading-tight">
             Web Command Center & <br />Native Android Remote Control
           </h2>
-          <p class="text-base text-[#B7C2D6] leading-relaxed">
+          <p class="text-base text-[#96979a] leading-relaxed">
             Manage projects from your workstation or authorize critical deployment gates from anywhere. StructZero Remote connects natively via secure WebSocket protocols to give you mobile command over runs, budgets, and releases.
           </p>
-          <ul class="space-y-3 text-sm text-[#B7C2D6]">
+          <ul class="space-y-3 text-sm text-[#96979a]">
             <li class="flex items-start gap-3">
-              <span class="w-5 h-5 rounded bg-[#4F8BFF]/20 text-[#4F8BFF] flex items-center justify-center shrink-0 mt-0.5">✓</span>
+              <span class="w-5 h-5 rounded bg-[#101c2c] text-[#7cadec] flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
               <span><strong>Real-time push notifications</strong> when runs require operator approval.</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="w-5 h-5 rounded bg-[#4F8BFF]/20 text-[#4F8BFF] flex items-center justify-center shrink-0 mt-0.5">✓</span>
+              <span class="w-5 h-5 rounded bg-[#101c2c] text-[#7cadec] flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
               <span><strong>Live run telemetry</strong>: model token burn, build step logs, and health status.</span>
             </li>
             <li class="flex items-start gap-3">
-              <span class="w-5 h-5 rounded bg-[#4F8BFF]/20 text-[#4F8BFF] flex items-center justify-center shrink-0 mt-0.5">✓</span>
+              <span class="w-5 h-5 rounded bg-[#101c2c] text-[#7cadec] flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
               <span><strong>Separate generated-app pipeline</strong>: build native Android apps with Gradle sandboxes.</span>
             </li>
           </ul>
           <div>
-            <a href="/android/" class="inline-flex items-center gap-2 text-sm font-semibold text-[#4F8BFF] hover:underline">
+            <a href="/android/" class="inline-flex items-center gap-2 text-sm font-semibold text-[#4d8fe0] hover:text-[#7cadec] transition-colors">
               Explore Native Android Architecture →
             </a>
           </div>
         </div>
 
         <div class="lg:col-span-6">
-          <div class="p-6 rounded-2xl border border-[#23314D] bg-[#141D30] shadow-xl">
-            <div class="flex items-center justify-between pb-4 border-b border-[#23314D] mb-4 text-xs font-mono text-[#8A98B0]">
+          <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] shadow-xl">
+            <div class="flex items-center justify-between pb-4 border-b border-[#1e1e1e] mb-4 text-xs font-mono text-[#7c7d80]">
               <span>REMOTE EVENT PUSH</span>
-              <span class="text-[#34D399]">LIVE SYNC</span>
+              <span class="text-[#4f9e6e]">LIVE SYNC</span>
             </div>
             <div class="space-y-3">
-              <div class="p-3 rounded-lg bg-[#0B1020] border border-[#FBBF24]/40 flex items-center justify-between">
+              <div class="p-3.5 rounded-lg bg-[#000000] border border-[#423318] flex items-center justify-between">
                 <div>
-                  <div class="text-xs font-semibold text-[#F5F7FB]">Run #104 Paused</div>
-                  <div class="text-[11px] text-[#8A98B0]">Action: Deploy to Vercel Edge</div>
+                  <div class="text-xs font-semibold text-[#e9e9ea]">Run #104 Paused</div>
+                  <div class="text-[11px] text-[#7c7d80]">Action: Deploy to Vercel Edge</div>
                 </div>
                 <div class="flex gap-2">
-                  <span class="px-2.5 py-1 rounded text-[11px] font-semibold bg-[#34D399] text-[#0B1020]">Approve</span>
-                  <span class="px-2.5 py-1 rounded text-[11px] font-semibold bg-[#23314D] text-[#F5F7FB]">Deny</span>
+                  <span class="px-2.5 py-1 rounded text-[11px] font-semibold bg-[#4f9e6e] text-[#000000]">Approve</span>
+                  <span class="px-2.5 py-1 rounded text-[11px] font-semibold bg-[#1a1a1a] text-[#e9e9ea] border border-[#2c2c2c]">Deny</span>
                 </div>
               </div>
-              <div class="p-3 rounded-lg bg-[#0B1020] border border-[#23314D] text-xs space-y-1">
-                <div class="text-[#8A98B0]">Active Device: Pixel 8 Pro (Android 14)</div>
-                <div class="text-[#8A98B0]">Authentication: mTLS + JWT Session Token</div>
-                <div class="text-[#34D399]">Heartbeat: 140ms latency</div>
+              <div class="p-3.5 rounded-lg bg-[#000000] border border-[#1e1e1e] text-xs space-y-1">
+                <div class="text-[#7c7d80]">Active Device: Pixel 8 Pro (Android 14)</div>
+                <div class="text-[#7c7d80]">Authentication: mTLS + JWT Session Token</div>
+                <div class="text-[#4f9e6e]">Heartbeat: 140ms latency</div>
               </div>
             </div>
           </div>
@@ -360,49 +371,49 @@ const faqs = [
   </section>
 
   <!-- Section 6: Trust, Evidence & Controls -->
-  <section class="py-20 border-b border-[#23314D]/80">
+  <section class="py-20 border-b border-[#1e1e1e] bg-[#000000]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-3xl mx-auto mb-14">
-        <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold block mb-2">
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
           Enterprise Security Posture
         </span>
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#F5F7FB] mb-4">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea] mb-4">
           Strict Isolation & Audit Guarantees
         </h2>
-        <p class="text-base text-[#B7C2D6]">
+        <p class="text-base text-[#96979a]">
           Engineered for regulated environments where uncontrolled agent execution is unacceptable.
         </p>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="p-5 rounded-xl border border-[#23314D] bg-[#141D30]">
-          <h3 class="text-base font-semibold text-[#F5F7FB] mb-2">Container Sandboxing</h3>
-          <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed">
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-base font-semibold text-[#e9e9ea] mb-2">Container Sandboxing</h3>
+          <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
             All code compilation, tests, and generation run inside isolated container sandboxes with strictly confined filesystem boundaries.
           </p>
         </div>
-        <div class="p-5 rounded-xl border border-[#23314D] bg-[#141D30]">
-          <h3 class="text-base font-semibold text-[#F5F7FB] mb-2">Immutable Audit Trails</h3>
-          <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed">
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-base font-semibold text-[#e9e9ea] mb-2">Immutable Audit Trails</h3>
+          <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
             Every prompt, model debate transcript, AST check, and user authorization is written to tamper-evident JSONL logs.
           </p>
         </div>
-        <div class="p-5 rounded-xl border border-[#23314D] bg-[#141D30]">
-          <h3 class="text-base font-semibold text-[#F5F7FB] mb-2">Secret Masking</h3>
-          <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed">
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-base font-semibold text-[#e9e9ea] mb-2">Secret Masking</h3>
+          <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
             API keys, tokens, and database credentials are automatically masked from model prompts and context windows.
           </p>
         </div>
-        <div class="p-5 rounded-xl border border-[#23314D] bg-[#141D30]">
-          <h3 class="text-base font-semibold text-[#F5F7FB] mb-2">Human Authorization</h3>
-          <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed">
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-base font-semibold text-[#e9e9ea] mb-2">Human Authorization</h3>
+          <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
             Hard execution intercepts pause before billable cloud provisioning or destructive operations can occur.
           </p>
         </div>
       </div>
 
       <div class="mt-8 text-center">
-        <a href="/security/" class="text-xs font-mono text-[#4F8BFF] hover:underline">
+        <a href="/security/" class="text-xs font-mono text-[#4d8fe0] hover:text-[#7cadec] transition-colors">
           Read Full Security Architecture & Controls →
         </a>
       </div>
@@ -410,30 +421,30 @@ const faqs = [
   </section>
 
   <!-- Section 7: Available vs Next (Roadmap Snapshot) -->
-  <section class="py-20 border-b border-[#23314D]/80 bg-[#10172A]/40">
+  <section class="py-20 border-b border-[#1e1e1e] bg-[#0a0a0a]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
         <div>
-          <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold block mb-2">
+          <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
             Release Transparency
           </span>
-          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#F5F7FB]">
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea]">
             Platform Availability & Roadmap
           </h2>
         </div>
-        <a href="/roadmap/" class="text-xs font-mono text-[#4F8BFF] hover:underline">
+        <a href="/roadmap/" class="text-xs font-mono text-[#4d8fe0] hover:text-[#7cadec] transition-colors">
           View Complete Product Roadmap →
         </a>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="p-6 rounded-xl border border-[#23314D] bg-[#141D30]">
+        <div class="p-6 rounded-xl border border-[#1e1e1e] bg-[#111111]">
           <div class="flex items-center justify-between mb-4">
-            <span class="font-mono text-xs text-[#8A98B0]">VERSION 11 CORE</span>
+            <span class="font-mono text-xs text-[#7c7d80]">VERSION 11 CORE</span>
             <StatusBadge status="Available" size="sm" />
           </div>
-          <h3 class="text-base font-bold text-[#F5F7FB] mb-3">Multi-Model Command Center</h3>
-          <ul class="space-y-2 text-xs text-[#B7C2D6]">
+          <h3 class="text-base font-bold text-[#e9e9ea] mb-3">Multi-Model Command Center</h3>
+          <ul class="space-y-2 text-xs text-[#96979a]">
             <li>✓ Multi-model architecture debate engine</li>
             <li>✓ AST Project DNA parser & symbol index</li>
             <li>✓ Automated certification pre-flight gate</li>
@@ -442,13 +453,13 @@ const faqs = [
           </ul>
         </div>
 
-        <div class="p-6 rounded-xl border border-[#23314D] bg-[#141D30]">
+        <div class="p-6 rounded-xl border border-[#1e1e1e] bg-[#111111]">
           <div class="flex items-center justify-between mb-4">
-            <span class="font-mono text-xs text-[#8A98B0]">VERSION 11 REMOTE</span>
+            <span class="font-mono text-xs text-[#7c7d80]">VERSION 11 REMOTE</span>
             <StatusBadge status="In Development" size="sm" />
           </div>
-          <h3 class="text-base font-bold text-[#F5F7FB] mb-3">Native Android Remote</h3>
-          <ul class="space-y-2 text-xs text-[#B7C2D6]">
+          <h3 class="text-base font-bold text-[#e9e9ea] mb-3">Native Android Remote</h3>
+          <ul class="space-y-2 text-xs text-[#96979a]">
             <li>• StructZero Remote native Android client</li>
             <li>• Push-notification approval workflow</li>
             <li>• Mobile run telemetry & budget meters</li>
@@ -456,13 +467,13 @@ const faqs = [
           </ul>
         </div>
 
-        <div class="p-6 rounded-xl border border-[#23314D] bg-[#141D30]">
+        <div class="p-6 rounded-xl border border-[#1e1e1e] bg-[#111111]">
           <div class="flex items-center justify-between mb-4">
-            <span class="font-mono text-xs text-[#8A98B0]">VERSION 12 HORIZON</span>
+            <span class="font-mono text-xs text-[#7c7d80]">VERSION 12 HORIZON</span>
             <StatusBadge status="Planned" size="sm" />
           </div>
-          <h3 class="text-base font-bold text-[#F5F7FB] mb-3">Autonomous Evolution</h3>
-          <ul class="space-y-2 text-xs text-[#B7C2D6]">
+          <h3 class="text-base font-bold text-[#e9e9ea] mb-3">Autonomous Evolution</h3>
+          <ul class="space-y-2 text-xs text-[#96979a]">
             <li>• Continuous autonomous patch verification</li>
             <li>• Cross-cloud workload synthesis (AWS/GCP/Azure)</li>
             <li>• Enterprise SSO & RBAC policy governance</li>
@@ -473,25 +484,25 @@ const faqs = [
   </section>
 
   <!-- Section 8: Final CTA + Focused FAQ -->
-  <section class="py-20">
+  <section class="py-20 bg-[#000000]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#F5F7FB] mb-4">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea] mb-4">
           Ready to Coordinate Your AI Engineering?
         </h2>
-        <p class="text-base text-[#B7C2D6] max-w-xl mx-auto mb-8">
+        <p class="text-base text-[#96979a] max-w-xl mx-auto mb-8">
           Explore the interactive command center tour or request a technical walkthrough for your team.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
             href="/demo/"
-            class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#4F8BFF] text-[#0B1020] font-semibold text-sm hover:bg-[#689DFF] transition-all"
+            class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#4d8fe0] text-[#000000] font-semibold text-sm hover:bg-[#7cadec] transition-all"
           >
             Explore Interactive Demo
           </a>
           <a
             href="/contact/"
-            class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#141D30] border border-[#23314D] text-[#F5F7FB] font-medium text-sm hover:bg-[#1D2940] transition-colors"
+            class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#111111] border border-[#2c2c2c] text-[#e9e9ea] font-medium text-sm hover:bg-[#1a1a1a] transition-colors"
           >
             Request Technical Walkthrough
           </a>
@@ -499,13 +510,13 @@ const faqs = [
       </div>
 
       <!-- Focused Adoption FAQ -->
-      <div class="border-t border-[#23314D] pt-12">
-        <h3 class="text-xl font-bold text-[#F5F7FB] mb-6 text-center">Frequently Asked Adoption Questions</h3>
+      <div class="border-t border-[#1e1e1e] pt-12">
+        <h3 class="text-xl font-bold text-[#e9e9ea] mb-6 text-center">Frequently Asked Adoption Questions</h3>
         <div class="space-y-4">
           {faqs.map(faq => (
-            <div class="p-5 rounded-xl border border-[#23314D] bg-[#141D30]">
-              <h4 class="text-sm font-semibold text-[#F5F7FB] mb-2">{faq.q}</h4>
-              <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed">{faq.a}</p>
+            <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+              <h4 class="text-sm font-semibold text-[#e9e9ea] mb-2">{faq.q}</h4>
+              <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>

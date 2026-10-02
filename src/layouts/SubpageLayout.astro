@@ -29,53 +29,53 @@ const {
 
 <Base title={`${title} — StructZero`} description={description}>
   <!-- Subpage Header -->
-  <section class="relative pt-12 pb-10 border-b border-[#23314D] bg-[#141D30]/40 overflow-hidden">
+  <section class="relative pt-12 pb-10 border-b border-[#1e1e1e] bg-[#0a0a0a] overflow-hidden">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 relative">
-      <nav class="flex items-center gap-2 text-xs font-mono text-[#8A98B0] mb-4" aria-label="Breadcrumb">
-        <a href="/" class="hover:text-[#4F8BFF] transition-colors">Home</a>
+      <nav class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-[#4d8fe0] transition-colors">Home</a>
         <span>/</span>
         {category && (
           <>
-            <a href="/modules/" class="hover:text-[#4F8BFF] transition-colors">{category}</a>
+            <a href="/modules/" class="hover:text-[#4d8fe0] transition-colors">{category}</a>
             <span>/</span>
           </>
         )}
-        <span class="text-[#F5F7FB] font-medium">{title}</span>
+        <span class="text-[#e9e9ea] font-medium">{title}</span>
       </nav>
 
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#F5F7FB]">{title}</h1>
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea]">{title}</h1>
         <StatusBadge status={status} size="md" />
       </div>
 
-      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-3xl leading-relaxed mb-6">
+      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed mb-6">
         {description}
       </p>
 
       {summary && (
-        <div class="p-4 rounded-xl border border-[#4F8BFF]/30 bg-[#4F8BFF]/10 text-sm text-[#F5F7FB] max-w-3xl">
-          <span class="font-mono text-xs uppercase text-[#4F8BFF] font-bold block mb-1">Architecture Summary</span>
-          <p class="leading-relaxed text-[#B7C2D6]">{summary}</p>
+        <div class="p-4 rounded-xl border border-[#2c2c2c] bg-[#101c2c] text-sm text-[#e9e9ea] max-w-3xl">
+          <span class="font-mono text-xs uppercase text-[#7cadec] font-bold block mb-1">Architecture Summary</span>
+          <p class="leading-relaxed text-[#96979a]">{summary}</p>
         </div>
       )}
     </div>
   </section>
 
   <!-- Main Body Content -->
-  <section class="py-12">
+  <section class="py-12 bg-[#000000]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-12">
       {video && (
-        <div class="rounded-2xl border border-[#23314D] bg-[#141D30] overflow-hidden shadow-2xl text-left">
-          <div class="flex items-center justify-between px-4 py-3 border-b border-[#23314D] bg-[#0B1020]/90">
+        <div class="rounded-2xl border border-[#1e1e1e] bg-[#111111] overflow-hidden shadow-2xl text-left">
+          <div class="flex items-center justify-between px-4 py-3 border-b border-[#1e1e1e] bg-[#000000]">
             <div class="flex items-center gap-2">
               <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
               <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
               <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
             </div>
-            <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-[#141D30] border border-[#23314D] font-mono text-[11px] text-[#B7C2D6]">
+            <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-[#111111] border border-[#1e1e1e] font-mono text-[11px] text-[#96979a]">
               <span>{video.title}</span>
             </div>
-            <div class="font-mono text-[11px] text-[#4F8BFF] font-semibold px-2 py-0.5 rounded bg-[#4F8BFF]/10 border border-[#4F8BFF]/30">
+            <div class="font-mono text-[11px] text-[#7cadec] font-semibold px-2 py-0.5 rounded bg-[#101c2c] border border-[#2c2c2c]">
               {video.label || 'TECHNICAL WALKTHROUGH'}
             </div>
           </div>
@@ -94,19 +94,19 @@ const {
       )}
 
       <!-- Slot Content -->
-      <div class="prose prose-invert prose-headings:text-[#F5F7FB] prose-p:text-[#B7C2D6] prose-a:text-[#4F8BFF] prose-code:text-[#F5F7FB] prose-pre:bg-[#141D30] prose-pre:border prose-pre:border-[#23314D] max-w-none">
+      <div class="prose prose-invert prose-headings:text-[#e9e9ea] prose-p:text-[#96979a] prose-a:text-[#4d8fe0] prose-code:text-[#e9e9ea] prose-pre:bg-[#111111] prose-pre:border prose-pre:border-[#1e1e1e] max-w-none">
         <slot />
       </div>
 
       <!-- Features Grid -->
       {features.length > 0 && (
-        <div class="border-t border-[#23314D] pt-10">
-          <h2 class="text-xl font-bold text-[#F5F7FB] mb-6">Key Capabilities</h2>
+        <div class="border-t border-[#1e1e1e] pt-10">
+          <h2 class="text-xl font-bold text-[#e9e9ea] mb-6">Key Capabilities</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             {features.map(f => (
-              <div class="p-5 rounded-xl border border-[#23314D] bg-[#141D30]">
-                <h3 class="text-sm font-semibold text-[#F5F7FB] mb-1.5">{f.title}</h3>
-                <p class="text-xs text-[#B7C2D6] leading-relaxed">{f.desc}</p>
+              <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+                <h3 class="text-sm font-semibold text-[#e9e9ea] mb-1.5">{f.title}</h3>
+                <p class="text-xs text-[#96979a] leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
@@ -115,13 +115,13 @@ const {
 
       <!-- FAQs Section -->
       {faqs.length > 0 && (
-        <div class="border-t border-[#23314D] pt-10">
-          <h2 class="text-xl font-bold text-[#F5F7FB] mb-6">Frequently Asked Questions</h2>
+        <div class="border-t border-[#1e1e1e] pt-10">
+          <h2 class="text-xl font-bold text-[#e9e9ea] mb-6">Frequently Asked Questions</h2>
           <div class="space-y-4">
             {faqs.map(faq => (
-              <div class="p-5 rounded-xl border border-[#23314D] bg-[#141D30]">
-                <h3 class="text-sm font-semibold text-[#F5F7FB] mb-2">{faq.q}</h3>
-                <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed">{faq.a}</p>
+              <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+                <h3 class="text-sm font-semibold text-[#e9e9ea] mb-2">{faq.q}</h3>
+                <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -130,16 +130,16 @@ const {
 
       <!-- Related Documentation -->
       {related.length > 0 && (
-        <div class="border-t border-[#23314D] pt-8">
-          <h3 class="text-xs font-mono uppercase tracking-wider text-[#8A98B0] mb-4">Related Documentation</h3>
+        <div class="border-t border-[#1e1e1e] pt-8">
+          <h3 class="text-xs font-mono uppercase tracking-wider text-[#7c7d80] mb-4">Related Documentation</h3>
           <div class="flex flex-wrap gap-3">
             {related.map(r => (
               <a
                 href={r.href}
-                class="inline-flex items-center gap-2 text-xs font-medium px-3.5 py-2 rounded-lg border border-[#23314D] bg-[#141D30] text-[#B7C2D6] hover:text-[#4F8BFF] hover:border-[#4F8BFF]/40 transition-colors"
+                class="inline-flex items-center gap-2 text-xs font-medium px-3.5 py-2 rounded-lg border border-[#1e1e1e] bg-[#111111] text-[#96979a] hover:text-[#4d8fe0] hover:border-[#2c2c2c] transition-colors"
               >
                 <span>{r.label}</span>
-                <span class="text-[#4F8BFF]">→</span>
+                <span class="text-[#4d8fe0]">→</span>
               </a>
             ))}
           </div>

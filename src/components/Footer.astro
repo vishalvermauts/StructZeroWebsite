@@ -50,18 +50,18 @@ const footerSections = [
 ];
 ---
 
-<footer class="border-t border-[#23314D] bg-[#0B1020] pt-16 pb-12 text-[#B7C2D6]">
+<footer class="border-t border-[#1e1e1e] bg-[#000000] pt-16 pb-12 text-[#96979a]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6">
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mb-14">
       {footerSections.map(section => (
         <div>
-          <h3 class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold mb-4">
+          <h3 class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold mb-4">
             {section.title}
           </h3>
           <ul class="space-y-2.5 text-sm">
             {section.links.map(link => (
               <li>
-                <a href={link.href} class="hover:text-white transition-colors">
+                <a href={link.href} class="hover:text-[#e9e9ea] transition-colors">
                   {link.label}
                 </a>
               </li>
@@ -72,18 +72,18 @@ const footerSections = [
     </div>
 
     <!-- Bottom Bar -->
-    <div class="border-t border-[#23314D]/80 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8A98B0]">
+    <div class="border-t border-[#1e1e1e] pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#7c7d80]">
       <div class="flex items-center gap-2.5">
-        <div class="w-5 h-5 rounded bg-[#141D30] border border-[#23314D] flex items-center justify-center text-[#4F8BFF]">
+        <div class="w-5 h-5 rounded bg-[#111111] border border-[#2c2c2c] flex items-center justify-center text-[#4d8fe0]">
           <BrandMark size={14} />
         </div>
-        <span class="font-semibold text-[#F5F7FB]">StructZero Platform</span>
-        <span class="hidden md:inline text-[#3A4C70]">|</span>
+        <span class="font-semibold text-[#e9e9ea]">StructZero Platform</span>
+        <span class="hidden md:inline text-[#2c2c2c]">|</span>
         <span class="hidden md:inline">Command center for governed AI-built software.</span>
       </div>
       <div class="flex items-center gap-4">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-[#141D30] text-[#34D399] border border-[#23314D]">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#34D399]"></span>
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-[#111111] text-[#4f9e6e] border border-[#1e1e1e]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#4f9e6e]"></span>
           Version 11 Preview
         </span>
         <span>© {new Date().getFullYear()} StructZero. All rights reserved.</span>

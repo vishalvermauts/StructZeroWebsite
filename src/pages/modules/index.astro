@@ -107,48 +107,48 @@ const moduleList = [
   description="Explore StructZero platform modules: Build, Research, Security, Operations, Knowledge, and Automation with verified release availability."
 >
   <!-- Hero Section -->
-  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="flex items-center gap-2 text-xs font-mono text-[#8A98B0] mb-4">
-        <a href="/" class="hover:text-[#4F8BFF]">Home</a>
+      <div class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4">
+        <a href="/" class="hover:text-[#4d8fe0]">Home</a>
         <span>/</span>
-        <span class="text-[#F5F7FB]">Modules</span>
+        <span class="text-[#e9e9ea]">Modules</span>
       </div>
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB]">Modules Directory</h1>
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea]">Modules Directory</h1>
         <StatusBadge status="Available" size="md" />
       </div>
-      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-3xl leading-relaxed">
+      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed">
         StructZero breaks down software engineering into modular capabilities. Review each module's technical scope, operational boundaries, and current release availability.
       </p>
     </div>
   </section>
 
   <!-- Module Cards with Required Anchors -->
-  <section class="py-16">
+  <section class="py-16 bg-[#000000]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-12">
       {moduleList.map((m) => (
-        <div id={m.id} class="p-6 sm:p-8 rounded-2xl border border-[#23314D] bg-[#141D30] scroll-mt-24 space-y-5">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#23314D] pb-4">
+        <div id={m.id} class="p-6 sm:p-8 rounded-2xl border border-[#1e1e1e] bg-[#111111] scroll-mt-24 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#1e1e1e] pb-4">
             <div>
-              <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] block mb-1">
+              <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] block mb-1">
                 MODULE #{m.id.toUpperCase()}
               </span>
-              <h2 class="text-2xl font-bold text-[#F5F7FB]">{m.title}</h2>
+              <h2 class="text-2xl font-bold text-[#e9e9ea]">{m.title}</h2>
             </div>
             <StatusBadge status={m.status} size="md" />
           </div>
 
-          <p class="text-sm sm:text-base text-[#B7C2D6] leading-relaxed">
+          <p class="text-sm sm:text-base text-[#96979a] leading-relaxed">
             {m.summary}
           </p>
 
-          <div class="p-4 rounded-xl bg-[#0B1020] border border-[#23314D]">
-            <h3 class="text-xs font-mono uppercase tracking-wider text-[#8A98B0] mb-3">Technical Specifications</h3>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#B7C2D6]">
+          <div class="p-4 rounded-xl bg-[#000000] border border-[#1e1e1e]">
+            <h3 class="text-xs font-mono uppercase tracking-wider text-[#7c7d80] mb-3">Technical Specifications</h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#96979a]">
               {m.details.map((d) => (
                 <li class="flex items-start gap-2">
-                  <span class="text-[#4F8BFF] font-bold">✓</span>
+                  <span class="text-[#4d8fe0] font-bold">✓</span>
                   <span>{d}</span>
                 </li>
               ))}

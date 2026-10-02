@@ -13,24 +13,24 @@ const navLinks = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="sticky top-0 z-50 backdrop-blur-md bg-[#0B1020]/90 border-b border-[#23314D]/80">
+<header class="sticky top-0 z-50 backdrop-blur-md bg-[#000000]/90 border-b border-[#1e1e1e]">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
     <!-- Brand Logo -->
-    <a href="/" class="flex items-center gap-3 font-semibold text-base tracking-tight text-white hover:opacity-95 transition-opacity shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4F8BFF] rounded-md px-1 py-0.5">
-      <div class="w-8 h-8 rounded-lg bg-[#141D30] border border-[#23314D] flex items-center justify-center text-[#4F8BFF]">
+    <a href="/" class="flex items-center gap-3 font-semibold text-base tracking-tight text-white hover:opacity-95 transition-opacity shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4d8fe0] rounded-md px-1 py-0.5">
+      <div class="w-8 h-8 rounded-lg bg-[#111111] border border-[#2c2c2c] flex items-center justify-center text-[#4d8fe0]">
         <BrandMark size={22} />
       </div>
-      <span class="font-sans font-bold text-lg text-[#F5F7FB]">StructZero</span>
+      <span class="font-sans font-bold text-lg text-[#e9e9ea]">StructZero</span>
     </a>
 
     <!-- Desktop Navigation Links -->
-    <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-[14px] font-medium text-[#B7C2D6]" aria-label="Main Navigation">
+    <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-[14px] font-medium text-[#96979a]" aria-label="Main Navigation">
       {navLinks.map(link => {
         const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
         return (
           <a
             href={link.href}
-            class={`px-3 py-1.5 rounded-md transition-colors hover:text-white hover:bg-[#141D30]/60 ${isActive ? 'text-white bg-[#141D30] font-semibold text-[#4F8BFF]' : ''}`}
+            class={`px-3 py-1.5 rounded-full transition-colors hover:text-[#e9e9ea] hover:bg-[#1a1a1a] ${isActive ? 'text-[#7cadec] bg-[#101c2c] border border-[#2c2c2c] font-semibold' : ''}`}
           >
             {link.label}
           </a>
@@ -42,13 +42,13 @@ const currentPath = Astro.url.pathname;
     <div class="hidden sm:flex items-center gap-2.5 shrink-0">
       <a
         href="/demo/"
-        class="text-[13.5px] font-medium text-[#B7C2D6] hover:text-white px-3 py-1.5 rounded-md hover:bg-[#141D30] transition-colors"
+        class="text-[13.5px] font-medium text-[#96979a] hover:text-[#e9e9ea] px-3 py-1.5 rounded-md hover:bg-[#1a1a1a] transition-colors"
       >
         Explore Demo
       </a>
       <a
         href="/contact/"
-        class="bg-[#4F8BFF] text-[#0B1020] font-semibold text-[13.5px] px-3.5 py-1.5 rounded-md hover:bg-[#689DFF] transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4F8BFF]"
+        class="bg-[#4d8fe0] text-[#000000] font-semibold text-[13.5px] px-3.5 py-1.5 rounded-md hover:bg-[#7cadec] transition-all shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4d8fe0]"
       >
         Request Access
       </a>
@@ -58,14 +58,14 @@ const currentPath = Astro.url.pathname;
     <div class="flex md:hidden items-center gap-2">
       <a
         href="/contact/"
-        class="text-xs bg-[#4F8BFF] text-[#0B1020] font-semibold px-2.5 py-1.5 rounded hover:bg-[#689DFF] transition-colors"
+        class="text-xs bg-[#4d8fe0] text-[#000000] font-semibold px-2.5 py-1.5 rounded hover:bg-[#7cadec] transition-colors"
       >
         Access
       </a>
       <button
         type="button"
         id="mobile-menu-btn"
-        class="p-2 rounded-lg bg-[#141D30] border border-[#23314D] text-[#B7C2D6] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#4F8BFF]"
+        class="p-2 rounded-lg bg-[#111111] border border-[#1e1e1e] text-[#96979a] hover:text-[#e9e9ea] focus:outline-none focus:ring-2 focus:ring-[#4d8fe0]"
         aria-label="Toggle Navigation Menu"
         aria-expanded="false"
         aria-controls="mobile-menu"
@@ -83,47 +83,47 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile Disclosure Drawer -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden border-b border-[#23314D] bg-[#0B1020] px-4 pt-3 pb-6 space-y-3 transition-all"
+    class="hidden md:hidden border-b border-[#1e1e1e] bg-[#000000] px-4 pt-3 pb-6 space-y-3 transition-all"
   >
     <div class="flex flex-col space-y-1">
       {navLinks.map(link => (
         <a
           href={link.href}
-          class="px-3 py-2 rounded-md text-sm font-medium text-[#B7C2D6] hover:text-white hover:bg-[#141D30] transition-colors"
+          class="px-3 py-2 rounded-md text-sm font-medium text-[#96979a] hover:text-[#e9e9ea] hover:bg-[#111111] transition-colors"
         >
           {link.label}
         </a>
       ))}
       <a
         href="/updates/"
-        class="px-3 py-2 rounded-md text-sm font-medium text-[#B7C2D6] hover:text-white hover:bg-[#141D30] transition-colors"
+        class="px-3 py-2 rounded-md text-sm font-medium text-[#96979a] hover:text-[#e9e9ea] hover:bg-[#111111] transition-colors"
       >
         Updates
       </a>
       <a
         href="/about/"
-        class="px-3 py-2 rounded-md text-sm font-medium text-[#B7C2D6] hover:text-white hover:bg-[#141D30] transition-colors"
+        class="px-3 py-2 rounded-md text-sm font-medium text-[#96979a] hover:text-[#e9e9ea] hover:bg-[#111111] transition-colors"
       >
         About
       </a>
       <a
         href="/security/"
-        class="px-3 py-2 rounded-md text-sm font-medium text-[#B7C2D6] hover:text-white hover:bg-[#141D30] transition-colors"
+        class="px-3 py-2 rounded-md text-sm font-medium text-[#96979a] hover:text-[#e9e9ea] hover:bg-[#111111] transition-colors"
       >
         Security
       </a>
     </div>
 
-    <div class="pt-3 border-t border-[#23314D]/80 flex flex-col gap-2">
+    <div class="pt-3 border-t border-[#1e1e1e] flex flex-col gap-2">
       <a
         href="/demo/"
-        class="w-full text-center px-4 py-2 rounded-md text-sm font-medium border border-[#23314D] text-[#F5F7FB] bg-[#141D30] hover:bg-[#1D2940] transition-colors"
+        class="w-full text-center px-4 py-2 rounded-md text-sm font-medium border border-[#2c2c2c] text-[#e9e9ea] bg-[#111111] hover:bg-[#1a1a1a] transition-colors"
       >
         Explore Interactive Demo
       </a>
       <a
         href="/contact/"
-        class="w-full text-center px-4 py-2 rounded-md text-sm font-semibold bg-[#4F8BFF] text-[#0B1020] hover:bg-[#689DFF] transition-colors"
+        class="w-full text-center px-4 py-2 rounded-md text-sm font-semibold bg-[#4d8fe0] text-[#000000] hover:bg-[#7cadec] transition-colors"
       >
         Request Access & Walkthrough
       </a>

@@ -8,27 +8,27 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || 'default-acc
   description="Connect with StructZero engineering leadership to request a technical walkthrough or discuss enterprise command center deployment."
   schemaType="ContactPage"
 >
-  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold block mb-2">
+      <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
         Get In Touch
       </span>
-      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB] mb-4">
+      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea] mb-4">
         Contact Engineering & Request Access
       </h1>
-      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-xl mx-auto">
+      <p class="text-base sm:text-lg text-[#96979a] max-w-xl mx-auto">
         Interested in an enterprise deployment, a hands-on walkthrough, or private MCP server integration? Reach out directly.
       </p>
     </div>
   </section>
 
-  <section class="py-16">
+  <section class="py-16 bg-[#000000]">
     <div class="max-w-xl mx-auto px-4 sm:px-6">
       <form
         id="contact-form"
         action="https://api.web3forms.com/submit"
         method="POST"
-        class="p-6 sm:p-8 border border-[#23314D] rounded-2xl bg-[#141D30] text-left relative overflow-hidden shadow-xl"
+        class="p-6 sm:p-8 border border-[#1e1e1e] rounded-2xl bg-[#111111] text-left relative overflow-hidden shadow-xl"
       >
         <!-- Web3Forms Configuration -->
         <input type="hidden" name="access_key" value={web3FormsKey} />
@@ -37,7 +37,7 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || 'default-acc
 
         <div id="form-content" class="space-y-5">
           <div>
-            <label for="contact-name" class="block text-xs font-mono uppercase text-[#8A98B0] mb-2 font-medium">
+            <label for="contact-name" class="block text-xs font-mono uppercase text-[#7c7d80] mb-2 font-medium">
               Your Name
             </label>
             <input
@@ -46,12 +46,12 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || 'default-acc
               name="name"
               required
               placeholder="Alex Chen"
-              class="w-full bg-[#0B1020] border border-[#23314D] rounded-lg px-4 py-2.5 text-sm text-[#F5F7FB] focus:border-[#4F8BFF] focus:outline-none transition-colors"
+              class="w-full bg-[#000000] border border-[#1e1e1e] rounded-lg px-4 py-2.5 text-sm text-[#e9e9ea] focus:border-[#4d8fe0] focus:outline-none transition-colors"
             />
           </div>
 
           <div>
-            <label for="contact-email" class="block text-xs font-mono uppercase text-[#8A98B0] mb-2 font-medium">
+            <label for="contact-email" class="block text-xs font-mono uppercase text-[#7c7d80] mb-2 font-medium">
               Work Email
             </label>
             <input
@@ -60,12 +60,12 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || 'default-acc
               name="email"
               required
               placeholder="alex@company.com"
-              class="w-full bg-[#0B1020] border border-[#23314D] rounded-lg px-4 py-2.5 text-sm text-[#F5F7FB] focus:border-[#4F8BFF] focus:outline-none transition-colors"
+              class="w-full bg-[#000000] border border-[#1e1e1e] rounded-lg px-4 py-2.5 text-sm text-[#e9e9ea] focus:border-[#4d8fe0] focus:outline-none transition-colors"
             />
           </div>
 
           <div>
-            <label for="contact-message" class="block text-xs font-mono uppercase text-[#8A98B0] mb-2 font-medium">
+            <label for="contact-message" class="block text-xs font-mono uppercase text-[#7c7d80] mb-2 font-medium">
               Project Requirements / Use Case
             </label>
             <textarea
@@ -74,26 +74,26 @@ const web3FormsKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY || 'default-acc
               required
               rows="4"
               placeholder="Tell us about your team's architecture, model preferences, and current deployment targets..."
-              class="w-full bg-[#0B1020] border border-[#23314D] rounded-lg px-4 py-2.5 text-sm text-[#F5F7FB] focus:border-[#4F8BFF] focus:outline-none transition-colors resize-y"
+              class="w-full bg-[#000000] border border-[#1e1e1e] rounded-lg px-4 py-2.5 text-sm text-[#e9e9ea] focus:border-[#4d8fe0] focus:outline-none transition-colors resize-y"
             ></textarea>
           </div>
 
           <button
             type="submit"
             id="submit-btn"
-            class="w-full bg-[#4F8BFF] text-[#0B1020] font-semibold text-sm py-3 rounded-lg hover:bg-[#689DFF] transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4F8BFF]"
+            class="w-full bg-[#4d8fe0] text-[#000000] font-semibold text-sm py-3 rounded-lg hover:bg-[#7cadec] transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#4d8fe0]"
           >
             Submit Request & Schedule Walkthrough
           </button>
         </div>
 
         <div id="success-message" class="hidden flex-col items-center justify-center text-center py-10 opacity-0 translate-y-4 transition-all duration-300">
-          <div class="w-12 h-12 rounded-full bg-[#34D399]/20 text-[#34D399] flex items-center justify-center mb-4 text-xl">✓</div>
-          <h3 class="text-lg font-semibold text-[#F5F7FB] mb-2">Request Submitted</h3>
-          <p class="text-sm text-[#B7C2D6]">Thank you! Our engineering team will review your requirements and reach out within 24 hours.</p>
+          <div class="w-12 h-12 rounded-full bg-[#0f2417] text-[#4f9e6e] border border-[#1e3a29] flex items-center justify-center mb-4 text-xl">✓</div>
+          <h3 class="text-lg font-semibold text-[#e9e9ea] mb-2">Request Submitted</h3>
+          <p class="text-sm text-[#96979a]">Thank you! Our engineering team will review your requirements and reach out within 24 hours.</p>
         </div>
 
-        <div id="error-message" class="hidden text-sm text-red-400 mt-4 text-center">
+        <div id="error-message" class="hidden text-sm text-[#c15c5c] mt-4 text-center">
           Something went wrong with form submission. Please try again or email us directly at team@structzero.app.
         </div>
       </form>

@@ -60,46 +60,46 @@ const updates = [
   title="Product & Platform Updates — StructZero"
   description="Chronological log of verified releases, architectural milestones, and platform updates for StructZero."
 >
-  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold block mb-2">
+      <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
         Platform Changelog
       </span>
-      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB] mb-4">
+      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea] mb-4">
         Product & Engineering Updates
       </h1>
-      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-2xl mx-auto">
+      <p class="text-base sm:text-lg text-[#96979a] max-w-2xl mx-auto">
         A chronological record of verified platform releases, architectural enhancements, and documentation changes.
       </p>
     </div>
   </section>
 
-  <section class="py-16">
+  <section class="py-16 bg-[#000000]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
       {updates.map(u => (
-        <article class="p-6 sm:p-8 rounded-2xl border border-[#23314D] bg-[#141D30] space-y-5">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#23314D] pb-4">
+        <article class="p-6 sm:p-8 rounded-2xl border border-[#1e1e1e] bg-[#111111] space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#1e1e1e] pb-4">
             <div>
               <div class="flex items-center gap-2 mb-1">
-                <span class="font-mono text-xs text-[#8A98B0]">{u.date}</span>
-                <span class="text-[#3A4C70]">·</span>
-                <span class="font-mono text-xs text-[#4F8BFF]">{u.category}</span>
+                <span class="font-mono text-xs text-[#7c7d80]">{u.date}</span>
+                <span class="text-[#2c2c2c]">·</span>
+                <span class="font-mono text-xs text-[#7cadec]">{u.category}</span>
               </div>
-              <h2 class="text-2xl font-bold text-[#F5F7FB]">{u.version}: {u.title}</h2>
+              <h2 class="text-2xl font-bold text-[#e9e9ea]">{u.version}: {u.title}</h2>
             </div>
             <StatusBadge status="Available" size="sm" />
           </div>
 
-          <p class="text-sm sm:text-base text-[#B7C2D6] leading-relaxed">
+          <p class="text-sm sm:text-base text-[#96979a] leading-relaxed">
             {u.summary}
           </p>
 
-          <div class="p-4 rounded-xl bg-[#0B1020] border border-[#23314D]">
-            <h3 class="text-xs font-mono uppercase tracking-wider text-[#8A98B0] mb-3">Key Highlights</h3>
-            <ul class="space-y-2 text-xs text-[#B7C2D6]">
+          <div class="p-4 rounded-xl bg-[#000000] border border-[#1e1e1e]">
+            <h3 class="text-xs font-mono uppercase tracking-wider text-[#7c7d80] mb-3">Key Highlights</h3>
+            <ul class="space-y-2 text-xs text-[#96979a]">
               {u.highlights.map(h => (
                 <li class="flex items-start gap-2">
-                  <span class="text-[#34D399] font-bold">✓</span>
+                  <span class="text-[#4f9e6e] font-bold">✓</span>
                   <span>{h}</span>
                 </li>
               ))}

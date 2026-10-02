@@ -41,41 +41,41 @@ const securityControls = [
   description="Due diligence guide covering StructZero execution boundaries, container sandboxing, secret masking, and data privacy."
 >
   <!-- Hero Section -->
-  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="flex items-center gap-2 text-xs font-mono text-[#8A98B0] mb-4">
-        <a href="/" class="hover:text-[#4F8BFF]">Home</a>
+      <div class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4">
+        <a href="/" class="hover:text-[#4d8fe0]">Home</a>
         <span>/</span>
-        <span class="text-[#F5F7FB]">Security</span>
+        <span class="text-[#e9e9ea]">Security</span>
       </div>
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
-        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB]">Security Controls & Posture</h1>
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea]">Security Controls & Posture</h1>
         <StatusBadge status="Available" size="md" />
       </div>
-      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-3xl leading-relaxed">
+      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed">
         StructZero is designed from first principles with hard execution boundaries, sandboxed runtimes, and strict isolation for enterprise environments.
       </p>
     </div>
   </section>
 
   <!-- Controls Grid -->
-  <section class="py-16 border-b border-[#23314D]">
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#000000]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-8">
       <div>
-        <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold block mb-2">
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
           Control Matrix
         </span>
-        <h2 class="text-2xl sm:text-3xl font-bold text-[#F5F7FB]">Technical Security Controls</h2>
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#e9e9ea]">Technical Security Controls</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {securityControls.map((c) => (
-          <div class="p-6 rounded-2xl border border-[#23314D] bg-[#141D30] space-y-3">
-            <span class="text-xs font-mono uppercase tracking-wider text-[#4F8BFF] block">
+          <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] space-y-3">
+            <span class="text-xs font-mono uppercase tracking-wider text-[#7cadec] block">
               {c.category}
             </span>
-            <h3 class="text-lg font-bold text-[#F5F7FB]">{c.title}</h3>
-            <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed">
+            <h3 class="text-lg font-bold text-[#e9e9ea]">{c.title}</h3>
+            <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
               {c.desc}
             </p>
           </div>
@@ -85,10 +85,10 @@ const securityControls = [
   </section>
 
   <!-- Known Boundaries & Limitations -->
-  <section class="py-16">
+  <section class="py-16 bg-[#000000]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
-      <h2 class="text-xl sm:text-2xl font-bold text-[#F5F7FB]">Known Boundaries & Operational Responsibilities</h2>
-      <div class="p-6 rounded-2xl border border-[#23314D] bg-[#141D30] space-y-4 text-sm text-[#B7C2D6] leading-relaxed">
+      <h2 class="text-xl sm:text-2xl font-bold text-[#e9e9ea]">Known Boundaries & Operational Responsibilities</h2>
+      <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] space-y-4 text-sm text-[#96979a] leading-relaxed">
         <p>
           While StructZero introduces automated AST syntax checks, topological generation, and sandbox testing, no automated system can guarantee 100% defect-free software without human oversight.
         </p>
@@ -100,8 +100,8 @@ const securityControls = [
       </div>
 
       <div class="pt-4 flex items-center justify-between">
-        <span class="text-xs font-mono text-[#8A98B0]">Report security issues: security@structzero.app</span>
-        <a href="/legal/security-policy/" class="text-xs font-mono text-[#4F8BFF] hover:underline">
+        <span class="text-xs font-mono text-[#7c7d80]">Report security issues: security@structzero.app</span>
+        <a href="/legal/security-policy/" class="text-xs font-mono text-[#4d8fe0] hover:text-[#7cadec] transition-colors">
           Read Formal Vulnerability Disclosure Policy →
         </a>
       </div>
