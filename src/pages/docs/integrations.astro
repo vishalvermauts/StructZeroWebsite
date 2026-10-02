@@ -1,0 +1,96 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+---
+
+<Base
+  title="Integration Setup — StructZero Docs"
+  description="Configure StructZero via Model Context Protocol (MCP) in Cursor, VS Code, Windsurf, Claude Code, and developer environments."
+>
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4">
+        <a href="/" class="hover:text-[#4d8fe0]">Home</a>
+        <span>/</span>
+        <a href="/docs/" class="hover:text-[#4d8fe0]">Docs</a>
+        <span>/</span>
+        <span class="text-[#e9e9ea]">Integrations</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea]">Integration Setup</h1>
+        <StatusBadge status="Available" size="md" />
+      </div>
+      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed">
+        Configure StructZero as a Model Context Protocol (MCP) server or integrate it into your local terminal workflows and existing IDEs.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 space-y-16 bg-[#000000]">
+    <!-- Anchored Section: #mcp -->
+    <div id="mcp" class="scroll-mt-24 space-y-6">
+      <div class="flex items-center justify-between border-b border-[#1e1e1e] pb-3">
+        <h2 class="text-2xl font-bold text-[#e9e9ea]">Model Context Protocol (MCP) Server Setup</h2>
+        <StatusBadge status="Available" size="sm" />
+      </div>
+      <p class="text-sm sm:text-base text-[#96979a] leading-relaxed">
+        StructZero operates as a standardized MCP server. This allows Cursor, VS Code, Windsurf, Zed, and Claude Code to access StructZero's Project DNA AST graph, multi-model debate engine, and pre-flight gates directly.
+      </p>
+
+      <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] space-y-4">
+        <h3 class="text-sm font-semibold text-[#e9e9ea]">Configuration for Cursor & VS Code</h3>
+        <p class="text-xs text-[#96979a]">
+          Add the following JSON configuration to your IDE's MCP server configuration file (e.g. <code class="text-[#e9e9ea] bg-[#000000] px-1.5 py-0.5 rounded border border-[#1e1e1e]">.cursor/mcp.json</code> or Claude Code settings):
+        </p>
+
+        <div class="p-4 rounded-xl bg-[#000000] border border-[#1e1e1e] font-mono text-xs text-[#e9e9ea]">
+          <pre>{`{
+  "mcpServers": {
+    "structzero": {
+      "command": "npx",
+      "args": ["-y", "@structzero/mcp-server"]
+    }
+  }
+}`}</pre>
+        </div>
+      </div>
+
+      <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] space-y-3">
+        <h3 class="text-sm font-semibold text-[#e9e9ea]">Exposed MCP Tools & Resources</h3>
+        <ul class="space-y-2 text-xs text-[#96979a]">
+          <li><code class="text-[#7cadec] font-mono">structzero_ast_query:</code> Query exported symbols, interface types, and route maps for any file.</li>
+          <li><code class="text-[#7cadec] font-mono">structzero_debate_trigger:</code> Launch a multi-model debate across Claude, Gemini, and DeepSeek for an architectural decision.</li>
+          <li><code class="text-[#7cadec] font-mono">structzero_verify_patch:</code> Execute pre-flight AST compilation and import resolution before saving edits.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Anchored Section: #developer-tools -->
+    <div id="developer-tools" class="scroll-mt-24 space-y-6 border-t border-[#1e1e1e] pt-12">
+      <div class="flex items-center justify-between border-b border-[#1e1e1e] pb-3">
+        <h2 class="text-2xl font-bold text-[#e9e9ea]">Developer Tools & IDE Interoperability</h2>
+        <StatusBadge status="Available" size="sm" />
+      </div>
+      <p class="text-sm sm:text-base text-[#96979a] leading-relaxed">
+        StructZero does not attempt to replace your preferred code editor. Instead, it operates alongside your editor as a background engineering council that supplies verified architecture and code directly into your workspace.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-sm font-semibold text-[#e9e9ea] mb-1.5">Cursor & Windsurf</h3>
+          <p class="text-xs text-[#96979a]">Native MCP integration enables direct prompting of the multi-model council from chat sidebars.</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-sm font-semibold text-[#e9e9ea] mb-1.5">VS Code & JetBrains</h3>
+          <p class="text-xs text-[#96979a]">Use standard MCP extensions or run StructZero alongside via the built-in terminal.</p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-sm font-semibold text-[#e9e9ea] mb-1.5">Claude Code & CLI</h3>
+          <p class="text-xs text-[#96979a]">Interoperate seamlessly with Claude Code CLI tools through project-level MCP server configurations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

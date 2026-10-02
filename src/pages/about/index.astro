@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+
+const principles = [
+  {
+    title: 'Architecture Precedes Code',
+    desc: 'No code should be generated until data schemas, API contracts, and topological dependency order are formulated, critiqued, and approved.',
+  },
+  {
+    title: 'Adversarial Review Eliminates Bias',
+    desc: 'A single AI model cannot objectively evaluate its own hallucinations. Independent models assigned to opposing roles create true peer review.',
+  },
+  {
+    title: 'Compilation is Non-Negotiable',
+    desc: 'Code generation does not finish when a model outputs text. It finishes only when the code compiles cleanly, imports resolve against disk, and pre-flight tests pass.',
+  },
+  {
+    title: 'Controlled Autonomy with Clear Guardrails',
+    desc: 'Autonomous systems must have hard execution stops for billable provisioning, destructive data operations, and live releases. Humans stay in command.',
+  },
+];
+---
+
+<Base
+  title="About StructZero — Operating Philosophy & Team"
+  description="The engineering ethos, core operating principles, and mission behind the StructZero AI software engineering platform."
+  schemaType="AboutPage"
+>
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
+        Company & Philosophy
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea] mb-4">
+        Engineering Software with Rigor
+      </h1>
+      <p class="text-base sm:text-lg text-[#96979a] max-w-2xl mx-auto">
+        We believe that building reliable production software requires structural discipline, independent review, and immutable verification — not just faster autocompletion.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#000000]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-8">
+      <div>
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
+          Operating Ethos
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#e9e9ea]">Our Core Engineering Principles</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {principles.map((p) => (
+          <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] space-y-3">
+            <h3 class="text-lg font-bold text-[#e9e9ea]">{p.title}</h3>
+            <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
+              {p.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-[#000000]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-6">
+      <h2 class="text-2xl font-bold text-[#e9e9ea]">Get in Touch</h2>
+      <p class="text-sm sm:text-base text-[#96979a] leading-relaxed">
+        Whether you are interested in enterprise deployment, custom MCP server configurations, or technical partnerships, our engineering team is here to help.
+      </p>
+      <div>
+        <a
+          href="/contact/"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#4d8fe0] text-[#000000] font-semibold text-xs hover:bg-[#7cadec] transition-all"
+        >
+          <span>Contact Engineering Leadership</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

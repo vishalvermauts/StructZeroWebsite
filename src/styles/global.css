@@ -2,47 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design tokens -- high-contrast dark palette, one accent, per the real
-   architecture debate: "inspired by Linear, Raycast, and Vercel, deliberately
-   rejecting every currently-saturated SaaS template convention." Avoids the
-   generic AI-landing-page defaults: no cream+terracotta, no purple-to-blue
-   gradient hero, no Inter-as-default, no centered-everything. */
+/* Design tokens exactly matching StructZero UI (#000000 pitch-black palette) */
 :root {
-  --bg: #0a0a0c;
-  --bg-alt: #111114;
-  --panel: #16161a;
-  --border: #232328;
-  --text: #f3f2ef;
-  --text-muted: #9d9aa4;
-  --text-faint: #63616b;
-  --accent: #4f6df5;
-  --accent-ink: #ffffff;
-  --accent-soft: rgba(79, 109, 245, 0.14);
-  --ok: #33c088;
-  --font-mono: 'Berkeley Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
-  --font-sans: 'Neue Haas', -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --bg: #000000;
+  --bg-raised: #0a0a0a;
+  --panel: #111111;
+  --panel-raised: #1a1a1a;
+  --panel-hover: #212121;
+  --border: #1e1e1e;
+  --border-strong: #2c2c2c;
+  --text: #e9e9ea;
+  --text-muted: #96979a;
+  --text-faint: #7c7d80;
+  --accent: #4d8fe0;
+  --accent-strong: #7cadec;
+  --accent-dim: #101c2c;
+  --accent-soft: rgba(77, 143, 224, 0.14);
+  --accent-ink: #000000;
+  --ok: #4f9e6e;
+  --ok-dim: #0f2417;
+  --warning: #c19a4a;
+  --warning-dim: #2b2210;
+  --error: #c15c5c;
+  --error-dim: #2c1616;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Code", "Consolas", monospace;
+  --font-sans: -apple-system, "Segoe UI", "SF Pro Text", ui-sans-serif, system-ui, sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
-}
-::selection { background: var(--accent-soft); }
-
-.reveal { opacity: 0; }
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1 !important; transform: none !important; }
-  html { scroll-behavior: auto; }
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Subtitle / WebVTT Cue Styling -- transparent background, clean shadow */
-video::cue {
+main {
+  flex: 1;
+}
+
+::selection {
+  background: var(--accent-dim);
+  color: var(--accent-strong);
+}
+
+/* Scrollbars matching StructZero theme */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
   background: transparent;
-  color: #ffffff;
-  font-family: var(--font-sans);
-  font-size: 1.05rem;
-  font-weight: 600;
-  text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.95), 0px 0px 8px rgba(0, 0, 0, 0.9);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 8px;
+  border: 2px solid var(--bg-raised);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+/* Progressive enhancement */
+.reveal {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
 }

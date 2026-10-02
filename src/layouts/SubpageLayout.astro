@@ -17,7 +17,7 @@ export interface Props {
 const {
   title,
   description,
-  status = 'Production',
+  status = 'Available',
   summary,
   category,
   features = [],
@@ -27,69 +27,63 @@ const {
 } = Astro.props;
 ---
 
-<Base title={`${title} — StructZero Knowledge Base`} description={description}>
-  <!-- Subpage Hero Header -->
-  <section class="relative pt-16 pb-14 border-b border-border bg-panel/30 overflow-hidden">
-    <div class="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[350px] rounded-full opacity-30" style="background: radial-gradient(ellipse at center, var(--accent-soft), transparent 70%);"></div>
-    <div class="max-w-5xl mx-auto px-6 relative">
-      <div class="flex items-center gap-3 text-xs font-mono text-ink-muted mb-4">
-        <a href="/" class="hover:text-accent transition-colors">Home</a>
+<Base title={`${title} — StructZero`} description={description}>
+  <!-- Subpage Header -->
+  <section class="relative pt-12 pb-10 border-b border-[#1e1e1e] bg-[#0a0a0a] overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative">
+      <nav class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4" aria-label="Breadcrumb">
+        <a href="/" class="hover:text-[#4d8fe0] transition-colors">Home</a>
         <span>/</span>
         {category && (
           <>
-            <a href="/plugins-hub" class="hover:text-accent transition-colors">{category}</a>
+            <a href="/modules/" class="hover:text-[#4d8fe0] transition-colors">{category}</a>
             <span>/</span>
           </>
         )}
-        <span class="text-accent font-semibold">{title}</span>
-      </div>
+        <span class="text-[#e9e9ea] font-medium">{title}</span>
+      </nav>
 
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-        <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-ink">{title}</h1>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+        <h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea]">{title}</h1>
         <StatusBadge status={status} size="md" />
       </div>
 
-      <p class="text-lg text-ink-muted max-w-3xl leading-relaxed mb-6">
+      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed mb-6">
         {description}
       </p>
 
       {summary && (
-        <div class="p-4 rounded-xl border border-accent/30 bg-accent-soft/20 text-sm text-ink font-medium max-w-3xl">
-          <span class="font-mono text-xs uppercase text-accent font-bold block mb-1">Executive Summary</span>
-          {summary}
+        <div class="p-4 rounded-xl border border-[#2c2c2c] bg-[#101c2c] text-sm text-[#e9e9ea] max-w-3xl">
+          <span class="font-mono text-xs uppercase text-[#7cadec] font-bold block mb-1">Architecture Summary</span>
+          <p class="leading-relaxed text-[#96979a]">{summary}</p>
         </div>
       )}
     </div>
   </section>
 
-  <!-- Main Content Container -->
-  <section class="py-16">
-    <div class="max-w-5xl mx-auto px-6 space-y-16">
-      
+  <!-- Main Body Content -->
+  <section class="py-12 bg-[#000000]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-12">
       {video && (
-        <div class="rounded-2xl border border-border bg-panel/80 overflow-hidden shadow-2xl backdrop-blur text-left">
-          <div class="flex items-center justify-between px-4 py-3 border-b border-border bg-bg/90">
+        <div class="rounded-2xl border border-[#1e1e1e] bg-[#111111] overflow-hidden shadow-2xl text-left">
+          <div class="flex items-center justify-between px-4 py-3 border-b border-[#1e1e1e] bg-[#000000]">
             <div class="flex items-center gap-2">
               <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
               <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
               <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
             </div>
-            <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-panel border border-border font-mono text-[11px] text-ink-muted">
-              <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
+            <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-[#111111] border border-[#1e1e1e] font-mono text-[11px] text-[#96979a]">
               <span>{video.title}</span>
             </div>
-            <div class="font-mono text-[11px] text-accent font-semibold px-2 py-0.5 rounded bg-accent-soft border border-accent/30">
-              {video.label || 'PLATFORM VIDEO'}
+            <div class="font-mono text-[11px] text-[#7cadec] font-semibold px-2 py-0.5 rounded bg-[#101c2c] border border-[#2c2c2c]">
+              {video.label || 'TECHNICAL WALKTHROUGH'}
             </div>
           </div>
           <div class="relative aspect-video bg-black/40 flex items-center justify-center">
-            <video 
-              class="w-full h-full object-cover" 
-              controls 
-              playsinline 
+            <video
+              class="w-full h-full object-cover"
+              controls
+              playsinline
               preload="metadata"
             >
               <source src={video.src} type="video/mp4" />
@@ -99,75 +93,58 @@ const {
         </div>
       )}
 
-      <!-- Content Body Slot -->
-      <div class="prose prose-invert max-w-none text-ink-muted leading-relaxed">
+      <!-- Slot Content -->
+      <div class="prose prose-invert prose-headings:text-[#e9e9ea] prose-p:text-[#96979a] prose-a:text-[#4d8fe0] prose-code:text-[#e9e9ea] prose-pre:bg-[#111111] prose-pre:border prose-pre:border-[#1e1e1e] max-w-none">
         <slot />
       </div>
 
-      <!-- Feature Grid Card Component -->
+      <!-- Features Grid -->
       {features.length > 0 && (
-        <div class="border-t border-border pt-12">
-          <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Capabilities</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-ink mb-8">Key Features & Technical Pillars</h2>
-          <div class="grid sm:grid-cols-2 gap-6">
+        <div class="border-t border-[#1e1e1e] pt-10">
+          <h2 class="text-xl font-bold text-[#e9e9ea] mb-6">Key Capabilities</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             {features.map(f => (
-              <div class="p-6 border border-border rounded-2xl bg-panel">
-                <h3 class="text-lg font-bold text-ink mb-2">{f.title}</h3>
-                <p class="text-sm text-ink-muted leading-relaxed">{f.desc}</p>
+              <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+                <h3 class="text-sm font-semibold text-[#e9e9ea] mb-1.5">{f.title}</h3>
+                <p class="text-xs text-[#96979a] leading-relaxed">{f.desc}</p>
               </div>
             ))}
           </div>
         </div>
       )}
 
-      <!-- FAQ Section Accordion -->
+      <!-- FAQs Section -->
       {faqs.length > 0 && (
-        <div class="border-t border-border pt-12">
-          <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Got Questions?</span>
-          <h2 class="text-2xl md:text-3xl font-bold text-ink mb-8">Frequently Asked Questions</h2>
-          <div class="space-y-4 max-w-3xl">
+        <div class="border-t border-[#1e1e1e] pt-10">
+          <h2 class="text-xl font-bold text-[#e9e9ea] mb-6">Frequently Asked Questions</h2>
+          <div class="space-y-4">
             {faqs.map(faq => (
-              <div class="border border-border rounded-xl p-5 bg-panel">
-                <h4 class="text-base font-bold text-ink mb-2">{faq.q}</h4>
-                <p class="text-sm text-ink-muted leading-relaxed">{faq.a}</p>
+              <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+                <h3 class="text-sm font-semibold text-[#e9e9ea] mb-2">{faq.q}</h3>
+                <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
         </div>
       )}
 
-      <!-- Internal Link Graph / Related Pages -->
+      <!-- Related Documentation -->
       {related.length > 0 && (
-        <div class="border-t border-border pt-12">
-          <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Knowledge Graph</span>
-          <h2 class="text-xl font-bold text-ink mb-6">Related Knowledge Base Pages</h2>
+        <div class="border-t border-[#1e1e1e] pt-8">
+          <h3 class="text-xs font-mono uppercase tracking-wider text-[#7c7d80] mb-4">Related Documentation</h3>
           <div class="flex flex-wrap gap-3">
             {related.map(r => (
-              <a href={r.href} class="inline-flex items-center gap-2 text-xs font-mono px-4 py-2.5 rounded-lg border border-border bg-panel text-ink hover:border-accent hover:text-accent transition-all">
+              <a
+                href={r.href}
+                class="inline-flex items-center gap-2 text-xs font-medium px-3.5 py-2 rounded-lg border border-[#1e1e1e] bg-[#111111] text-[#96979a] hover:text-[#4d8fe0] hover:border-[#2c2c2c] transition-colors"
+              >
                 <span>{r.label}</span>
-                <span>→</span>
+                <span class="text-[#4d8fe0]">→</span>
               </a>
             ))}
           </div>
         </div>
       )}
-
-      <!-- Call to Action Card -->
-      <div class="p-8 rounded-2xl border border-accent bg-gradient-to-b from-accent-soft/30 to-panel text-center">
-        <h3 class="text-2xl font-bold text-ink mb-3">Ready to deploy with StructZero?</h3>
-        <p class="text-sm text-ink-muted max-w-xl mx-auto mb-6">
-          Connect StructZero's multi-agent debate engine directly into your existing editor using Model Context Protocol (MCP).
-        </p>
-        <div class="flex gap-4 justify-center flex-wrap">
-          <a href="/docs/mcp-setup" class="bg-accent text-white font-semibold text-sm px-6 py-3 rounded-lg hover:opacity-90 transition-opacity">
-            Connect via MCP
-          </a>
-          <a href="/roadmap" class="border border-border font-semibold text-sm px-6 py-3 rounded-lg hover:bg-panel text-ink transition-colors">
-            View Live Roadmap
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
 </Base>

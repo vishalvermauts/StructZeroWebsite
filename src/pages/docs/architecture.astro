@@ -1,0 +1,131 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+
+const glossaryTerms = [
+  { term: 'Abstract Syntax Tree (AST)', def: 'The structured hierarchical tree representation of source code syntax parsed by compilers, used by StructZero to guarantee valid types and imports.' },
+  { term: 'Controlled Autonomy', def: 'An operational model where autonomous software generation is strictly bounded by human-in-the-loop authorization gates for billable or destructive operations.' },
+  { term: 'Engineering Event Recorder', def: 'An immutable append-only JSONL log streaming all model prompts, debate arguments, validation outcomes, and human approvals.' },
+  { term: 'Multi-Model Debate', def: 'An adversarial evaluation process where independent LLMs assume distinct roles (Architect, Reviewer, Judge) to eliminate hallucinations before implementation.' },
+  { term: 'Pre-Flight Gate', def: 'Automated verification running AST compilation, module resolution, and security audits inside container sandboxes prior to writing code to disk.' },
+  { term: 'Project DNA', def: 'The semantic context graph of a codebase including symbol tables, interface contracts, import dependencies, and route topologies.' },
+  { term: 'StructZero Remote', def: 'The native Android client application enabling real-time monitoring, live run telemetry streaming, and mobile authorization approvals.' },
+  { term: 'Topological Order', def: 'A mathematical ordering of files such that every module is written and verified only after all of its upstream dependencies have been established.' },
+];
+---
+
+<Base
+  title="Architecture & Concepts — StructZero Docs"
+  description="Technical deep dive into StructZero's Project DNA context engine, multi-model adversarial debate mechanics, and platform glossary."
+>
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4">
+        <a href="/" class="hover:text-[#4d8fe0]">Home</a>
+        <span>/</span>
+        <a href="/docs/" class="hover:text-[#4d8fe0]">Docs</a>
+        <span>/</span>
+        <span class="text-[#e9e9ea]">Architecture</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea]">Architecture & Concepts</h1>
+        <StatusBadge status="Available" size="md" />
+      </div>
+      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed">
+        Explore the technical mechanics behind the Multi-Model Debate Engine, AST Project DNA parsing, and core platform terminology.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6 space-y-16 bg-[#000000]">
+    <!-- Anchored Section: #planning-and-review -->
+    <div id="planning-and-review" class="scroll-mt-24 space-y-6">
+      <div class="flex items-center justify-between border-b border-[#1e1e1e] pb-3">
+        <h2 class="text-2xl font-bold text-[#e9e9ea]">Multi-Model Debate Mechanics</h2>
+        <StatusBadge status="Available" size="sm" />
+      </div>
+      <p class="text-sm sm:text-base text-[#96979a] leading-relaxed">
+        StructZero assigns independent foundation models to opposing adversarial roles before code generation begins. This eliminates shared confirmation bias and discovers architecture bottlenecks early.
+      </p>
+
+      <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] space-y-4">
+        <pre class="mermaid">
+stateDiagram-v2
+    [*] --> SpecReceived
+    SpecReceived --> DraftProposal: Architect Role (Claude 3.5)
+    DraftProposal --> AdversarialReview: Reviewer Role (Gemini 3.6)
+    AdversarialReview --> FlagDefects: Detect Interface Conflicts
+    FlagDefects --> JudgeEvaluation: Judge Role (DeepSeek R1)
+    JudgeEvaluation --> ApprovedPatch: Issue Consensus Blueprint
+    ApprovedPatch --> [*]: Proceed to Topological Build
+        </pre>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-sm font-semibold text-[#e9e9ea] mb-1.5">1. Architect Role</h3>
+          <p class="text-xs text-[#96979a] leading-relaxed">
+            Formulates initial module boundaries, API schemas, and dependency order based on the user spec.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-sm font-semibold text-[#e9e9ea] mb-1.5">2. Reviewer Role</h3>
+          <p class="text-xs text-[#96979a] leading-relaxed">
+            Evaluates the proposal without seeing prior model bias, flagging race conditions, scaling bottlenecks, and type inconsistencies.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-sm font-semibold text-[#e9e9ea] mb-1.5">3. Judge Role</h3>
+          <p class="text-xs text-[#96979a] leading-relaxed">
+            A high-reasoning model evaluates conflicting arguments and issues a binding, finalized architectural blueprint.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Anchored Section: #project-context -->
+    <div id="project-context" class="scroll-mt-24 space-y-6 border-t border-[#1e1e1e] pt-12">
+      <div class="flex items-center justify-between border-b border-[#1e1e1e] pb-3">
+        <h2 class="text-2xl font-bold text-[#e9e9ea]">AST Project DNA Context Engine</h2>
+        <StatusBadge status="Available" size="sm" />
+      </div>
+      <p class="text-sm sm:text-base text-[#96979a] leading-relaxed">
+        Project DNA parses codebases into compiler Abstract Syntax Trees, symbol tables, and route topologies, eliminating the hallucination of non-existent imports or broken function signatures.
+      </p>
+
+      <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111]">
+        <pre class="mermaid">
+mindmap
+  root((Project DNA Context))
+    AST Graphs
+      Exported Functions
+      Class Interfaces
+      Import Graph
+    Route Topologies
+      API Endpoints
+      Frontend Routes
+      Middleware Chains
+    Environment Contracts
+      Schema Migrations
+      Config Variables
+        </pre>
+      </div>
+    </div>
+
+    <!-- Anchored Section: #glossary -->
+    <div id="glossary" class="scroll-mt-24 space-y-6 border-t border-[#1e1e1e] pt-12">
+      <div class="flex items-center justify-between border-b border-[#1e1e1e] pb-3">
+        <h2 class="text-2xl font-bold text-[#e9e9ea]">Platform Glossary</h2>
+        <span class="text-xs font-mono text-[#7c7d80]">8 KEY CONCEPTS</span>
+      </div>
+      <div class="space-y-4">
+        {glossaryTerms.map((t) => (
+          <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+            <h3 class="text-sm font-bold text-[#7cadec] mb-1.5">{t.term}</h3>
+            <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">{t.def}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

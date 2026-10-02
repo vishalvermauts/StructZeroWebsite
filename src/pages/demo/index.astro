@@ -1,0 +1,135 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+
+const sampleProducts = [
+  {
+    name: 'FarmWatch Ag-Core',
+    useCase: 'Agricultural inspection and autonomous crop health monitoring platform for agricultural cooperatives.',
+    tech: 'TypeScript · Fastify · Vite · AWS ECS',
+    status: 'Verified Sample',
+    summary: 'Engineered with StructZero multi-model debate. Generated AST route contracts, database schemas, and multi-spectral NDVI calculation handlers.',
+  },
+  {
+    name: 'BuildPilot Telemetry',
+    useCase: 'High-throughput CI/CD event collection and container build monitoring pipeline.',
+    tech: 'Go · Docker Socket Proxy · Redis · Vercel Edge',
+    status: 'Verified Sample',
+    summary: 'Constructed using topological dependency generation with sandboxed test compilation and zero-dangling import guarantees.',
+  },
+];
+---
+
+<Base
+  title="Demo & Example Products — StructZero"
+  description="Explore StructZero's interactive platform walkthrough, technical video tour, and verified real-world sample products."
+  videoUrl="https://www.structzero.app/Structzero_AI_software_engineering_platform.mp4"
+>
+  <!-- Hero Section -->
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4">
+        <a href="/" class="hover:text-[#4d8fe0]">Home</a>
+        <span>/</span>
+        <span class="text-[#e9e9ea]">Demo</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea]">Interactive Tour & Samples</h1>
+        <StatusBadge status="Available" size="md" />
+      </div>
+      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed">
+        Experience how StructZero manages multi-model debates, pre-flight AST verification, and controlled deployments.
+      </p>
+    </div>
+  </section>
+
+  <!-- Video Walkthrough Section -->
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#000000]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
+      <div>
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
+          Architecture Walkthrough
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#e9e9ea]">Technical Video Overview</h2>
+      </div>
+
+      <div class="rounded-2xl border border-[#1e1e1e] bg-[#111111] overflow-hidden shadow-2xl">
+        <div class="flex items-center justify-between px-4 py-3 border-b border-[#1e1e1e] bg-[#000000]">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+            <span class="ml-2 font-mono text-xs text-[#7c7d80]">StructZero Video Explainer</span>
+          </div>
+          <span class="text-[11px] font-mono text-[#7cadec] px-2 py-0.5 rounded bg-[#101c2c] border border-[#2c2c2c]">
+            RECORDED TOUR
+          </span>
+        </div>
+        <div class="relative aspect-video bg-black/40 flex items-center justify-center">
+          <video
+            class="w-full h-full object-cover"
+            controls
+            playsinline
+            preload="metadata"
+          >
+            <source src="/Structzero_AI_software_engineering_platform.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Products Section -->
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-8">
+      <div>
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
+          Codebase Evidence
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#e9e9ea]">Verified Built Products</h2>
+        <p class="text-sm text-[#96979a] mt-2">
+          Real software platforms engineered and verified through the StructZero pipeline.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {sampleProducts.map((p) => (
+          <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-bold text-[#e9e9ea]">{p.name}</h3>
+              <StatusBadge status="Available" size="sm" />
+            </div>
+            <div class="font-mono text-xs text-[#4d8fe0]">{p.tech}</div>
+            <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
+              {p.useCase}
+            </p>
+            <div class="p-3.5 rounded-xl bg-[#000000] border border-[#1e1e1e] text-xs text-[#7c7d80] leading-relaxed">
+              <strong class="text-[#e9e9ea] block mb-1">Architecture Note:</strong>
+              {p.summary}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 bg-[#000000]">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center space-y-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#e9e9ea]">Want a Live Hands-On Walkthrough?</h2>
+      <p class="text-sm sm:text-base text-[#96979a]">
+        Connect with our engineering leadership to see StructZero operate against your team's real codebase and architecture requirements.
+      </p>
+      <div>
+        <a
+          href="/contact/"
+          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-[#4d8fe0] text-[#000000] font-semibold text-sm hover:bg-[#7cadec] transition-all"
+        >
+          <span>Request Technical Walkthrough</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

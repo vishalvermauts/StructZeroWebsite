@@ -1,113 +1,61 @@
 {
-  "totalHtmlPages": 71,
-  "totalUniqueHrefs": 146,
-  "internalHrefsCount": 69,
-  "externalHrefsCount": 71,
+  "totalHtmlPages": 31,
+  "totalUniqueHrefs": 64,
+  "internalHrefsCount": 37,
+  "externalHrefsCount": 26,
   "internalHrefsList": [
     "/favicon.svg",
     "/sitemap-index.xml",
     "/rss.xml",
-    "/_astro/_slug_.BXwL5RDE.css",
+    "/_astro/acceptable-use.DqsY5Cej.css",
     "/",
-    "/platform-overview",
-    "/debate-engine",
-    "/project-dna",
-    "/certification",
-    "/ai-team",
-    "/plugins-hub",
-    "/mcp-server",
-    "/cloud-integrations",
-    "/roadmap",
-    "/faq",
-    "/contact",
-    "/docs",
-    "/docs/mcp-setup",
-    "/why-structzero",
-    "/architecture-overview",
-    "/plugin-system",
-    "/engineering-events",
-    "/observability",
+    "/platform/",
+    "/modules/",
+    "/android/",
+    "/integrations/",
+    "/docs/",
+    "/roadmap/",
+    "/demo/",
+    "/contact/",
+    "/updates/",
+    "/about/",
+    "/security/",
+    "/docs/getting-started/",
+    "/docs/workflows/",
+    "/docs/integrations/",
+    "/docs/architecture/",
+    "/legal/responsible-ai/",
+    "/legal/privacy/",
+    "/legal/terms/",
+    "/legal/security-policy/",
+    "/legal/acceptable-use/",
+    "/legal/data-processing/",
+    "/legal/cookies/",
+    "/legal/accessibility/",
+    "/legal/licenses/",
+    "/platform/#why",
     "/security",
-    "/plugins/aws-agent-toolkit",
-    "/plugins/github",
-    "/plugins/vercel",
-    "/plugins/google-cloud",
-    "/plugins/vertex-ai",
-    "/plugins/bedrock",
-    "/plugins/azure-foundry",
-    "/ide-integration",
-    "/compare/cursor",
-    "/compare/claude-code",
-    "/compare/github-copilot",
-    "/compare/firebase-studio",
-    "/compare/antigravity",
-    "/compare/lovable",
-    "/compare/bolt",
-    "/compare/replit",
-    "/compare/windsurf",
-    "/compare/continue",
-    "/compare/cline",
-    "/company",
-    "/product",
-    "/business-platform",
-    "/glossary",
-    "/changelog",
-    "/careers",
-    "/legal/privacy",
     "/legal/terms",
     "/legal/security-policy",
-    "/legal/responsible-ai",
-    "/legal/accessibility",
-    "/legal/acceptable-use",
-    "/legal/cookies",
     "/legal/data-processing",
-    "/legal/licenses",
-    "/blog/multi-model-debate",
-    "/plugins/business",
-    "/docs/certification-guide",
-    "/docs/getting-started",
-    "/plugins/billing",
-    "/plugins/aws",
-    "/plugins/azure",
-    "/plugins/cloud",
-    "/plugins/mcp",
-    "/plugins/observability",
-    "/plugins/security"
+    "/docs/workflows/#verification",
+    "/legal/privacy",
+    "/legal/acceptable-use"
   ],
   "externalHrefsList": [
-    "https://www.structzero.app/ai-team/",
-    "https://www.structzero.app/architecture-overview/",
-    "https://www.structzero.app/blog/",
-    "https://www.structzero.app/blog/multi-model-debate/",
-    "https://www.structzero.app/business-platform/",
-    "https://www.structzero.app/careers/",
-    "https://www.structzero.app/certification/",
-    "https://www.structzero.app/changelog/",
-    "https://www.structzero.app/cloud-integrations/",
-    "https://www.structzero.app/company/",
-    "https://www.structzero.app/compare/antigravity/",
-    "https://www.structzero.app/compare/bolt/",
-    "https://www.structzero.app/compare/claude-code/",
-    "https://www.structzero.app/compare/cline/",
-    "https://www.structzero.app/compare/continue/",
-    "https://www.structzero.app/compare/cursor/",
-    "https://www.structzero.app/compare/firebase-studio/",
-    "https://www.structzero.app/compare/github-copilot/",
-    "https://www.structzero.app/compare/",
-    "https://www.structzero.app/compare/lovable/",
-    "https://www.structzero.app/compare/replit/",
-    "https://www.structzero.app/compare/windsurf/",
+    "https://www.structzero.app/about/",
+    "https://www.structzero.app/android/",
+    "https://www.structzero.app/updates/",
+    "https://www.structzero.app/platform/#why",
     "https://www.structzero.app/contact/",
-    "https://www.structzero.app/debate-engine/",
-    "https://www.structzero.app/docs/certification-guide/",
+    "https://www.structzero.app/demo/",
+    "https://www.structzero.app/docs/architecture/",
     "https://www.structzero.app/docs/getting-started/",
     "https://www.structzero.app/docs/",
-    "https://www.structzero.app/docs/mcp-setup/",
-    "https://www.structzero.app/engineering-events/",
-    "https://www.structzero.app/faq/",
-    "https://www.structzero.app/glossary/",
-    "https://www.structzero.app/ide-integration/",
+    "https://www.structzero.app/docs/integrations/",
+    "https://www.structzero.app/docs/workflows/",
     "https://www.structzero.app/",
+    "https://www.structzero.app/integrations/",
     "https://www.structzero.app/legal/acceptable-use/",
     "https://www.structzero.app/legal/accessibility/",
     "https://www.structzero.app/legal/cookies/",
@@ -117,463 +65,224 @@
     "https://www.structzero.app/legal/responsible-ai/",
     "https://www.structzero.app/legal/security-policy/",
     "https://www.structzero.app/legal/terms/",
-    "https://www.structzero.app/mcp-server/",
-    "https://www.structzero.app/observability/",
-    "https://www.structzero.app/platform-overview/",
-    "https://www.structzero.app/plugin-system/",
-    "https://www.structzero.app/plugins/aws/",
-    "https://www.structzero.app/plugins/aws-agent-toolkit/",
-    "https://www.structzero.app/plugins/azure/",
-    "https://www.structzero.app/plugins/azure-foundry/",
-    "https://www.structzero.app/plugins/bedrock/",
-    "https://www.structzero.app/plugins/billing/",
-    "https://www.structzero.app/plugins/business/",
-    "https://www.structzero.app/plugins/cloud/",
-    "https://www.structzero.app/plugins/github/",
-    "https://www.structzero.app/plugins/google-cloud/",
-    "https://www.structzero.app/plugins/",
-    "https://www.structzero.app/plugins/mcp/",
-    "https://www.structzero.app/plugins/observability/",
-    "https://www.structzero.app/plugins/security/",
-    "https://www.structzero.app/plugins/vercel/",
-    "https://www.structzero.app/plugins/vertex-ai/",
-    "https://www.structzero.app/plugins-hub/",
-    "https://www.structzero.app/privacy/",
-    "https://www.structzero.app/product/",
-    "https://www.structzero.app/project-dna/",
-    "https://www.structzero.app/releases/",
+    "https://www.structzero.app/modules/",
+    "https://www.structzero.app/platform/",
     "https://www.structzero.app/roadmap/",
-    "https://www.structzero.app/security/",
-    "https://www.structzero.app/terms/",
-    "https://www.structzero.app/why-structzero/"
+    "https://www.structzero.app/security/"
   ],
   "pagesReport": [
     {
-      "page": "ai-team/index.html",
-      "title": "Named-Role AI Team Orchestration — StructZero Knowledge Base",
-      "descLength": 80,
-      "issues": []
-    },
-    {
-      "page": "architecture-overview/index.html",
-      "title": "Architecture Overview — StructZero Knowledge Base",
-      "descLength": 68,
-      "issues": []
-    },
-    {
-      "page": "blog/index.html",
-      "title": "StructZero Engineering Blog — Technical Articles",
-      "descLength": 111,
-      "issues": []
-    },
-    {
-      "page": "blog/multi-model-debate/index.html",
-      "title": "Why Multi-Model Debate Outperforms Single LLMs — StructZero Blog",
-      "descLength": 106,
-      "issues": []
-    },
-    {
-      "page": "business-platform/index.html",
-      "title": "Business Growth Engine &amp; Platform — StructZero Knowledge Base",
-      "descLength": 69,
-      "issues": []
-    },
-    {
-      "page": "careers/index.html",
-      "title": "Careers — Join StructZero Engineering",
-      "descLength": 65,
-      "issues": []
-    },
-    {
-      "page": "certification/index.html",
-      "title": "Certification &amp; Release Gates — StructZero Knowledge Base",
-      "descLength": 57,
-      "issues": []
-    },
-    {
-      "page": "changelog/index.html",
-      "title": "Platform Changelog &amp; Release Notes — StructZero Knowledge Base",
-      "descLength": 79,
-      "issues": []
-    },
-    {
-      "page": "cloud-integrations/index.html",
-      "title": "Cloud Infrastructure Integrations — StructZero Knowledge Base",
-      "descLength": 58,
-      "issues": []
-    },
-    {
-      "page": "company/index.html",
-      "title": "Company &amp; Operating Philosophy — StructZero Knowledge Base",
-      "descLength": 77,
-      "issues": []
-    },
-    {
-      "page": "compare/antigravity/index.html",
-      "title": "StructZero vs Google Antigravity 2.0",
-      "descLength": 121,
-      "issues": []
-    },
-    {
-      "page": "compare/bolt/index.html",
-      "title": "StructZero vs Bolt.new",
-      "descLength": 113,
-      "issues": []
-    },
-    {
-      "page": "compare/claude-code/index.html",
-      "title": "StructZero vs Claude Code Architecture",
-      "descLength": 93,
-      "issues": []
-    },
-    {
-      "page": "compare/cline/index.html",
-      "title": "StructZero vs Cline Autonomous Agent",
-      "descLength": 100,
-      "issues": []
-    },
-    {
-      "page": "compare/continue/index.html",
-      "title": "StructZero vs Continue.dev",
-      "descLength": 102,
-      "issues": []
-    },
-    {
-      "page": "compare/cursor/index.html",
-      "title": "StructZero vs Cursor — Technical Architecture Comparison",
-      "descLength": 61,
-      "issues": []
-    },
-    {
-      "page": "compare/firebase-studio/index.html",
-      "title": "StructZero vs Google Firebase Studio",
-      "descLength": 125,
-      "issues": []
-    },
-    {
-      "page": "compare/github-copilot/index.html",
-      "title": "StructZero vs GitHub Copilot",
-      "descLength": 111,
-      "issues": []
-    },
-    {
-      "page": "compare/index.html",
-      "title": "StructZero Tool Comparisons — Architectural Matrices",
-      "descLength": 143,
-      "issues": []
-    },
-    {
-      "page": "compare/lovable/index.html",
-      "title": "StructZero vs Lovable",
-      "descLength": 83,
-      "issues": []
-    },
-    {
-      "page": "compare/replit/index.html",
-      "title": "StructZero vs Replit Agent",
+      "page": "about/index.html",
+      "title": "About StructZero — Operating Philosophy &amp; Team",
       "descLength": 123,
       "issues": []
     },
     {
-      "page": "compare/windsurf/index.html",
-      "title": "StructZero vs Windsurf",
-      "descLength": 102,
+      "page": "android/index.html",
+      "title": "Native Android Control — StructZero",
+      "descLength": 116,
       "issues": []
+    },
+    {
+      "page": "blog/index.html",
+      "title": "Redirecting to Updates...",
+      "descLength": 0,
+      "issues": [
+        "Missing meta description",
+        "Missing H1 heading",
+        "Incomplete OpenGraph tags"
+      ]
+    },
+    {
+      "page": "careers/index.html",
+      "title": "Redirecting to About...",
+      "descLength": 0,
+      "issues": [
+        "Missing meta description",
+        "Missing H1 heading",
+        "Incomplete OpenGraph tags"
+      ]
+    },
+    {
+      "page": "compare/index.html",
+      "title": "Redirecting to Platform Differentiation...",
+      "descLength": 0,
+      "issues": [
+        "Missing meta description",
+        "Missing H1 heading",
+        "Incomplete OpenGraph tags"
+      ]
     },
     {
       "page": "contact/index.html",
-      "title": "Contact Us — StructZero Platform",
-      "descLength": 65,
+      "title": "Contact &amp; Request Access — StructZero",
+      "descLength": 130,
       "issues": []
     },
     {
-      "page": "debate-engine/index.html",
-      "title": "Multi-Model Debate Engine — StructZero Knowledge Base",
-      "descLength": 56,
-      "issues": []
-    },
-    {
-      "page": "docs/certification-guide/index.html",
-      "title": "Certification Release Gate Operational Guide — StructZero Docs",
-      "descLength": 94,
-      "issues": []
-    },
-    {
-      "page": "docs/getting-started/index.html",
-      "title": "Getting Started with StructZero — StructZero Docs",
-      "descLength": 94,
-      "issues": []
-    },
-    {
-      "page": "docs/index.html",
-      "title": "StructZero Documentation Portal",
-      "descLength": 81,
-      "issues": []
-    },
-    {
-      "page": "docs/mcp-setup/index.html",
-      "title": "Connecting StructZero via MCP Server Protocol — StructZero Docs",
-      "descLength": 107,
-      "issues": []
-    },
-    {
-      "page": "engineering-events/index.html",
-      "title": "Engineering Event Recorder — StructZero Knowledge Base",
-      "descLength": 56,
-      "issues": []
-    },
-    {
-      "page": "faq/index.html",
-      "title": "Frequently Asked Questions (FAQ) — StructZero Knowledge Base",
-      "descLength": 124,
-      "issues": []
-    },
-    {
-      "page": "glossary/index.html",
-      "title": "Platform Terminology Glossary — StructZero Knowledge Base",
-      "descLength": 73,
-      "issues": []
-    },
-    {
-      "page": "ide-integration/index.html",
-      "title": "IDE Integration &amp; Developer Workflow — StructZero Knowledge Base",
-      "descLength": 63,
-      "issues": []
-    },
-    {
-      "page": "index.html",
-      "title": "StructZero — Build software with an AI engineering team",
-      "descLength": 141,
-      "issues": []
-    },
-    {
-      "page": "legal/acceptable-use/index.html",
-      "title": "Acceptable Use Policy — StructZero Knowledge Base",
-      "descLength": 56,
-      "issues": []
-    },
-    {
-      "page": "legal/accessibility/index.html",
-      "title": "Accessibility Statement — StructZero Knowledge Base",
-      "descLength": 54,
-      "issues": []
-    },
-    {
-      "page": "legal/cookies/index.html",
-      "title": "Cookie &amp; Local Storage Policy — StructZero Knowledge Base",
-      "descLength": 53,
-      "issues": []
-    },
-    {
-      "page": "legal/data-processing/index.html",
-      "title": "Data Processing Addendum (DPA) — StructZero Knowledge Base",
-      "descLength": 58,
-      "issues": []
-    },
-    {
-      "page": "legal/licenses/index.html",
-      "title": "Open Source Notices &amp; Licensing — StructZero Knowledge Base",
-      "descLength": 71,
-      "issues": []
-    },
-    {
-      "page": "legal/privacy/index.html",
-      "title": "Privacy Policy — StructZero Knowledge Base",
-      "descLength": 101,
-      "issues": []
-    },
-    {
-      "page": "legal/responsible-ai/index.html",
-      "title": "Responsible AI &amp; Governance Statement — StructZero Knowledge Base",
-      "descLength": 71,
-      "issues": []
-    },
-    {
-      "page": "legal/security-policy/index.html",
-      "title": "Security Policy &amp; Guardrails — StructZero Knowledge Base",
-      "descLength": 71,
-      "issues": []
-    },
-    {
-      "page": "legal/terms/index.html",
-      "title": "Terms of Service — StructZero Knowledge Base",
-      "descLength": 106,
-      "issues": []
-    },
-    {
-      "page": "mcp-server/index.html",
-      "title": "Model Context Protocol (MCP) Server — StructZero Knowledge Base",
+      "page": "demo/index.html",
+      "title": "Demo &amp; Example Products — StructZero",
       "descLength": 18,
       "issues": [
         "Description too short (18 chars)"
       ]
     },
     {
-      "page": "observability/index.html",
-      "title": "Platform Observability &amp; Cost Tracking — StructZero Knowledge Base",
-      "descLength": 63,
+      "page": "docs/architecture/index.html",
+      "title": "Architecture &amp; Concepts — StructZero Docs",
+      "descLength": 35,
+      "issues": [
+        "Description too short (35 chars)"
+      ]
+    },
+    {
+      "page": "docs/getting-started/index.html",
+      "title": "Getting Started — StructZero Docs",
+      "descLength": 138,
       "issues": []
     },
     {
-      "page": "platform-overview/index.html",
-      "title": "Platform Overview — StructZero Knowledge Base",
-      "descLength": 69,
+      "page": "docs/index.html",
+      "title": "Documentation Hub — StructZero",
+      "descLength": 123,
       "issues": []
     },
     {
-      "page": "plugin-system/index.html",
-      "title": "Plugin Architecture &amp; Marketplace — StructZero Knowledge Base",
-      "descLength": 60,
+      "page": "docs/integrations/index.html",
+      "title": "Integration Setup — StructZero Docs",
+      "descLength": 124,
       "issues": []
     },
     {
-      "page": "plugins/aws/index.html",
-      "title": "AWS Cloud Infrastructure Integration — StructZero Knowledge Base",
-      "descLength": 82,
+      "page": "docs/workflows/index.html",
+      "title": "Build, Review &amp; Recovery Workflows — StructZero Docs",
+      "descLength": 118,
       "issues": []
     },
     {
-      "page": "plugins/aws-agent-toolkit/index.html",
-      "title": "AWS Agent Toolkit Plugin — StructZero Knowledge Base",
-      "descLength": 91,
-      "issues": []
-    },
-    {
-      "page": "plugins/azure/index.html",
-      "title": "Microsoft Azure Infrastructure Plugin — StructZero Knowledge Base",
-      "descLength": 84,
-      "issues": []
-    },
-    {
-      "page": "plugins/azure-foundry/index.html",
-      "title": "Azure AI Foundry Plugin — StructZero Knowledge Base",
-      "descLength": 65,
-      "issues": []
-    },
-    {
-      "page": "plugins/bedrock/index.html",
-      "title": "Amazon Bedrock Plugin — StructZero Knowledge Base",
-      "descLength": 62,
-      "issues": []
-    },
-    {
-      "page": "plugins/billing/index.html",
-      "title": "Billing &amp; Cost Management Plugin — StructZero Knowledge Base",
-      "descLength": 88,
-      "issues": []
-    },
-    {
-      "page": "plugins/business/index.html",
-      "title": "Business Automation &amp; ROI Plugin — StructZero Knowledge Base",
-      "descLength": 74,
-      "issues": []
-    },
-    {
-      "page": "plugins/cloud/index.html",
-      "title": "Cloud Infrastructure Plugin — StructZero Knowledge Base",
-      "descLength": 71,
-      "issues": []
-    },
-    {
-      "page": "plugins/github/index.html",
-      "title": "GitHub Connector Plugin — StructZero Knowledge Base",
-      "descLength": 77,
-      "issues": []
-    },
-    {
-      "page": "plugins/google-cloud/index.html",
-      "title": "Google Cloud Platform Plugin — StructZero Knowledge Base",
-      "descLength": 62,
-      "issues": []
-    },
-    {
-      "page": "plugins/index.html",
-      "title": "StructZero Plugin Marketplace — Ecosystem Extensions",
-      "descLength": 111,
-      "issues": []
-    },
-    {
-      "page": "plugins/mcp/index.html",
-      "title": "MCP Tools &amp; Servers Plugin — StructZero Knowledge Base",
-      "descLength": 76,
-      "issues": []
-    },
-    {
-      "page": "plugins/observability/index.html",
-      "title": "Observability &amp; Telemetry Plugin — StructZero Knowledge Base",
-      "descLength": 85,
-      "issues": []
-    },
-    {
-      "page": "plugins/security/index.html",
-      "title": "Security Plugin Specification — StructZero Knowledge Base",
-      "descLength": 94,
-      "issues": []
-    },
-    {
-      "page": "plugins/vercel/index.html",
-      "title": "Vercel Deployment Plugin — StructZero Knowledge Base",
-      "descLength": 54,
-      "issues": []
-    },
-    {
-      "page": "plugins/vertex-ai/index.html",
-      "title": "Vertex AI Plugin — StructZero Knowledge Base",
-      "descLength": 112,
-      "issues": []
-    },
-    {
-      "page": "plugins-hub/index.html",
-      "title": "Plugin Marketplace Hub — StructZero Knowledge Base",
+      "page": "index.html",
+      "title": "StructZero — AI Software Command Center",
       "descLength": 151,
       "issues": []
     },
     {
-      "page": "privacy/index.html",
-      "title": "Privacy Policy — StructZero Platform",
-      "descLength": 65,
-      "issues": []
-    },
-    {
-      "page": "product/index.html",
-      "title": "Product Overview &amp; Capabilities — StructZero Knowledge Base",
-      "descLength": 61,
-      "issues": []
-    },
-    {
-      "page": "project-dna/index.html",
-      "title": "Project DNA Context Engine — StructZero Knowledge Base",
-      "descLength": 74,
-      "issues": []
-    },
-    {
-      "page": "releases/index.html",
-      "title": "Releases &amp; Changelog — StructZero Platform",
-      "descLength": 69,
-      "issues": []
-    },
-    {
-      "page": "roadmap/index.html",
-      "title": "StructZero Roadmap — Version 8 to Version 10",
+      "page": "integrations/index.html",
+      "title": "Integrations &amp; Supported Actions — StructZero",
       "descLength": 108,
       "issues": []
     },
     {
+      "page": "legal/acceptable-use/index.html",
+      "title": "Acceptable Use Policy — StructZero",
+      "descLength": 56,
+      "issues": []
+    },
+    {
+      "page": "legal/accessibility/index.html",
+      "title": "Accessibility Statement — StructZero",
+      "descLength": 54,
+      "issues": []
+    },
+    {
+      "page": "legal/cookies/index.html",
+      "title": "Cookie &amp; Local Storage Policy — StructZero",
+      "descLength": 53,
+      "issues": []
+    },
+    {
+      "page": "legal/data-processing/index.html",
+      "title": "Data Processing Addendum (DPA) — StructZero",
+      "descLength": 58,
+      "issues": []
+    },
+    {
+      "page": "legal/licenses/index.html",
+      "title": "Open Source Notices &amp; Licensing — StructZero",
+      "descLength": 71,
+      "issues": []
+    },
+    {
+      "page": "legal/privacy/index.html",
+      "title": "Privacy Policy — StructZero",
+      "descLength": 101,
+      "issues": []
+    },
+    {
+      "page": "legal/responsible-ai/index.html",
+      "title": "Responsible AI &amp; Governance Statement — StructZero",
+      "descLength": 71,
+      "issues": []
+    },
+    {
+      "page": "legal/security-policy/index.html",
+      "title": "Security Policy &amp; Vulnerability Disclosure — StructZero",
+      "descLength": 96,
+      "issues": []
+    },
+    {
+      "page": "legal/terms/index.html",
+      "title": "Terms of Service — StructZero",
+      "descLength": 106,
+      "issues": []
+    },
+    {
+      "page": "modules/index.html",
+      "title": "Modules &amp; Availability Directory — StructZero",
+      "descLength": 137,
+      "issues": []
+    },
+    {
+      "page": "platform/index.html",
+      "title": "Platform &amp; Controlled Autonomy — StructZero",
+      "descLength": 140,
+      "issues": []
+    },
+    {
+      "page": "plugins/index.html",
+      "title": "Redirecting to Integrations...",
+      "descLength": 0,
+      "issues": [
+        "Missing meta description",
+        "Missing H1 heading",
+        "Incomplete OpenGraph tags"
+      ]
+    },
+    {
+      "page": "plugins-hub/index.html",
+      "title": "Redirecting to Integrations...",
+      "descLength": 0,
+      "issues": [
+        "Missing meta description",
+        "Missing H1 heading",
+        "Incomplete OpenGraph tags"
+      ]
+    },
+    {
+      "page": "releases/index.html",
+      "title": "Redirecting to Updates...",
+      "descLength": 0,
+      "issues": [
+        "Missing meta description",
+        "Missing H1 heading",
+        "Incomplete OpenGraph tags"
+      ]
+    },
+    {
+      "page": "roadmap/index.html",
+      "title": "Product Roadmap &amp; Availability — StructZero",
+      "descLength": 104,
+      "issues": []
+    },
+    {
       "page": "security/index.html",
-      "title": "Enterprise Security &amp; Guardrails — StructZero Knowledge Base",
-      "descLength": 72,
+      "title": "Security Controls &amp; Limitations — StructZero",
+      "descLength": 117,
       "issues": []
     },
     {
-      "page": "terms/index.html",
-      "title": "Terms of Service — StructZero Platform",
-      "descLength": 68,
-      "issues": []
-    },
-    {
-      "page": "why-structzero/index.html",
-      "title": "Why StructZero — StructZero Knowledge Base",
-      "descLength": 86,
+      "page": "updates/index.html",
+      "title": "Product &amp; Platform Updates — StructZero",
+      "descLength": 102,
       "issues": []
     }
   ]

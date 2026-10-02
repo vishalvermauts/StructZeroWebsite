@@ -1,0 +1,161 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+
+const sections = [
+  {
+    id: 'deployment',
+    title: 'Cloud Deployment Pipelines',
+    status: 'Available',
+    summary: 'Deploy certified applications directly to modern cloud providers with automated rollback protection if post-deployment health checks fail.',
+    bullets: [
+      'Declarative deployment pipelines for static sites, serverless functions, and containers.',
+      'Automated health check verification before promoting traffic.',
+      'Instant rollback handling upon receiving runtime failure signals.',
+      'Explicit human approval intercept before any billable infrastructure is created.',
+    ],
+  },
+  {
+    id: 'extensibility',
+    title: 'Extensibility & Plugin System',
+    status: 'Available',
+    summary: 'Extend StructZero with custom cloud connectors, telemetry sinks, and model endpoints using standard TypeScript plugin contracts.',
+    bullets: [
+      'Standardized connector interfaces for storage, compute, and notification sinks.',
+      'Sandboxed plugin execution preventing unauthorized filesystem or network access.',
+      'Automatic configuration schema validation via Zod type schemas.',
+      'Hot-reloading plugin registry for local workspace customizations.',
+    ],
+  },
+  {
+    id: 'aws',
+    title: 'Amazon Web Services (AWS)',
+    status: 'Available',
+    summary: 'Integrate with AWS Agent Toolkit, Amazon ECS, AWS Lambda, and S3 for enterprise cloud infrastructure.',
+    bullets: [
+      'Deploy containerized backend microservices to AWS ECS Fargate.',
+      'Deploy serverless API handlers and background workers to AWS Lambda.',
+      'Static asset hosting and CDN distribution via Amazon S3 and CloudFront.',
+      'Support for IAM role delegation and temporary STS credential sessions.',
+    ],
+  },
+  {
+    id: 'github',
+    title: 'GitHub Version Control & Pull Requests',
+    status: 'Available',
+    summary: 'Import repositories, sync remote branch heads, and generate certified pull requests with automated test evidence.',
+    bullets: [
+      'One-click GitHub repository import and AST Project DNA indexing.',
+      'Automated branch isolation keeping experimental runs separated from main.',
+      'Automated pull-request generation attaching verified test and debate logs.',
+      'GitHub Actions CI/CD trigger integration.',
+    ],
+  },
+  {
+    id: 'vercel',
+    title: 'Vercel Edge Deployment',
+    status: 'Available',
+    summary: 'Instant web application deployment to Vercel global edge CDN with automated preview URLs.',
+    bullets: [
+      'Deploy static sites and Next.js / Astro frontends via Vercel Build Output API.',
+      'Automatic preview deployment URLs generated per feature run.',
+      'Isolated environment variable mapping for staging vs production.',
+      'Instant rollback capabilities to previous immutable deployment hashes.',
+    ],
+  },
+  {
+    id: 'google-cloud',
+    title: 'Google Cloud Platform (GCP)',
+    status: 'Available',
+    summary: 'Integrate with Google Cloud Run, BigQuery, and Dataproc serverless compute pipelines.',
+    bullets: [
+      'Containerized service deployment to Google Cloud Run with automatic scaling.',
+      'BigQuery data pipeline and schema migration support.',
+      'Google Cloud Storage bucket artifact syncing.',
+      'Service account authentication via Google Application Default Credentials (ADC).',
+    ],
+  },
+  {
+    id: 'models',
+    title: 'AI Model Endpoints & Providers',
+    status: 'Available',
+    summary: 'Connect foundation models across Anthropic, Google Vertex AI, Amazon Bedrock, DeepSeek, and local Ollama instances.',
+    bullets: [
+      'Anthropic Claude 3.5 Sonnet / Haiku via direct API or Amazon Bedrock.',
+      'Google Gemini 3.6 Pro / Flash via Google Cloud Vertex AI.',
+      'DeepSeek reasoning models for code synthesis and mathematical review.',
+      'Local Ollama endpoint integration for air-gapped or private environments.',
+    ],
+  },
+  {
+    id: 'azure',
+    title: 'Microsoft Azure',
+    status: 'In Development',
+    summary: 'Connect to Microsoft Azure AI Foundry, Azure Container Apps, and Azure Blob Storage.',
+    bullets: [
+      'Azure OpenAI model integration with enterprise privacy boundaries.',
+      'Containerized deployment target for Azure Container Apps (ACA).',
+      'Azure Blob Storage synchronization for build artifacts.',
+      'Currently in active technical development.',
+    ],
+  },
+];
+---
+
+<Base
+  title="Integrations & Supported Actions — StructZero"
+  description="Supported cloud providers, model platforms, developer tools, and deployment targets verified for StructZero."
+>
+  <!-- Hero Section -->
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4">
+        <a href="/" class="hover:text-[#4d8fe0]">Home</a>
+        <span>/</span>
+        <span class="text-[#e9e9ea]">Integrations</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea]">Supported Integrations</h1>
+        <StatusBadge status="Available" size="md" />
+      </div>
+      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed">
+        Connect StructZero to your existing cloud infrastructure, version control repositories, and model providers. Every integration operates within strict permission boundaries.
+      </p>
+    </div>
+  </section>
+
+  <!-- Integration Anchor Cards -->
+  <section class="py-16 bg-[#000000]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-12">
+      {sections.map((sec) => (
+        <div id={sec.id} class="p-6 sm:p-8 rounded-2xl border border-[#1e1e1e] bg-[#111111] scroll-mt-24 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#1e1e1e] pb-4">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] block mb-1">
+                INTEGRATION TARGET
+              </span>
+              <h2 class="text-2xl font-bold text-[#e9e9ea]">{sec.title}</h2>
+            </div>
+            <StatusBadge status={sec.status} size="md" />
+          </div>
+
+          <p class="text-sm sm:text-base text-[#96979a] leading-relaxed">
+            {sec.summary}
+          </p>
+
+          <div class="p-4 rounded-xl bg-[#000000] border border-[#1e1e1e]">
+            <h3 class="text-xs font-mono uppercase tracking-wider text-[#7c7d80] mb-3">Verified Capabilities</h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#96979a]">
+              {sec.bullets.map((b) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4d8fe0] font-bold">✓</span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

@@ -8,10 +8,23 @@ import SubpageLayout from '../../layouts/SubpageLayout.astro';
   status="Official Spec"
   summary="The StructZero Data Processing Addendum governs customer data processing, sub-processor disclosures, and compliance with global privacy regulations."
   related={[
-    { label: 'Privacy Policy', href: '/legal/privacy' },
-    { label: 'Security Policy', href: '/legal/security-policy' },
+    { label: 'Privacy Policy', href: '/legal/privacy/' },
+    { label: 'Security Policy', href: '/legal/security-policy/' },
   ]}
 >
-  ## Sub-Processors & Data Transfers
-  StructZero routes model queries to authorized provider endpoints (Anthropic, Google Cloud, AWS) under strict zero-retention enterprise agreements.
+  <div class="space-y-6">
+    <div>
+      <h2 class="text-xl font-bold text-[#e9e9ea] mb-2">Sub-Processors & Model Infrastructure</h2>
+      <p class="text-sm text-[#96979a] leading-relaxed">
+        StructZero routes model queries to authorized provider endpoints (Anthropic, Google Cloud Vertex AI, AWS Bedrock) under strict zero-retention enterprise agreements. Customer intellectual property is never retained for model retraining.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-xl font-bold text-[#e9e9ea] mb-2">Data Residency & Workspace Isolation</h2>
+      <p class="text-sm text-[#96979a] leading-relaxed">
+        All generated codebases and AST symbol caches remain confined to your specified local workspace or designated customer cloud container instances.
+      </p>
+    </div>
+  </div>
 </SubpageLayout>

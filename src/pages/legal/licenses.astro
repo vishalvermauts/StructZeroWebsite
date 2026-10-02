@@ -8,12 +8,18 @@ import SubpageLayout from '../../layouts/SubpageLayout.astro';
   status="Official Spec"
   summary="StructZero incorporates open source libraries including Astro, Tailwind CSS, GSAP, and Mermaid.js under their respective licenses."
   related={[
-    { label: 'Terms of Service', href: '/legal/terms' },
+    { label: 'Terms of Service', href: '/legal/terms/' },
   ]}
 >
-  ## Open Source Attributions
-  - **Astro**: MIT License
-  - **Tailwind CSS**: MIT License
-  - **GSAP**: Standard License
-  - **Mermaid.js**: MIT License
+  <div class="space-y-6">
+    <div>
+      <h2 class="text-xl font-bold text-[#e9e9ea] mb-3">Open Source Attributions</h2>
+      <ul class="space-y-2 text-sm text-[#96979a] list-disc list-inside">
+        <li><strong>Astro</strong>: MIT License (Copyright © with Astro contributors)</li>
+        <li><strong>Tailwind CSS</strong>: MIT License (Copyright © Tailwind Labs, Inc.)</li>
+        <li><strong>Mermaid.js</strong>: MIT License (Copyright © Knut Sveidqvist)</li>
+        <li><strong>GSAP</strong>: Standard GreenSock Web License</li>
+      </ul>
+    </div>
+  </div>
 </SubpageLayout>

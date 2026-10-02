@@ -4,76 +4,98 @@ import StatusBadge from '../components/StatusBadge.astro';
 
 const milestones = [
   {
-    version: 'Version 8',
-    date: 'Q1 2026',
-    status: 'LIVE',
-    description: 'Foundation of Multi-Agent Debate Engine, AST Parser, and basic Vercel deployment adapter.',
+    version: 'Version 11 Core',
+    date: 'Current Release',
+    status: 'Available',
+    description: 'Foundation of Multi-Model Engineering Engine, AST Project DNA Parser, and Pre-Flight Certification Gates.',
     features: [
-      { name: 'Multi-Model Debate (Gemini + Claude)', status: 'LIVE' },
-      { name: 'AST Project DNA Ingestion', status: 'LIVE' },
-      { name: 'Static Deployment Pipeline', status: 'LIVE' },
+      { name: 'Multi-Model Debate (Claude, Gemini, DeepSeek)', status: 'Available' },
+      { name: 'AST Project DNA Ingestion & Route Topologies', status: 'Available' },
+      { name: 'Automated Pre-Flight Certification Gate', status: 'Available' },
+      { name: 'Docker Container Sandboxed Execution', status: 'Available' },
+      { name: 'AWS & Vercel Edge Deployment Adapters', status: 'Available' },
+      { name: 'Budget Ceilings & Token Metering', status: 'Available' },
     ],
   },
   {
-    version: 'Version 9 (Current)',
-    date: 'Q3 2026',
-    status: 'LIVE',
-    description: 'Full IDE-Agnostic MCP Server, 10-Role AI Team Orchestration, AWS Agent Toolkit, and Certification Release Gates.',
+    version: 'Version 11 Remote',
+    date: 'In Development',
+    status: 'In Development',
+    description: 'Extending software engineering governance to mobile with StructZero Remote for Android.',
     features: [
-      { name: 'IDE-Agnostic MCP Server (Cursor, VS Code, Windsurf)', status: 'LIVE' },
-      { name: '10-Role AI Engineering Team', status: 'LIVE' },
-      { name: 'Automated Certification Gate', status: 'LIVE' },
-      { name: 'AWS Agent Toolkit Integration', status: 'LIVE' },
-      { name: '70–80% Recursive Self-Development Dogfooding', status: 'LIVE' },
-      { name: 'Plugin Marketplace Framework', status: 'IN DEVELOPMENT' },
+      { name: 'StructZero Remote Native Android Client', status: 'In Development' },
+      { name: 'Biometric & Push-Notification Operator Approvals', status: 'In Development' },
+      { name: 'Live WebSocket Telemetry & Latency Streaming', status: 'In Development' },
+      { name: 'Offline Action Queueing & Replay Protection', status: 'In Development' },
+      { name: 'Android Native Gradle Build Pipeline', status: 'In Development' },
     ],
   },
   {
-    version: 'Version 10',
-    date: 'Q4 2026 / 2027',
-    status: 'PLANNED',
-    description: 'Self Evolution Engine, Business Growth Engine, and Autonomous Infrastructure Orchestration.',
+    version: 'Version 12 Platform',
+    date: 'Planned',
+    status: 'Planned',
+    description: 'Autonomous continuous improvement, cross-cloud deployment orchestration, and enterprise RBAC.',
     features: [
-      { name: 'Self Evolution Engine (Autonomous Self-Patching)', status: 'PLANNED' },
-      { name: 'Business Growth Engine & ROI Analyzer', status: 'PLANNED' },
-      { name: 'Multi-Cloud Native Synthesis (AWS, GCP, Azure)', status: 'PLANNED' },
+      { name: 'Autonomous Continuous Patch Verification', status: 'Planned' },
+      { name: 'Multi-Cloud Workload Synthesis (AWS, GCP, Azure)', status: 'Planned' },
+      { name: 'Enterprise SAML/SSO & Role-Based Access Control', status: 'Planned' },
+      { name: 'Automated Dead-Code Pruning & AST Optimization', status: 'Planned' },
+    ],
+  },
+  {
+    version: 'Research Horizon',
+    date: 'Exploring',
+    status: 'Exploring',
+    description: 'Long-term research into autonomous portfolio refactoring and system self-healing.',
+    features: [
+      { name: 'Autonomous Technical Debt Reduction Loops', status: 'Exploring' },
+      { name: 'Business Impact & Feature ROI Estimation', status: 'Exploring' },
     ],
   },
 ];
 ---
 
 <Base
-  title="StructZero Roadmap — Version 8 to Version 10"
-  description="Exhaustive timeline of StructZero platform milestones, marked by Live, In Development, and Planned statuses."
+  title="Product Roadmap & Availability — StructZero"
+  description="Transparent development timeline for StructZero platform capabilities, release statuses, and milestones."
 >
-  <section class="py-20 border-b border-border bg-panel/30">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Transparent Engineering</span>
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">Platform Roadmap & Release Timeline</h1>
-      <p class="text-lg text-ink-muted max-w-2xl mx-auto">
-        Every feature clearly marked as Live, In Development, or Planned. No unverified claims.
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div class="inline-flex items-center gap-2 mb-3">
+        <StatusBadge status="Available" size="sm" />
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold">
+          Transparent Milestones
+        </span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea] mb-4">
+        Platform Roadmap & Availability
+      </h1>
+      <p class="text-base sm:text-lg text-[#96979a] max-w-2xl mx-auto">
+        Every capability clearly tagged with its true development and release state. No unverified claims.
       </p>
     </div>
   </section>
 
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-6 space-y-12">
+  <section class="py-16 bg-[#000000]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
       {milestones.map(m => (
-        <div class="border border-border rounded-2xl p-8 bg-panel relative overflow-hidden">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 border-b border-border/80 pb-4">
+        <div class="border border-[#1e1e1e] rounded-2xl p-6 sm:p-8 bg-[#111111] space-y-6">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#1e1e1e] pb-4">
             <div>
-              <span class="font-mono text-xs text-ink-faint block">{m.date}</span>
-              <h2 class="text-2xl font-bold text-ink">{m.version}</h2>
+              <span class="font-mono text-xs text-[#7c7d80] block mb-1">{m.date}</span>
+              <h2 class="text-2xl font-bold text-[#e9e9ea]">{m.version}</h2>
             </div>
-            <StatusBadge status={m.status} />
+            <StatusBadge status={m.status} size="md" />
           </div>
-          <p class="text-ink-muted mb-6">{m.description}</p>
+
+          <p class="text-sm text-[#96979a] leading-relaxed">{m.description}</p>
+
           <div class="space-y-3">
-            <h3 class="font-mono text-xs uppercase text-accent font-semibold">Key Capabilities</h3>
+            <h3 class="font-mono text-xs uppercase text-[#7cadec] font-semibold">Milestone Deliverables</h3>
             <div class="grid sm:grid-cols-2 gap-3">
               {m.features.map(f => (
-                <div class="flex items-center justify-between p-3 rounded-lg bg-bg/60 border border-border/60 text-sm">
-                  <span class="text-ink font-medium">{f.name}</span>
+                <div class="flex items-center justify-between p-3 rounded-xl bg-[#000000] border border-[#1e1e1e] text-xs">
+                  <span class="text-[#e9e9ea] font-medium">{f.name}</span>
                   <StatusBadge status={f.status} size="sm" />
                 </div>
               ))}

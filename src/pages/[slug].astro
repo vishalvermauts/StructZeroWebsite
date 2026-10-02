@@ -1,28 +1,6 @@
 ---
-import SubpageLayout from '../layouts/SubpageLayout.astro';
-import { getCollection } from 'astro:content';
-
+// Broad legacy generator replaced with explicit approved manifest (empty to prevent retired content being regenerated)
 export async function getStaticPaths() {
-  const kbEntries = await getCollection('kb');
-  return kbEntries.map(entry => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+  return [];
 }
-
-const { entry } = Astro.props;
-const { Content } = await entry.render();
 ---
-
-<SubpageLayout
-  title={entry.data.title}
-  description={entry.data.description}
-  status={entry.data.status}
-  summary={entry.data.summary}
-  features={entry.data.features}
-  faqs={entry.data.faqs}
-  related={entry.data.related}
-  video={entry.data.video}
->
-  <Content />
-</SubpageLayout>

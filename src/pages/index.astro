@@ -1,307 +1,526 @@
 ---
 import Base from '../layouts/Base.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+import BrandMark from '../components/BrandMark.astro';
 import '../styles/global.css';
+
+const lifecycleSteps = [
+  { step: '01', name: 'Research', desc: 'Ingest codebase AST, dependency graphs, API specs, and technical documentation.' },
+  { step: '02', name: 'Plan', desc: 'Formulate architecture blueprints, topological order, and cross-model design critique.' },
+  { step: '03', name: 'Build', desc: 'Generate dependency-ordered source code strictly aligned to type contracts.' },
+  { step: '04', name: 'Verify', desc: 'Pre-flight AST compilation, module import resolution, and automated repair loops.' },
+  { step: '05', name: 'Review', desc: 'Human authorization pause for billable cloud provisioning, schema shifts, and releases.' },
+  { step: '06', name: 'Deploy', desc: 'Ship certified static bundles or container workloads to Vercel, AWS, or GCP.' },
+  { step: '07', name: 'Monitor', desc: 'Live event streaming, model token consumption, latency, and budget meter telemetry.' },
+  { step: '08', name: 'Improve', desc: 'Governed continuous patching, feedback loops, and persistent project memory.' },
+];
+
+const faqs = [
+  {
+    q: 'How does StructZero differ from single-model code assistants?',
+    a: 'Single-model tools prompt-and-pray in a single pass without independent review, leading to hallucinated imports, broken routes, and undetected bugs. StructZero operates as a coordinated AI software engineering platform: parsing syntax trees (Project DNA), debating architecture across independent models, validating code in sandboxes before disk write, and enforcing strict human approval gates.',
+  },
+  {
+    q: 'Can we use our own models or local Ollama endpoints?',
+    a: 'Yes. StructZero is provider-neutral. You can configure Claude, Gemini, DeepSeek, Amazon Bedrock, or your own local Ollama endpoints for specific roles (e.g. Claude for Architecture, DeepSeek for Code, Gemini for Security Audit).',
+  },
+  {
+    q: 'How does StructZero prevent accidental cloud charges or data loss?',
+    a: 'Every billable action (e.g. AWS provisioning, serverless deployments) or destructive command (e.g. DROP TABLE, resource deletion) triggers a hard human-in-the-loop authorization pause. Projects also enforce pre-configured budget ceilings per run.',
+  },
+];
 ---
+
 <Base
-  title="StructZero — Build software with an AI engineering team"
-  description="StructZero runs a real multi-model debate, certifies every file, and deploys real infrastructure — an AI engineering platform, not a chatbot."
+  title="StructZero — AI Software Engineering Platform"
+  description="Coordinates modular workflows to research, build, verify, secure, deploy, and operate software — with budgets, approvals, and an immutable record of every change."
 >
-  <header id="top" class="relative pt-10 pb-16 text-center overflow-hidden">
-    <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[500px] rounded-full opacity-40" style="background: radial-gradient(ellipse at center, var(--accent-soft), transparent 65%);"></div>
-    <div class="max-w-4xl mx-auto px-6 relative">
-      <h1 class="text-4xl md:text-6xl font-bold leading-[1.08] tracking-tight mb-6" data-anim="hero-text">
-        Build software with an AI engineering team — not a single AI model.
+  <!-- Section 1: Hero -->
+  <section class="relative pt-16 pb-20 overflow-hidden border-b border-[#1e1e1e] bg-[#000000]">
+    <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[500px] rounded-full opacity-20" style="background: radial-gradient(ellipse at center, #4d8fe0, transparent 70%);"></div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative text-center">
+
+      <!-- Availability Chip -->
+      <div class="inline-flex items-center gap-2 mb-6">
+        <StatusBadge status="Available" size="md" />
+        <span class="text-xs font-mono text-[#7c7d80]">Version 11 Technical Preview</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-[#e9e9ea] leading-[1.08] mb-6">
+        Your AI Software <br class="hidden sm:inline" />
+        <span class="text-[#4d8fe0]">Engineering Platform</span>.
       </h1>
 
-      <div class="flex flex-wrap justify-center gap-1.5 font-mono text-[12.5px] mb-8">
-        {['Prompt','Debate','Architecture','Certification','Code','Deploy','Monitor'].map((step) => (
-          <span data-pipeline-step class="px-3.5 py-2 rounded-md bg-panel border border-border text-ink-faint">{step}</span>
-        ))}
-      </div>
-
-      <p class="text-lg font-bold text-ink max-w-xl mx-auto mb-3">
-        Every project begins with an architecture debate before a single file is written.
-      </p>
-      <p class="text-lg text-ink-muted max-w-xl mx-auto mb-10">
-        StructZero runs a real architecture debate between multiple models before a single file is written — then certifies every file before it ships.
+      <p class="text-lg sm:text-xl text-[#96979a] max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+        Coordinates modular workflows to research, build, verify, secure, deploy, and operate software — with budgets, approvals, and an immutable record of every change.
       </p>
 
-      <!-- Video Showcase with Modern IDE/Browser UI Frame -->
-      <div class="reveal opacity-0 translate-y-4 mb-4 rounded-2xl border border-border bg-panel/80 overflow-hidden shadow-2xl backdrop-blur text-left">
-        <!-- Mock Browser / Terminal Top Bar -->
-        <div class="flex items-center justify-between px-4 py-3 border-b border-border bg-bg/90">
-          <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-            <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
-          </div>
-          <div class="flex items-center gap-2 px-3 py-1 rounded-md bg-panel border border-border font-mono text-[11px] text-ink-muted">
-            <svg class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-            <span>Structzero - AI software engineering platform.mp4</span>
-          </div>
-          <div class="font-mono text-[11px] text-accent font-semibold px-2 py-0.5 rounded bg-accent-soft border border-accent/30">
-            EXPLAINER VIDEO
-          </div>
-        </div>
-
-        <!-- Video Player Wrapper -->
-        <div class="relative aspect-video bg-black/40 flex items-center justify-center group">
-          <video 
-            class="w-full h-full object-cover" 
-            controls 
-            playsinline 
-            preload="metadata"
-          >
-            <source src="/Structzero_AI_software_engineering_platform.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <section id="why" class="py-24 border-t border-border">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="reveal opacity-0 translate-y-4 mb-12">
-        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Why another AI coding platform</span>
-        <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Cursor exists. Lovable exists. Bolt exists.<br />Here's the actual difference.</h2>
-        <p class="text-ink-muted">Most AI coding tools are one model, one pass, no review. You get code fast — and bugs faster. StructZero runs the process a real engineering team would, compressed into minutes.</p>
-      </div>
-      <div class="grid md:grid-cols-2 gap-6 reveal opacity-0 translate-y-4">
-        <div class="border border-border rounded-2xl p-7 bg-panel opacity-70">
-          <div class="font-bold text-sm mb-4">Traditional AI IDE</div>
-          <div class="text-[14.5px] text-ink-muted py-2.5">Prompt</div>
-          <div class="text-[14.5px] text-ink-muted py-2.5 border-t border-border">Code</div>
-          <div class="text-[14.5px] text-ink-muted py-2.5 border-t border-border">Hope</div>
-          <div class="text-[14.5px] text-ink-muted py-2.5 border-t border-border">Debug</div>
-          <div class="text-[14.5px] text-ink-muted py-2.5 border-t border-border">Manual Deploy</div>
-        </div>
-        <div class="border border-accent rounded-2xl p-7" style="background: linear-gradient(180deg, var(--accent-soft), transparent 70%);">
-          <div class="font-bold text-sm mb-4">StructZero</div>
-          <div class="text-[14.5px] py-2.5">Prompt</div>
-          <div class="text-[14.5px] py-2.5 border-t border-border font-semibold text-accent">Architecture</div>
-          <div class="text-[14.5px] py-2.5 border-t border-border font-semibold text-accent">Debate</div>
-          <div class="text-[14.5px] py-2.5 border-t border-border font-semibold text-accent">Certification</div>
-          <div class="text-[14.5px] py-2.5 border-t border-border font-semibold text-accent">Deploy</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 border-t border-border">
-    <div class="max-w-2xl mx-auto px-6">
-      <div class="reveal opacity-0 translate-y-4 mb-12">
-        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Don't hide the debate</span>
-        <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Watch the models actually disagree.</h2>
-        <p class="text-ink-muted mb-4">This is StructZero's real personality — a genuine review process, not a single model faking a conversation with itself.</p>
-        <p class="text-ink font-bold mb-8">Every opinion is independent. No model sees another model's critique before writing its own.</p>
-      </div>
-      <div data-debate-scene class="flex flex-col gap-3">
-        <div class="debate-bubble opacity-0 translate-y-2 flex gap-3 border border-border bg-panel rounded-xl px-5 py-4 max-w-[88%]">
-          <span class="font-mono text-[11px] font-bold text-accent uppercase w-20 shrink-0">Gemini</span>
-          <span class="text-[14.5px]">This API design is weak — the pagination contract doesn't handle empty result sets.</span>
-        </div>
-        <div class="debate-bubble opacity-0 translate-y-2 flex gap-3 border border-border bg-panel rounded-xl px-5 py-4 max-w-[88%]">
-          <span class="font-mono text-[11px] font-bold text-accent uppercase w-20 shrink-0">DeepSeek</span>
-          <span class="text-[14.5px]">Agreed, and the database schema has a redundant foreign key that will cause write conflicts under load.</span>
-        </div>
-        <div class="debate-bubble opacity-0 translate-y-2 flex gap-3 rounded-xl px-5 py-4 max-w-[88%] self-end" style="background: var(--accent-soft); border: 1px solid var(--accent);">
-          <span class="font-mono text-[11px] font-bold text-accent uppercase w-20 shrink-0">Judge</span>
-          <span class="text-[14.5px]">Both flags are valid. Revise the pagination contract and drop the redundant key before proceeding.</span>
-        </div>
-        <div class="debate-bubble opacity-0 translate-y-2 flex gap-3 rounded-xl px-5 py-4 max-w-[88%]" style="background: rgba(51,192,136,0.08); border: 1px solid var(--ok);">
-          <span class="font-mono text-[11px] font-bold uppercase w-20 shrink-0" style="color: var(--ok);">Verified</span>
-          <span class="text-[14.5px]">Architecture re-checked against the fixes. Consistent. Proceeding to certification.</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="workflow" class="py-24 border-t border-border" data-pipeline-diagram>
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="reveal opacity-0 translate-y-4 mb-12">
-        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">How it works</span>
-        <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Every project follows the same real pipeline.</h2>
-        <p class="text-ink-muted">Not a metaphor — this is the literal sequence every generation runs through, in order.</p>
+      <!-- Primary Action CTAs -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
+        <a
+          href="/demo/"
+          class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#4d8fe0] text-[#000000] font-semibold text-sm hover:bg-[#7cadec] transition-all shadow-lg shadow-[#4d8fe0]/10 flex items-center justify-center gap-2"
+        >
+          <span>Explore Interactive Demo</span>
+          <span>→</span>
+        </a>
+        <a
+          href="/contact/"
+          class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#111111] border border-[#2c2c2c] text-[#e9e9ea] font-medium text-sm hover:bg-[#1a1a1a] transition-colors flex items-center justify-center gap-2"
+        >
+          <span>Request Access & Walkthrough</span>
+        </a>
       </div>
 
-      <div class="relative pl-8">
-        <svg class="absolute left-0 top-0 h-full w-4" viewBox="0 0 10 800" preserveAspectRatio="none" aria-hidden="true">
-          <path data-draw-path d="M5 0 L5 800" stroke="var(--accent)" stroke-width="2" fill="none" />
-        </svg>
-        {[
-          ['01','Idea','Describe what you want to build in plain English. StructZero classifies the request — a quick question, a focused change, or a full architecture debate.'],
-          ['02','Debate','Multiple models draft, critique, and revise the architecture — independently, not as a single model playing multiple roles.'],
-          ['03','Architecture','Every project produces a complete engineering blueprint before implementation.', ['Architecture Diagram', 'Database', 'APIs', 'Components', 'Dependencies', 'File Manifest']],
-          ['04','Certification','Every file is checked before it\'s considered done — nothing ships unverified.'],
-          ['05','Code','Real files, generated in dependency order, reconciled against each other so imports and interfaces actually line up.'],
-          ['06','Deploy','One click to real infrastructure — see it live before you decide to ship it further.'],
-          ['07','Monitor','Every model call, every decision, every step — logged, so you can see exactly what happened and why.'],
-          ['08','Improve','Refine the architecture, rebuild a single file, or start the next iteration — the same rigor, every time.'],
-        ].map(([n, title, desc, list]) => (
-          <div class="reveal opacity-0 translate-y-4 grid grid-cols-[48px_1fr] gap-5 py-7 border-t border-border first:border-t-0">
-            <div class="font-mono text-[13px] text-ink-faint pt-0.5">{n}</div>
-            <div>
-              <div class="text-lg font-bold mb-1.5">{title}</div>
-              <p class="text-[14.5px] text-ink-muted max-w-md">{desc}</p>
-              {list && (
-                <div class="flex flex-wrap gap-2 mt-4">
-                  {(list as string[]).map(item => (
-                    <span class="text-[11px] uppercase tracking-wider font-mono px-3 py-1.5 bg-panel border border-border rounded-md text-ink-muted">{item}</span>
-                  ))}
-                </div>
-              )}
+      <!-- Section 2: Product Proof (Platform Workspace Canvas Matching App UI) -->
+      <div class="rounded-2xl border border-[#1e1e1e] bg-[#0a0a0a] overflow-hidden shadow-2xl text-left">
+        <!-- Canvas Top Bar -->
+        <div class="flex items-center justify-between px-4 py-3 border-b border-[#1e1e1e] bg-[#000000]">
+          <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+              <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+            </div>
+            <div class="flex items-center gap-2 text-xs font-mono text-[#96979a] pl-2 border-l border-[#1e1e1e]">
+              <span class="text-[#e9e9ea] font-semibold flex items-center gap-1.5">
+                <span class="text-[#4d8fe0]">▲</span> StructZero
+              </span>
+              <span class="text-[#7c7d80]">/</span>
+              <span>Workspace: aurora-studio</span>
             </div>
           </div>
-        ))}
+          <div class="flex items-center gap-2.5">
+            <span class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded text-[11px] font-mono bg-[#101c2c] text-[#7cadec] border border-[#2c2c2c]">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#4f9e6e]"></span>
+              aurora-studio · BUILD
+            </span>
+            <span class="text-[11px] font-mono text-[#96979a] px-2 py-0.5 bg-[#111111] rounded border border-[#1e1e1e]">
+              Open Full IDE
+            </span>
+          </div>
+        </div>
+
+        <!-- Canvas Body: Authentic 3-Pane Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-[#1e1e1e] bg-[#000000]">
+          <!-- Left Column: Session Drawer & Active Sessions -->
+          <div class="lg:col-span-3 p-4 space-y-4 bg-[#0a0a0a]">
+            <!-- Action Button -->
+            <button type="button" class="w-full py-2 px-3 rounded-lg bg-[#101c2c] border border-[#2c2c2c] text-[#7cadec] font-medium text-xs flex items-center justify-center gap-1.5 hover:bg-[#1a2c42] transition-colors">
+              <span>+ New Engineering Session</span>
+            </button>
+
+            <div class="space-y-2">
+              <div class="text-[11px] font-mono uppercase tracking-wider text-[#7c7d80]">Recent Sessions</div>
+              <div class="space-y-1 text-xs">
+                <div class="p-2 rounded-md bg-[#111111] border border-[#2c2c2c] flex items-center justify-between text-[#e9e9ea]">
+                  <span class="font-medium text-[#7cadec]">aurora-studio</span>
+                  <span class="text-[10px] font-mono text-[#4f9e6e]">ACTIVE</span>
+                </div>
+                <div class="p-2 rounded-md hover:bg-[#111111] flex items-center justify-between text-[#96979a] transition-colors">
+                  <span>dummy-preview-p...</span>
+                  <span class="text-[10px] font-mono text-[#7c7d80]">IDLE</span>
+                </div>
+                <div class="p-2 rounded-md hover:bg-[#111111] flex items-center justify-between text-[#96979a] transition-colors">
+                  <span>neonfalcon</span>
+                  <span class="text-[10px] font-mono text-[#7c7d80]">IDLE</span>
+                </div>
+                <div class="p-2 rounded-md hover:bg-[#111111] flex items-center justify-between text-[#96979a] transition-colors">
+                  <span>project-lunarecho</span>
+                  <span class="text-[10px] font-mono text-[#7c7d80]">IDLE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Center Column: Workflow Steps & Metric Widgets -->
+          <div class="lg:col-span-4 p-4 space-y-4 bg-[#000000]">
+            <!-- Lifecycle Breadcrumb Strip -->
+            <div class="flex items-center gap-1 text-[11px] font-mono text-[#7c7d80] overflow-x-auto pb-1 border-b border-[#1e1e1e]">
+              <span class="text-[#4f9e6e]">● Define</span>
+              <span>→</span>
+              <span class="text-[#4f9e6e]">● Research</span>
+              <span>→</span>
+              <span class="text-[#4f9e6e]">● Debate</span>
+              <span>→</span>
+              <span class="text-[#7cadec] font-bold">● Build</span>
+            </div>
+
+            <!-- Widgets Grid -->
+            <div class="space-y-3">
+              <div class="p-3 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+                <div class="text-[10px] font-mono text-[#7c7d80] uppercase">API Usage</div>
+                <div class="text-sm font-semibold text-[#e9e9ea] mt-0.5">Sandboxed Container</div>
+                <div class="text-[11px] text-[#96979a]">Claude 3.5 Sonnet + Gemini Flash</div>
+              </div>
+
+              <div class="p-3 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+                <div class="text-[10px] font-mono text-[#7c7d80] uppercase">Billing & Guardrails</div>
+                <div class="text-sm font-semibold text-[#e9e9ea] mt-0.5">$14.20 / $50.00 Limit</div>
+                <div class="w-full bg-[#000000] h-1.5 rounded-full mt-2 overflow-hidden border border-[#1e1e1e]">
+                  <div class="bg-[#4f9e6e] h-full" style="width: 28%"></div>
+                </div>
+              </div>
+
+              <div class="p-3 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+                <div class="flex items-center justify-between">
+                  <div class="text-[10px] font-mono text-[#7c7d80] uppercase">Preview Target</div>
+                  <span class="text-[10px] font-mono text-[#4f9e6e] flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#4f9e6e] animate-pulse"></span> Live
+                  </span>
+                </div>
+                <div class="text-xs text-[#96979a] mt-1">Generated: 18 files · 0 syntax defects</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Live Artifact Canvas / Workspace Preview -->
+          <div class="lg:col-span-5 p-4 space-y-3 bg-[#0a0a0a]">
+            <div class="flex items-center justify-between text-xs border-b border-[#1e1e1e] pb-2">
+              <span class="font-mono text-[#7cadec] font-semibold">PREVIEW: aurora / 01</span>
+              <span class="text-[11px] font-mono text-[#7c7d80]">index.html</span>
+            </div>
+
+            <!-- Terminal / Event Stream Output -->
+            <div class="p-3 rounded-xl bg-[#000000] border border-[#1e1e1e] font-mono text-xs space-y-1.5">
+              <div class="text-[#7c7d80]">[14:32:01] <span class="text-[#4f9e6e]">ProjectDNA:</span> Abstract Syntax Tree parsed: 142 exports.</div>
+              <div class="text-[#7c7d80]">[14:32:04] <span class="text-[#7cadec]">Debate:</span> Architect (Claude) proposal critiqued by Reviewer (Gemini).</div>
+              <div class="text-[#7c7d80]">[14:32:08] <span class="text-[#b388eb]">Judge:</span> DeepSeek R1 approved final layout patch.</div>
+              <div class="text-[#7c7d80]">[14:32:12] <span class="text-[#4f9e6e]">Certify:</span> Syntax: PASS | Imports: PASS | Build: PASS</div>
+              <div class="text-[#c19a4a]">[14:32:15] Intercept: PAUSED awaiting operator deploy approval.</div>
+            </div>
+
+            <div class="p-3 rounded-lg bg-[#111111] border border-[#2c2c2c] flex items-center justify-between text-xs">
+              <span class="text-[#e9e9ea]">Operator Confirmation:</span>
+              <div class="flex gap-2">
+                <span class="px-2.5 py-1 rounded text-[11px] font-semibold bg-[#4f9e6e] text-[#000000]">Approve</span>
+                <span class="px-2.5 py-1 rounded text-[11px] font-semibold bg-[#1a1a1a] text-[#e9e9ea] border border-[#2c2c2c]">Deny</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="certification" class="py-24 border-t border-border">
-    <div class="max-w-2xl mx-auto px-6 text-center">
-      <div class="reveal opacity-0 translate-y-4">
-        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Certification</span>
-        <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Nothing ships until it's checked.</h2>
-        <p class="text-ink-muted mb-4">Every generated file passes automated checks before StructZero considers it done — the same discipline a careful engineer would apply by hand, run automatically, every time.</p>
-        <p class="text-ink font-bold">Code generation doesn't finish when the model stops typing. It finishes when certification passes.</p>
+  <!-- Section 3: 8-Stage Lifecycle -->
+  <section class="py-20 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
+          Governed Execution Pipeline
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea] mb-4">
+          The 8-Stage Engineering Lifecycle
+        </h2>
+        <p class="text-base text-[#96979a]">
+          Every generation follows the exact sequence an enterprise engineering department would execute.
+        </p>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mt-9 reveal opacity-0 translate-y-4">
-        {['Syntax','Imports','Module consistency','Framework fit','Dependencies'].map((c) => (
-          <div class="flex items-center gap-2 text-[14px] bg-panel border border-border rounded-lg px-3.5 py-3">
-            <span class="font-bold" style="color: var(--ok);">✓</span>{c}
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {lifecycleSteps.map((item) => (
+          <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111] hover:border-[#2c2c2c] transition-colors">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-mono text-xs font-bold text-[#7cadec]">{item.step}</span>
+              <span class="w-2 h-2 rounded-full bg-[#4d8fe0]/30"></span>
+            </div>
+            <h3 class="text-base font-bold text-[#e9e9ea] mb-1.5">{item.name}</h3>
+            <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section id="connect" class="py-24 border-t border-border">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="reveal opacity-0 translate-y-4 mb-10">
-        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Integration Marketplace</span>
-        <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Not a fixed list of integrations. A capability.</h2>
-        <p class="text-ink-muted">Install verified integrations or describe one in plain English and let StructZero build it.</p>
+  <!-- Section 4: Three Core Outcome Groups -->
+  <section class="py-20 border-b border-[#1e1e1e] bg-[#000000]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
+          Purpose-Built Architecture
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea] mb-4">
+          Engineered for Real Software Production
+        </h2>
+        <p class="text-base text-[#96979a]">
+          Three distinct operational workflows configured for developers, teams, and autonomous pipelines.
+        </p>
       </div>
-      <div class="grid md:grid-cols-2 gap-5 reveal opacity-0 translate-y-4">
-        <div class="border border-border rounded-2xl p-7 bg-panel">
-          <h3 class="text-lg font-bold mb-2.5">Install</h3>
-          <p class="text-[14.5px] text-ink-muted mb-5">Connect Vercel or AWS in a couple of clicks and start deploying immediately.</p>
-          <div class="flex gap-2.5"><span class="text-xs font-semibold border border-border rounded-md px-3.5 py-2">Vercel</span><span class="text-xs font-semibold border border-border rounded-md px-3.5 py-2">AWS</span></div>
-        </div>
-        <div class="border border-border rounded-2xl p-7 bg-panel">
-          <h3 class="text-lg font-bold mb-2.5">Generate with AI</h3>
-          <p class="text-[14.5px] text-ink-muted mb-5">Need something else? Describe it in plain English — StructZero designs, generates, and certifies a real, working plugin.</p>
-          <span class="text-xs font-semibold border border-accent text-accent rounded-md px-3.5 py-2">Try it →</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="deploy" class="py-24 border-t border-border" data-deploy-diagram>
-    <div class="max-w-2xl mx-auto px-6 text-center">
-      <div class="reveal opacity-0 translate-y-4">
-        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Deployment is a workflow</span>
-        <h2 class="text-3xl md:text-4xl tracking-tight">Not a button. A process.</h2>
-      </div>
-      <div class="relative mt-10">
-        <svg class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-2 hidden md:block" viewBox="0 0 500 4" preserveAspectRatio="none" aria-hidden="true">
-          <path data-draw-path-deploy d="M0 2 L500 2" stroke="var(--accent)" stroke-width="2" fill="none" />
-        </svg>
-        <div class="flex flex-wrap gap-4 justify-center relative reveal opacity-0 translate-y-4">
-          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-border whitespace-nowrap">Build</span>
-          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-border whitespace-nowrap">Preview</span>
-          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-border whitespace-nowrap">Approve</span>
-          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-border whitespace-nowrap">Deploy</span>
-          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-dashed border-border text-ink-faint whitespace-nowrap">Rollback</span>
-          <span class="relative z-10 font-mono text-sm px-6 py-3 rounded-lg bg-bg border border-border whitespace-nowrap">Redeploy</span>
-        </div>
-      </div>
-      <div class="flex gap-3 justify-center flex-wrap mt-7 reveal opacity-0 translate-y-4">
-        <span class="text-[13.5px] font-semibold px-5 py-2.5 rounded-full bg-panel border border-border">Vercel</span>
-        <span class="text-[13.5px] font-semibold px-5 py-2.5 rounded-full bg-panel border border-border">AWS</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 border-t border-border">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="reveal opacity-0 translate-y-4 mb-10">
-        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Engineering Guarantees</span>
-        <h2 class="text-3xl md:text-4xl tracking-tight">Most AI platforms hide this. We don't.</h2>
-      </div>
-      <div class="grid sm:grid-cols-2 gap-5 reveal opacity-0 translate-y-4">
-        <div class="border border-border rounded-xl p-6"><span class="font-mono text-sm uppercase tracking-wide text-accent block mb-3">✓ Multi-model review</span><p class="text-base text-ink-muted">You choose — Gemini, Claude, DeepSeek, or your own local Ollama endpoint.</p></div>
-        <div class="border border-border rounded-xl p-6"><span class="font-mono text-sm uppercase tracking-wide text-accent block mb-3">✓ Sandboxed execution</span><p class="text-base text-ink-muted">Builds run in isolated, sandboxed containers — never against shared infrastructure.</p></div>
-        <div class="border border-border rounded-xl p-6"><span class="font-mono text-sm uppercase tracking-wide text-accent block mb-3">✓ Audit trail</span><p class="text-base text-ink-muted">Your projects, conversations, and architecture decisions are all logged transparently.</p></div>
-        <div class="border border-border rounded-xl p-6"><span class="font-mono text-sm uppercase tracking-wide text-accent block mb-3">✓ Certified output</span><p class="text-base text-ink-muted">Every file is checked before it ships. See exactly what's verified above.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="public" class="py-16 border-t border-border text-center">
-    <div class="max-w-2xl mx-auto px-6">
-      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Built in public</span>
-      <h2 class="text-2xl md:text-3xl tracking-tight mb-2">See where we are — and where we're going.</h2>
-      <p class="text-ink-muted">Real roadmap. Real known limitations. No hiding what isn't finished yet.</p>
-      <!-- Real bug found live: these were href="#" no-op links to pages that
-           don't exist yet -- clicking did nothing, which reads as broken.
-           Marked as non-interactive "coming soon" until the real subpages
-           ship, per this session's own no-dead-links principle. -->
-      <div class="flex gap-2.5 justify-center flex-wrap mt-8">
-        {['Roadmap','Engineering events','Release notes','Known limitations'].map((label) => (
-          <span class="text-[13.5px] font-semibold px-5 py-2.5 rounded-lg border border-dashed border-border text-ink-faint cursor-not-allowed" title="Coming at launch">{label} <span class="font-mono text-[10px] align-super">at launch</span></span>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="py-24 border-t border-border">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="reveal opacity-0 translate-y-4 mb-12">
-        <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">StructZero Builds StructZero</span>
-        <h2 class="text-3xl md:text-4xl tracking-tight mb-4">StructZero is its own first customer.</h2>
-        <p class="text-ink-muted max-w-2xl mx-auto mb-4">Every major feature starts as a StructZero debate.</p>
-        <p class="text-ink-muted max-w-2xl mx-auto">StructZero plans its own architecture, critiques its own designs, certifies its own code, and continuously improves itself before a human reviews every change.</p>
-      </div>
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4 reveal opacity-0 translate-y-4 text-left">
-        {[
-          ['Plugin System', 'Designed by StructZero', 'Released'],
-          ['Knowledge Graph', 'Designed by StructZero', 'Released'],
-          ['Certification Engine', 'Designed by StructZero', 'Released'],
-          ['Deployment Pipeline', 'Designed by StructZero', 'Released'],
-        ].map(([title, subtitle, status]) => (
-          <div class="border border-border rounded-xl p-5 bg-panel">
-            <h3 class="font-bold text-sm mb-1">{title}</h3>
-            <div class="text-[12px] text-ink-muted mb-4">{subtitle}</div>
-            <div class="text-[11px] font-mono text-ok uppercase tracking-wider">{status}</div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Outcome 1 -->
+        <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#101c2c] border border-[#2c2c2c] flex items-center justify-center text-[#7cadec] mb-5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#e9e9ea] mb-2.5">Build a Product</h3>
+            <p class="text-sm text-[#96979a] leading-relaxed mb-4">
+              Turn specifications into multi-file production applications. Files are written in strict topological dependency order with validated interfaces and zero dangling imports.
+            </p>
           </div>
-        ))}
+          <div class="pt-4 border-t border-[#1e1e1e] text-xs font-mono text-[#7c7d80]">
+            AST Project DNA · Pre-flight compilation
+          </div>
+        </div>
+
+        <!-- Outcome 2 -->
+        <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#0f2417] border border-[#1e3a29] flex items-center justify-center text-[#4f9e6e] mb-5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#e9e9ea] mb-2.5">Operate a Portfolio</h3>
+            <p class="text-sm text-[#96979a] leading-relaxed mb-4">
+              Manage dozens of concurrent projects from a centralized dashboard. Inspect historical runs, model token spend, latency metrics, and container sandboxes in real time.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#1e1e1e] text-xs font-mono text-[#7c7d80]">
+            Multi-project telemetry · Cost attribution
+          </div>
+        </div>
+
+        <!-- Outcome 3 -->
+        <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-[#2b2210] border border-[#423318] flex items-center justify-center text-[#c19a4a] mb-5">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#e9e9ea] mb-2.5">Improve Safely</h3>
+            <p class="text-sm text-[#96979a] leading-relaxed mb-4">
+              Enforce strict human authorization boundaries for cloud deployments, migrations, and destructive operations. Autonomous runs stop and wait for explicit sign-off.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-[#1e1e1e] text-xs font-mono text-[#7c7d80]">
+            Budget ceilings · Isolated preview environments
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer id="get-started" class="py-24 text-center">
-    <div class="max-w-2xl mx-auto px-6">
-      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Get started</span>
-      <h2 class="text-3xl md:text-4xl tracking-tight mb-3">Start with an idea.</h2>
-      <p class="text-ink-muted mb-7">StructZero will debate it, design it, certify it, and help turn it into production software.</p>
-      <a href="#workflow" class="inline-block bg-accent text-[color:var(--accent-ink)] font-semibold text-[14.5px] px-6 py-3.5 rounded-lg">Try StructZero</a>
-      <div class="flex gap-5 justify-center flex-wrap mt-14 text-[13px] text-ink-faint">
-        <a href="#why" class="hover:text-ink">Why StructZero</a>
-        <a href="#workflow" class="hover:text-ink">How it works</a>
-        <a href="#public" class="hover:text-ink">Built in public</a>
-        <span class="cursor-not-allowed" title="Coming at launch">Docs <span class="font-mono text-[10px] align-super">at launch</span></span>
-      </div>
-      <div class="mt-6 text-[12px] text-ink-faint">© StructZero</div>
-    </div>
-  </footer>
+  <!-- Section 5: Web + Native Android Control -->
+  <section class="py-20 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block">
+            Dual Control Surfaces
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea] leading-tight">
+            Web Interface & <br />Native Android Remote Control
+          </h2>
+          <p class="text-base text-[#96979a] leading-relaxed">
+            Manage projects from your workstation or authorize critical deployment gates from anywhere. StructZero Remote connects natively via secure WebSocket protocols to give you mobile command over runs, budgets, and releases.
+          </p>
+          <ul class="space-y-3 text-sm text-[#96979a]">
+            <li class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded bg-[#101c2c] text-[#7cadec] flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
+              <span><strong>Real-time push notifications</strong> when runs require operator approval.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded bg-[#101c2c] text-[#7cadec] flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
+              <span><strong>Live run telemetry</strong>: model token burn, build step logs, and health status.</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-5 h-5 rounded bg-[#101c2c] text-[#7cadec] flex items-center justify-center shrink-0 mt-0.5 font-bold">✓</span>
+              <span><strong>Separate generated-app pipeline</strong>: build native Android apps with Gradle sandboxes.</span>
+            </li>
+          </ul>
+          <div>
+            <a href="/android/" class="inline-flex items-center gap-2 text-sm font-semibold text-[#4d8fe0] hover:text-[#7cadec] transition-colors">
+              Explore Native Android Architecture →
+            </a>
+          </div>
+        </div>
 
-  <script>
-    import { initAnimations } from '../scripts/animations.js';
-    initAnimations();
-  </script>
+        <div class="lg:col-span-6">
+          <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111] shadow-xl">
+            <div class="flex items-center justify-between pb-4 border-b border-[#1e1e1e] mb-4 text-xs font-mono text-[#7c7d80]">
+              <span>REMOTE EVENT PUSH</span>
+              <span class="text-[#4f9e6e]">LIVE SYNC</span>
+            </div>
+            <div class="space-y-3">
+              <div class="p-3.5 rounded-lg bg-[#000000] border border-[#423318] flex items-center justify-between">
+                <div>
+                  <div class="text-xs font-semibold text-[#e9e9ea]">Run #104 Paused</div>
+                  <div class="text-[11px] text-[#7c7d80]">Action: Deploy to Vercel Edge</div>
+                </div>
+                <div class="flex gap-2">
+                  <span class="px-2.5 py-1 rounded text-[11px] font-semibold bg-[#4f9e6e] text-[#000000]">Approve</span>
+                  <span class="px-2.5 py-1 rounded text-[11px] font-semibold bg-[#1a1a1a] text-[#e9e9ea] border border-[#2c2c2c]">Deny</span>
+                </div>
+              </div>
+              <div class="p-3.5 rounded-lg bg-[#000000] border border-[#1e1e1e] text-xs space-y-1">
+                <div class="text-[#7c7d80]">Active Device: Pixel 8 Pro (Android 14)</div>
+                <div class="text-[#7c7d80]">Authentication: mTLS + JWT Session Token</div>
+                <div class="text-[#4f9e6e]">Heartbeat: 140ms latency</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 6: Trust, Evidence & Controls -->
+  <section class="py-20 border-b border-[#1e1e1e] bg-[#000000]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
+          Enterprise Security Posture
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea] mb-4">
+          Strict Isolation & Audit Guarantees
+        </h2>
+        <p class="text-base text-[#96979a]">
+          Engineered for regulated environments where uncontrolled agent execution is unacceptable.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-base font-semibold text-[#e9e9ea] mb-2">Container Sandboxing</h3>
+          <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
+            All code compilation, tests, and generation run inside isolated container sandboxes with strictly confined filesystem boundaries.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-base font-semibold text-[#e9e9ea] mb-2">Immutable Audit Trails</h3>
+          <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
+            Every prompt, model debate transcript, AST check, and user authorization is written to tamper-evident JSONL logs.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-base font-semibold text-[#e9e9ea] mb-2">Secret Masking</h3>
+          <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
+            API keys, tokens, and database credentials are automatically masked from model prompts and context windows.
+          </p>
+        </div>
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-base font-semibold text-[#e9e9ea] mb-2">Human Authorization</h3>
+          <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
+            Hard execution intercepts pause before billable cloud provisioning or destructive operations can occur.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="/security/" class="text-xs font-mono text-[#4d8fe0] hover:text-[#7cadec] transition-colors">
+          Read Full Security Architecture & Controls →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 7: Available vs Next (Roadmap Snapshot) -->
+  <section class="py-20 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
+            Release Transparency
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea]">
+            Platform Availability & Roadmap
+          </h2>
+        </div>
+        <a href="/roadmap/" class="text-xs font-mono text-[#4d8fe0] hover:text-[#7cadec] transition-colors">
+          View Complete Product Roadmap →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-6 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs text-[#7c7d80]">VERSION 11 CORE</span>
+            <StatusBadge status="Available" size="sm" />
+          </div>
+          <h3 class="text-base font-bold text-[#e9e9ea] mb-3">Multi-Model Engineering Engine</h3>
+          <ul class="space-y-2 text-xs text-[#96979a]">
+            <li>✓ Multi-model architecture debate engine</li>
+            <li>✓ AST Project DNA parser & symbol index</li>
+            <li>✓ Automated certification pre-flight gate</li>
+            <li>✓ Container sandboxed execution</li>
+            <li>✓ Vercel & AWS deployment adapters</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs text-[#7c7d80]">VERSION 11 REMOTE</span>
+            <StatusBadge status="In Development" size="sm" />
+          </div>
+          <h3 class="text-base font-bold text-[#e9e9ea] mb-3">Native Android Remote</h3>
+          <ul class="space-y-2 text-xs text-[#96979a]">
+            <li>• StructZero Remote native Android client</li>
+            <li>• Push-notification approval workflow</li>
+            <li>• Mobile run telemetry & budget meters</li>
+            <li>• Offline event queue & reconnect sync</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <div class="flex items-center justify-between mb-4">
+            <span class="font-mono text-xs text-[#7c7d80]">VERSION 12 HORIZON</span>
+            <StatusBadge status="Planned" size="sm" />
+          </div>
+          <h3 class="text-base font-bold text-[#e9e9ea] mb-3">Autonomous Evolution</h3>
+          <ul class="space-y-2 text-xs text-[#96979a]">
+            <li>• Continuous autonomous patch verification</li>
+            <li>• Cross-cloud workload synthesis (AWS/GCP/Azure)</li>
+            <li>• Enterprise SSO & RBAC policy governance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 8: Final CTA + Focused FAQ -->
+  <section class="py-20 bg-[#000000]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[#e9e9ea] mb-4">
+          Ready to Coordinate Your AI Engineering?
+        </h2>
+        <p class="text-base text-[#96979a] max-w-xl mx-auto mb-8">
+          Explore the interactive platform tour or request a technical walkthrough for your team.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/demo/"
+            class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#4d8fe0] text-[#000000] font-semibold text-sm hover:bg-[#7cadec] transition-all"
+          >
+            Explore Interactive Demo
+          </a>
+          <a
+            href="/contact/"
+            class="w-full sm:w-auto px-6 py-3.5 rounded-lg bg-[#111111] border border-[#2c2c2c] text-[#e9e9ea] font-medium text-sm hover:bg-[#1a1a1a] transition-colors"
+          >
+            Request Technical Walkthrough
+          </a>
+        </div>
+      </div>
+
+      <!-- Focused Adoption FAQ -->
+      <div class="border-t border-[#1e1e1e] pt-12">
+        <h3 class="text-xl font-bold text-[#e9e9ea] mb-6 text-center">Frequently Asked Adoption Questions</h3>
+        <div class="space-y-4">
+          {faqs.map(faq => (
+            <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+              <h4 class="text-sm font-semibold text-[#e9e9ea] mb-2">{faq.q}</h4>
+              <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
 </Base>

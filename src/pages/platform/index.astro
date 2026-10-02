@@ -1,0 +1,200 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+
+const platformPillars = [
+  {
+    title: 'Controlled Autonomy',
+    desc: 'Runs execute with bounded authority. Routine AST refactoring and unit test creation proceed automatically, while external API provisioning and schema migrations pause for operator approval.',
+  },
+  {
+    title: 'Multi-Project Portfolio State',
+    desc: 'Manage discrete codebases with independent AST indices, dependency trees, environment configurations, and deployment credentials in complete isolation.',
+  },
+  {
+    title: 'Topological Code Generation',
+    desc: 'Source files are generated in strict mathematical dependency order. Core type contracts, database schemas, and shared utilities are built and verified before dependent consumer files.',
+  },
+  {
+    title: 'Provider-Neutral Model Council',
+    desc: 'Leverage the distinct strengths of Claude, Gemini, DeepSeek, or local Ollama endpoints without lock-in. Assign reasoning, coding, and security audit roles independently.',
+  },
+];
+---
+
+<Base
+  title="Platform & Controlled Autonomy — StructZero"
+  description="How StructZero orchestrates projects, runs, evidence, budget ceilings, and human-in-the-loop governance for production software engineering."
+>
+  <!-- Hero Section -->
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-2 text-xs font-mono text-[#7c7d80] mb-4">
+        <a href="/" class="hover:text-[#4d8fe0]">Home</a>
+        <span>/</span>
+        <span class="text-[#e9e9ea]">Platform</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#e9e9ea]">Platform Architecture</h1>
+        <StatusBadge status="Available" size="md" />
+      </div>
+      <p class="text-base sm:text-lg text-[#96979a] max-w-3xl leading-relaxed">
+        StructZero connects Abstract Syntax Tree parsing, multi-model adversarial debate, sandboxed compilation, and edge cloud connectors into a unified AI software engineering platform.
+      </p>
+    </div>
+  </section>
+
+  <!-- Platform Workflow Sequence -->
+  <section class="py-16 border-b border-[#1e1e1e] bg-[#000000]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-10">
+      <div>
+        <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block mb-2">
+          Deterministic Flow
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#e9e9ea]">Platform Execution Workflow</h2>
+      </div>
+
+      <div class="p-6 rounded-2xl border border-[#1e1e1e] bg-[#111111]">
+        <pre class="mermaid">
+sequenceDiagram
+    autonumber
+    actor User as Human Operator
+    participant Shell as Platform Workspace (Web UI)
+    participant DNA as AST Project DNA
+    participant Council as Multi-Model Council
+    participant Gate as Certification Sandbox
+    participant Cloud as Cloud Provider
+
+    User->>Shell: Submit Feature Specification
+    Shell->>DNA: Parse AST & Module Symbol Table
+    DNA->>Council: Provide Syntax Tree & Context
+    Council->>Council: Debate Architecture & Resolve Flags
+    Council->>Gate: Write Code in Topological Order
+    Gate->>Gate: AST Syntax Check & Auto-Repair Loop
+    opt Billable / Destructive Action
+        Gate->>User: Request Operator Approval (PAUSED)
+        User->>Gate: Approve Execution
+    end
+    Gate->>Cloud: Ship Verified Artifact to Vercel / AWS
+        </pre>
+      </div>
+
+      <!-- Pillars Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
+        {platformPillars.map(p => (
+          <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+            <h3 class="text-base font-semibold text-[#e9e9ea] mb-2">{p.title}</h3>
+            <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">{p.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Anchored Section: #why -->
+  <section id="why" class="py-16 border-b border-[#1e1e1e] bg-[#0a0a0a] scroll-mt-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
+      <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block">
+        Structural Distinction
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#e9e9ea]">
+        Why StructZero: The Problem with Single-Pass Generation
+      </h2>
+      <p class="text-sm sm:text-base text-[#96979a] leading-relaxed max-w-3xl">
+        Current AI coding assistants attempt to generate complex multi-file projects in a single pass without independent review. Because a single model suffers from self-confirmation bias, it cannot reliably detect its own architectural flaws, hallucinates imports from non-existent modules, and misses critical security vulnerabilities.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+        <div class="p-5 rounded-xl border border-[#2c1616] bg-[#000000]">
+          <h3 class="text-sm font-bold text-[#c15c5c] mb-2">Conventional Prompt-to-Code Assistant</h3>
+          <ul class="space-y-2 text-xs text-[#96979a]">
+            <li>• Single model generates code without independent review</li>
+            <li>• Guesses what dependent files will export before they exist</li>
+            <li>• Mixes ESM and CommonJS module syntax</li>
+            <li>• Directly modifies local workspace without pre-flight sandboxing</li>
+            <li>• Unchecked hallucinations cause runtime 404s and broken imports</li>
+          </ul>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[#1e3a29] bg-[#000000]">
+          <h3 class="text-sm font-bold text-[#4f9e6e] mb-2">StructZero Governed Engineering Platform</h3>
+          <ul class="space-y-2 text-xs text-[#96979a]">
+            <li>• Adversarial multi-model debate uncovers design bottlenecks first</li>
+            <li>• AST Project DNA validates symbols and types against real disk state</li>
+            <li>• Files are generated strictly in topological dependency order</li>
+            <li>• Automated pre-flight compilation verifies syntax in isolated containers</li>
+            <li>• Hard execution intercepts prevent unauthorized cloud spend or data loss</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anchored Section: #budgets -->
+  <section id="budgets" class="py-16 border-b border-[#1e1e1e] bg-[#000000] scroll-mt-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
+      <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block">
+        Cost Governance
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#e9e9ea]">
+        Budget Ceilings & Token Metering
+      </h2>
+      <p class="text-sm sm:text-base text-[#96979a] leading-relaxed max-w-3xl">
+        Autonomous agent loops can quickly run away with token usage if unconstrained. StructZero enforces pre-allocated budget ceilings on every execution run.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <div class="text-xs font-mono text-[#7cadec] mb-1">PER-RUN CEILINGS</div>
+          <h3 class="text-base font-semibold text-[#e9e9ea] mb-1.5">Hard Spend Stops</h3>
+          <p class="text-xs text-[#96979a]">Set explicit dollar or token limits per run. When a ceiling is reached, execution pauses immediately.</p>
+        </div>
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <div class="text-xs font-mono text-[#7cadec] mb-1">ROLE ATTRIBUTION</div>
+          <h3 class="text-base font-semibold text-[#e9e9ea] mb-1.5">Cost by Model & Role</h3>
+          <p class="text-xs text-[#96979a]">Inspect exactly how much spend went to the Architect (Claude), Coder (DeepSeek), or Verifier (Gemini).</p>
+        </div>
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <div class="text-xs font-mono text-[#7cadec] mb-1">PROVISIONING GUARD</div>
+          <h3 class="text-base font-semibold text-[#e9e9ea] mb-1.5">No Surprise Invoices</h3>
+          <p class="text-xs text-[#96979a]">Any cloud action that initiates AWS CloudFormation, ECS, or GCP instances requires explicit confirmation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Anchored Section: #faq -->
+  <section id="faq" class="py-16 bg-[#0a0a0a] scroll-mt-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
+      <span class="font-mono text-xs uppercase tracking-wider text-[#7cadec] font-semibold block">
+        Common Questions
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-bold text-[#e9e9ea]">
+        Platform Frequently Asked Questions
+      </h2>
+
+      <div class="space-y-4 pt-2">
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-sm font-semibold text-[#e9e9ea] mb-2">What is Project DNA?</h3>
+          <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
+            Project DNA is StructZero's semantic context engine. It continuously parses your local codebase into an Abstract Syntax Tree (AST), indexing exported functions, interface contracts, route topologies, and dependencies. This grounds model generation in your actual codebase rather than hallucinations.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-sm font-semibold text-[#e9e9ea] mb-2">Does StructZero work with Cursor, VS Code, or Windsurf?</h3>
+          <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
+            Yes. StructZero runs as a standard Model Context Protocol (MCP) server, allowing you to trigger multi-model debate, AST queries, and certification gates directly inside your favorite IDE.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[#1e1e1e] bg-[#111111]">
+          <h3 class="text-sm font-semibold text-[#e9e9ea] mb-2">Where is customer data stored, and is it used for training?</h3>
+          <p class="text-xs sm:text-sm text-[#96979a] leading-relaxed">
+            Customer code, AST graphs, and debate transcripts remain strictly isolated within your local workspace and container sandboxes. StructZero never uses your code to train public foundation models.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

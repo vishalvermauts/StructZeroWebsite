@@ -74,7 +74,7 @@ check('Automated Link Crawler & Route Verification', () => {
   }
 });
 
-// 4. Content Depth & SEO Quality Check
+// 4. Content Depth & SEO Quality Check (excluding canonical redirect stubs)
 check('Content Depth & SEO Quality Check', () => {
   const outDir = fs.existsSync('./.vercel/output/static')
     ? path.resolve('./.vercel/output/static')
@@ -93,7 +93,11 @@ check('Content Depth & SEO Quality Check', () => {
 
   const thinPages = [];
   for (const file of htmlFiles) {
-    const text = fs.readFileSync(file, 'utf-8').replace(/<[^>]*>/g, ' ');
+    const rawHtml = fs.readFileSync(file, 'utf-8');
+    // Skip meta-refresh redirect stubs
+    if (rawHtml.includes('http-equiv="refresh"')) continue;
+
+    const text = rawHtml.replace(/<[^>]*>/g, ' ');
     const wordCount = text.split(/\s+/).filter(Boolean).length;
     if (wordCount < 120) {
       thinPages.push({ file: path.relative(outDir, file), wordCount });
@@ -102,7 +106,7 @@ check('Content Depth & SEO Quality Check', () => {
 
   if (thinPages.length > 0) {
     console.error('Thin Pages Detected:', thinPages);
-    throw new Error(`Content Depth Failure: ${thinPages.length} pages have under 120 words.`);
+    throw new Error(`Content Depth Failure: ${thinPages.length} canonical pages have under 120 words.`);
   }
 });
 

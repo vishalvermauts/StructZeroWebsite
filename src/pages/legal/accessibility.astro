@@ -8,13 +8,19 @@ import SubpageLayout from '../../layouts/SubpageLayout.astro';
   status="Official Spec"
   summary="StructZero is designed to meet WCAG 2.1 AA accessibility guidelines, offering high-contrast typography, screen-reader navigation, and full keyboard support."
   related={[
-    { label: 'Company Overview', href: '/company' },
-    { label: 'Terms of Service', href: '/legal/terms' },
+    { label: 'About StructZero', href: '/about/' },
+    { label: 'Terms of Service', href: '/legal/terms/' },
   ]}
 >
-  ## Accessibility Features
-  - High-contrast dark palette with verified color contrast ratios.
-  - Full keyboard navigation across all interactive elements and dialogs.
-  - Semantic HTML5 landmark tags and ARIA labels.
-  - Native `prefers-reduced-motion` CSS rules to respect motion sensitivities.
+  <div class="space-y-6">
+    <div>
+      <h2 class="text-xl font-bold text-[#e9e9ea] mb-3">Accessibility Standards & Features</h2>
+      <ul class="space-y-2 text-sm text-[#96979a] list-disc list-inside">
+        <li>High-contrast dark palette with tested foreground and background contrast ratios.</li>
+        <li>Full keyboard navigation across all interactive navigation menus, buttons, and form inputs.</li>
+        <li>Semantic HTML5 landmark tags (<code class="text-[#4d8fe0] bg-[#000000] px-1 py-0.5 rounded border border-[#1e1e1e]">header</code>, <code class="text-[#4d8fe0] bg-[#000000] px-1 py-0.5 rounded border border-[#1e1e1e]">nav</code>, <code class="text-[#4d8fe0] bg-[#000000] px-1 py-0.5 rounded border border-[#1e1e1e]">main</code>, <code class="text-[#4d8fe0] bg-[#000000] px-1 py-0.5 rounded border border-[#1e1e1e]">footer</code>) and ARIA attributes.</li>
+        <li>Native <code class="text-[#4d8fe0] bg-[#000000] px-1 py-0.5 rounded border border-[#1e1e1e]">prefers-reduced-motion</code> CSS styles respecting user motion sensitivities.</li>
+      </ul>
+    </div>
+  </div>
 </SubpageLayout>
