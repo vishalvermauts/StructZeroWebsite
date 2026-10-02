@@ -1,0 +1,112 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+
+const updates = [
+  {
+    version: 'V11.4 Technical Preview',
+    date: 'October 2026',
+    category: 'Platform Release',
+    title: 'Command Center Architecture & Dual-Control Remote Specs',
+    summary: 'Consolidated engineering pipeline across research, debate, and verification. Published formal specifications for StructZero Remote on Android.',
+    highlights: [
+      'Topological dependency ordering engine with automated import path reconciliation.',
+      'Docker socket proxy audit ensuring container sandboxes are hermetically isolated.',
+      'Budget ceiling and per-role model token tracking with automated pause intercepts.',
+      'Verified sample architecture deployments for FarmWatch Ag-Core and BuildPilot.',
+    ],
+  },
+  {
+    version: 'V11.2 Core Integration',
+    date: 'September 2026',
+    category: 'Engineering Architecture',
+    title: 'Real Multi-Model Adversarial Debate Engine',
+    summary: 'Implemented independent role assignments for Claude 3.5, Gemini 3.6, and DeepSeek R1 models to eliminate hallucinations before code write.',
+    highlights: [
+      'Architect, Reviewer, and Judge role separation preventing shared-bias confirmation loops.',
+      'Binding consensus resolution: disputes produce revised architectural blueprints.',
+      'Tamper-evident JSONL logging of all model debate trajectories.',
+    ],
+  },
+  {
+    version: 'Website Refresh & IA Migration',
+    date: 'September 2026',
+    category: 'Documentation & Web',
+    title: 'Consolidated 25-Route Information Architecture',
+    summary: 'Refreshed the public marketing website to accurately reflect the AI Software Command Center positioning and V11 release status.',
+    highlights: [
+      'Consolidated 71 legacy routes into 25 high-signal canonical destinations.',
+      'Reconciled brand identity with the canonical triangular node Logo component.',
+      'Introduced accessible mobile navigation disclosure menu for all viewports.',
+      'Updated all availability claims to reflect verified engineering state.',
+    ],
+  },
+  {
+    version: 'V10 Baseline Freeze',
+    date: 'August 2026',
+    category: 'Platform Release',
+    title: 'AST Project DNA Parser & Pre-Flight Gate',
+    summary: 'Released semantic AST parsing for TypeScript, JavaScript, and Python codebases alongside automated pre-flight syntax verification.',
+    highlights: [
+      'Abstract Syntax Tree route and symbol graph extraction.',
+      'Pre-flight syntax compilation check with 2-attempt localized auto-repair loops.',
+      'Automatic fallback to clean backup state if verification fails.',
+    ],
+  },
+];
+---
+
+<Base
+  title="Product & Platform Updates — StructZero"
+  description="Chronological log of verified releases, architectural milestones, and platform updates for StructZero."
+>
+  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold block mb-2">
+        Platform Changelog
+      </span>
+      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB] mb-4">
+        Product & Engineering Updates
+      </h1>
+      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-2xl mx-auto">
+        A chronological record of verified platform releases, architectural enhancements, and documentation changes.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 space-y-12">
+      {updates.map(u => (
+        <article class="p-6 sm:p-8 rounded-2xl border border-[#23314D] bg-[#141D30] space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#23314D] pb-4">
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <span class="font-mono text-xs text-[#8A98B0]">{u.date}</span>
+                <span class="text-[#3A4C70]">·</span>
+                <span class="font-mono text-xs text-[#4F8BFF]">{u.category}</span>
+              </div>
+              <h2 class="text-2xl font-bold text-[#F5F7FB]">{u.version}: {u.title}</h2>
+            </div>
+            <StatusBadge status="Available" size="sm" />
+          </div>
+
+          <p class="text-sm sm:text-base text-[#B7C2D6] leading-relaxed">
+            {u.summary}
+          </p>
+
+          <div class="p-4 rounded-xl bg-[#0B1020] border border-[#23314D]">
+            <h3 class="text-xs font-mono uppercase tracking-wider text-[#8A98B0] mb-3">Key Highlights</h3>
+            <ul class="space-y-2 text-xs text-[#B7C2D6]">
+              {u.highlights.map(h => (
+                <li class="flex items-start gap-2">
+                  <span class="text-[#34D399] font-bold">✓</span>
+                  <span>{h}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,161 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+
+const moduleList = [
+  {
+    id: 'build',
+    title: 'Build Module & Specialized Roles',
+    status: 'Available',
+    summary: 'Dividing engineering cognitive load across specialized roles (Architect, Coder, Verifier, Data Engineer) to generate dependency-ordered source code.',
+    details: [
+      'Architect role drafts system blueprints and interface contracts.',
+      'Coder role generates production files respecting AST boundaries.',
+      'Data Engineer manages migrations, schema shifts, and ORM contracts.',
+      'Topological dependency ordering prevents broken inter-module imports.',
+    ],
+  },
+  {
+    id: 'research',
+    title: 'Research & Context Indexer',
+    status: 'Available',
+    summary: 'Extracting codebase AST, route maps, exported symbols, and fetching authoritative third-party API documentation.',
+    details: [
+      'Full AST extraction for TypeScript, JavaScript, Python, and Go.',
+      'Live symbol table mapping exported functions and class contracts.',
+      'Route topology inspection aligning frontend paths with backend handlers.',
+      'Incremental cache updates as files are modified during generation runs.',
+    ],
+  },
+  {
+    id: 'security',
+    title: 'Security Auditor & Guardrails',
+    status: 'Available',
+    summary: 'Auditing code for injection risks, secret leakage, and enforcing human authorization on destructive or billable commands.',
+    details: [
+      'Automatic secret masking before strings reach model context.',
+      'Hard execution intercepts on DROP TABLE, resource deletion, and cloud billing.',
+      'Static analysis scans checking for OWASP Top 10 vulnerabilities.',
+      'Strict container filesystem sandboxing during test executions.',
+    ],
+  },
+  {
+    id: 'operations',
+    title: 'Operations & Observability Telemetry',
+    status: 'Available',
+    summary: 'Tracking token expenditure, API latency, container resource utilization, and budget ceilings per project.',
+    details: [
+      'Real-time token cost attribution per role, model, and project.',
+      'Model latency and time-to-first-token telemetry.',
+      'Budget alerts and hard execution stops when ceilings are hit.',
+      'Container CPU, memory, and build duration metrics.',
+    ],
+  },
+  {
+    id: 'android-delivery',
+    title: 'Android Delivery Pipeline',
+    status: 'In Development',
+    summary: 'Compiling generated mobile code into native Android APK/AAB packages using isolated containerized Gradle sandboxes.',
+    details: [
+      'Native Kotlin / Jetpack Compose scaffolding and build generation.',
+      'Sandboxed Gradle builds running without host filesystem access.',
+      'Signed APK artifacts generation with verified SHA-256 fingerprints.',
+      'Distinct from the StructZero Remote control client.',
+    ],
+  },
+  {
+    id: 'knowledge',
+    title: 'Engineering Event Recorder',
+    status: 'Available',
+    summary: 'Tamper-evident, structured JSONL audit stream recording every prompt, debate decision, AST check, and user approval.',
+    details: [
+      '100% decision traceability for compliance and post-mortems.',
+      'Structured JSONL logs easily ingested by enterprise SIEM systems.',
+      'Trajectory replay allowing developers to reproduce and debug past debates.',
+      'Local workspace storage under .system_generated/logs directory.',
+    ],
+  },
+  {
+    id: 'automation',
+    title: 'Automated Repair & Patch Synthesis',
+    status: 'Available',
+    summary: 'Pre-flight compilation gate that identifies AST syntax breaks or import errors and runs localized repair loops before writing to disk.',
+    details: [
+      '100% AST compilation check guarantees zero syntax errors before disk write.',
+      'Localized repair routines attempt automated patch fixes (max 2 retries).',
+      'Clean backup restoration ensures workspace is never left in a broken state.',
+      'Module resolution verification confirming all imported files exist on disk.',
+    ],
+  },
+  {
+    id: 'future',
+    title: 'Business & Autonomous ROI Analyzer',
+    status: 'Planned',
+    summary: 'Exploratory economic and business analytics module evaluating feature ROI, technical debt reduction, and autonomous patch planning.',
+    details: [
+      'Autonomous feature impact analysis against product telemetry.',
+      'Refactoring opportunity detection based on historical bug density.',
+      'Cross-cloud cost optimization suggestions.',
+      'Exploratory future capability — not available in current release.',
+    ],
+  },
+];
+---
+
+<Base
+  title="Modules & Availability Directory — StructZero"
+  description="Explore StructZero platform modules: Build, Research, Security, Operations, Knowledge, and Automation with verified release availability."
+>
+  <!-- Hero Section -->
+  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-2 text-xs font-mono text-[#8A98B0] mb-4">
+        <a href="/" class="hover:text-[#4F8BFF]">Home</a>
+        <span>/</span>
+        <span class="text-[#F5F7FB]">Modules</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB]">Modules Directory</h1>
+        <StatusBadge status="Available" size="md" />
+      </div>
+      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-3xl leading-relaxed">
+        StructZero breaks down software engineering into modular capabilities. Review each module's technical scope, operational boundaries, and current release availability.
+      </p>
+    </div>
+  </section>
+
+  <!-- Module Cards with Required Anchors -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-12">
+      {moduleList.map((m) => (
+        <div id={m.id} class="p-6 sm:p-8 rounded-2xl border border-[#23314D] bg-[#141D30] scroll-mt-24 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-[#23314D] pb-4">
+            <div>
+              <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] block mb-1">
+                MODULE #{m.id.toUpperCase()}
+              </span>
+              <h2 class="text-2xl font-bold text-[#F5F7FB]">{m.title}</h2>
+            </div>
+            <StatusBadge status={m.status} size="md" />
+          </div>
+
+          <p class="text-sm sm:text-base text-[#B7C2D6] leading-relaxed">
+            {m.summary}
+          </p>
+
+          <div class="p-4 rounded-xl bg-[#0B1020] border border-[#23314D]">
+            <h3 class="text-xs font-mono uppercase tracking-wider text-[#8A98B0] mb-3">Technical Specifications</h3>
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#B7C2D6]">
+              {m.details.map((d) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-[#4F8BFF] font-bold">✓</span>
+                  <span>{d}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

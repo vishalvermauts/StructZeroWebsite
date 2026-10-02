@@ -1,42 +1,86 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { getCollection } from 'astro:content';
+import StatusBadge from '../../components/StatusBadge.astro';
 
-const docs = await getCollection('docs');
-const sections = Array.from(new Set(docs.map(d => d.data.section)));
+const docSections = [
+  {
+    title: 'Getting Started',
+    href: '/docs/getting-started/',
+    description: 'Set up your local workspace, configure model credentials, and run your first autonomous engineering project.',
+    topics: ['Prerequisites & Docker Sandboxes', 'Workspace Environment Variables', 'Initializing Project DNA', 'Running First Generation'],
+  },
+  {
+    title: 'Workflows & Verification',
+    href: '/docs/workflows/',
+    description: 'Understand the pre-flight verification gate, auto-repair loops, and human-in-the-loop approval procedures.',
+    topics: ['Pre-Flight AST Compilation (#verification)', 'Automated Repair Loops', 'Operator Intercept Gates', 'Audit Trail & Recovery (#audit-and-recovery)'],
+  },
+  {
+    title: 'Integration Setup',
+    href: '/docs/integrations/',
+    description: 'Connect Cursor, VS Code, Zed, and Claude Code via Model Context Protocol (MCP) and configure cloud targets.',
+    topics: ['MCP Server Setup (#mcp)', 'Cursor & VS Code Configuration', 'Developer Tools Interop (#developer-tools)', 'Cloud Credential Management'],
+  },
+  {
+    title: 'Architecture & Concepts',
+    href: '/docs/architecture/',
+    description: 'Deep dive into Project DNA, multi-model adversarial debate mechanics, and the platform glossary.',
+    topics: ['Multi-Model Debate (#planning-and-review)', 'AST Project DNA Graph (#project-context)', 'Topological Dependency Sorting', 'Platform Glossary (#glossary)'],
+  },
+];
 ---
 
 <Base
-  title="StructZero Documentation Portal"
-  description="Technical documentation, MCP server setup, and architecture specs for StructZero."
+  title="Documentation Hub — StructZero"
+  description="Comprehensive operational guides, MCP configuration reference, and architecture specifications for the StructZero platform."
 >
-  <section class="py-20 border-b border-border bg-panel/30">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <span class="font-mono text-xs uppercase tracking-wider text-accent block mb-3">Documentation</span>
-      <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-4">StructZero Technical Portal</h1>
-      <p class="text-lg text-ink-muted max-w-2xl mx-auto">
-        Complete operational guides, MCP server reference, and engineering specs.
+  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-2 text-xs font-mono text-[#8A98B0] mb-4">
+        <a href="/" class="hover:text-[#4F8BFF]">Home</a>
+        <span>/</span>
+        <span class="text-[#F5F7FB]">Docs</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB]">Technical Documentation</h1>
+        <StatusBadge status="Available" size="md" />
+      </div>
+      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-3xl leading-relaxed">
+        Everything you need to configure StructZero, connect your IDE via Model Context Protocol, and run governed AI software development.
       </p>
     </div>
   </section>
 
-  <section class="py-16 max-w-6xl mx-auto px-6">
-    <div class="grid md:grid-cols-2 gap-8">
-      {sections.map(section => (
-        <div class="border border-border rounded-2xl p-6 bg-panel">
-          <h2 class="font-mono text-sm uppercase text-accent font-bold mb-4">{section}</h2>
-          <ul class="space-y-3">
-            {docs.filter(d => d.data.section === section).map(doc => (
-              <li>
-                <a href={`/docs/${doc.slug}`} class="text-ink hover:text-accent font-medium transition-colors block">
-                  {doc.data.title} →
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {docSections.map((s) => (
+          <div class="p-6 sm:p-8 rounded-2xl border border-[#23314D] bg-[#141D30] flex flex-col justify-between hover:border-[#4F8BFF]/40 transition-colors">
+            <div>
+              <h2 class="text-xl font-bold text-[#F5F7FB] mb-2.5">
+                <a href={s.href} class="hover:text-[#4F8BFF] transition-colors flex items-center justify-between">
+                  <span>{s.title}</span>
+                  <span class="text-[#4F8BFF] text-base">→</span>
                 </a>
-                <p class="text-xs text-ink-muted mt-1">{doc.data.description}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+              </h2>
+              <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed mb-6">
+                {s.description}
+              </p>
+            </div>
+            <div class="pt-4 border-t border-[#23314D]">
+              <h3 class="text-xs font-mono uppercase tracking-wider text-[#8A98B0] mb-3">Key Topics</h3>
+              <ul class="space-y-1.5 text-xs text-[#B7C2D6]">
+                {s.topics.map((t) => (
+                  <li class="flex items-center gap-2">
+                    <span class="w-1 h-1 rounded-full bg-[#4F8BFF]"></span>
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 </Base>

@@ -8,16 +8,30 @@ import SubpageLayout from '../../layouts/SubpageLayout.astro';
   status="Official Spec"
   summary="StructZero adheres to verifiable, evidence-based AI engineering — utilizing adversarial review and automated compilation checks to eliminate hallucinations."
   related={[
-    { label: 'Debate Engine', href: '/debate-engine' },
-    { label: 'Certification', href: '/certification' },
+    { label: 'Workflows & Verification', href: '/docs/workflows/#verification' },
+    { label: 'Security Controls', href: '/security/' },
   ]}
 >
-  ## Verifiable Generation
-  StructZero never accepts unverified AI model output. Code must pass automated certification gates before release.
+  <div class="space-y-6">
+    <div>
+      <h2 class="text-xl font-bold text-[#F5F7FB] mb-2">Verifiable Code Generation</h2>
+      <p class="text-sm text-[#B7C2D6] leading-relaxed">
+        StructZero rejects unverified, single-pass AI code output. All proposed files must pass automated syntax compilation, import resolution, and test gates before being committed.
+      </p>
+    </div>
 
-  ## Multi-Model Neutrality
-  StructZero maintains model neutrality, allowing customers to assign model providers based on performance and privacy needs.
+    <div>
+      <h2 class="text-xl font-bold text-[#F5F7FB] mb-2">Multi-Model Neutrality & Independence</h2>
+      <p class="text-sm text-[#B7C2D6] leading-relaxed">
+        We believe developers should never be locked into a single AI model vendor. Independent models cross-examine architectural drafts to eliminate individual model blind spots.
+      </p>
+    </div>
 
-  ## Human in the Loop
-  The platform keeps developers in command, using human-in-the-loop authorization for critical decisions.
+    <div>
+      <h2 class="text-xl font-bold text-[#F5F7FB] mb-2">Human Authorization Priority</h2>
+      <p class="text-sm text-[#B7C2D6] leading-relaxed">
+        Autonomous loops are strictly bounded. Operators retain absolute authority over billable cloud infrastructure provisioning, schema migrations, and production releases.
+      </p>
+    </div>
+  </div>
 </SubpageLayout>

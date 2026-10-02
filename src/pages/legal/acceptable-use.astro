@@ -8,12 +8,19 @@ import SubpageLayout from '../../layouts/SubpageLayout.astro';
   status="Official Spec"
   summary="StructZero must not be utilized for malicious software generation, security exploit generation, or unauthorized infrastructure disruption."
   related={[
-    { label: 'Security Policy', href: '/legal/security-policy' },
-    { label: 'Terms of Service', href: '/legal/terms' },
+    { label: 'Security Policy', href: '/legal/security-policy/' },
+    { label: 'Terms of Service', href: '/legal/terms/' },
   ]}
 >
-  ## Prohibited Activities
-  - Generating malware, ransomware, or zero-day exploit payloads.
-  - Attempting unauthorized access to third-party cloud infrastructure.
-  - Bypassing human authorization intercepts for billable commands.
+  <div class="space-y-6">
+    <div>
+      <h2 class="text-xl font-bold text-[#F5F7FB] mb-3">Prohibited Activities</h2>
+      <ul class="space-y-2 text-sm text-[#B7C2D6] list-disc list-inside">
+        <li>Generating malware, ransomware, spyware, or zero-day exploit payloads.</li>
+        <li>Attempting unauthorized access, penetration testing, or disruption of third-party cloud infrastructure.</li>
+        <li>Bypassing human authorization intercepts for billable or destructive operations.</li>
+        <li>Deploying autonomous agents without appropriate operator oversight in production environments.</li>
+      </ul>
+    </div>
+  </div>
 </SubpageLayout>

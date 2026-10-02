@@ -1,0 +1,110 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+
+const securityControls = [
+  {
+    category: 'Execution Boundaries',
+    title: 'Hard Human-in-the-Loop Intercepts',
+    desc: 'Autonomous runs cannot execute destructive database operations (DROP TABLE, TRUNCATE, DELETE without WHERE), mutate live production infrastructure, or provision billable cloud resources without explicit operator sign-off.',
+  },
+  {
+    category: 'Runtime Isolation',
+    title: 'Containerized Build Sandboxes',
+    desc: 'All compilation, syntax testing, and dependency resolution occur within ephemeral Docker containers. The host workstation and network are strictly protected from untrusted code execution.',
+  },
+  {
+    category: 'Context & Data Privacy',
+    title: 'Zero Training on Customer Code',
+    desc: 'Customer source code, AST graphs, and debate transcripts are strictly ephemeral or stored within your own isolated project directory. No customer intellectual property is used to train public foundation models.',
+  },
+  {
+    category: 'Credential Security',
+    title: 'Automated Secret Masking',
+    desc: 'Pre-flight prompt sanitization scans for API keys, bearer tokens, database passwords, and private certificates, replacing them with redaction placeholders before context is sent to any model endpoint.',
+  },
+  {
+    category: 'Auditability',
+    title: 'Immutable Event Trails',
+    desc: 'Every model request, response, architectural argument, AST validation check, and operator approval is written to append-only JSONL audit logs with timestamps and commit SHAs.',
+  },
+  {
+    category: 'Model Resilience',
+    title: 'Multi-Provider Redundancy',
+    desc: 'Prevents single-vendor outage lock-in by supporting Anthropic Claude, Google Vertex AI, DeepSeek, and local Ollama model endpoints.',
+  },
+];
+---
+
+<Base
+  title="Security Controls & Limitations — StructZero"
+  description="Due diligence guide covering StructZero execution boundaries, container sandboxing, secret masking, and data privacy."
+>
+  <!-- Hero Section -->
+  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-2 text-xs font-mono text-[#8A98B0] mb-4">
+        <a href="/" class="hover:text-[#4F8BFF]">Home</a>
+        <span>/</span>
+        <span class="text-[#F5F7FB]">Security</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB]">Security Controls & Posture</h1>
+        <StatusBadge status="Available" size="md" />
+      </div>
+      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-3xl leading-relaxed">
+        StructZero is designed from first principles with hard execution boundaries, sandboxed runtimes, and strict isolation for enterprise environments.
+      </p>
+    </div>
+  </section>
+
+  <!-- Controls Grid -->
+  <section class="py-16 border-b border-[#23314D]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-8">
+      <div>
+        <span class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold block mb-2">
+          Control Matrix
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#F5F7FB]">Technical Security Controls</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {securityControls.map((c) => (
+          <div class="p-6 rounded-2xl border border-[#23314D] bg-[#141D30] space-y-3">
+            <span class="text-xs font-mono uppercase tracking-wider text-[#4F8BFF] block">
+              {c.category}
+            </span>
+            <h3 class="text-lg font-bold text-[#F5F7FB]">{c.title}</h3>
+            <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed">
+              {c.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Known Boundaries & Limitations -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
+      <h2 class="text-xl sm:text-2xl font-bold text-[#F5F7FB]">Known Boundaries & Operational Responsibilities</h2>
+      <div class="p-6 rounded-2xl border border-[#23314D] bg-[#141D30] space-y-4 text-sm text-[#B7C2D6] leading-relaxed">
+        <p>
+          While StructZero introduces automated AST syntax checks, topological generation, and sandbox testing, no automated system can guarantee 100% defect-free software without human oversight.
+        </p>
+        <ul class="space-y-2 list-disc list-inside text-xs sm:text-sm">
+          <li><strong>Operator Verification:</strong> Human developers must review critical architectural decisions and business logic before approving production deployments.</li>
+          <li><strong>Cloud Credentials:</strong> Cloud provider keys and tokens must be managed using least-privilege IAM policies.</li>
+          <li><strong>Local Execution:</strong> Local Docker containers must have socket proxy boundaries properly configured to prevent container escape vulnerabilities.</li>
+        </ul>
+      </div>
+
+      <div class="pt-4 flex items-center justify-between">
+        <span class="text-xs font-mono text-[#8A98B0]">Report security issues: security@structzero.app</span>
+        <a href="/legal/security-policy/" class="text-xs font-mono text-[#4F8BFF] hover:underline">
+          Read Formal Vulnerability Disclosure Policy →
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,114 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+
+const capabilities = [
+  {
+    title: 'Operator Push Approvals',
+    desc: 'When an autonomous run reaches an external cloud provisioning action or destructive database migration, receive a high-priority push notification and approve or abort with one tap.',
+  },
+  {
+    title: 'Live Run Telemetry',
+    desc: 'Stream token expenditure, step-by-step reasoning outputs, active model latencies, and sandbox health directly to your mobile device via secure WebSockets.',
+  },
+  {
+    title: 'Portfolio Health Oversight',
+    desc: 'Monitor health status, branch deployments, and budget consumption across all connected projects from a single mobile dashboard.',
+  },
+  {
+    title: 'Offline Queueing & Reconnect',
+    desc: 'Actions taken offline are securely queued with cryptographic replay protection and synchronized upon reconnection.',
+  },
+];
+---
+
+<Base
+  title="Native Android Control — StructZero"
+  description="Manage AI engineering runs, review live telemetry, and authorize deployment gates with StructZero Remote on Android."
+>
+  <!-- Hero Section -->
+  <section class="py-16 border-b border-[#23314D] bg-[#141D30]/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-2 text-xs font-mono text-[#8A98B0] mb-4">
+        <a href="/" class="hover:text-[#4F8BFF]">Home</a>
+        <span>/</span>
+        <span class="text-[#F5F7FB]">Android</span>
+      </div>
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
+        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-[#F5F7FB]">Native Android Control</h1>
+        <StatusBadge status="In Development" size="md" />
+      </div>
+      <p class="text-base sm:text-lg text-[#B7C2D6] max-w-3xl leading-relaxed">
+        StructZero Remote extends software engineering governance to your pocket. Authorize releases, audit model debates, and watch runs execute in real time.
+      </p>
+    </div>
+  </section>
+
+  <!-- Distinguishing Two Android Pipelines -->
+  <section class="py-16 border-b border-[#23314D]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-8">
+      <div class="p-6 rounded-2xl border border-[#4F8BFF]/30 bg-[#4F8BFF]/10 text-[#F5F7FB]">
+        <h2 class="text-base font-bold text-[#4F8BFF] uppercase tracking-wider font-mono mb-2">
+          Architectural Scope Distinction
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-[#B7C2D6]">
+          <div>
+            <strong class="text-[#F5F7FB] block mb-1">1. StructZero Remote (Client Surface)</strong>
+            The native Android application used by developers and engineering leads to monitor runs, inspect budgets, and issue biometric approvals on critical releases.
+          </div>
+          <div>
+            <strong class="text-[#F5F7FB] block mb-1">2. Android App Generation (Build Target)</strong>
+            The platform capability allowing StructZero to generate, compile, and package native Android mobile apps (Kotlin/Compose) inside sandboxed Gradle containers.
+          </div>
+        </div>
+      </div>
+
+      <!-- Capabilities Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+        {capabilities.map((c) => (
+          <div class="p-6 rounded-xl border border-[#23314D] bg-[#141D30]">
+            <h3 class="text-base font-bold text-[#F5F7FB] mb-2">{c.title}</h3>
+            <p class="text-xs sm:text-sm text-[#B7C2D6] leading-relaxed">{c.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specs -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-6">
+      <h2 class="text-xl sm:text-2xl font-bold text-[#F5F7FB]">System Compatibility & Security</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="p-5 rounded-xl border border-[#23314D] bg-[#141D30]">
+          <div class="text-xs font-mono text-[#8A98B0] mb-1">OS REQUIREMENTS</div>
+          <div class="text-sm font-semibold text-[#F5F7FB]">Android 10+ (API 29+)</div>
+          <div class="text-xs text-[#8A98B0] mt-1">ARM64 & x86_64 architecture</div>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[#23314D] bg-[#141D30]">
+          <div class="text-xs font-mono text-[#8A98B0] mb-1">SESSION SECURITY</div>
+          <div class="text-sm font-semibold text-[#F5F7FB]">TLS 1.3 + mTLS</div>
+          <div class="text-xs text-[#8A98B0] mt-1">Short-lived JWT & biometric unlock</div>
+        </div>
+
+        <div class="p-5 rounded-xl border border-[#23314D] bg-[#141D30]">
+          <div class="text-xs font-mono text-[#8A98B0] mb-1">CURRENT STATUS</div>
+          <div class="text-sm font-semibold text-[#FBBF24]">Technical Preview</div>
+          <div class="text-xs text-[#8A98B0] mt-1">Request early test access via contact</div>
+        </div>
+      </div>
+
+      <div class="pt-6">
+        <a
+          href="/contact/"
+          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#4F8BFF] text-[#0B1020] font-semibold text-xs hover:bg-[#689DFF] transition-all"
+        >
+          <span>Request Android Preview Access</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

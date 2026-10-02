@@ -1,94 +1,69 @@
 ---
+import BrandMark from './BrandMark.astro';
+
 const footerSections = [
   {
-    title: 'Platform Architecture',
+    title: 'Product',
     links: [
-      { label: 'Platform Overview', href: '/platform-overview' },
-      { label: 'Why StructZero', href: '/why-structzero' },
-      { label: 'Architecture Overview', href: '/architecture-overview' },
-      { label: 'Multi-Model Debate Engine', href: '/debate-engine' },
-      { label: 'Project DNA Context', href: '/project-dna' },
-      { label: 'Certification Gates', href: '/certification' },
-      { label: 'Plugin Architecture', href: '/plugin-system' },
-      { label: 'AI Team Orchestration', href: '/ai-team' },
-      { label: 'Engineering Events', href: '/engineering-events' },
-      { label: 'Observability & Spend', href: '/observability' },
-      { label: 'Security & Guardrails', href: '/security' },
+      { label: 'Platform & Autonomy', href: '/platform/' },
+      { label: 'Modules Directory', href: '/modules/' },
+      { label: 'Native Android Control', href: '/android/' },
+      { label: 'Integrations & Providers', href: '/integrations/' },
+      { label: 'Interactive Demo', href: '/demo/' },
+      { label: 'Security & Guardrails', href: '/security/' },
     ],
   },
   {
-    title: 'Connectors & Ecosystem',
+    title: 'Resources & Docs',
     links: [
-      { label: 'Plugin Marketplace Hub', href: '/plugins-hub' },
-      { label: 'AWS Agent Toolkit', href: '/plugins/aws-agent-toolkit' },
-      { label: 'GitHub Connector', href: '/plugins/github' },
-      { label: 'Vercel Connector', href: '/plugins/vercel' },
-      { label: 'Google Cloud Platform', href: '/plugins/google-cloud' },
-      { label: 'Vertex AI Connector', href: '/plugins/vertex-ai' },
-      { label: 'Amazon Bedrock', href: '/plugins/bedrock' },
-      { label: 'Azure AI Foundry', href: '/plugins/azure-foundry' },
-      { label: 'IDE-Agnostic MCP Server', href: '/mcp-server' },
-      { label: 'IDE Integration Guide', href: '/ide-integration' },
-      { label: 'Cloud Integrations', href: '/cloud-integrations' },
+      { label: 'Documentation Hub', href: '/docs/' },
+      { label: 'Getting Started', href: '/docs/getting-started/' },
+      { label: 'Workflows & Verification', href: '/docs/workflows/' },
+      { label: 'Integrations Setup', href: '/docs/integrations/' },
+      { label: 'Architecture & Concepts', href: '/docs/architecture/' },
+      { label: 'Product Roadmap', href: '/roadmap/' },
+      { label: 'Platform Updates', href: '/updates/' },
     ],
   },
   {
-    title: 'Tool Comparisons',
+    title: 'Company',
     links: [
-      { label: 'vs Cursor', href: '/compare/cursor' },
-      { label: 'vs Claude Code', href: '/compare/claude-code' },
-      { label: 'vs GitHub Copilot', href: '/compare/github-copilot' },
-      { label: 'vs Firebase Studio', href: '/compare/firebase-studio' },
-      { label: 'vs Google Antigravity', href: '/compare/antigravity' },
-      { label: 'vs Lovable', href: '/compare/lovable' },
-      { label: 'vs Bolt.new', href: '/compare/bolt' },
-      { label: 'vs Replit Agent', href: '/compare/replit' },
-      { label: 'vs Windsurf', href: '/compare/windsurf' },
-      { label: 'vs Continue.dev', href: '/compare/continue' },
-      { label: 'vs Cline Agent', href: '/compare/cline' },
-    ],
-  },
-  {
-    title: 'Company & Resources',
-    links: [
-      { label: 'About Company', href: '/company' },
-      { label: 'Product Overview', href: '/product' },
-      { label: 'Business Platform', href: '/business-platform' },
-      { label: 'Interactive Roadmap', href: '/roadmap' },
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Glossary', href: '/glossary' },
-      { label: 'Changelog', href: '/changelog' },
-      { label: 'Careers', href: '/careers' },
-      { label: 'Contact Us', href: '/contact' },
+      { label: 'About StructZero', href: '/about/' },
+      { label: 'Contact & Walkthrough', href: '/contact/' },
+      { label: 'Security Controls', href: '/security/' },
+      { label: 'Responsible AI Policy', href: '/legal/responsible-ai/' },
     ],
   },
   {
     title: 'Legal & Governance',
     links: [
-      { label: 'Privacy Policy', href: '/legal/privacy' },
-      { label: 'Terms of Service', href: '/legal/terms' },
-      { label: 'Security Policy', href: '/legal/security-policy' },
-      { label: 'Responsible AI Statement', href: '/legal/responsible-ai' },
-      { label: 'Accessibility Statement', href: '/legal/accessibility' },
-      { label: 'Acceptable Use Policy', href: '/legal/acceptable-use' },
-      { label: 'Cookie Policy', href: '/legal/cookies' },
-      { label: 'Data Processing (DPA)', href: '/legal/data-processing' },
-      { label: 'Open Source Notices', href: '/legal/licenses' },
+      { label: 'Privacy Policy', href: '/legal/privacy/' },
+      { label: 'Terms of Service', href: '/legal/terms/' },
+      { label: 'Security Policy', href: '/legal/security-policy/' },
+      { label: 'Acceptable Use', href: '/legal/acceptable-use/' },
+      { label: 'Data Processing (DPA)', href: '/legal/data-processing/' },
+      { label: 'Cookie Policy', href: '/legal/cookies/' },
+      { label: 'Accessibility', href: '/legal/accessibility/' },
+      { label: 'Open Source Notices', href: '/legal/licenses/' },
     ],
   },
 ];
 ---
 
-<footer class="border-t border-border bg-bg-alt py-16">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 mb-16">
+<footer class="border-t border-[#23314D] bg-[#0B1020] pt-16 pb-12 text-[#B7C2D6]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 mb-14">
       {footerSections.map(section => (
         <div>
-          <h4 class="font-mono text-xs uppercase tracking-wider text-accent font-semibold mb-4">{section.title}</h4>
-          <ul class="space-y-2.5 text-sm text-ink-muted">
+          <h3 class="font-mono text-xs uppercase tracking-wider text-[#4F8BFF] font-semibold mb-4">
+            {section.title}
+          </h3>
+          <ul class="space-y-2.5 text-sm">
             {section.links.map(link => (
               <li>
-                <a href={link.href} class="hover:text-ink transition-colors">{link.label}</a>
+                <a href={link.href} class="hover:text-white transition-colors">
+                  {link.label}
+                </a>
               </li>
             ))}
           </ul>
@@ -96,13 +71,22 @@ const footerSections = [
       ))}
     </div>
 
-    <div class="border-t border-border/60 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-ink-faint">
-      <div class="flex items-center gap-2">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span>70–80% of StructZero was designed and built using StructZero itself.</span>
+    <!-- Bottom Bar -->
+    <div class="border-t border-[#23314D]/80 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8A98B0]">
+      <div class="flex items-center gap-2.5">
+        <div class="w-5 h-5 rounded bg-[#141D30] border border-[#23314D] flex items-center justify-center text-[#4F8BFF]">
+          <BrandMark size={14} />
+        </div>
+        <span class="font-semibold text-[#F5F7FB]">StructZero Platform</span>
+        <span class="hidden md:inline text-[#3A4C70]">|</span>
+        <span class="hidden md:inline">Command center for governed AI-built software.</span>
       </div>
-      <div>
-        © {new Date().getFullYear()} StructZero Platform. All rights reserved.
+      <div class="flex items-center gap-4">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono bg-[#141D30] text-[#34D399] border border-[#23314D]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#34D399]"></span>
+          Version 11 Preview
+        </span>
+        <span>© {new Date().getFullYear()} StructZero. All rights reserved.</span>
       </div>
     </div>
   </div>

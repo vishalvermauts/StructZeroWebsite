@@ -7,10 +7,24 @@ export interface Props {
   title: string;
   description: string;
   schemaType?: string;
+  ogImage?: string;
+  videoUrl?: string;
 }
-const { title, description, schemaType = 'SoftwareApplication' } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://structzero.app');
+const {
+  title,
+  description,
+  schemaType = 'WebPage',
+  ogImage = 'https://www.structzero.app/Multi-Agent_Engineering_Pipeline.png',
+  videoUrl,
+} = Astro.props;
+
+// Ensure consistent canonical URL with trailing slash policy
+let pathWithSlash = Astro.url.pathname;
+if (!pathWithSlash.endsWith('/')) {
+  pathWithSlash += '/';
+}
+const canonicalURL = new URL(pathWithSlash, 'https://www.structzero.app');
 ---
 <!doctype html>
 <html lang="en">
@@ -23,49 +37,70 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://structze
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- OpenGraph -->
+    <!-- OpenGraph Metadata -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="StructZero Platform" />
-    <meta property="og:video" content="https://www.structzero.app/Structzero_AI_software_engineering_platform.mp4" />
-    <meta property="og:video:secure_url" content="https://www.structzero.app/Structzero_AI_software_engineering_platform.mp4" />
-    <meta property="og:video:type" content="video/mp4" />
-    <meta property="og:video:width" content="1280" />
-    <meta property="og:video:height" content="720" />
-    <meta property="og:image" content="https://www.structzero.app/Multi-Agent_Engineering_Pipeline.png" />
-    <meta property="og:image:secure_url" content="https://www.structzero.app/Multi-Agent_Engineering_Pipeline.png" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="1920" />
-    <meta property="og:image:height" content="1080" />
-    <meta property="og:image:alt" content="StructZero Multi-Agent Engineering Pipeline Diagram" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="StructZero AI Software Command Center" />
 
-    <!-- Twitter -->
+    {videoUrl && (
+      <>
+        <meta property="og:video" content={videoUrl} />
+        <meta property="og:video:type" content="video/mp4" />
+      </>
+    )}
+
+    <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content={canonicalURL} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://www.structzero.app/Multi-Agent_Engineering_Pipeline.png" />
-    <meta name="twitter:image:alt" content="StructZero Multi-Agent Engineering Pipeline Diagram" />
+    <meta name="twitter:image" content={ogImage} />
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": schemaType,
-      "name": title,
-      "description": description,
-      "url": canonicalURL.toString(),
-      "publisher": {
-        "@type": "Organization",
-        "name": "StructZero",
-        "url": "https://structzero.app"
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.structzero.app/#organization",
+          "name": "StructZero",
+          "url": "https://www.structzero.app",
+          "logo": "https://www.structzero.app/favicon.svg",
+          "description": "Command center platform for governed AI-built software engineering."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.structzero.app/#website",
+          "url": "https://www.structzero.app",
+          "name": "StructZero Platform",
+          "publisher": {
+            "@id": "https://www.structzero.app/#organization"
+          }
+        },
+        {
+          "@type": schemaType,
+          "@id": `${canonicalURL.toString()}#webpage`,
+          "url": canonicalURL.toString(),
+          "name": title,
+          "description": description,
+          "isPartOf": {
+            "@id": "https://www.structzero.app/#website"
+          }
+        }
+      ]
     })} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <link rel="alternate" type="application/rss+xml" title="StructZero Blog RSS Feed" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="StructZero Updates RSS Feed" href="/rss.xml" />
+
+    <!-- Dynamic Mermaid initialization with error resilience -->
     <script type="module">
       import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
       mermaid.initialize({
@@ -73,42 +108,44 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://structze
         theme: 'base',
         themeVariables: {
           darkMode: true,
-          background: '#0d1322',
-          primaryColor: '#1e293b',
-          primaryTextColor: '#ffffff',
-          primaryBorderColor: '#3b82f6',
-          lineColor: '#38bdf8',
-          secondaryColor: '#0f172a',
-          secondaryTextColor: '#ffffff',
-          secondaryBorderColor: '#0ea5e9',
-          tertiaryColor: '#1e1b4b',
-          tertiaryTextColor: '#ffffff',
-          tertiaryBorderColor: '#818cf8',
-          nodeBkg: '#1e293b',
-          nodeTextColor: '#ffffff',
-          nodeBorder: '#3b82f6',
-          clusterBkg: '#0f172a',
-          clusterBorder: '#334155',
-          titleColor: '#38bdf8',
-          edgeLabelBackground: '#0f172a'
+          background: '#0B1020',
+          primaryColor: '#141D30',
+          primaryTextColor: '#F5F7FB',
+          primaryBorderColor: '#4F8BFF',
+          lineColor: '#4F8BFF',
+          secondaryColor: '#1D2940',
+          secondaryTextColor: '#F5F7FB',
+          secondaryBorderColor: '#3A4C70',
+          tertiaryColor: '#10172A',
+          tertiaryTextColor: '#F5F7FB',
+          tertiaryBorderColor: '#23314D',
+          nodeBkg: '#141D30',
+          nodeTextColor: '#F5F7FB',
+          nodeBorder: '#4F8BFF',
+          clusterBkg: '#10172A',
+          clusterBorder: '#23314D',
+          titleColor: '#F5F7FB',
+          edgeLabelBackground: '#10172A'
         }
       });
       const renderMermaid = async () => {
-        const blocks = document.querySelectorAll('pre[data-language="mermaid"], pre.mermaid, code[class*="mermaid"]');
+        const blocks = document.querySelectorAll('pre.mermaid, code.language-mermaid, pre[data-language="mermaid"]');
         for (let i = 0; i < blocks.length; i++) {
           const block = blocks[i];
-          const pre = block.tagName === 'PRE' ? block : block.closest('pre') || block;
           const code = block.textContent.trim();
-          const div = document.createElement('div');
-          div.className = 'mermaid my-6 p-4 rounded-xl border border-border bg-panel text-center overflow-x-auto min-h-[120px] flex items-center justify-center';
-          div.id = `mermaid-svg-${i}`;
-          pre.replaceWith(div);
+          const container = document.createElement('div');
+          container.className = 'mermaid my-6 p-4 rounded-xl border border-[#23314D] bg-[#141D30] text-center overflow-x-auto min-h-[100px] flex items-center justify-center';
+          block.replaceWith(container);
           try {
             const { svg } = await mermaid.render(`mermaid-diagram-${i}`, code);
-            div.innerHTML = svg;
+            container.innerHTML = svg;
           } catch (e) {
-            console.error('Mermaid render error:', e);
-            div.innerHTML = `<pre class="text-xs text-left font-mono text-ink-muted">${code}</pre>`;
+            console.error('Mermaid rendering notice:', e);
+            const pre = document.createElement('pre');
+            pre.className = 'text-xs text-left font-mono text-[#B7C2D6] overflow-x-auto p-3';
+            pre.textContent = code;
+            container.innerHTML = '';
+            container.appendChild(pre);
           }
         }
       };
@@ -119,9 +156,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://structze
       }
     </script>
   </head>
-  <body class="antialiased min-h-screen flex flex-col bg-bg text-text">
+  <body class="bg-[#0B1020] text-[#F5F7FB] antialiased">
     <Nav />
-    <main class="flex-grow">
+    <main>
       <slot />
     </main>
     <Footer />
