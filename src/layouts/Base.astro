@@ -72,6 +72,9 @@ const canonicalURL = new URL(pathWithSlash, 'https://www.structzero.app');
           "name": "StructZero",
           "url": "https://www.structzero.app",
           "logo": "https://www.structzero.app/favicon.svg",
+          "sameAs": [
+            "https://github.com/vishalvermauts/StructZeroWebsite"
+          ],
           "description": "AI software engineering platform coordinating modular workflows to research, build, verify, secure, deploy, and operate software."
         },
         {
@@ -97,39 +100,43 @@ const canonicalURL = new URL(pathWithSlash, 'https://www.structzero.app');
     })} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="sitemap" href="/sitemap.xml" />
     <link rel="alternate" type="application/rss+xml" title="StructZero Updates RSS Feed" href="/rss.xml" />
 
-    <!-- Dynamic Mermaid initialization with error resilience -->
+    <!-- Performance-optimized on-demand Mermaid initializer -->
     <script type="module">
-      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-      mermaid.initialize({
-        startOnLoad: false,
-        theme: 'base',
-        themeVariables: {
-          darkMode: true,
-          background: '#000000',
-          primaryColor: '#111111',
-          primaryTextColor: '#e9e9ea',
-          primaryBorderColor: '#4d8fe0',
-          lineColor: '#4d8fe0',
-          secondaryColor: '#1a1a1a',
-          secondaryTextColor: '#e9e9ea',
-          secondaryBorderColor: '#2c2c2c',
-          tertiaryColor: '#0a0a0a',
-          tertiaryTextColor: '#e9e9ea',
-          tertiaryBorderColor: '#1e1e1e',
-          nodeBkg: '#111111',
-          nodeTextColor: '#e9e9ea',
-          nodeBorder: '#4d8fe0',
-          clusterBkg: '#0a0a0a',
-          clusterBorder: '#1e1e1e',
-          titleColor: '#e9e9ea',
-          edgeLabelBackground: '#0a0a0a'
-        }
-      });
       const renderMermaid = async () => {
         const blocks = document.querySelectorAll('pre.mermaid, code.language-mermaid, pre[data-language="mermaid"]');
+        if (blocks.length === 0) return;
+
+        // Lazy-load Mermaid ESM only on pages with actual diagram blocks
+        const { default: mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs');
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: 'base',
+          themeVariables: {
+            darkMode: true,
+            background: '#000000',
+            primaryColor: '#111111',
+            primaryTextColor: '#e9e9ea',
+            primaryBorderColor: '#4d8fe0',
+            lineColor: '#4d8fe0',
+            secondaryColor: '#1a1a1a',
+            secondaryTextColor: '#e9e9ea',
+            secondaryBorderColor: '#2c2c2c',
+            tertiaryColor: '#0a0a0a',
+            tertiaryTextColor: '#e9e9ea',
+            tertiaryBorderColor: '#1e1e1e',
+            nodeBkg: '#111111',
+            nodeTextColor: '#e9e9ea',
+            nodeBorder: '#4d8fe0',
+            clusterBkg: '#0a0a0a',
+            clusterBorder: '#1e1e1e',
+            titleColor: '#e9e9ea',
+            edgeLabelBackground: '#0a0a0a'
+          }
+        });
+
         for (let i = 0; i < blocks.length; i++) {
           const block = blocks[i];
           const code = block.textContent.trim();
@@ -149,6 +156,7 @@ const canonicalURL = new URL(pathWithSlash, 'https://www.structzero.app');
           }
         }
       };
+
       if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', renderMermaid);
       } else {

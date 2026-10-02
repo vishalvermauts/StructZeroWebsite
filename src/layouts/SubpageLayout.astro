@@ -8,6 +8,7 @@ export interface Props {
   status?: string;
   summary?: string;
   category?: string;
+  schemaType?: string;
   features?: Array<{ title: string; desc: string }>;
   faqs?: Array<{ q: string; a: string }>;
   related?: Array<{ label: string; href: string }>;
@@ -20,6 +21,7 @@ const {
   status = 'Available',
   summary,
   category,
+  schemaType = 'TechArticle',
   features = [],
   faqs = [],
   related = [],
@@ -27,7 +29,7 @@ const {
 } = Astro.props;
 ---
 
-<Base title={`${title} — StructZero`} description={description}>
+<Base title={`${title} — StructZero`} description={description} schemaType={schemaType}>
   <!-- Subpage Header -->
   <section class="relative pt-12 pb-10 border-b border-[#1e1e1e] bg-[#0a0a0a] overflow-hidden">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 relative">

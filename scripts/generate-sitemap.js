@@ -70,10 +70,12 @@ ${urls.join('\n')}
 </urlset>`;
 
   if (outDir && fs.existsSync(outDir)) {
+    fs.writeFileSync(path.join(outDir, 'sitemap.xml'), xmlContent);
     fs.writeFileSync(path.join(outDir, 'sitemap-index.xml'), xmlContent);
   }
+  fs.writeFileSync(path.resolve('./public/sitemap.xml'), xmlContent);
   fs.writeFileSync(path.resolve('./public/sitemap-index.xml'), xmlContent);
-  console.log(`  ✓ Canonical sitemap generated with ${urls.length} verified routes.`);
+  console.log(`  ✓ Canonical sitemaps (sitemap.xml & sitemap-index.xml) generated with ${urls.length} verified routes.`);
 }
 
 if (process.argv[1] === import.meta.url || process.argv[1].endsWith('generate-sitemap.js')) {
